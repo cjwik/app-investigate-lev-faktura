@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import shutil
 import sys
 from pathlib import Path
 
@@ -42,6 +43,44 @@ def cmd_setup(_: argparse.Namespace) -> int:
         return 2
 
     logger.info("Setup OK")
+    return 0
+
+
+def cmd_ocrclean(args: argparse.Namespace) -> int:
+    """Remove all OCR-processed PDFs from output folders."""
+    years = [args.year] if args.year else [2024, 2025]
+
+    total_removed = 0
+
+    for year in years:
+        if year == 2024:
+            output_folder = config.OUTPUT_VOUCHERS_2024
+        elif year == 2025:
+            output_folder = config.OUTPUT_VOUCHERS_2025
+        else:
+            logger.error(f"Invalid year: {year}")
+            continue
+
+        if not output_folder.exists():
+            logger.info(f"Output folder does not exist: {output_folder}")
+            continue
+
+        pdf_files = list(output_folder.glob("*.pdf"))
+
+        if not pdf_files:
+            logger.info(f"No PDFs to remove in {year}")
+            continue
+
+        logger.info(f"Removing {len(pdf_files)} PDFs from {year}...")
+
+        for pdf_file in pdf_files:
+            try:
+                pdf_file.unlink()
+                total_removed += 1
+            except Exception as e:
+                logger.error(f"Failed to remove {pdf_file.name}: {e}")
+
+    logger.info(f"OCR clean complete: {total_removed} files removed")
     return 0
 
 
@@ -108,6 +147,10 @@ def build_parser() -> argparse.ArgumentParser:
 
     setup = sub.add_parser("setup", help="Create output folders and verify data paths")
     setup.set_defaults(func=cmd_setup)
+
+    ocrclean = sub.add_parser("ocrclean", help="Remove all OCR-processed PDFs from output folders")
+    ocrclean.add_argument("--year", type=int, choices=[2024, 2025], help="Clean specific year (default: both)")
+    ocrclean.set_defaults(func=cmd_ocrclean)
 
     ocr = sub.add_parser("ocr", help="Copy PDFs to output with OCR where needed")
     ocr.add_argument("--year", type=int, choices=[2024, 2025], help="Process specific year (default: both)")
