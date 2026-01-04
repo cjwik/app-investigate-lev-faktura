@@ -27,10 +27,19 @@ Find differences between PDF vouchers and vouchers recorded in the bookkeeping s
 - User provides updated SIE exports when new verifications are added to the accounting system
 - Preliminary/draft verifications in the accounting system won't appear until exported to SIE
 
-## Commands (planned)
+## Commands
 
-- `python src/main.py setup`
-- `python src/main.py ocr --year 2024 --limit 5`
-- `python src/main.py parse --year 2024`
-- `python src/main.py match --year 2024`
-- `python src/main.py full --year 2024`
+### Setup
+- `python src/main.py setup` - Create output folders and verify data paths
+
+### OCR Processing
+- `python src/main.py ocr --year 2024 --limit 5` - Process PDFs with OCR
+- `python src/main.py ocrclean [--year 2024]` - Remove OCR-processed PDFs
+
+### SIE Parsing
+- `python src/main.py parse --year 2024` - Parse SIE files and extract verification data
+- `python src/main.py parseclean` - Remove all parsed SIE output files
+
+### Matching (Not implemented yet)
+- `python src/main.py match --year 2024` - Match SIE entries with PDF vouchers
+- `python src/main.py full --year 2024` - Run full pipeline (OCR → Parse → Match)

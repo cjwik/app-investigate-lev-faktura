@@ -75,6 +75,35 @@ def cmd_ocrclean(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_parseclean(args: argparse.Namespace) -> int:
+    """Remove all parsed SIE output files."""
+    if not config.SIE_OUTPUT_DIR.exists():
+        logger.info(f"SIE output folder does not exist: {config.SIE_OUTPUT_DIR}")
+        return 0
+
+    # Find all CSV and TXT files in SIE output directory
+    csv_files = list(config.SIE_OUTPUT_DIR.glob("sie_data_*.csv"))
+    txt_files = list(config.SIE_OUTPUT_DIR.glob("sie_summary_*.txt"))
+    all_files = csv_files + txt_files
+
+    if not all_files:
+        logger.info("No parsed SIE files to remove")
+        return 0
+
+    logger.info(f"Removing {len(all_files)} parsed SIE files ({len(csv_files)} CSV, {len(txt_files)} TXT)...")
+    total_removed = 0
+    for file in all_files:
+        try:
+            file.unlink()
+            total_removed += 1
+            logger.debug(f"Removed: {file.name}")
+        except Exception as e:
+            logger.error(f"Failed to remove {file.name}: {e}")
+
+    logger.info(f"Parse clean complete: {total_removed} files removed")
+    return 0
+
+
 def cmd_ocr(args: argparse.Namespace) -> int:
     """Process PDFs: copy to output with OCR where needed."""
     _ensure_dirs()
@@ -176,6 +205,9 @@ def build_parser() -> argparse.ArgumentParser:
     ocrclean = sub.add_parser("ocrclean", help="Remove all OCR-processed PDFs from output folders")
     ocrclean.add_argument("--year", type=int, choices=[2024, 2025], help="Clean specific year (default: both)")
     ocrclean.set_defaults(func=cmd_ocrclean)
+
+    parseclean = sub.add_parser("parseclean", help="Remove all parsed SIE output files")
+    parseclean.set_defaults(func=cmd_parseclean)
 
     ocr = sub.add_parser("ocr", help="Copy PDFs to output with OCR where needed")
     ocr.add_argument("--year", type=int, choices=[2024, 2025], help="Process specific year (default: both)")
