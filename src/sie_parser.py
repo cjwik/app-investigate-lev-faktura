@@ -32,8 +32,15 @@ TRANS_PATTERN = re.compile(r'^#TRANS\s+(\d+)\s+\{.*?\}\s+([-]?\d+\.?\d*)\s*(\d{8
 
 
 def _try_read_file(filepath: Path) -> str:
-    """Tries to read the file with different encodings."""
-    encodings = ['cp437', 'cp850', 'latin-1', 'utf-8']
+    """Tries to read the file with different encodings.
+
+    Priority order for PC8 format:
+    1. cp850 (OEM 850 - Western European) - RECOMMENDED for Swedish å,ä,ö
+    2. cp437 (OEM 437 - US)
+    3. latin-1 (ISO 8859-1)
+    4. utf-8
+    """
+    encodings = ['cp850', 'cp437', 'latin-1', 'utf-8']
     for encoding in encodings:
         try:
             with open(filepath, 'r', encoding=encoding) as f:
@@ -42,7 +49,7 @@ def _try_read_file(filepath: Path) -> str:
             return content
         except UnicodeDecodeError:
             logger.debug(f"Failed to decode {filepath.name} with {encoding}")
-    
+
     raise ValueError(f"Could not decode {filepath} with any of the attempted encodings.")
 
 def parse_sie_file(filepath: Path) -> pd.DataFrame:

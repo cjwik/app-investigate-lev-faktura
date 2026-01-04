@@ -22,6 +22,11 @@ Find differences between PDF vouchers and vouchers recorded in the bookkeeping s
 - Input is read-only: `Data/Input/`
 - All generated output goes to: `Data/Output/`
 
+⚠️ **Important Notes:**
+- **SIE files** (`data/Input/SIE/*.se`) are exported from the accounting system and should NOT be modified
+- User provides updated SIE exports when new verifications are added to the accounting system
+- Preliminary/draft verifications in the accounting system won't appear until exported to SIE
+
 ## Commands (planned)
 
 - `python src/main.py setup`

@@ -20,6 +20,12 @@
 
 **Purpose:** Parse SIE files and extract verification entries - this is the "source of truth" from the bookkeeping system
 
+⚠️ **IMPORTANT: SIE File Management**
+- **DO NOT modify** SIE files in `data/Input/SIE/`
+- SIE files are exported from the accounting system (Spiris Bokföring & Fakturering)
+- User will provide updated SIE exports when new verifications are added
+- The parser reads what exists in the SIE file - preliminary/draft verifications in the accounting system won't appear until exported
+
 ### Key Functions
 
 #### `parse_sie_file(filepath)`
