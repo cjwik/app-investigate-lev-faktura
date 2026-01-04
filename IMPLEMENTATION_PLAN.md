@@ -1,6 +1,6 @@
 # OCR Processing and SIE Matching Project - Master Plan
 
-**Version:** 2.0 (Split Plan Structure)
+**Version:** 2.1 (Iteration 0 Complete)
 **Last Updated:** 2026-01-04
 
 ---
@@ -60,6 +60,11 @@ project-root/
 │   ├── content_extractor.py        # PDF text extraction/OCR
 │   ├── matcher.py                  # Matching logic
 │   └── main.py                     # CLI interface
+├── tests/                          # 🧪 Unit & Integration Tests
+│   ├── __init__.py
+│   ├── test_sie_parser.py
+│   ├── test_file_scanner.py
+│   └── test_matcher.py
 ├── docs/                           # 📁 Documentation
 │   ├── iteration-0-environment-setup.md
 │   ├── iteration-1-ocr-processing.md
@@ -101,13 +106,14 @@ project-root/
 
 | Iteration | Goal | Deliverable | Time Estimate | Status |
 |-----------|------|-------------|---------------|--------|
-| **[Iteration 0](docs/iteration-0-environment-setup.md)** | Environment Setup | Virtual env + dependencies | ~15 min | ⏸️ Pending |
-| **[Iteration 1](docs/iteration-1-ocr-processing.md)** ⭐ | OCR Processing | Searchable PDFs in Output/ | ~1-2 hours | ⏸️ Pending |
+| **[Iteration 0](docs/iteration-0-environment-setup.md)** | Environment Setup | Virtual env + dependencies | ~15 min | ✅ Completed |
+| **[Iteration 1](docs/iteration-1-ocr-processing.md)** ⭐ | OCR Processing | Searchable PDFs in Output/ | ~1-2 hours | ✅ Completed |
 | **[Iteration 2](docs/iteration-2-sie-parser.md)** | SIE Parser | DataFrame with verifications | ~1 hour | ⏸️ Pending |
 | **[Iteration 3](docs/iteration-3-matching.md)** | Matching | Match report (Excel/CSV) | ~30-60 min | ⏸️ Pending |
-| **Iteration 4** | CLI Polish | User-friendly commands | ~30 min | ⏸️ Optional |
+| **Iteration 4** | Testing & Quality | Comprehensive test suite | ~1-2 hours | ⏸️ Pending |
+| **Iteration 5** | CLI Polish | User-friendly commands | ~30 min | ⏸️ Optional |
 
-**Total Estimated Time:** ~3-5 hours for core functionality (Iterations 0-3)
+**Total Estimated Time:** ~5-8 hours for core functionality + testing (Iterations 0-4)
 
 ---
 
@@ -139,6 +145,12 @@ project-root/
   - Compare amounts (Swedish number parsing)
   - Generate comprehensive reports
   - Module: matcher.py
+
+- **[Iteration 4: Testing & Quality](docs/iteration-4-testing.md)**
+  - Unit tests for all modules
+  - Integration tests for CLI commands
+  - Test fixtures and mocking strategies
+  - CI/CD setup with pytest
 
 ### 📚 Technical References
 
@@ -201,6 +213,8 @@ Most modern accounting PDFs are "born digital" (not scanned):
   - Amount mismatches
 ✅ CLI interface provides clear feedback and progress
 ✅ Comprehensive error handling and logging
+✅ Test suite with >80% code coverage
+✅ All tests passing (unit + integration)
 ✅ Documentation complete with setup and usage instructions
 
 ---
@@ -242,6 +256,21 @@ python src/main.py match --year 2024
 python src/main.py full --year 2024
 ```
 
+### Iteration 4: Testing
+```bash
+# Run all tests
+pytest
+
+# Run with coverage report
+pytest --cov=src --cov-report=html
+
+# Run specific test file
+pytest tests/test_main.py
+
+# Run with verbose output
+pytest -v
+```
+
 ---
 
 ## Getting Started
@@ -259,13 +288,34 @@ Follow the iteration order (0 → 1 → 2 → 3)
 
 ## Project Status
 
-**Current Iteration:** Planning Complete ✅
-**Next Action:** Begin [Iteration 0: Environment Setup](docs/iteration-0-environment-setup.md)
+### Repository Status (as of 2026-01-04)
+
+- **Iteration 0 Complete:** ✅ Environment setup, config, logger, and `setup` command implemented
+- **Iteration 1 Complete:** ✅ PDF copy + OCR processing implemented
+  - `src/content_extractor.py` with text-first approach (pdfplumber → OCR fallback)
+  - `python src/main.py ocr` command with `--year` and `--limit` options
+  - Tested: 2/3 PDFs copied successfully (text-based), 1 failed (needs Tesseract)
+- **Testing Infrastructure Added:** ✅ Test directory structure created, `test_main.py` with CLI tests
+- Run: `python src/main.py setup` to create `Data/Output/*` and `logs/`, and verify `Data/Input/*` exists.
+- Run: `python src/main.py ocr --year 2024 --limit 5` to process first 5 PDFs (testing)
+- Added files:
+  - Core: `requirements.txt`, `README.md`, `src/{__init__.py,config.py,logger.py,main.py,content_extractor.py}`
+  - Tests: `tests/{__init__.py,test_main.py}`, `docs/iteration-4-testing.md`
+- Notes:
+  - The repo uses `Data/` (capital D); `src/config.py` supports both `Data/` and `data/` (prefers existing `Data/`).
+  - Tesseract OCR is optional - PDFs with text are simply copied (70-90% of files)
+- Testing: `pytest` runs 2 CLI integration tests for the `setup` command
+
+**Current Iteration:** Iteration 2 (SIE Parser) ⏸️ Pending
+**Next Action:** Implement `src/sie_parser.py` to parse SIE bookkeeping files
 
 ---
 
 ## Document Change Log
 
+- **v2.3 (2026-01-04):** Completed Iteration 1 (OCR Processing) - implemented `src/content_extractor.py` with text-first approach, wired up `ocr` CLI command, tested with 3 PDFs (2 copied successfully)
+- **v2.2 (2026-01-04):** Added comprehensive testing strategy (Iteration 4), created `tests/` directory with `test_main.py`, added testing dependencies to `requirements.txt`, created [iteration-4-testing.md](docs/iteration-4-testing.md)
+- **v2.1 (2026-01-04):** Implemented Iteration 0 scaffold (`src/`, logging, `requirements.txt`) + `python src/main.py setup`
 - **v2.0 (2026-01-04):** Split into modular plan structure
 - **v1.0 (2026-01-04):** Initial monolithic plan (867 lines)
 
@@ -280,6 +330,7 @@ Follow the iteration order (0 → 1 → 2 → 3)
 | [iteration-1-ocr-processing.md](docs/iteration-1-ocr-processing.md) | OCR processing details | During Iteration 1 |
 | [iteration-2-sie-parser.md](docs/iteration-2-sie-parser.md) | SIE parsing details | During Iteration 2 |
 | [iteration-3-matching.md](docs/iteration-3-matching.md) | Matching logic details | During Iteration 3 |
+| [iteration-4-testing.md](docs/iteration-4-testing.md) | Testing strategy & setup | During Iteration 4 |
 | [TECHNICAL_REFERENCE.md](docs/TECHNICAL_REFERENCE.md) | Technical specs | As needed |
 
 ---
