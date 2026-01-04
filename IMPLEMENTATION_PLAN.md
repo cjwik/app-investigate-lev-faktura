@@ -107,8 +107,8 @@ project-root/
 | Iteration | Goal | Deliverable | Time Estimate | Status |
 |-----------|------|-------------|---------------|--------|
 | **[Iteration 0](docs/iteration-0-environment-setup.md)** | Environment Setup | Virtual env + dependencies | ~15 min | ✅ Completed |
-| **[Iteration 1](docs/iteration-1-ocr-processing.md)** ⭐ | OCR Processing | Searchable PDFs in Output/ | ~1-2 hours | ✅ Completed |
-| **[Iteration 2](docs/iteration-2-sie-parser.md)** | SIE Parser | DataFrame with verifications | ~1 hour | ⏸️ Pending |
+| **[Iteration 1](docs/iteration-1-ocr-processing.md)** | OCR Processing | Searchable PDFs in Output/ | ~1-2 hours | ✅ Completed |
+| **[Iteration 2](docs/iteration-2-sie-parser.md)** ⭐ | SIE Parser | DataFrame with verifications | ~1 hour | 🔄 Next |
 | **[Iteration 3](docs/iteration-3-matching.md)** | Matching | Match report (Excel/CSV) | ~30-60 min | ⏸️ Pending |
 | **Iteration 4** | Testing & Quality | Comprehensive test suite | ~1-2 hours | ⏸️ Pending |
 | **Iteration 5** | CLI Polish | User-friendly commands | ~30 min | ⏸️ Optional |
@@ -296,8 +296,12 @@ Follow the iteration order (0 → 1 → 2 → 3)
   - `python src/main.py ocr` command with `--year` and `--limit` options
   - `python src/main.py ocrclean` command to remove OCR-processed PDFs
   - **Swedish OCR Fix (2026-01-04):** Installed Swedish language data (swe.traineddata) for Tesseract
-  - Verified Swedish OCR working correctly on test voucher (A10)
-  - Ready to process all vouchers (171 files in 2024, 528 files in 2025)
+  - **Processing Complete (2026-01-04):** All 699 vouchers successfully processed
+    - Total: 699 files (171 in 2024, 528 in 2025)
+    - Copied (text-based): 572 files (81.8%)
+    - OCR processed (image PDFs): 127 files (18.2%)
+    - Failed: 0 files (100% success rate)
+    - All PDFs now searchable with Swedish language support
 - **Testing Infrastructure Added:** ✅ Test directory structure created, `test_main.py` with CLI tests
 - Run: `python src/main.py setup` to create `Data/Output/*` and `logs/`, and verify `Data/Input/*` exists.
 - Run: `python src/main.py ocr --year 2024 --limit 5` to process first 5 PDFs (testing)
@@ -311,13 +315,14 @@ Follow the iteration order (0 → 1 → 2 → 3)
   - Text-based PDFs are simply copied (70-90% of files), image PDFs get Swedish OCR
 - Testing: `pytest` runs 2 CLI integration tests for the `setup` command
 
-**Current Iteration:** Iteration 1 (OCR Processing) - Swedish OCR verified ✅
-**Next Action:** Process all vouchers with Swedish OCR, then proceed to Iteration 2 (SIE Parser)
+**Current Iteration:** Iteration 1 (OCR Processing) - COMPLETE ✅
+**Next Action:** Proceed to Iteration 2 (SIE Parser) - Parse SIE bookkeeping files
 
 ---
 
 ## Document Change Log
 
+- **v2.5 (2026-01-04):** Completed full OCR processing - all 699 vouchers processed successfully (572 copied, 127 OCR'd, 0 failed)
 - **v2.4 (2026-01-04):** Fixed Swedish OCR - installed swe.traineddata for Tesseract, added `ocrclean` command, verified Swedish OCR working on test voucher
 - **v2.3 (2026-01-04):** Completed Iteration 1 (OCR Processing) - implemented `src/content_extractor.py` with text-first approach, wired up `ocr` CLI command, tested with 3 PDFs (2 copied successfully)
 - **v2.2 (2026-01-04):** Added comprehensive testing strategy (Iteration 4), created `tests/` directory with `test_main.py`, added testing dependencies to `requirements.txt`, created [iteration-4-testing.md](docs/iteration-4-testing.md)

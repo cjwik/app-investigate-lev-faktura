@@ -281,7 +281,7 @@ target_amount = max(abs(amt) for amt in transaction_amounts)
 
 ### CSV Export
 
-**File:** `data/Output/reports/sie_data_{timestamp}.csv`
+**File:** `data/Output/SIE/sie_data_{timestamp}.csv`
 
 **Columns:**
 ```csv
@@ -293,7 +293,7 @@ A100,A,100,2024-11-05,"Ahsell - Faktura",2024-11-25,625.00,0.00,625.00,625.00,3
 
 ### Summary Report
 
-**File:** `data/Output/reports/sie_summary_{timestamp}.txt`
+**File:** `data/Output/SIE/sie_summary_{timestamp}.txt`
 
 **Content:**
 ```
@@ -368,7 +368,7 @@ python src/main.py parse --year 2024
 ```
 
 **Expected output:**
-- CSV file created in `data/Output/reports/`
+- CSV file created in `data/Output/SIE/`
 - Summary report with statistics
 - Log file showing all verifications processed
 
@@ -412,6 +412,9 @@ python src/main.py parse
 ➡️ **Iteration 3:** Matching ([iteration-3-matching.md](iteration-3-matching.md))
 
 ## Reference
+
+📖 **Official SIE Specification:**
+   - [SIE File Format Version 4B (PDF)](https://sie.se/wp-content/uploads/2020/05/SIE_filformat_ver_4B_080930.pdf)
 
 📖 **Technical Reference:** See [TECHNICAL_REFERENCE.md](TECHNICAL_REFERENCE.md) for:
 - Complete SIE file format specification

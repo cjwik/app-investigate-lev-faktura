@@ -3,6 +3,8 @@ from __future__ import annotations
 import argparse
 import shutil
 import sys
+import time
+from datetime import datetime
 from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
@@ -12,7 +14,7 @@ if str(PROJECT_ROOT) not in sys.path:
 from src import config
 from src.logger import get_logger
 from src.content_extractor import process_pdf_folder
-
+from src.sie_parser import parse_sie_file
 
 logger = get_logger(__name__)
 
@@ -22,6 +24,8 @@ def _ensure_dirs() -> None:
     config.OUTPUT_VOUCHERS_2025.mkdir(parents=True, exist_ok=True)
     config.REPORTS_DIR.mkdir(parents=True, exist_ok=True)
     config.LOGS_DIR.mkdir(parents=True, exist_ok=True)
+    # Ensure the new SIE output directory exists
+    config.SIE_OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 
 def cmd_setup(_: argparse.Namespace) -> int:
@@ -36,6 +40,7 @@ def cmd_setup(_: argparse.Namespace) -> int:
     logger.info("Data dir: %s", config.DATA_DIR)
     logger.info("Output dir: %s", config.OUTPUT_DIR)
     logger.info("Logs dir: %s", config.LOGS_DIR)
+    logger.info("SIE Output dir: %s", config.SIE_OUTPUT_DIR)
 
     if missing_inputs:
         for p in missing_inputs:
@@ -49,37 +54,23 @@ def cmd_setup(_: argparse.Namespace) -> int:
 def cmd_ocrclean(args: argparse.Namespace) -> int:
     """Remove all OCR-processed PDFs from output folders."""
     years = [args.year] if args.year else [2024, 2025]
-
     total_removed = 0
-
     for year in years:
-        if year == 2024:
-            output_folder = config.OUTPUT_VOUCHERS_2024
-        elif year == 2025:
-            output_folder = config.OUTPUT_VOUCHERS_2025
-        else:
-            logger.error(f"Invalid year: {year}")
-            continue
-
+        output_folder = config.OUTPUT_VOUCHERS_2024 if year == 2024 else config.OUTPUT_VOUCHERS_2025
         if not output_folder.exists():
             logger.info(f"Output folder does not exist: {output_folder}")
             continue
-
         pdf_files = list(output_folder.glob("*.pdf"))
-
         if not pdf_files:
             logger.info(f"No PDFs to remove in {year}")
             continue
-
         logger.info(f"Removing {len(pdf_files)} PDFs from {year}...")
-
         for pdf_file in pdf_files:
             try:
                 pdf_file.unlink()
                 total_removed += 1
             except Exception as e:
                 logger.error(f"Failed to remove {pdf_file.name}: {e}")
-
     logger.info(f"OCR clean complete: {total_removed} files removed")
     return 0
 
@@ -87,38 +78,16 @@ def cmd_ocrclean(args: argparse.Namespace) -> int:
 def cmd_ocr(args: argparse.Namespace) -> int:
     """Process PDFs: copy to output with OCR where needed."""
     _ensure_dirs()
-
     years = [args.year] if args.year else [2024, 2025]
     limit = args.limit if hasattr(args, 'limit') else None
-
-    overall_stats = {
-        'total': 0,
-        'copied': 0,
-        'ocr_processed': 0,
-        'failed': 0,
-        'skipped': 0,
-        'processing_time': 0
-    }
-
+    overall_stats = {'total': 0, 'copied': 0, 'ocr_processed': 0, 'failed': 0, 'skipped': 0, 'processing_time': 0}
     for year in years:
-        if year == 2024:
-            input_folder = config.INPUT_VOUCHERS_2024
-            output_folder = config.OUTPUT_VOUCHERS_2024
-        elif year == 2025:
-            input_folder = config.INPUT_VOUCHERS_2025
-            output_folder = config.OUTPUT_VOUCHERS_2025
-        else:
-            logger.error(f"Invalid year: {year}")
-            continue
-
+        input_folder = config.INPUT_VOUCHERS_2024 if year == 2024 else config.INPUT_VOUCHERS_2025
+        output_folder = config.OUTPUT_VOUCHERS_2024 if year == 2024 else config.OUTPUT_VOUCHERS_2025
         logger.info(f"Processing year {year}...")
         stats = process_pdf_folder(input_folder, output_folder, year, limit=limit)
-
-        # Aggregate stats
         for key in overall_stats:
             overall_stats[key] += stats.get(key, 0)
-
-    # Final summary
     logger.info("=" * 60)
     logger.info("OCR Processing Complete")
     logger.info("=" * 60)
@@ -128,11 +97,67 @@ def cmd_ocr(args: argparse.Namespace) -> int:
     logger.info(f"Failed: {overall_stats['failed']}")
     logger.info(f"Skipped (already processed): {overall_stats['skipped']}")
     logger.info(f"Total time: {overall_stats['processing_time']:.1f}s")
-
     if overall_stats['failed'] > 0:
         logger.warning(f"{overall_stats['failed']} files failed processing")
         return 1
+    return 0
 
+
+def cmd_parse(args: argparse.Namespace) -> int:
+    """Parse SIE files and extract verification data."""
+    _ensure_dirs()
+    years = [args.year] if args.year else [2024, 2025]
+    start_time = time.time()
+
+    for year in years:
+        logger.info(f"Parsing SIE file for year {year}...")
+        sie_file = next(config.SIE_DIR.glob(f"{year}*.se"), None)
+
+        if not sie_file:
+            logger.error(f"No SIE file found for year {year} in {config.SIE_DIR}")
+            continue
+
+        df = parse_sie_file(sie_file)
+
+        if df.empty:
+            logger.warning(f"Parsing resulted in an empty DataFrame for {sie_file.name}. No output will be generated.")
+            continue
+
+        # Save the output to the new directory
+        ts = datetime.now().strftime("%Y%m%d_%H%M%S")
+        csv_path = config.SIE_OUTPUT_DIR / f"sie_data_{year}_{ts}.csv"
+        summary_path = config.SIE_OUTPUT_DIR / f"sie_summary_{year}_{ts}.txt"
+
+        # Save CSV
+        df.to_csv(csv_path, index=False, date_format='%Y-%m-%d')
+        logger.info(f"Successfully saved parsed data to {csv_path}")
+
+        # Generate and save summary report
+        with open(summary_path, "w", encoding="utf-8") as f:
+            f.write(f"SIE Parsing Summary\n")
+            f.write(f"Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n\n")
+            f.write(f"=== FILE: {sie_file.name} ===\n")
+            f.write(f"Total verifications: {len(df)}\n")
+            f.write(f"Date range: {df['trans_date'].min().date()} to {df['trans_date'].max().date()}\n\n")
+            
+            unbalanced = df[abs(df['total_amount']) > 0.01]
+            f.write(f"=== VALIDATION ===\n")
+            f.write(f"Balanced entries: {len(df) - len(unbalanced)}/{len(df)}\n")
+            f.write(f"Unbalanced entries: {len(unbalanced)}\n\n")
+
+            f.write(f"=== AMOUNTS ===\n")
+            f.write(f"Min target_amount: {df['target_amount'].min():.2f} kr\n")
+            f.write(f"Max target_amount: {df['target_amount'].max():.2f} kr\n")
+            f.write(f"Average target_amount: {df['target_amount'].mean():.2f} kr\n\n")
+
+            f.write(f"=== SERIES ===\n")
+            for series, count in df['series'].value_counts().items():
+                f.write(f"Series {series}: {count} verifications\n")
+        
+        logger.info(f"Successfully saved summary to {summary_path}")
+
+    total_time = time.time() - start_time
+    logger.info(f"SIE parsing finished in {total_time:.2f}s")
     return 0
 
 
@@ -157,7 +182,12 @@ def build_parser() -> argparse.ArgumentParser:
     ocr.add_argument("--limit", type=int, help="Limit number of files for testing (e.g., 5)")
     ocr.set_defaults(func=cmd_ocr)
 
-    for name in ["parse", "match", "full"]:
+    # Add the new parse command
+    parse_cmd = sub.add_parser("parse", help="Parse SIE files and extract verification data")
+    parse_cmd.add_argument("--year", type=int, choices=[2024, 2025], help="Process specific year (default: both)")
+    parse_cmd.set_defaults(func=cmd_parse)
+
+    for name in ["match", "full"]:
         p = sub.add_parser(name, help="Not implemented yet (see docs/)")
         p.set_defaults(func=cmd_not_implemented)
 
