@@ -15,6 +15,9 @@ from src import config
 from src.logger import get_logger
 from src.content_extractor import process_pdf_folder
 from src.sie_parser import parse_sie_file
+from src.transaction_parser import parse_sie_transactions
+from src.matcher import InvoiceMatcher
+from src.report_generator import generate_both_reports
 
 logger = get_logger(__name__)
 
@@ -104,6 +107,35 @@ def cmd_parseclean(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_matchclean(args: argparse.Namespace) -> int:
+    """Remove all matching report files."""
+    if not config.REPORTS_DIR.exists():
+        logger.info(f"Reports folder does not exist: {config.REPORTS_DIR}")
+        return 0
+
+    # Find all CSV files in reports directory (validation and any old exception files)
+    validation_files = list(config.REPORTS_DIR.glob("invoice_validation_*.csv"))
+    exception_files = list(config.REPORTS_DIR.glob("invoice_exceptions_*.csv"))
+    report_files = validation_files + exception_files
+
+    if not report_files:
+        logger.info("No report files to remove")
+        return 0
+
+    logger.info(f"Removing {len(report_files)} report files...")
+    total_removed = 0
+    for file in report_files:
+        try:
+            file.unlink()
+            total_removed += 1
+            logger.debug(f"Removed: {file.name}")
+        except Exception as e:
+            logger.error(f"Failed to remove {file.name}: {e}")
+
+    logger.info(f"Match clean complete: {total_removed} files removed")
+    return 0
+
+
 def cmd_ocr(args: argparse.Namespace) -> int:
     """Process PDFs: copy to output with OCR where needed."""
     _ensure_dirs()
@@ -190,6 +222,45 @@ def cmd_parse(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_match(args: argparse.Namespace) -> int:
+    """Match supplier invoices with clearing vouchers."""
+    _ensure_dirs()
+    years = [args.year] if args.year else [2024, 2025]
+    max_days = args.max_days if hasattr(args, 'max_days') else 120
+    start_time = time.time()
+
+    for year in years:
+        logger.info(f"Processing matching for year {year}...")
+        sie_file = next(config.SIE_DIR.glob(f"{year}*.se"), None)
+
+        if not sie_file:
+            logger.error(f"No SIE file found for year {year} in {config.SIE_DIR}")
+            continue
+
+        # Parse SIE file with transaction-level detail
+        vouchers = parse_sie_transactions(sie_file)
+
+        if not vouchers:
+            logger.warning(f"No vouchers parsed from {sie_file.name}")
+            continue
+
+        # Perform matching
+        matcher = InvoiceMatcher(max_days=max_days)
+        cases = matcher.match_all(vouchers)
+
+        if not cases:
+            logger.warning(f"No invoice cases generated for {year}")
+            continue
+
+        # Generate report
+        report_path = generate_both_reports(cases, config.REPORTS_DIR, year)
+        logger.info(f"Report generated: {report_path.name}")
+
+    total_time = time.time() - start_time
+    logger.info(f"Matching finished in {total_time:.2f}s")
+    return 0
+
+
 def cmd_not_implemented(args: argparse.Namespace) -> int:
     logger.error("%s not implemented yet (see docs/)", args.command)
     return 2
@@ -209,6 +280,9 @@ def build_parser() -> argparse.ArgumentParser:
     parseclean = sub.add_parser("parseclean", help="Remove all parsed SIE output files")
     parseclean.set_defaults(func=cmd_parseclean)
 
+    matchclean = sub.add_parser("matchclean", help="Remove all matching report files")
+    matchclean.set_defaults(func=cmd_matchclean)
+
     ocr = sub.add_parser("ocr", help="Copy PDFs to output with OCR where needed")
     ocr.add_argument("--year", type=int, choices=[2024, 2025], help="Process specific year (default: both)")
     ocr.add_argument("--limit", type=int, help="Limit number of files for testing (e.g., 5)")
@@ -219,7 +293,13 @@ def build_parser() -> argparse.ArgumentParser:
     parse_cmd.add_argument("--year", type=int, choices=[2024, 2025], help="Process specific year (default: both)")
     parse_cmd.set_defaults(func=cmd_parse)
 
-    for name in ["match", "full"]:
+    # Add the match command
+    match_cmd = sub.add_parser("match", help="Match supplier invoices with clearing vouchers")
+    match_cmd.add_argument("--year", type=int, choices=[2024, 2025], help="Process specific year (default: both)")
+    match_cmd.add_argument("--max-days", type=int, default=120, help="Maximum days to search for clearing (default: 120)")
+    match_cmd.set_defaults(func=cmd_match)
+
+    for name in ["full"]:
         p = sub.add_parser(name, help="Not implemented yet (see docs/)")
         p.set_defaults(func=cmd_not_implemented)
 
