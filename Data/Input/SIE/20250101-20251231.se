@@ -1,0 +1,1370 @@
+#FLAGGA 0
+
+#PROGRAM "Spiris Bokfîring & Fakturering" 7.5.0.0
+#FORMAT PC8
+#GEN 20260104 "Carl-Johan Wik"
+#SIETYP 4
+#ORGNR 559064-1337
+#FNAMN "NC Finance AB"
+#RAR 0 20250101 20251231
+#RAR -1 20240101 20241231
+#KPTYP EUBAS97
+#VALUTA SEK
+
+#KONTO 1210 "Maskiner och andra tekniska anlÑggningar"
+#KONTO 1220 "Inventarier och verktyg"
+#KONTO 1229 "Ack avskrivn inv/verktyg"
+#KONTO 1337 "Ackumulerade nedskrivningar av andelar i îvriga fîretag som"
+#KONTO 1357 "Andelar i handelsbolag, andra fîretag"
+#KONTO 1381 "LÜngfristiga reversfordringar"
+#KONTO 1382 "LÜngfristiga fordringar hos anstÑllda"
+#KONTO 1388 "LÜngfristiga kundfordringar"
+#KONTO 1389 "Ackumulerade nedskrivningar av andra lÜngfristiga fordringa"
+#KONTO 1470 "PÜgÜende arbete"
+#KONTO 1510 Kundfordringar
+#KONTO 1511 "Kundfordringar pÜminnelsavgift"
+#KONTO 1518 "Ej reskontrafîrda kundfordringar"
+#KONTO 1519 "Nedskrivning av kundfordringar"
+#KONTO 1549 "Nedskrivning av ej reskontrafîrda kundfordringar"
+#KONTO 1630 "AvrÑkning fîr skatter och avgifter (skattekonto)"
+#KONTO 1640 Skattefordringar
+#KONTO 1650 Momsfordran
+#KONTO 1680 "Andra kortfristiga fordringar"
+#KONTO 1682 "Kortfristiga lÜnefordringar"
+#KONTO 1684 "Kortfristiga fordringar hos leverantîrer"
+#KONTO 1700 "Fîrutbetalda kostnader/interimsfordringar"
+#KONTO 1790 "ôvriga fîrutbetalda kostnader o upplupna intÑkter"
+#KONTO 1910 Kassa
+#KONTO 1920 PlusGiro
+#KONTO 1930 "Fîretagskonto/checkkonto/affÑrskonto (BG)"
+#KONTO 1940 "ôvriga bankkonton (AK)"
+#KONTO 1980 Valutakonton
+#KONTO 2018 "ôvriga egna insÑttningar"
+#KONTO 2081 Aktiekapital
+#KONTO 2086 Reservfond
+#KONTO 2091 "Balanserad vinst eller fîrlust"
+#KONTO 2093 AktieÑgartillskott
+#KONTO 2098 "Vinst eller fîrlust frÜn fîregÜende Ür"
+#KONTO 2099 "èrets resultat"
+#KONTO 2110 "Periodiseringsfond TAX 2010"
+#KONTO 2111 "Periodiseringsfond TAX 2011"
+#KONTO 2112 "Periodiseringsfond TAX 2012"
+#KONTO 2113 "Periodiseringsfond TAX 2013"
+#KONTO 2124 "Periodiseringsfond 2024"
+#KONTO 2125 "Periodiseringsfond 2025"
+#KONTO 2126 "Periodiseringsfond 2026"
+#KONTO 2127 "Periodiseringsfond 2027"
+#KONTO 2128 "Periodiseringsfond 2028"
+#KONTO 2129 "Periodiseringsfond 2019"
+#KONTO 2130 "Periodiseringsfond 2020 - nr 2"
+#KONTO 2131 "Periodiseringsfond 2021 - nr 2"
+#KONTO 2132 "Periodiseringsfond 2022 - nr 2"
+#KONTO 2133 "Periodiseringsfond 2023 - nr 2"
+#KONTO 2134 "Periodiseringsfond 2024 - nr 2"
+#KONTO 2135 "Periodiseringsfond 2025 - nr 2"
+#KONTO 2136 "Periodiseringsfond 2026 - nr 2"
+#KONTO 2137 "Periodiseringsfond 2027 - nr 2"
+#KONTO 2138 "Periodiseringsfond 2028 - nr 2"
+#KONTO 2139 "Periodiseringsfond 2019 - nr 2"
+#KONTO 2150 "Ack îveravskrivningar"
+#KONTO 2390 "ôvriga lÜngfristiga skulder"
+#KONTO 2393 "LÜn frÜn nÑrstÜende personer, lÜngfristig del"
+#KONTO 2399 "ôvriga lÜngfristiga skulder"
+#KONTO 2420 "Fîrskott frÜn kunder"
+#KONTO 2440 Leverantîrsskulder
+#KONTO 2448 "Ej reskontrafîrda leverantîrsskulder"
+#KONTO 2499 "Andra îvriga kortfristiga skulder"
+#KONTO 2510 Skatteskulder
+#KONTO 2518 "Betald F-skatt"
+#KONTO 2611 "UtgÜende moms pÜ fîrsÑljning inom Sverige, 25%"
+#KONTO 2612 "UtgÜende moms pÜ egna uttag, 25%"
+#KONTO 2614 "UtgÜende moms omvÑnd skattskyldighet, 25%"
+#KONTO 2615 "UtgÜende moms import av varor, 25%"
+#KONTO 2621 "UtgÜende moms pÜ fîrsÑljning inom Sverige, 12%"
+#KONTO 2624 "UtgÜende moms omvÑnd skattskyldighet, 12%"
+#KONTO 2631 "UtgÜende moms pÜ fîrsÑljning inom Sverige, 6%"
+#KONTO 2634 "UtgÜende moms omvÑnd skattskyldighet, 6%"
+#KONTO 2641 "Debiterad ingÜende moms"
+#KONTO 2645 "BerÑknad ingÜende moms pÜ fîrvÑrv frÜn utlandet"
+#KONTO 2647 "Ing moms omvÑnd skattskyld varor o tjÑnster i Sv"
+#KONTO 2650 "Redovisningskonto fîr moms"
+#KONTO 2710 Personalskatt
+#KONTO 2730 "Lagstadgade sociala avgifter o sÑrskild lîneskatt"
+#KONTO 2731 "AvrÑkning lagstadgade sociala avgifter"
+#KONTO 2732 "AvrÑkning sÑrskild lîneskatt"
+#KONTO 2790 "ôvriga lîneavdrag"
+#KONTO 2794 Fackfîreningsavgifter
+#KONTO 2890 "ôvriga kortfristiga skulder"
+#KONTO 2893 "Skulder till nÑrstÜende personer, kortfristig del"
+#KONTO 2896 "Skuld till personal - dricks"
+#KONTO 2899 "ôvriga kortfristiga skulder"
+#KONTO 2910 "Upplupna lîner"
+#KONTO 2920 "Upplupna semesterlîner"
+#KONTO 2940 "Upplupna lagstadgade sociala och andra avgifter"
+#KONTO 2941 "BerÑknade upplupna lagstadgade sociala avgifter"
+#KONTO 2950 "Upplupna avtalade sociala avgifter"
+#KONTO 2959 "Uppl. avt. Pens.fîrsÑkr.premier, deklarationspost"
+#KONTO 2960 "Upplupna rÑntekostnader"
+#KONTO 2990 "ôvriga upplupna kostnader o fîrutbetalda intÑkter"
+#KONTO 2999 OBS-konto
+#KONTO 3041 "FîrsÑljning tjÑnster 25% moms Sv"
+#KONTO 3042 "FîrsÑljning tjÑnster 12% moms Sv"
+#KONTO 3043 "FîrsÑljning tjÑnster 6% moms Sv"
+#KONTO 3044 "FîrsÑljn tjÑnst sv momsfri"
+#KONTO 3045 "FîrsÑlj tjÑnst utanfîr EU"
+#KONTO 3046 "FîrsÑlj tjÑnst till EU momspl"
+#KONTO 3048 "FîrsÑljning tjÑnster EU momsfri"
+#KONTO 3051 "FîrsÑljning varor 25% moms Sv"
+#KONTO 3052 "FîrsÑljning varor 12% moms Sv"
+#KONTO 3053 "FîrsÑljning varor 6% moms Sv"
+#KONTO 3054 "FîrsÑljn varor sv momsfri"
+#KONTO 3055 "FîrsÑljn varor utanfîr EU momsfri"
+#KONTO 3056 "FîrsÑljning varor till EU 25% moms"
+#KONTO 3057 "Treparts fîrsÑlj varor till EU 25%"
+#KONTO 3058 "FîrsÑljning varor EU momsfri"
+#KONTO 3100 RÑnteintÑkter
+#KONTO 3231 "FîrsÑljning inom byggsektorn, omv skattskyld moms"
+#KONTO 3510 "Fakturerat emballage"
+#KONTO 3520 "Fakturerade frakter"
+#KONTO 3521 "Fakturerade frakter, EU-land"
+#KONTO 3522 "Fakturerade frakter, export"
+#KONTO 3530 "Fakturerade tull- och speditionskostnader m.m."
+#KONTO 3540 Faktureringsavgifter
+#KONTO 3541 "Faktureringsavgifter, EU-land"
+#KONTO 3542 "Faktureringsavgifter, export"
+#KONTO 3543 "Faktureringavgift 12%"
+#KONTO 3544 "Faktureringavgift 6%"
+#KONTO 3590 "ôvriga fakturerade kostnader"
+#KONTO 3596 PÜminnelseavgift
+#KONTO 3690 "ôvriga sidointÑkter"
+#KONTO 3740 "ôres- och kronutjÑmning"
+#KONTO 3950 "ètervunna, tidigare avskrivna kundfordringar"
+#KONTO 3960 "Valutakursvinster fordr/skulder av rîrelsekaraktÑr"
+#KONTO 3970 "Vinst vid avyttring av immateriella och materiella anlÑggni"
+#KONTO 3971 "Vinst vid avyttring av immateriella anlÑggn.tillg."
+#KONTO 3980 "ErhÜllna offentliga bidrag"
+#KONTO 4000 "Inkîp av varor frÜn Sverige"
+#KONTO 4056 "Inkîp varor frÜn EU 25% moms"
+#KONTO 4057 "Inkîp varor frÜn EU 12% moms"
+#KONTO 4058 "Inkîp varor EU momsfri"
+#KONTO 4059 "Inkîp varor EU momsfri"
+#KONTO 4400 "Momspliktiga inkîp i Sverige"
+#KONTO 4415 "Inkîpta varor Sv, omv skattskyld, 25%"
+#KONTO 4416 "Inkîpta varor i Sverige, omvÑnd betalningsskyldighet, 12 %"
+#KONTO 4417 "Inkîpta varor i Sverige, omvÑnd betalningsskyldighet, 6 %"
+#KONTO 4425 "Inkîpta tjÑnster i Sv, omvÑnd betalningsskyldighet, 25 %"
+#KONTO 4426 "Inkîpta tjÑnster i Sv, omvÑnd betalningsskyldighet, 12 %"
+#KONTO 4427 "Inkîpta tjÑnster i Sv, omvÑnd betalningsskyldighet, 6 %"
+#KONTO 4500 "ôvriga momspliktiga inkîp"
+#KONTO 4531 "Inkîp av tjÑnst frÜn land utanfîr EU, 25%"
+#KONTO 4532 "Inkîp av tjÑnster frÜn ett land utanfîr EU, 12 % moms"
+#KONTO 4533 "Inkîp av tjÑnster frÜn ett land utanfîr EU, 6 % moms"
+#KONTO 4545 "Import av varor, 25% moms"
+#KONTO 4546 "Import av varor, 12% moms"
+#KONTO 4547 "Import av varor, 6% moms"
+#KONTO 4549 "Motkonto beskattningsunderlag import"
+#KONTO 4700 "Reduktion av inkîpspriser (gruppkonto)"
+#KONTO 4900 "FîrÑndring av lager (gruppkonto)"
+#KONTO 4990 "FîrÑndring av lager o pÜgÜende arbeten"
+#KONTO 5000 "Lokalkostnader (gruppkonto)"
+#KONTO 5200 "Hyra av anlÑggningstillgÜngar"
+#KONTO 5400 "Fîrbrukningsinventarier och fîrbrukningsmaterial (gruppkont"
+#KONTO 5410 Fîrbrukningsinventarier
+#KONTO 5420 Programvaror
+#KONTO 5460 Fîrbrukningsmaterial
+#KONTO 5480 "ArbetsklÑder och skyddsmaterial"
+#KONTO 5600 "Kostnader fîr transportmedel"
+#KONTO 5610 Personbilskostnader
+#KONTO 5611 "Drivmedel personbilar"
+#KONTO 5612 "FîrsÑkring och skatt fîr personbilar"
+#KONTO 5613 "Reparation och underhÜll av personbilar"
+#KONTO 5615 "Leasing av personbilar"
+#KONTO 5616 "TrÑngselskatt, avdragsgill"
+#KONTO 5619 "ôvriga personbilskostnader"
+#KONTO 5620 Lastbilskostnader
+#KONTO 5630 Truckkostnader
+#KONTO 5640 "Kostnader fîr arbetsmaskiner"
+#KONTO 5650 Traktorkostnader
+#KONTO 5660 "Motorcykel-, moped- och skoterkostnader"
+#KONTO 5670 "BÜt-, flygplans- och helikopterkostnader"
+#KONTO 5690 "ôvriga kostnader fîr transportmedel"
+#KONTO 5700 "Frakter och transporter (gruppkonto)"
+#KONTO 5800 Resekostnader
+#KONTO 5900 "Reklam och PR (gruppkonto)"
+#KONTO 6000 "ôvriga fîrsÑljningskostnader (gruppkonto)"
+#KONTO 6044 "Avgift kortbetalning Webshop"
+#KONTO 6071 "Representation, avdragsgill"
+#KONTO 6072 "Representation, ej avdragsgill"
+#KONTO 6090 "ôvriga fîrsÑljningskostnader"
+#KONTO 6100 "Kontorsmateriel och trycksaker (gruppkonto)"
+#KONTO 6200 "Tele och post (gruppkonto)"
+#KONTO 6250 Postbefordran
+#KONTO 6300 "FîretagsfîrsÑkringar och îvriga riskkostnader (gruppkonto)"
+#KONTO 6350 "Fîrluster pÜ kundfordringar"
+#KONTO 6351 "Konstaterade fîrluster pÜ kundfordringar"
+#KONTO 6352 "Befarade fîrluster pÜ kundfordringar"
+#KONTO 6358 "Befarade fîrluster pÜ kundfordringar, OSS"
+#KONTO 6359 "Konstaterade fîrluster pÜ kundfordringar, OSS"
+#KONTO 6380 "Fîrluster pÜ îvriga fordringar"
+#KONTO 6420 "ErsÑttning till revisor"
+#KONTO 6500 "ôvriga externa tjÑnster (gruppkonto)"
+#KONTO 6530 RedovisningstjÑnster
+#KONTO 6540 IT-tjÑnster
+#KONTO 6570 Bankkostnader
+#KONTO 6580 "Advokat- och rÑttegÜngskostnader"
+#KONTO 6800 "Inhyrd personal"
+#KONTO 6810 "Inhyrd produktionspersonal"
+#KONTO 6820 "Inhyrd lagerpersonal"
+#KONTO 6830 "Inhyrd transportpersonal"
+#KONTO 6840 "Inhyrd kontors- och ekonomipersonal"
+#KONTO 6850 "Inhyrd IT-personal"
+#KONTO 6860 "Inhyrd marknads- och fîrsÑljningspersonal"
+#KONTO 6870 "Inhyrd restaurang- och butikspersonal"
+#KONTO 6880 "Inhyrda fîretagsledare"
+#KONTO 6890 "ôvrig inhyrd personal"
+#KONTO 6900 "ôvriga externa kostnader (gruppkonto)"
+#KONTO 6950 "Tillsynsavgifter myndigheter"
+#KONTO 6991 "ôvriga externa kostnader, avdragsgilla"
+#KONTO 6992 "ôvriga externa kostnader, ej avdragsgilla"
+#KONTO 7000 "Lîner till kollektivanstÑllda (gruppkonto)"
+#KONTO 7210 "Lîner till tjÑnstemÑn"
+#KONTO 7220 "Lîner till fîretagsledare"
+#KONTO 7300 "KostnadsersÑttningar och fîrmÜner (gruppkonto)"
+#KONTO 7321 "Skattefria traktamenten, Sverige"
+#KONTO 7322 "Skattepliktiga traktamenten, Sverige"
+#KONTO 7323 "Skattefria traktamenten, utlandet"
+#KONTO 7324 "Skattepliktiga traktamenten, utlandet"
+#KONTO 7331 "Skattefria bilersÑttningar"
+#KONTO 7332 "Skattepliktiga bilersÑttningar"
+#KONTO 7350 "ErsÑttningar fîr fîreskrivna arbetsklÑder"
+#KONTO 7380 "Kostnader fîr fîrmÜner till anstÑllda"
+#KONTO 7390 "ôvriga kostnadsersÑttningar och fîrmÜner"
+#KONTO 7399 "Motkontering av fîrmÜn"
+#KONTO 7410 PensionsfîrsÑkringspremier
+#KONTO 7500 "Sociala och andra avgifter enligt lag och avtal (gruppkonto"
+#KONTO 7510 "Arbetsgivaravgifter 31,42%"
+#KONTO 7513 "Arbetsgivaravgift avdrag forskning"
+#KONTO 7514 "Arbetsgivaravgift fîrsta anstÑlld"
+#KONTO 7521 "Avgifter fîr lîner och ersÑttningar"
+#KONTO 7533 "SÑrskild lîneskatt fîr pensionskostnader"
+#KONTO 7560 "Arbetsgivaravgifter 25,46%"
+#KONTO 7600 "ôvriga personalkostnader"
+#KONTO 7831 "Avskrivn pÜ maskiner o andra tekniska anlÑggn"
+#KONTO 7832 "Avskrivningar pÜ inventarier och verktyg"
+#KONTO 7960 "Valutakursfîrl fordr o skulder rîrelsekaraktÑr"
+#KONTO 7973 "Fîrlust vid avyttring av maskiner och inventarier"
+#KONTO 8314 "Skattefria rÑnteintÑkter"
+#KONTO 8330 "Valutakursdifferenser pÜ kortfristiga fordringar och placer"
+#KONTO 8400 RÑntekostnader
+#KONTO 8415 "RÑntekostnader fîr andra skulder till kreditinstitut"
+#KONTO 8422 "DrîjsmÜlsrÑntor fîr leverantîrsskulder"
+#KONTO 8423 "RÑntekostnader fîr skatter och avgifter"
+#KONTO 8430 "Valutakursdifferenser pÜ skulder"
+#KONTO 8811 "AvsÑttning till periodiseringsfond"
+#KONTO 8819 "èterfîring frÜn periodiseringsfond"
+#KONTO 8850 "FîrÑndring av îveravskrivningar"
+#KONTO 8910 "Skatt som belastar Ürets resultat"
+#KONTO 8999 "èrets resultat"
+#DIM 6 Projekt
+#DIM 1 Resultatenhet
+#OBJEKT 6 10066 "LÜn 10066 - Bang-On Bootdee"
+#OBJEKT 6 10009 "LÜn 10009 - Buajan Thiangyotha"
+#OBJEKT 6 10041 "LÜn 10041 - Maruta Lundgren"
+#OBJEKT 6 10017 "LÜn 10017 - Sitthichai  Reangklang"
+#OBJEKT 6 10033 "LÜn 10033 - Karistha Sathapitanon"
+#OBJEKT 6 10025 "LÜn 10025 - Nattakan Apsuwan"
+#OBJEKT 6 10058 "LÜn 10058 - Surapee Chaisuntorn"
+#OBJEKT 6 10108 "LÜn 10108 - Anders Mattias Waern"
+#OBJEKT 6 10181 "LÜn 10181 - Andreas Mikael Liakka"
+#OBJEKT 6 10165 "LÜn 10165 - Johan Resman"
+#OBJEKT 6 10173 "LÜn 10173 - Boris Gavric"
+#OBJEKT 6 10157 "LÜn 10157 - Lina Catarina Forslind Nilsson"
+#OBJEKT 6 10116 "LÜn 10116 - Peter Frans Mikael Einarsson"
+#OBJEKT 6 10074 "LÜn 10074 - Emelie Christina Fellhammar"
+#OBJEKT 6 10124 "LÜn 10124 - Mattias NorÇn"
+#OBJEKT 6 10090 "LÜn 10090 - Lindha Larsson"
+#OBJEKT 6 10082 "LÜn 10082 - Emelie Rebecka Nordvall"
+#OBJEKT 6 10207 "LÜn 10207 - Ahlan Solmus"
+#OBJEKT 6 10223 "LÜn 10223 - Jimmie Daniel Olsson"
+#OBJEKT 6 10231 "LÜn 10231 - Aida Alagic"
+#OBJEKT 6 10272 "LÜn 10272 - Wannaphaka Soodsakhorn"
+#OBJEKT 6 10256 "LÜn 10256 - Gerth Erik Jimmy Sundell"
+#OBJEKT 6 10140 "LÜn 10140 - Glenn Lennart Lundberg"
+#OBJEKT 6 10264 "LÜn 10264 - Sarah Pernilla VisÇn"
+#OBJEKT 6 10199 "LÜn 10199 - Egzon Maholli"
+#OBJEKT 6 10280 "LÜn 10280 - Johan Erik Lindstrîm"
+#OBJEKT 6 10298 "LÜn 10298 - Helena Jeanette Lundberg"
+#OBJEKT 6 10215 "LÜn 10215 - Andreas Fast"
+#OBJEKT 6 10132 "LÜn 10132 - Kim Berg"
+#OBJEKT 6 10249 "LÜn 10249 - Mikael Andreas Dovermyr"
+#OBJEKT 6 10330 "LÜn 10330 - Khanittha Ngorsungnoen"
+#OBJEKT 6 10355 "LÜn 10355 - Suwana Wongjantharueang"
+#OBJEKT 6 10306 "LÜn 10306 - Somdiang Berglund"
+#OBJEKT 6 10322 "LÜn 10322 - Aimon Janahan"
+#OBJEKT 6 10348 "LÜn 10348 - Waree Gabrielsson Daituktang"
+#OBJEKT 6 10314 "LÜn 10314 - Phasorn  Klongphimai"
+#OBJEKT 6 10363 "LÜn 10363 - Supoj Kerdbuengpraw"
+#OBJEKT 6 10389 "LÜn 10389 - Thananya Klevell"
+#OBJEKT 6 10371 "LÜn 10371 - Adipa  Pradapthong Sernefors"
+#OBJEKT 6 10397 "LÜn 10397 - Chantima Andersson"
+#OBJEKT 6 10405 "LÜn 10405 - Sunisa Srichok"
+#OBJEKT 6 10413 "LÜn 10413 - Kunyarat Rungklang"
+#OBJEKT 6 10421 "LÜn 10421 - Padcharaporn Deeudom"
+#OBJEKT 6 10439 "LÜn 10439 - Onanong Sakong"
+#OBJEKT 6 10447 "LÜn 10447 - Nattakan Apsuwan"
+#OBJEKT 6 10454 "LÜn 10454 - Supaporn Aronsen"
+#OBJEKT 6 10470 "LÜn 10470 - Stefan Klang"
+#OBJEKT 6 10496 "LÜn 10496 - Torbjîrn Thorstensson"
+#OBJEKT 6 10488 "LÜn 10488 - Andreas Eriksson"
+#OBJEKT 6 10462 "LÜn 10462 - Mirhad Alagic"
+#OBJEKT 6 10504 "LÜn 10504 - Sunisa Srichok"
+#OBJEKT 6 10538 "LÜn 10538 - Suwanna Wongjantharueang"
+#OBJEKT 6 10546 "LÜn 10546 - Maruta Lundgren"
+#OBJEKT 6 10553 "LÜn 10553 - Thananya Klevell"
+#OBJEKT 6 10512 "LÜn 10512 - Chantima Andersson"
+#OBJEKT 6 10520 "LÜn 10520 - Casper Willmarsson"
+#OBJEKT 6 10561 "LÜn 10561 - Champa Jiacharoen"
+#OBJEKT 6 10595 "LÜn 10595 - Parawee  Anutianchai Blom"
+#OBJEKT 6 10603 "LÜn 10603 - Kantana Mina"
+#OBJEKT 6 10579 "LÜn 10579 - Ketkanok Illes"
+#OBJEKT 6 10587 "LÜn 10587 - Khwanhatai Tuayprasert"
+#OBJEKT 6 10652 "LÜn 10652 - Maleewan Nystrîm"
+#OBJEKT 6 10637 "LÜn 10637 - Sanitsuda Insaard"
+#OBJEKT 6 10660 "LÜn 10660 - Kamlai Ratchadej"
+#OBJEKT 6 10629 "LÜn 10629 - Suphaphon Wakoetpem Andersson"
+#OBJEKT 6 10645 "LÜn 10645 - Kitikan Chueamkaew"
+#OBJEKT 6 10611 "LÜn 10611 - Duangkamol Jampakaew Hamann"
+#OBJEKT 6 10678 "LÜn 10678 - Tobias Nilsson"
+#OBJEKT 6 10694 "LÜn 10694 - Daniel Karlsson"
+#OBJEKT 6 10686 "LÜn 10686 - Jîrgen Torstensson"
+#OBJEKT 6 10702 "LÜn 10702 - Jîrgen Ingelsson"
+#OBJEKT 6 10710 "LÜn 10710 - Fredrik Nystrîm"
+#OBJEKT 6 10728 "LÜn 10728 - Kari MÑkelÑ"
+#OBJEKT 6 10744 "LÜn 10744 - Daniel Maront"
+#OBJEKT 6 10736 "LÜn 10736 - Eliott Friberg"
+#OBJEKT 6 10751 "LÜn 10751 - Niklas Johansson"
+#OBJEKT 6 10777 "LÜn 10777 - Markus Karlsson"
+#OBJEKT 6 10769 "LÜn 10769 - Christian Claesson"
+#OBJEKT 6 10785 "LÜn 10785 - Wanpen Thongnak"
+#OBJEKT 6 10793 "LÜn 10793 - Nalini Serabut"
+#OBJEKT 6 10801 "LÜn 10801 - Katrin Lilja"
+#OBJEKT 6 10819 "LÜn 10819 - Linus Knutsson"
+#OBJEKT 6 10827 "LÜn 10827 - Kristian èstrand"
+#OBJEKT 6 10835 "LÜn 10835 - Nassuda Sikaew"
+#OBJEKT 6 10843 "LÜn 10843 - Waree Gabrielsson Daituktang"
+#OBJEKT 6 10850 "LÜn 10850 - Maleewan Nystrîm"
+#OBJEKT 6 10868 "LÜn 10868 - Lina Svensson"
+#OBJEKT 6 10884 "LÜn 10884 - Vanphensiri SÑll "
+#OBJEKT 6 10892 "LÜn 10892 - Saijit Nantikaew"
+#OBJEKT 6 10876 "LÜn 10876 - Rungnapha Thueanphrom"
+#OBJEKT 6 10900 "LÜn 10900 - Kristofer Hjelm"
+#OBJEKT 6 10918 "LÜn 10918 - Helena SÑlgstrîm"
+#OBJEKT 6 10926 "LÜn 10926 - Chamnan Kasemets"
+#OBJEKT 6 10934 "LÜn 10934 - Boonyawee  Kuntharup"
+#OBJEKT 6 10942 "LÜn 10942 - Robert David Kenyon"
+#OBJEKT 6 10959 "LÜn 10959 - Berniel Arvidsson"
+#OBJEKT 6 10967 "LÜn 10967 - Karistha Sathapitanon"
+#OBJEKT 6 10983 "LÜn 10983 -  Jirawan Nadee"
+#OBJEKT 6 10991 "LÜn 10991 - Punyada Phetnoo"
+#OBJEKT 6 11007 "LÜn 11007 - Mathias Wastesson"
+#OBJEKT 6 11056 "LÜn 11056 - Maleewan Nystrîm"
+#OBJEKT 6 11015 "LÜn 11015 - Buajan Thiangyotha"
+#OBJEKT 6 11049 "LÜn 11049 - Christopher HÜkansson Hjelm"
+#OBJEKT 6 11023 "LÜn 11023 - Nattakan Apsuwan"
+#OBJEKT 6 11031 "LÜn 11031 - Sunisa Srichok"
+#OBJEKT 6 11064 "LÜn 11064 - Johan ôberg"
+#OBJEKT 6 11080 "LÜn 11080 - Jonathan Ledin"
+#OBJEKT 6 11072 "LÜn 11072 - Thepthong Lundkvist"
+#OBJEKT 6 11098 "LÜn 11098 - Jasmin Nilsson"
+#OBJEKT 6 11106 "LÜn 11106 - Fredrik ThornÇus"
+#OBJEKT 6 11114 "LÜn 11114 - Peter Andersson"
+#OBJEKT 6 11122 "LÜn 11122 - Nicole Hildenborg"
+#OBJEKT 6 11130 "LÜn 11130 - Anders BÑckstrîm"
+#OBJEKT 6 11148 "LÜn 11148 - Supoj Kerdbuengpraw"
+#OBJEKT 6 11155 "LÜn 11155 - Pairat Chiangwong"
+#OBJEKT 6 11163 "LÜn 11163 - Kaewmalee Asa"
+#OBJEKT 6 11171 "LÜn 11171 - Phuwadon Rachawong"
+#OBJEKT 6 11213 "LÜn 11213 - Kamlai Ratchadej"
+#OBJEKT 6 11189 "LÜn 11189 - Jerker Croissier"
+#OBJEKT 6 11190 "LÜn 11197 - Thepthong Lundkvist "
+#OBJEKT 6 11197 "LÜn 11197 - Thepthong Lundkvist"
+#OBJEKT 6 11205 "LÜn 11205 - Buajan Thiangyotha"
+#OBJEKT 6 11221 "LÜn 11221 Nassuda Sikaew"
+#OBJEKT 6 11247 "LÜn 11247 Maruta Lundgren"
+#OBJEKT 6 11239 "LÜn 11239 Nalini Serabut"
+#OBJEKT 6 11254 "LÜn 11254 Mustapha Dana"
+#OBJEKT 6 11262 "LÜn 11262 - Mikael Kristiansson"
+#OBJEKT 6 11270 "LÜn 11270 - Nattasinee Ploktong"
+#OBJEKT 6 11271 "LÜn 11270 - Nattasinee Ploktong"
+#OBJEKT 6 11288 "LÜn 11288 Kevin NeemÇ"
+#OBJEKT 6 11296 "LÜn 11296 Sofia Skinnari"
+#OBJEKT 6 11304 "LÜn 11304 Rungruang Chaiyasit"
+#OBJEKT 6 11312 "LÜn 11312 Stephanie Zedlitz-N"
+#OBJEKT 6 11313 "LÜn 11320 Somkiat Onbut"
+#OBJEKT 6 11338 "LÜn 11338 - Rungnapha Thueanphrom"
+#OBJEKT 6 11346 "LÜn 11346 Maleewan Nystrîm"
+#OBJEKT 6 11353 "LÜn 11353 Praphasiri Kakarndee"
+#OBJEKT 6 11361 "LÜn 11361 Somkiat Onbut"
+#OBJEKT 6 11379 "LÜn 11379 Sumran Sawatdi"
+#OBJEKT 6 11388 "LÜn 11395 Kenneth SÑrÇn"
+#OBJEKT 6 11387 "LÜn 11387 A Saenla Iad"
+#OBJEKT 6 11411 "LÜn 11411 Martin Vinterell"
+#OBJEKT 6 11403 "LÜn 11403 Erik Westerholm"
+#OBJEKT 6 11429 "LÜn 11429 Atcharaporn Gustafsson"
+#OBJEKT 6 11445 "LÜn 11445 Robin Gustavsson"
+#OBJEKT 6 11437 "LÜn 11437 Benon Kassabian"
+#OBJEKT 6 11452 "LÜn 11452 Samuel Donkor"
+#OBJEKT 6 11460 "LÜn 11460  Panatda ôstman"
+#OBJEKT 6 11478 "LÜn 11478 Sam Butlakron"
+#OBJEKT 6 11486 "LÜn 11486 Supaporn Phungern"
+#OBJEKT 6 11494 "LÜn 11494 Rungruang Chaiyasit"
+#OBJEKT 6 11510 "LÜn 11510 Nathalie Ekbom"
+#OBJEKT 6 11502 "LÜn 11502 Thomas Prebensen"
+#OBJEKT 6 11528 "LÜn 11528 Ulf Lundin"
+#OBJEKT 6 11536 "LÜn 11536 Linus Holm"
+#OBJEKT 6 11544 "LÜn 11544 - MÜns Granîî"
+#OBJEKT 6 11551 "LÜn - 11551 -  Kamlai Ratchadej"
+#OBJEKT 6 11569 "LÜn 11569 Rungruang Chaiyasit"
+#OBJEKT 6 11577 "LÜn 11577 Supanai Baipa-Om"
+#OBJEKT 6 11585 "LÜn 11585 - Nassuda Sikaew"
+#OBJEKT 6 11593 "LÜn 11593 Nattasinee Ploktong"
+#OBJEKT 6 11601 "LÜn 11601 Samruay Junsuwan"
+#OBJEKT 6 11619 "LÜn 11619 - Sumran Sawatdi"
+#OBJEKT 6 11627 "LÜn 11627 Suriyan Sawatdi"
+#OBJEKT 6 11635 "LÜn 11635 - Maleewan Nystrîm"
+#OBJEKT 6 11643 "LÜn 11643 Kamlai Ratchadej"
+#OBJEKT 6 11650 "LÜn 11650 Jirarat Stenson"
+#OBJEKT 6 11676 "LÜn 11676 - Rungnapha Thueanphrom"
+#OBJEKT 6 11668 "LÜn 11668 - Natthakarn  Inklub "
+#OBJEKT 6 11684 "LÜn 11684 Kamlai Ratchadej"
+#OBJEKT 6 11692 "LÜn 11692 Maleewan Nystrîm"
+
+#IB 0 1381 296593.00
+#IB 0 1511 25155.00
+#IB 0 1519 -11989.00
+#IB 0 1630 299.00
+#IB 0 1682 285384.00
+#IB 0 1930 1555756.55
+#IB 0 1940 38000.00
+#IB 0 2081 -50000.00
+#IB 0 2091 -473617.80
+#IB 0 2099 6587.25
+#IB 0 2393 -1672168.00
+
+#UB 0 1381 589484.00
+#UB 0 1511 25342.00
+#UB 0 1519 -11989.00
+#UB 0 1630 299.00
+#UB 0 1930 1612212.30
+#UB 0 1940 38000.00
+#UB 0 2081 -50000.00
+#UB 0 2091 -473617.80
+#UB 0 2099 6587.25
+#UB 0 2393 -1672168.00
+
+#RES 0 3100 -66741.00
+#RES 0 3596 -2080.00
+#RES 0 3950 -4466.00
+#RES 0 5420 2755.00
+#RES 0 6090 4051.00
+#RES 0 6570 2331.25
+
+#IB -1 1381 454667.00
+#IB -1 1511 27559.00
+#IB -1 1519 -11989.00
+#IB -1 1630 5107.00
+#IB -1 1682 304955.00
+#IB -1 1930 1437487.80
+#IB -1 1940 38000.00
+#IB -1 2081 -50000.00
+#IB -1 2091 -531378.74
+#IB -1 2099 57760.94
+#IB -1 2393 -1677168.00
+#IB -1 2510 -4686.00
+#IB -1 2960 -50315.00
+
+#UB -1 1381 296593.00
+#UB -1 1511 25155.00
+#UB -1 1519 -11989.00
+#UB -1 1630 299.00
+#UB -1 1682 285384.00
+#UB -1 1930 1555756.55
+#UB -1 1940 38000.00
+#UB -1 2081 -50000.00
+#UB -1 2091 -473617.80
+#UB -1 2099 6587.25
+#UB -1 2393 -1672168.00
+
+#RES -1 3100 -99904.00
+#RES -1 3596 -6000.00
+#RES -1 3950 -40667.00
+#RES -1 5420 2535.00
+#RES -1 5900 425.00
+#RES -1 6090 7431.00
+#RES -1 6250 7600.00
+#RES -1 6380 119945.00
+#RES -1 6530 13500.00
+#RES -1 6570 1600.25
+#RES -1 8314 -30.00
+#RES -1 8423 152.00
+#RES -1 8999 -6587.25
+
+#VER A 1 20250102 "2025-01-02 - Utebetalat - FôRETAGSPAKET" 20250122
+{
+#TRANS 6570 {} 1900.00 20250102 "2025-01-02 - Utebetalat - FôRETAGSPAKET"
+#TRANS 1930 {} -1900.00 20250102 "2025-01-02 - Utebetalat - FôRETAGSPAKET"
+}
+
+#VER A 2 20250102 "2025-01-02 - Utebetalat - ENG.RAPPORT" 20250122
+{
+#TRANS 6570 {} 300.00 20250102 "2025-01-02 - Utebetalat - ENG.RAPPORT"
+#TRANS 1930 {} -300.00 20250102 "2025-01-02 - Utebetalat - ENG.RAPPORT"
+}
+
+#VER A 3 20250102 "èterfîring Kortfristiga krediter" 20250205
+{
+#TRANS 1381 {} 285384.00 20250102 "èterfîring Kortfristiga krediter"
+#TRANS 1682 {} -285384.00 20250102 "èterfîring Kortfristiga krediter"
+}
+
+#VER A 4 20250225 "LÜn 11395 - BetalningsfîrelÑggande" 20250326
+{
+#TRANS 6090 {} 600.00 20250225 "LÜn 11395 - BetalningsfîrelÑggande"
+#TRANS 1930 {} -600.00 20250225 "LÜn 11395 - BetalningsfîrelÑggande"
+}
+
+#VER A 5 20250318 "2025-03-18 - Utebetalat - KFM,113068006122" 20250331
+{
+#TRANS 6090 {} 451.00 20250318 "2025-03-18 - Utebetalat - KFM,113068006122"
+#TRANS 1930 {} -451.00 20250318 "2025-03-18 - Utebetalat - KFM,113068006122"
+}
+
+#VER A 6 20250318 "2025-03-19 - Utbetalning - KFM,113068078923" 20250331
+{
+#TRANS 6090 {} 600.00 20250318 "2025-03-19 - Utbetalning - KFM,113068078923"
+#TRANS 1930 {} -600.00 20250318 "2025-03-19 - Utbetalning - KFM,113068078923"
+}
+
+#VER A 7 20250731 "2025-07-31 - Utebetalning - E-FAKTURA/MèN" 20250810
+{
+#TRANS 1930 {} -131.25 20250731 "2025-07-31 - Utebetalning - E-FAKTURA/MèN"
+#TRANS 6570 {} 131.25 20250731 "2025-07-31 - Utebetalning - E-FAKTURA/MèN"
+}
+
+#VER A 8 20250819 "Utebetalat Visma Amili AB" 20251022
+{
+#TRANS 1930 {} -2755.00 20250819 "Utebetalat Visma Amili AB"
+#TRANS 5420 {} 2755.00 20250819 "Utebetalat Visma Amili AB"
+}
+
+#VER A 9 20250819 "2025-08-19 - Utebetalat- KFM,113073369325" 20251022
+{
+#TRANS 1930 {} -600.00 20250819 "2025-08-19 - Utebetalat- KFM,113073369325"
+#TRANS 6090 {} 600.00 20250819 "2025-08-19 - Utebetalat- KFM,113073369325"
+}
+
+#VER A 10 20250819 "2025-08-19 - Utebetalat - KFM,113073368723" 20251022
+{
+#TRANS 1930 {} -500.00 20250819 "2025-08-19 - Utebetalat - KFM,113073368723"
+#TRANS 6090 {} 500.00 20250819 "2025-08-19 - Utebetalat - KFM,113073368723"
+}
+
+#VER A 11 20250819 "2025-08-19 - Utebetalat- KFM,117037977024" 20251022
+{
+#TRANS 1930 {} -300.00 20250819 "2025-08-19 - Utebetalat- KFM,117037977024"
+#TRANS 6090 {} 300.00 20250819 "2025-08-19 - Utebetalat- KFM,117037977024"
+}
+
+#VER A 12 20250819 "2025-08-19 - Utebetalat - KFM,113073315922" 20251022
+{
+#TRANS 1930 {} -100.00 20250819 "2025-08-19 - Utebetalat - KFM,113073315922"
+#TRANS 6090 {} 100.00 20250819 "2025-08-19 - Utebetalat - KFM,113073315922"
+}
+
+#VER A 13 20250825 "2025-08-25 - Utebetalat - KFM,113073452725" 20251022
+{
+#TRANS 1930 {} -600.00 20250825 "2025-08-25 - Utebetalat - KFM,113073452725"
+#TRANS 6090 {} 600.00 20250825 "2025-08-25 - Utebetalat - KFM,113073452725"
+}
+
+#VER A 14 20250826 "2025-08-26 - Utebetalat - KFM,117038130227" 20251022
+{
+#TRANS 1930 {} -300.00 20250826 "2025-08-26 - Utebetalat - KFM,117038130227"
+#TRANS 6090 {} 300.00 20250826 "2025-08-26 - Utebetalat - KFM,117038130227"
+}
+
+#VER B 1 20250102 "LÜn - KFM - Kvitto - 2025-01-02 - Lan - 10694 - Kvitto,KFM" 20250122
+{
+#TRANS 1930 {"6" "10694" } 494.00 20250102 "LÜn - KFM - Kvitto - 2025-01-02 - Lan - 10694 - Kvitto,KFM"
+#TRANS 3100 {"6" "10694" } -494.00 20250102 "LÜn - KFM - Kvitto - 2025-01-02 - Lan - 10694 - Kvitto,KFM"
+}
+
+#VER B 2 20250102 "LÜn - KFM - Kvitto - 2025-01-02 - Lan - 11619 - Kvitto,KFM" 20250122
+{
+#TRANS 1930 {"6" "11619" } 519.00 20250102 "LÜn - KFM - Kvitto - 2025-01-02 - Lan - 11619 - Kvitto,KFM"
+#TRANS 3100 {"6" "11619" } -519.00 20250102 "LÜn - KFM - Kvitto - 2025-01-02 - Lan - 11619 - Kvitto,KFM"
+}
+
+#VER B 3 20250107 "2025-01-07 - Lan - 11023 & Lan - 10678 - Kvitto,KFM" 20250127
+{
+#TRANS 1930 {"6" "11023" } 1684.00 20250107 "2025-01-07 - Lan - 11023 & Lan - 10678 - Kvitto,KFM"
+#TRANS 3100 {"6" "11023" } -769.00 20250107 "2025-01-07 - Lan - 11023 & Lan - 10678 - Kvitto,KFM"
+#TRANS 1381 {"6" "10678" } -816.00 20250107 "2025-01-07 - Lan - 11023 & Lan - 10678 - Kvitto,KFM"
+#TRANS 3100 {"6" "10678" } -99.00 20250107 "2025-01-07 - Lan - 11023 & Lan - 10678 - Kvitto,KFM"
+#TRANS 1389 {"6" "10678" } 816.00 20250107 "2025-01-07 - Lan - 11023 & Lan - 10678 - Kvitto,KFM"
+#TRANS 3950 {"6" "10678" } -816.00 20250107 "2025-01-07 - Lan - 11023 & Lan - 10678 - Kvitto,KFM"
+#TRANS 1381 {"6" "10678" } 816.00 20250107 "2025-01-07 - Lan - 11023 & Lan - 10678 - Kvitto,KFM"
+#TRANS 1389 {"6" "10678" } -816.00 20250107 "2025-01-07 - Lan - 11023 & Lan - 10678 - Kvitto,KFM"
+}
+
+#VER B 4 20250122 "2025-01-22 - Lan - 11197 - Kvitto,KFM" 20250127
+{
+#TRANS 1930 {"6" "11197" } 349.00 20250122 "2025-01-22 - Lan - 11197 - Kvitto,KFM"
+#TRANS 3100 {"6" "11197" } -349.00 20250122 "2025-01-22 - Lan - 11197 - Kvitto,KFM"
+}
+
+#VER B 5 20250122 "BetalningspÜminnelse - 2025-01-22 - LÜn 10298 - Sista betalningspÜminnelse" 20250127
+{
+#TRANS 1511 {"6" "10298" } 60.00 20250122 "BetalningspÜminnelse - 2025-01-22 - LÜn 10298 - Sista betal"
+#TRANS 3596 {"6" "10298" } -60.00 20250122 "BetalningspÜminnelse - 2025-01-22 - LÜn 10298 - Sista betal"
+}
+
+#VER B 6 20250122 "BetalningspÜminnelse - 2024-01-22 - LÜn 10371 - Sista betalningspÜminnelse" 20250127
+{
+#TRANS 1511 {"6" "10371" } 60.00 20250122 "BetalningspÜminnelse - 2024-01-22 - LÜn 10371 - Sista betal"
+#TRANS 3596 {"6" "10371" } -60.00 20250122 "BetalningspÜminnelse - 2024-01-22 - LÜn 10371 - Sista betal"
+}
+
+#VER B 7 20250122 "BetalningspÜminnelse - 2025-01-22 - LÜn 11593 -  Sista betalningspÜminnelse" 20250127
+{
+#TRANS 1511 {"6" "11593" } 60.00 20250122 "BetalningspÜminnelse - 2025-01-22 - LÜn 11593 -  Sista beta"
+#TRANS 3596 {"6" "11593" } -60.00 20250122 "BetalningspÜminnelse - 2025-01-22 - LÜn 11593 -  Sista beta"
+}
+
+#VER B 8 20250127 "LÜn - 10470 - Skuldsanering inbetalning" 20250212
+{
+#TRANS 1930 {"6" "10470" } 1451.00 20250127 "LÜn - 10470 - Skuldsanering inbetalning"
+#TRANS 1381 {"6" "10470" } -1451.00 20250127 "LÜn - 10470 - Skuldsanering inbetalning"
+}
+
+#VER B 9 20250128 "Inbetalning - Autogiro - LÜn - 11593" 20250212
+{
+#TRANS 1930 {"6" "11593" } 958.00 20250128 "Inbetalning - Autogiro - LÜn - 11593"
+#TRANS 1381 {"6" "11593" } -726.00 20250128 "Inbetalning - Autogiro - LÜn - 11593"
+#TRANS 3100 {"6" "11593" } -172.00 20250128 "Inbetalning - Autogiro - LÜn - 11593"
+#TRANS 1511 {"6" "11593" } -60.00 20250128 "Inbetalning - Autogiro - LÜn - 11593"
+}
+
+#VER B 10 20250128 "2025-01-28 - Lan - 11007 - Lan - 11023 - Lan - 11569 - Kvitto,KFM" 20250212
+{
+#TRANS 1930 {"6" "11007" } 2250.00 20250128 "2025-01-28 - Lan - 11007 - Lan - 11023 - Lan - 11569 - K"
+#TRANS 3100 {"6" "11007" } -574.00 20250128 "2025-01-28 - Lan - 11007 - Lan - 11023 - Lan - 11569 - K"
+#TRANS 3100 {"6" "11023" } -843.00 20250128 "2025-01-28 - Lan - 11007 - Lan - 11023 - Lan - 11569 - K"
+#TRANS 3100 {"6" "11569" } -833.00 20250128 "2025-01-28 - Lan - 11007 - Lan - 11023 - Lan - 11569 - K"
+}
+
+#VER B 11 20250130 "LÜn - KFM - Kvitto - 2025-01-30 - Lan - 10249 - Kvitto,KFM" 20250212
+{
+#TRANS 1930 {"6" "10249" } 168.00 20250130 "LÜn - KFM - Kvitto - 2025-01-30 - Lan - 10249 - Kvitto,KFM"
+#TRANS 3100 {"6" "10249" } -168.00 20250130 "LÜn - KFM - Kvitto - 2025-01-30 - Lan - 10249 - Kvitto,KFM"
+}
+
+#VER B 12 20250206 "2025-02-06 - LÜn - 10678 - Kvitto, KFM" 20250218
+{
+#TRANS 1930 {"6" "10678" } 686.00 20250206 "2025-02-06 - LÜn - 10678 - Kvitto, KFM"
+#TRANS 1381 {"6" "10678" } -575.00 20250206 "2025-02-06 - LÜn - 10678 - Kvitto, KFM"
+#TRANS 3100 {"6" "10678" } -111.00 20250206 "2025-02-06 - LÜn - 10678 - Kvitto, KFM"
+#TRANS 1389 {"6" "10678" } 575.00 20250206 "2025-02-06 - LÜn - 10678 - Kvitto, KFM"
+#TRANS 3950 {"6" "10678" } -575.00 20250206 "2025-02-06 - LÜn - 10678 - Kvitto, KFM"
+#TRANS 1381 {"6" "10678" } 575.00 20250206 "2025-02-06 - LÜn - 10678 - Kvitto, KFM"
+#TRANS 1389 {"6" "10678" } -575.00 20250206 "2025-02-06 - LÜn - 10678 - Kvitto, KFM"
+}
+
+#VER B 13 20250217 "LÜn - KFM - Kvitto - 2025-02-17 - Lan - 11247 - Kvitto,KFM" 20250218
+{
+#TRANS 1930 {"6" "11247" } 139.00 20250217 "LÜn - KFM - Kvitto - 2025-02-17 - Lan - 11247 - Kvitto,KFM"
+#TRANS 1511 {"6" "11247" } -139.00 20250217 "LÜn - KFM - Kvitto - 2025-02-17 - Lan - 11247 - Kvitto,KFM"
+}
+
+#VER B 14 20250217 "LÜn - KFM - Kvitto - 2025-02-17 - Lan - 11569 - Kvitto,KFM(" 20250218
+{
+#TRANS 1930 {"6" "11569" } 138.00 20250217 "LÜn - KFM - Kvitto - 2025-02-17 - Lan - 11569 - Kvitto,KFM("
+#TRANS 3100 {"6" "11569" } -138.00 20250217 "LÜn - KFM - Kvitto - 2025-02-17 - Lan - 11569 - Kvitto,KFM("
+}
+
+#VER B 15 20250217 "LÜn - KFM - Kvitto - 2025-02-17 - Lan - 11247 - Kvitto,KFM" 20250218
+{
+#TRANS 1930 {"6" "11247" } 138.00 20250217 "LÜn - KFM - Kvitto - 2025-02-17 - Lan - 11247 - Kvitto,KFM"
+#TRANS 1511 {"6" "11247" } -138.00 20250217 "LÜn - KFM - Kvitto - 2025-02-17 - Lan - 11247 - Kvitto,KFM"
+}
+
+#VER B 16 20250128 "Kapitalisering av rÑnta - 2025-01-28 - Ver - LÜn 10298 - Kapitalisering" 20250218
+{
+#TRANS 1381 {"6" "10298" } 1409.00 20250128 "Kapitalisering av rÑnta - 2025-01-28 - Ver - LÜn 10298 - Ka"
+#TRANS 3100 {"6" "10298" } -1409.00 20250128 "Kapitalisering av rÑnta - 2025-01-28 - Ver - LÜn 10298 - Ka"
+}
+
+#VER B 17 20250128 "Kapitalisering av rÑnta - 2025-01-28 - Ver - LÜn 10371 - Kapitalisering" 20250218
+{
+#TRANS 1381 {"6" "10371" } 324.00 20250128 "Kapitalisering av rÑnta - 2025-01-28 - Ver - LÜn 10371 - Ka"
+#TRANS 3100 {"6" "10371" } -324.00 20250128 "Kapitalisering av rÑnta - 2025-01-28 - Ver - LÜn 10371 - Ka"
+}
+
+#VER B 18 20250128 "Kapitalisering av rÑnta - 2025-01-28 - Ver - LÜn 11130 - Kapitalisering" 20250218
+{
+#TRANS 1381 {"6" "11130" } 357.00 20250128 "Kapitalisering av rÑnta - 2025-01-28 - Ver - LÜn 11130 - Ka"
+#TRANS 3100 {"6" "11130" } -357.00 20250128 "Kapitalisering av rÑnta - 2025-01-28 - Ver - LÜn 11130 - Ka"
+}
+
+#VER B 19 20250128 "Kapitalisering av rÑnta - 2025-01-28 - Ver - LÜn 11395 - Kapitalisering" 20250218
+{
+#TRANS 1381 {"6" "11388" } 688.00 20250128 "Kapitalisering av rÑnta - 2025-01-28 - Ver - LÜn 11395 - Ka"
+#TRANS 3100 {"6" "11388" } -688.00 20250128 "Kapitalisering av rÑnta - 2025-01-28 - Ver - LÜn 11395 - Ka"
+}
+
+#VER B 20 20250220 "2025-02-20 - Ver - LÜn 11197 - Inbetalning - Kvitto KFM, 5608518" 20250224
+{
+#TRANS 1930 {"6" "11190" } 351.00 20250220 "2025-02-20 - Ver - LÜn 11197 - Inbetalning - Kvitto KFM, 56"
+#TRANS 3100 {"6" "11197" } -351.00 20250220 "2025-02-20 - Ver - LÜn 11197 - Inbetalning - Kvitto KFM, 56"
+}
+
+#VER B 21 20250224 "Inkasso - 2025-02-24 - LÜn 11130 - Inkasso - E-porst" 20250224
+{
+#TRANS 1511 {"6" "11130" } 180.00 20250224 "Inkasso - 2025-02-24 - LÜn 11130 - Inkasso - E-porst"
+#TRANS 3596 {"6" "11130" } -180.00 20250224 "Inkasso - 2025-02-24 - LÜn 11130 - Inkasso - E-porst"
+}
+
+#VER B 22 20250224 "LÜn 11395 - BetalningsfîrelÑggande" 20250326
+{
+#TRANS 1511 {"6" "11388" } 680.00 20250224 "LÜn 11395 - BetalningsfîrelÑggande"
+#TRANS 3596 {"6" "11388" } -680.00 20250224 "LÜn 11395 - BetalningsfîrelÑggande"
+}
+
+#VER B 23 20250225 "2025-02-25 - Lan - 10678 - Kvitto, KFM" 20250326
+{
+#TRANS 1930 {"6" "10678" } 778.00 20250225 "2025-02-25 - Lan - 10678 - Kvitto, KFM"
+#TRANS 1381 {"6" "10678" } -723.00 20250225 "2025-02-25 - Lan - 10678 - Kvitto, KFM"
+#TRANS 3100 {"6" "10678" } -55.00 20250225 "2025-02-25 - Lan - 10678 - Kvitto, KFM"
+#TRANS 1389 {"6" "10678" } 723.00 20250225 "2025-02-25 - Lan - 10678 - Kvitto, KFM"
+#TRANS 3950 {"6" "10678" } -723.00 20250225 "2025-02-25 - Lan - 10678 - Kvitto, KFM"
+#TRANS 1381 {"6" "10678" } 723.00 20250225 "2025-02-25 - Lan - 10678 - Kvitto, KFM"
+#TRANS 1389 {"6" "10678" } -723.00 20250225 "2025-02-25 - Lan - 10678 - Kvitto, KFM"
+}
+
+#VER B 24 20250227 "LÜn - KFM - Kvitto - 2025-02-27 - Lan - 10694 - Kvitto, KFM" 20250331
+{
+#TRANS 1930 {"6" "10694" } 286.00 20250227 "LÜn - KFM - Kvitto - 2025-02-27 - Lan - 10694 - Kvitto, KFM"
+#TRANS 3100 {"6" "10694" } -286.00 20250227 "LÜn - KFM - Kvitto - 2025-02-27 - Lan - 10694 - Kvitto, KFM"
+}
+
+#VER B 25 20250227 "2025-02-27 - Lan - 11007 & LÜn - 11023 -  Kvitto, KFM" 20250331
+{
+#TRANS 1930 {"6" "11072" } 1255.00 20250227 "2025-02-27 - Lan - 11007 & LÜn - 11023 -  Kvitto, KFM"
+#TRANS 3100 {"6" "11072" } -580.00 20250227 "2025-02-27 - Lan - 11007 & LÜn - 11023 -  Kvitto, KFM"
+#TRANS 3100 {"6" "11023" } -675.00 20250227 "2025-02-27 - Lan - 11007 & LÜn - 11023 -  Kvitto, KFM"
+}
+
+#VER B 26 20250228 "LÜn - Autogiro - Inbetalning - 2025-02-28 - LÜn - 11593 - Betalningsunderlag_Autogiro" 20250331
+{
+#TRANS 1930 {"6" "11593" } 958.00 20250228 "LÜn - Autogiro - Inbetalning - 2025-02-28 - LÜn - 11593 - B"
+#TRANS 1381 {"6" "11593" } -791.00 20250228 "LÜn - Autogiro - Inbetalning - 2025-02-28 - LÜn - 11593 - B"
+#TRANS 3100 {"6" "11593" } -167.00 20250228 "LÜn - Autogiro - Inbetalning - 2025-02-28 - LÜn - 11593 - B"
+}
+
+#VER B 27 20250228 "LÜn - KFM - Kvitto - 2025-02-28 - Lan - 11569 - Kvitto, KFM" 20250331
+{
+#TRANS 1930 {"6" "11569" } 658.00 20250228 "LÜn - KFM - Kvitto - 2025-02-28 - Lan - 11569 - Kvitto, KFM"
+#TRANS 3100 {"6" "11569" } -658.00 20250228 "LÜn - KFM - Kvitto - 2025-02-28 - Lan - 11569 - Kvitto, KFM"
+}
+
+#VER B 28 20250304 "2025-03-04 - Lan - 11247 - Kvitto, KFM" 20250331
+{
+#TRANS 1930 {"6" "11247" } 136.00 20250304 "2025-03-04 - Lan - 11247 - Kvitto, KFM"
+#TRANS 1511 {"6" "11247" } -136.00 20250304 "2025-03-04 - Lan - 11247 - Kvitto, KFM"
+}
+
+#VER B 29 20250305 "2025-03-05 - LÜn 10678 - Inbetalning - Nedskrivning Üterfîring - Kapital- Kvitto KFM, 5608518" 20250331
+{
+#TRANS 1930 {"6" "10678" } 1078.00 20250305 "2025-03-05 - LÜn 10678 - Inbetalning - Nedskrivning Üterfîr"
+#TRANS 1381 {"6" "10678" } -1064.00 20250305 "2025-03-05 - LÜn 10678 - Inbetalning - Nedskrivning Üterfîr"
+#TRANS 3100 {"6" "10678" } -14.00 20250305 "2025-03-05 - LÜn 10678 - Inbetalning - Nedskrivning Üterfîr"
+#TRANS 1389 {"6" "10678" } 1064.00 20250305 "2025-03-05 - LÜn 10678 - Inbetalning - Nedskrivning Üterfîr"
+#TRANS 3950 {"6" "10678" } -1064.00 20250305 "2025-03-05 - LÜn 10678 - Inbetalning - Nedskrivning Üterfîr"
+#TRANS 1381 {"6" "10678" } 1064.00 20250305 "2025-03-05 - LÜn 10678 - Inbetalning - Nedskrivning Üterfîr"
+#TRANS 1389 {"6" "10678" } -1064.00 20250305 "2025-03-05 - LÜn 10678 - Inbetalning - Nedskrivning Üterfîr"
+}
+
+#VER B 30 20250313 "2025-03-13 - Lan - 11247 - Kvitto, KFM" 20250331
+{
+#TRANS 1930 {"6" "11247" } 136.00 20250313 "2025-03-13 - Lan - 11247 - Kvitto, KFM"
+#TRANS 1511 {"6" "11247" } -136.00 20250313 "2025-03-13 - Lan - 11247 - Kvitto, KFM"
+}
+
+#VER B 31 20250313 "2025-03-13 - Lan - 11569 - Kvitto,KFM" 20250331
+{
+#TRANS 1930 {"6" "11569" } 804.00 20250313 "2025-03-13 - Lan - 11569 - Kvitto,KFM"
+#TRANS 3100 {"6" "11569" } -804.00 20250313 "2025-03-13 - Lan - 11569 - Kvitto,KFM"
+}
+
+#VER B 32 20250314 "2025-03-14 -  Lan - 10678 - Kvitto, KFM" 20250331
+{
+#TRANS 1930 {"6" "10678" } 1300.00 20250314 "2025-03-14 -  Lan - 10678 - Kvitto, KFM"
+#TRANS 1381 {"6" "10678" } -1288.00 20250314 "2025-03-14 -  Lan - 10678 - Kvitto, KFM"
+#TRANS 3100 {"6" "10678" } -12.00 20250314 "2025-03-14 -  Lan - 10678 - Kvitto, KFM"
+#TRANS 1389 {"6" "10678" } 1288.00 20250314 "2025-03-14 -  Lan - 10678 - Kvitto, KFM"
+#TRANS 3950 {"6" "10678" } -1288.00 20250314 "2025-03-14 -  Lan - 10678 - Kvitto, KFM"
+#TRANS 1381 {"6" "10678" } 1288.00 20250314 "2025-03-14 -  Lan - 10678 - Kvitto, KFM"
+#TRANS 1389 {"6" "10678" } -1288.00 20250314 "2025-03-14 -  Lan - 10678 - Kvitto, KFM"
+}
+
+#VER B 33 20250317 "2025-03-17 - Lan - (1 434 kr) - Kvitto, KFM" 20250331
+{
+#TRANS 1930 {"6" "11569" } 1434.00 20250317 "2025-03-17 - Lan - (1 434 kr) - Kvitto, KFM"
+#TRANS 3100 {"6" "11569" } -1434.00 20250317 "2025-03-17 - Lan - (1 434 kr) - Kvitto, KFM"
+}
+
+#VER B 34 20250228 "Kapitalisering av rÑnta" 20250331
+{
+#TRANS 1381 {"6" "10298" } 1542.00 20250228 "Kapitalisering av rÑnta"
+#TRANS 3100 {"6" "10298" } -1542.00 20250228 "Kapitalisering av rÑnta"
+}
+
+#VER B 35 20250228 "Kapitalisering av rÑnta -  2025-02-28 - Ver - LÜn 10371- Kapitalisering" 20250331
+{
+#TRANS 1381 {"6" "10371" } 363.00 20250228 "Kapitalisering av rÑnta -  2025-02-28 - Ver - LÜn 10371- Ka"
+#TRANS 3100 {"6" "10371" } -363.00 20250228 "Kapitalisering av rÑnta -  2025-02-28 - Ver - LÜn 10371- Ka"
+}
+
+#VER B 36 20250228 "Kapitalisering av rÑnta - 2025-02-28 - Ver - LÜn 11130- Kapitalisering" 20250331
+{
+#TRANS 1381 {"6" "11130" } 390.00 20250228 "Kapitalisering av rÑnta - 2025-02-28 - Ver - LÜn 11130- Kap"
+#TRANS 3100 {"6" "11130" } -390.00 20250228 "Kapitalisering av rÑnta - 2025-02-28 - Ver - LÜn 11130- Kap"
+}
+
+#VER B 37 20250320 "2025-03-20 - Lan - 11197 - Kvitto, KFM" 20250415
+{
+#TRANS 1930 {"6" "11197" } 315.00 20250320 "2025-03-20 - Lan - 11197 - Kvitto, KFM"
+#TRANS 3100 {"6" "11197" } -315.00 20250320 "2025-03-20 - Lan - 11197 - Kvitto, KFM"
+}
+
+#VER B 38 20250327 "2025-03-27 - LÜn - 11593 - Betalningsunderlag_Autogiro" 20250415
+{
+#TRANS 1930 {"6" "11593" } 958.00 20250327 "2025-03-27 - LÜn - 11593 - Betalningsunderlag_Autogiro"
+#TRANS 1381 {"6" "11593" } -827.00 20250327 "2025-03-27 - LÜn - 11593 - Betalningsunderlag_Autogiro"
+#TRANS 3100 {"6" "11593" } -131.00 20250327 "2025-03-27 - LÜn - 11593 - Betalningsunderlag_Autogiro"
+}
+
+#VER B 39 20250327 "2025-03-27 - LÜn - 10298 - Kapitalisering av rÑnta" 20250415
+{
+#TRANS 1381 {"6" "10298" } 1378.00 20250327 "2025-03-27 - LÜn - 10298 - Kapitalisering av rÑnta"
+#TRANS 3100 {"6" "10298" } -1378.00 20250327 "2025-03-27 - LÜn - 10298 - Kapitalisering av rÑnta"
+}
+
+#VER B 40 20250327 "2025-03-27 - LÜn - 10371 - Kapitalisering av rÑnta" 20250415
+{
+#TRANS 1381 {"6" "10371" } 333.00 20250327 "2025-03-27 - LÜn - 10371 - Kapitalisering av rÑnta"
+#TRANS 3100 {"6" "10371" } -333.00 20250327 "2025-03-27 - LÜn - 10371 - Kapitalisering av rÑnta"
+}
+
+#VER B 41 20250327 "2025-03-27 - LÜn - 11130 - Kapitalisering av rÑnta" 20250415
+{
+#TRANS 1381 {"6" "11130" } 347.00 20250327 "2025-03-27 - LÜn - 11130 - Kapitalisering av rÑnta"
+#TRANS 3100 {"6" "11130" } -347.00 20250327 "2025-03-27 - LÜn - 11130 - Kapitalisering av rÑnta"
+}
+
+#VER B 42 20250327 "Inbetalning - Kvitto KFM, 5608518" 20250416
+{
+#TRANS 1930 {} 1362.00 20250327 "Inbetalning - Kvitto KFM, 5608518"
+#TRANS 3100 {"6" "11023" } -780.00 20250327 "Inbetalning - Kvitto KFM, 5608518"
+#TRANS 3100 {"6" "11007" } -582.00 20250327 "Inbetalning - Kvitto KFM, 5608518"
+}
+
+#VER B 43 20250328 "Inbetalning - 2025-03-28 - Ver - LÜn 10298 - Inbetalning" 20250416
+{
+#TRANS 1930 {"6" "10298" } 1260.00 20250328 "Inbetalning - 2025-03-28 - Ver - LÜn 10298 - Inbetalning"
+#TRANS 1381 {"6" "10298" } -1147.00 20250328 "Inbetalning - 2025-03-28 - Ver - LÜn 10298 - Inbetalning"
+#TRANS 3100 {"6" "10298" } -53.00 20250328 "Inbetalning - 2025-03-28 - Ver - LÜn 10298 - Inbetalning"
+#TRANS 1511 {"6" "10298" } -60.00 20250328 "Inbetalning - 2025-03-28 - Ver - LÜn 10298 - Inbetalning"
+}
+
+#VER B 44 20250331 "Inbetalning - Kvitto KFM, 5608518" 20250416
+{
+#TRANS 1930 {"6" "11569" } 376.00 20250331 "Inbetalning - Kvitto KFM, 5608518"
+#TRANS 3100 {"6" "11569" } -376.00 20250331 "Inbetalning - Kvitto KFM, 5608518"
+}
+
+#VER B 45 20250331 "KFM Inbetalning LÜn 11569" 20250416
+{
+#TRANS 1930 {"6" "11569" } 389.00 20250331 "KFM Inbetalning LÜn 11569"
+#TRANS 3100 {"6" "11569" } -389.00 20250331 "KFM Inbetalning LÜn 11569"
+}
+
+#VER B 46 20250401 "Inbetalning - Kvitto KFM, 5608518" 20250416
+{
+#TRANS 1930 {"6" "10694" } 444.00 20250401 "Inbetalning - Kvitto KFM, 5608518"
+#TRANS 3100 {"6" "10694" } -444.00 20250401 "Inbetalning - Kvitto KFM, 5608518"
+}
+
+#VER B 47 20250402 "Inbetalning - Kvitto KFM, 5608518" 20250416
+{
+#TRANS 1930 {"6" "11247" } 136.00 20250402 "Inbetalning - Kvitto KFM, 5608518"
+#TRANS 3100 {"6" "11247" } -14.00 20250402 "Inbetalning - Kvitto KFM, 5608518"
+#TRANS 1511 {"6" "11247" } -122.00 20250402 "Inbetalning - Kvitto KFM, 5608518"
+}
+
+#VER B 48 20250409 "Inbetalning - Kvitto KFM, 5608518 - LÜn 11247" 20250416
+{
+#TRANS 1930 {"6" "11247" } 443.00 20250409 "Inbetalning - Kvitto KFM, 5608518 - LÜn 11247"
+#TRANS 3100 {"6" "11247" } -443.00 20250409 "Inbetalning - Kvitto KFM, 5608518 - LÜn 11247"
+}
+
+#VER B 49 20250429 "Inbetalning - LÜn 10249/10694" 20250512
+{
+#TRANS 1930 {"6" "10249" } 608.00 20250429 "Inbetalning - LÜn 10249/10694"
+#TRANS 3100 {"6" "10694" } -445.00 20250429 "Inbetalning - LÜn 10249/10694"
+#TRANS 3100 {"6" "10249" } -163.00 20250429 "Inbetalning - LÜn 10249/10694"
+}
+
+#VER B 50 20250429 "Inbetalning - KFM - LÜn 11007/11023" 20250512
+{
+#TRANS 1930 {"6" "11007" } 1373.00 20250429 "Inbetalning - KFM - LÜn 11007/11023"
+#TRANS 3100 {"6" "11007" } -586.00 20250429 "Inbetalning - KFM - LÜn 11007/11023"
+#TRANS 3100 {"6" "11023" } -787.00 20250429 "Inbetalning - KFM - LÜn 11007/11023"
+}
+
+#VER B 51 20250507 "KFM InstÑttning -  LÜn 10710" 20250514
+{
+#TRANS 1930 {"6" "10710" } 298.00 20250507 "KFM InstÑttning -  LÜn 10710"
+#TRANS 3100 {"6" "10710" } -298.00 20250507 "KFM InstÑttning -  LÜn 10710"
+}
+
+#VER B 52 20250513 "KFM Avgift" 20250514
+{
+#TRANS 1930 {"6" "10207" } -600.00 20250513 "KFM Avgift"
+#TRANS 1930 {"6" "10520" } -600.00 20250513 "KFM Avgift"
+#TRANS 1930 {"6" "11388" } -300.00 20250513 "KFM Avgift"
+#TRANS 1511 {"6" "10207" } 600.00 20250513 "KFM Avgift"
+#TRANS 1511 {"6" "10520" } 600.00 20250513 "KFM Avgift"
+#TRANS 1511 {"6" "11388" } 300.00 20250513 "KFM Avgift"
+}
+
+#VER B 53 20250427 "Kapitalisering av rÑnta - LÜn 10298" 20250526
+{
+#TRANS 1381 {} 1537.00 20250427 "Kapitalisering av rÑnta - LÜn 10298"
+#TRANS 3100 {} -1537.00 20250427 "Kapitalisering av rÑnta - LÜn 10298"
+}
+
+#VER B 54 20250523 "Kapitalisering av rÑnta - LÜn 11593" 20250526
+{
+#TRANS 1381 {} 132.00 20250523 "Kapitalisering av rÑnta - LÜn 11593"
+#TRANS 3100 {} -132.00 20250523 "Kapitalisering av rÑnta - LÜn 11593"
+}
+
+#VER B 55 20250526 "Inkasso - LÜn 10371" 20250526
+{
+#TRANS 1511 {"6" "10371" } 180.00 20250526 "Inkasso - LÜn 10371"
+#TRANS 3596 {"6" "10371" } -180.00 20250526 "Inkasso - LÜn 10371"
+}
+
+#VER B 56 20250527 "2025-05-27 - LÜn - 10900 - 198604292014 - KFM" 20250624
+{
+#TRANS 1930 {"6" "10900" } 12.00 20250527 "2025-05-27 - LÜn - 10900 - 198604292014 - KFM"
+#TRANS 1381 {"6" "10900" } -12.00 20250527 "2025-05-27 - LÜn - 10900 - 198604292014 - KFM"
+}
+
+#VER B 57 20250527 "2025-05-27 - LÜn - 10900 - 198604292014 - KFM, (105 kr)" 20250624
+{
+#TRANS 1930 {"6" "10900" } 105.00 20250527 "2025-05-27 - LÜn - 10900 - 198604292014 - KFM, (105 kr)"
+#TRANS 1381 {"6" "10900" } -105.00 20250527 "2025-05-27 - LÜn - 10900 - 198604292014 - KFM, (105 kr)"
+}
+
+#VER B 58 20250527 "2025-05-27- Lan - 10249 - Kvitto, KFM" 20250624
+{
+#TRANS 1930 {"6" "10249" } 163.00 20250527 "2025-05-27- Lan - 10249 - Kvitto, KFM"
+#TRANS 3100 {"6" "10249" } -163.00 20250527 "2025-05-27- Lan - 10249 - Kvitto, KFM"
+}
+
+#VER B 59 20250527 "2025-05-27- Lan - 11619- Lan - 11023 - Kvitto, KFM" 20250624
+{
+#TRANS 1930 {"6" "11619" } 2269.00 20250527 "2025-05-27- Lan - 11619- Lan - 11023 - Kvitto, KFM"
+#TRANS 3100 {"6" "11619" } -1412.00 20250527 "2025-05-27- Lan - 11619- Lan - 11023 - Kvitto, KFM"
+#TRANS 3100 {"6" "11023" } -857.00 20250527 "2025-05-27- Lan - 11619- Lan - 11023 - Kvitto, KFM"
+}
+
+#VER B 60 20250527 "2025-05-27 - Lan - 10140 - Kvitto,KFM" 20250624
+{
+#TRANS 1930 {"6" "10140" } 663.00 20250527 "2025-05-27 - Lan - 10140 - Kvitto,KFM"
+#TRANS 1511 {"6" "10140" } -663.00 20250527 "2025-05-27 - Lan - 10140 - Kvitto,KFM"
+}
+
+#VER B 61 20250528 "2025-05-28- Lan - 11007 - Kvitto, KFM" 20250624
+{
+#TRANS 1930 {"6" "11007" } 590.00 20250528 "2025-05-28- Lan - 11007 - Kvitto, KFM"
+#TRANS 3100 {"6" "11007" } -590.00 20250528 "2025-05-28- Lan - 11007 - Kvitto, KFM"
+}
+
+#VER B 62 20250530 "2025-05-30 - Lan - 10694 - kvitto, KFM" 20250624
+{
+#TRANS 1930 {"6" "10694" } 447.00 20250530 "2025-05-30 - Lan - 10694 - kvitto, KFM"
+#TRANS 3100 {"6" "10694" } -447.00 20250530 "2025-05-30 - Lan - 10694 - kvitto, KFM"
+}
+
+#VER B 63 20250602 "2025-06-02 - Lan - 10371 - Inbetalning" 20250624
+{
+#TRANS 1930 {"6" "10371" } 2000.00 20250602 "2025-06-02 - Lan - 10371 - Inbetalning"
+#TRANS 1381 {"6" "10371" } -898.00 20250602 "2025-06-02 - Lan - 10371 - Inbetalning"
+#TRANS 3100 {"6" "10371" } -862.00 20250602 "2025-06-02 - Lan - 10371 - Inbetalning"
+#TRANS 1511 {"6" "10371" } -240.00 20250602 "2025-06-02 - Lan - 10371 - Inbetalning"
+}
+
+#VER B 64 20250602 "2025-06-02 - Lan - 10710 - kvitto, KFM" 20250624
+{
+#TRANS 1930 {"6" "10710" } 357.00 20250602 "2025-06-02 - Lan - 10710 - kvitto, KFM"
+#TRANS 3100 {"6" "10710" } -357.00 20250602 "2025-06-02 - Lan - 10710 - kvitto, KFM"
+}
+
+#VER B 65 20250602 "2025-06-02 - Lan - 11569(1) - kvitto, KFM" 20250624
+{
+#TRANS 1930 {"6" "11569" } 550.00 20250602 "2025-06-02 - Lan - 11569(1) - kvitto, KFM"
+#TRANS 3100 {"6" "11569" } -550.00 20250602 "2025-06-02 - Lan - 11569(1) - kvitto, KFM"
+}
+
+#VER B 66 20250602 "2025-06-02 - Lan - 11569(2) - kvitto, KFM" 20250624
+{
+#TRANS 1930 {"6" "11569" } 568.00 20250602 "2025-06-02 - Lan - 11569(2) - kvitto, KFM"
+#TRANS 3100 {"6" "11569" } -568.00 20250602 "2025-06-02 - Lan - 11569(2) - kvitto, KFM"
+}
+
+#VER B 67 20250603 "2025-06-03 - Lan - 10249 - kvitto, KFM" 20250624
+{
+#TRANS 1930 {"6" "10249" } 315.00 20250603 "2025-06-03 - Lan - 10249 - kvitto, KFM"
+#TRANS 3100 {"6" "10249" } -315.00 20250603 "2025-06-03 - Lan - 10249 - kvitto, KFM"
+}
+
+#VER B 68 20250603 "2025-06-03 - Lan - 11569(3) - kvitto, KFM" 20250624
+{
+#TRANS 1930 {"6" "11569" } 1477.00 20250603 "2025-06-03 - Lan - 11569(3) - kvitto, KFM"
+#TRANS 3100 {"6" "11569" } -1477.00 20250603 "2025-06-03 - Lan - 11569(3) - kvitto, KFM"
+}
+
+#VER B 69 20250603 "2025-06-03 - Lan - 11007 - Lan - 11569 - kvitto, KFM" 20250624
+{
+#TRANS 1930 {"6" "11007" } 2014.00 20250603 "2025-06-03 - Lan - 11007 - Lan - 11569 - kvitto, KFM"
+#TRANS 3100 {"6" "11007" } -488.00 20250603 "2025-06-03 - Lan - 11007 - Lan - 11569 - kvitto, KFM"
+#TRANS 3100 {"6" "11569" } -1526.00 20250603 "2025-06-03 - Lan - 11007 - Lan - 11569 - kvitto, KFM"
+}
+
+#VER B 70 20250527 " 2025-05-27 - LÜn 10298 - Kapitalisering" 20250624
+{
+#TRANS 1381 {"6" "10298" } 1575.00 20250527 " 2025-05-27 - LÜn 10298 - Kapitalisering"
+#TRANS 3100 {"6" "10298" } -1575.00 20250527 " 2025-05-27 - LÜn 10298 - Kapitalisering"
+}
+
+#VER B 71 20250527 "2025-05-27 - LÜn 11593- Kapitalisering" 20250624
+{
+#TRANS 1381 {"6" "11593" } 130.00 20250527 "2025-05-27 - LÜn 11593- Kapitalisering"
+#TRANS 3100 {"6" "11593" } -130.00 20250527 "2025-05-27 - LÜn 11593- Kapitalisering"
+}
+
+#VER B 72 20250618 "2025-06-18 - LÜn - 11569 - (420 kr) - Inbetalninc,KFM" 20250624
+{
+#TRANS 1930 {"6" "11569" } 420.00 20250618 "2025-06-18 - LÜn - 11569 - (420 kr) - Inbetalninc,KFM"
+#TRANS 3100 {"6" "11569" } -420.00 20250618 "2025-06-18 - LÜn - 11569 - (420 kr) - Inbetalninc,KFM"
+}
+
+#VER B 73 20250618 "2025-06-18 - Lan - 11569 - Kvitto,(434 kr) - Inbetalninc,KFM" 20250624
+{
+#TRANS 1930 {"6" "11569" } 434.00 20250618 "2025-06-18 - Lan - 11569 - Kvitto,(434 kr) - Inbetalninc,K"
+#TRANS 3100 {"6" "11569" } -434.00 20250618 "2025-06-18 - Lan - 11569 - Kvitto,(434 kr) - Inbetalninc,K"
+}
+
+#VER B 74 20250624 "BetalningspÜminnelse -  LÜn 10298" 20250624
+{
+#TRANS 1511 {"6" "10298" } 60.00 20250624 "BetalningspÜminnelse -  LÜn 10298"
+#TRANS 3596 {"6" "10298" } -60.00 20250624 "BetalningspÜminnelse -  LÜn 10298"
+}
+
+#VER B 75 20250624 "BetalningspÜminnelse - LÜn 11593" 20250624
+{
+#TRANS 1511 {"6" "11593" } 60.00 20250624 "BetalningspÜminnelse - LÜn 11593"
+#TRANS 3596 {"6" "11593" } -60.00 20250624 "BetalningspÜminnelse - LÜn 11593"
+}
+
+#VER B 76 20250625 "LÜn 11130 - BtalningsfîrelÑggande" 20250625
+{
+#TRANS 1511 {"6" "11130" } 680.00 20250625 "LÜn 11130 - BtalningsfîrelÑggande"
+#TRANS 3596 {"6" "11130" } -680.00 20250625 "LÜn 11130 - BtalningsfîrelÑggande"
+}
+
+#VER B 77 20250625 "2025-06-25 - Lan - 11007 (594kr) - Kvitto, KFM" 20250804
+{
+#TRANS 1930 {"6" "11007" } 594.00 20250625 "2025-06-25 - Lan - 11007 (594kr) - Kvitto, KFM"
+#TRANS 3100 {"6" "11007" } -594.00 20250625 "2025-06-25 - Lan - 11007 (594kr) - Kvitto, KFM"
+}
+
+#VER B 78 20250627 "Inbetalning - LÜn 10371" 20250804
+{
+#TRANS 1930 {"6" "10371" } 1000.00 20250627 "Inbetalning - LÜn 10371"
+#TRANS 1381 {"6" "10371" } -716.00 20250627 "Inbetalning - LÜn 10371"
+#TRANS 3100 {"6" "10371" } -284.00 20250627 "Inbetalning - LÜn 10371"
+}
+
+#VER B 79 20250627 "Kapitalisering av rÑnta - 2025-06-27 - LÜn - 10298 - Kapitalisering" 20250804
+{
+#TRANS 1381 {"6" "10298" } 1669.00 20250627 "Kapitalisering av rÑnta - 2025-06-27 - LÜn - 10298 - Kapita"
+#TRANS 3100 {"6" "10298" } -1669.00 20250627 "Kapitalisering av rÑnta - 2025-06-27 - LÜn - 10298 - Kapita"
+}
+
+#VER B 80 20250627 "Kapitalisering av rÑnta - 2025-06-27 - LÜn - 11593 - Kapitalisering" 20250804
+{
+#TRANS 1381 {"6" "11593" } 137.00 20250627 "Kapitalisering av rÑnta - 2025-06-27 - LÜn - 11593 - Kapita"
+#TRANS 3100 {"6" "11593" } -137.00 20250627 "Kapitalisering av rÑnta - 2025-06-27 - LÜn - 11593 - Kapita"
+}
+
+#VER B 81 20250627 "LÜn - KFM - Kvitto - Lan - 11619 (1 294kr) - Kvitto, KFM" 20250810
+{
+#TRANS 1930 {"6" "11619" } 1294.00 20250627 "LÜn - KFM - Kvitto - Lan - 11619 (1 294kr) - Kvitto, KFM"
+#TRANS 3100 {"6" "11619" } -1294.00 20250627 "LÜn - KFM - Kvitto - Lan - 11619 (1 294kr) - Kvitto, KFM"
+}
+
+#VER B 82 20250703 "LÜn - KFM - Kvitto - Lan - 10710 (358 kr)- kvitto, KFM" 20250810
+{
+#TRANS 1930 {"6" "10710" } 358.00 20250703 "LÜn - KFM - Kvitto - Lan - 10710 (358 kr)- kvitto, KFM"
+#TRANS 3100 {"6" "10710" } -358.00 20250703 "LÜn - KFM - Kvitto - Lan - 10710 (358 kr)- kvitto, KFM"
+}
+
+#VER B 83 20250703 "LÜn - KFM - Kvitto - Lan -10694 (446 kr) - kvitto, KFM" 20250810
+{
+#TRANS 1930 {"6" "10694" } 446.00 20250703 "LÜn - KFM - Kvitto - Lan -10694 (446 kr) - kvitto, KFM"
+#TRANS 3100 {"6" "10694" } -446.00 20250703 "LÜn - KFM - Kvitto - Lan -10694 (446 kr) - kvitto, KFM"
+}
+
+#VER B 84 20250708 "LÜn - KFM - Kvitto - Lan - 11569 - Kvitto, KFM (430 kr)" 20250810
+{
+#TRANS 1930 {"6" "11569" } 430.00 20250708 "LÜn - KFM - Kvitto - Lan - 11569 - Kvitto, KFM (430 kr)"
+#TRANS 3100 {"6" "11569" } -430.00 20250708 "LÜn - KFM - Kvitto - Lan - 11569 - Kvitto, KFM (430 kr)"
+}
+
+#VER B 85 20250718 "LÜn - KFM - Kvitto - Lan - 10140 - kvitto, KFM.(374 kr)" 20250810
+{
+#TRANS 1930 {"6" "10140" } 374.00 20250718 "LÜn - KFM - Kvitto - Lan - 10140 - kvitto, KFM.(374 kr)"
+#TRANS 1511 {"6" "10140" } -374.00 20250718 "LÜn - KFM - Kvitto - Lan - 10140 - kvitto, KFM.(374 kr)"
+}
+
+#VER B 86 20250718 "LÜn - KFM - Kvitto - Lan - 10140 - Kvitto,(821 kr)" 20250810
+{
+#TRANS 1930 {"6" "10140" } 821.00 20250718 "LÜn - KFM - Kvitto - Lan - 10140 - Kvitto,(821 kr)"
+#TRANS 3100 {"6" "10140" } -504.00 20250718 "LÜn - KFM - Kvitto - Lan - 10140 - Kvitto,(821 kr)"
+#TRANS 1511 {"6" "10140" } -317.00 20250718 "LÜn - KFM - Kvitto - Lan - 10140 - Kvitto,(821 kr)"
+}
+
+#VER B 87 20250722 "LÜn - KFM - Kvitto - Lan - 10140 - Kvitto, KFM (799 kr)" 20250810
+{
+#TRANS 1930 {"6" "10140" } 799.00 20250722 "LÜn - KFM - Kvitto - Lan - 10140 - Kvitto, KFM (799 kr)"
+#TRANS 3100 {"6" "10140" } -799.00 20250722 "LÜn - KFM - Kvitto - Lan - 10140 - Kvitto, KFM (799 kr)"
+}
+
+#VER B 88 20250725 "2025-07-25 - LÜn - 10298 - Inbetalning" 20250810
+{
+#TRANS 1930 {"6" "10298" } 1260.00 20250725 "2025-07-25 - LÜn - 10298 - Inbetalning"
+#TRANS 1381 {"6" "10298" } 286.00 20250725 "2025-07-25 - LÜn - 10298 - Inbetalning"
+#TRANS 3100 {"6" "10298" } -1546.00 20250725 "2025-07-25 - LÜn - 10298 - Inbetalning"
+}
+
+#VER B 89 20250729 "Inbetalning - LÜn - 10371 - Inbetalning" 20250810
+{
+#TRANS 1930 {"6" "10371" } 1000.00 20250729 "Inbetalning - LÜn - 10371 - Inbetalning"
+#TRANS 1381 {"6" "10371" } -513.00 20250729 "Inbetalning - LÜn - 10371 - Inbetalning"
+#TRANS 3100 {"6" "10371" } -487.00 20250729 "Inbetalning - LÜn - 10371 - Inbetalning"
+}
+
+#VER B 90 20250729 "Kapitalisering av rÑnta - LÜn - 10298 -  Kapitalisering" 20250810
+{
+#TRANS 1381 {"6" "10298" } 222.00 20250729 "Kapitalisering av rÑnta - LÜn - 10298 -  Kapitalisering"
+#TRANS 3100 {"6" "10298" } -222.00 20250729 "Kapitalisering av rÑnta - LÜn - 10298 -  Kapitalisering"
+}
+
+#VER B 91 20250729 "Kapitalisering av rÑnta - LÜn - 11593 -  Kapitalisering" 20250810
+{
+#TRANS 1381 {"6" "11593" } 145.00 20250729 "Kapitalisering av rÑnta - LÜn - 11593 -  Kapitalisering"
+#TRANS 3100 {"6" "11593" } -145.00 20250729 "Kapitalisering av rÑnta - LÜn - 11593 -  Kapitalisering"
+}
+
+#VER B 92 20250729 "LÜn - KFM - Kvitto - 2025-07-29 - Lan - 10694 - Kvitto, KFM (449 kr)" 20250810
+{
+#TRANS 1930 {"6" "10694" } 449.00 20250729 "LÜn - KFM - Kvitto - 2025-07-29 - Lan - 10694 - Kvitto, KF"
+#TRANS 3100 {"6" "10694" } -449.00 20250729 "LÜn - KFM - Kvitto - 2025-07-29 - Lan - 10694 - Kvitto, KF"
+}
+
+#VER B 93 20250729 "2025-07-29 - Lan - 11023 - Lan - 11619 -  Kvitto, KFM (2 925 kr)" 20250810
+{
+#TRANS 1930 {"6" "11023" } 2925.00 20250729 "2025-07-29 - Lan - 11023 - Lan - 11619 -  Kvitto, KFM (2 "
+#TRANS 3100 {"6" "11023" } -887.00 20250729 "2025-07-29 - Lan - 11023 - Lan - 11619 -  Kvitto, KFM (2 "
+#TRANS 3100 {"6" "11619" } -2038.00 20250729 "2025-07-29 - Lan - 11023 - Lan - 11619 -  Kvitto, KFM (2 "
+}
+
+#VER B 94 20250730 "LÜn - KFM - Kvitto - 2025-07-30 - Lan - 10710 - Kvitto, KFM (343 kr)" 20250810
+{
+#TRANS 1930 {"6" "10710" } 343.00 20250730 "LÜn - KFM - Kvitto - 2025-07-30 - Lan - 10710 - Kvitto, KF"
+#TRANS 3100 {"6" "10710" } -343.00 20250730 "LÜn - KFM - Kvitto - 2025-07-30 - Lan - 10710 - Kvitto, KF"
+}
+
+#VER B 95 20250731 "LÜn - KFM - Kvitto - 2025-07-31 - Lan - 11569(1) - Kvitto, KFM (477 kr)" 20250810
+{
+#TRANS 1930 {"6" "11569" } 477.00 20250731 "LÜn - KFM - Kvitto - 2025-07-31 - Lan - 11569(1) - Kvitto,"
+#TRANS 3100 {"6" "11569" } -477.00 20250731 "LÜn - KFM - Kvitto - 2025-07-31 - Lan - 11569(1) - Kvitto,"
+}
+
+#VER B 96 20250731 "LÜn - KFM - Kvitto - 2025-07-31 - Lan - 11569(2) - Kvitto, KFM (601 kr)" 20250810
+{
+#TRANS 1930 {"6" "11569" } 601.00 20250731 "LÜn - KFM - Kvitto - 2025-07-31 - Lan - 11569(2) - Kvitto,"
+#TRANS 3100 {"6" "11569" } -601.00 20250731 "LÜn - KFM - Kvitto - 2025-07-31 - Lan - 11569(2) - Kvitto,"
+}
+
+#VER B 97 20250805 "LÜn - KFM - Kvitto - 2025-08-05 - Lan - 11023 - Kvitto, KFM (637 kr)" 20250810
+{
+#TRANS 1930 {"6" "11023" } 637.00 20250805 "LÜn - KFM - Kvitto - 2025-08-05 - Lan - 11023 - Kvitto, KF"
+#TRANS 3100 {"6" "11023" } -637.00 20250805 "LÜn - KFM - Kvitto - 2025-08-05 - Lan - 11023 - Kvitto, KF"
+}
+
+#VER B 98 20250806 "2025-08-06 - Lan - 10207 - Kvitto, (88)kr - Inbetalning" 20251022
+{
+#TRANS 1930 {"6" "10207" } 88.00 20250806 "2025-08-06 - Lan - 10207 - Kvitto, (88)kr - Inbetalning"
+#TRANS 1511 {"6" "10207" } -88.00 20250806 "2025-08-06 - Lan - 10207 - Kvitto, (88)kr - Inbetalning"
+}
+
+#VER B 99 20250820 "LÜn - KFM - Kvitto - 2025-08-20 - Lan - 10140 - kvitto, KFM (344)kr" 20251022
+{
+#TRANS 1930 {"6" "10140" } 344.00 20250820 "LÜn - KFM - Kvitto - 2025-08-20 - Lan - 10140 - kvitto, KF"
+#TRANS 3100 {"6" "10140" } -344.00 20250820 "LÜn - KFM - Kvitto - 2025-08-20 - Lan - 10140 - kvitto, KF"
+}
+
+#VER B 100 20250826 "2025-08-25 - LÜn 10298 - Sista betalningspÜminnelse - Ej bokfîring" 20251022
+{
+#TRANS 1511 {"6" "10298" } 60.00 20250826 "2025-08-25 - LÜn 10298 - Sista betalningspÜminnelse - Ej bo"
+#TRANS 3596 {"6" "10298" } -60.00 20250826 "2025-08-25 - LÜn 10298 - Sista betalningspÜminnelse - Ej bo"
+}
+
+#VER B 101 20250827 "2025-08-27 - Lan - 11619, Lan - 11023, - Lan - 11007 - kvitto, KFM (3 487)kr" 20251022
+{
+#TRANS 1930 {"6" "11619" } 3487.00 20250827 "2025-08-27 - Lan - 11619, Lan - 11023, - Lan - 11007 - k"
+#TRANS 3100 {"6" "11023" } -917.00 20250827 "2025-08-27 - Lan - 11619, Lan - 11023, - Lan - 11007 - k"
+#TRANS 3100 {"6" "11007" } -618.00 20250827 "2025-08-27 - Lan - 11619, Lan - 11023, - Lan - 11007 - k"
+#TRANS 3100 {"6" "11619" } -1952.00 20250827 "2025-08-27 - Lan - 11619, Lan - 11023, - Lan - 11007 - k"
+}
+
+#VER B 102 20250828 "LÜn - KFM - Kvitto - 2025-08-28 - Lan - 10694 - kvitto, KFM (450)kr" 20251022
+{
+#TRANS 1930 {"6" "10694" } 450.00 20250828 "LÜn - KFM - Kvitto - 2025-08-28 - Lan - 10694 - kvitto, KF"
+#TRANS 3100 {"6" "10694" } -450.00 20250828 "LÜn - KFM - Kvitto - 2025-08-28 - Lan - 10694 - kvitto, KF"
+}
+
+#VER B 103 20250901 "LÜn - KFM - Kvitto - 2025-09-01 - Lan - 10710 - Kvitto, KFM (367)kr" 20251022
+{
+#TRANS 1930 {"6" "10710" } 367.00 20250901 "LÜn - KFM - Kvitto - 2025-09-01 - Lan - 10710 - Kvitto, KF"
+#TRANS 3100 {"6" "10710" } -367.00 20250901 "LÜn - KFM - Kvitto - 2025-09-01 - Lan - 10710 - Kvitto, KF"
+}
+
+#VER B 104 20250901 "LÜn - KFM - Kvitto - 2025-09-01 - Lan - 11569 - Kvitto, KFM (602)kr" 20251022
+{
+#TRANS 1930 {"6" "11569" } 602.00 20250901 "LÜn - KFM - Kvitto - 2025-09-01 - Lan - 11569 - Kvitto, KF"
+#TRANS 3100 {"6" "11569" } -602.00 20250901 "LÜn - KFM - Kvitto - 2025-09-01 - Lan - 11569 - Kvitto, KF"
+}
+
+#VER B 105 20250901 "LÜn - KFM - Kvitto - 2025-09-01 - Lan - 11569 - Kvitto, KFM (629)kr" 20251022
+{
+#TRANS 1930 {"6" "11569" } 629.00 20250901 "LÜn - KFM - Kvitto - 2025-09-01 - Lan - 11569 - Kvitto, KF"
+#TRANS 3100 {"6" "11569" } -629.00 20250901 "LÜn - KFM - Kvitto - 2025-09-01 - Lan - 11569 - Kvitto, KF"
+}
+
+#VER B 106 20250902 "LÜn - KFM - Kvitto - 2025-09-02 - Lan - 11247 - Kvitto, KFM (131)kr" 20251022
+{
+#TRANS 1930 {"6" "11247" } 131.00 20250902 "LÜn - KFM - Kvitto - 2025-09-02 - Lan - 11247 - Kvitto, KF"
+#TRANS 3100 {"6" "11247" } -131.00 20250902 "LÜn - KFM - Kvitto - 2025-09-02 - Lan - 11247 - Kvitto, KF"
+}
+
+#VER B 107 20250908 "LÜn - KFM - Kvitto - 2025-09-08 - Lan - 10207 - Kvitto, KFM (852)kr" 20251022
+{
+#TRANS 1930 {"6" "10207" } 852.00 20250908 "LÜn - KFM - Kvitto - 2025-09-08 - Lan - 10207 - Kvitto, KF"
+#TRANS 3100 {"6" "10207" } -852.00 20250908 "LÜn - KFM - Kvitto - 2025-09-08 - Lan - 10207 - Kvitto, KF"
+}
+
+#VER B 108 20250912 "LÜn - KFM - Kvitto - 2025-09-12 - Lan - 11023 - Kvitto, KFM (922)kr" 20251022
+{
+#TRANS 1930 {"6" "11023" } 922.00 20250912 "LÜn - KFM - Kvitto - 2025-09-12 - Lan - 11023 - Kvitto, KF"
+#TRANS 3100 {"6" "11023" } -922.00 20250912 "LÜn - KFM - Kvitto - 2025-09-12 - Lan - 11023 - Kvitto, KF"
+}
+
+#VER B 109 20250915 "LÜn - KFM - Kvitto - 2025-09-15 - Lan - 11395 - Kvitto, KFM (211)kr" 20251022
+{
+#TRANS 1930 {"6" "11388" } 211.00 20250915 "LÜn - KFM - Kvitto - 2025-09-15 - Lan - 11395 - Kvitto, KF"
+#TRANS 1511 {"6" "11388" } -211.00 20250915 "LÜn - KFM - Kvitto - 2025-09-15 - Lan - 11395 - Kvitto, KF"
+}
+
+#VER B 110 20250915 "LÜn - KFM - Kvitto - 2025-09-15 - Lan - 11395 - Kvitto, KFM (805)kr" 20251022
+{
+#TRANS 1930 {"6" "11388" } 805.00 20250915 "LÜn - KFM - Kvitto - 2025-09-15 - Lan - 11395 - Kvitto, KF"
+#TRANS 3100 {"6" "11388" } -96.00 20250915 "LÜn - KFM - Kvitto - 2025-09-15 - Lan - 11395 - Kvitto, KF"
+#TRANS 1511 {"6" "11388" } -709.00 20250915 "LÜn - KFM - Kvitto - 2025-09-15 - Lan - 11395 - Kvitto, KF"
+}
+
+#VER B 111 20250922 "LÜn - KFM - Kvitto - 2025-09-22 - Lan - 10140 - Kvitto, KFM (331)kr" 20251022
+{
+#TRANS 1930 {"6" "10140" } 331.00 20250922 "LÜn - KFM - Kvitto - 2025-09-22 - Lan - 10140 - Kvitto, KF"
+#TRANS 3100 {"6" "10140" } -331.00 20250922 "LÜn - KFM - Kvitto - 2025-09-22 - Lan - 10140 - Kvitto, KF"
+}
+
+#VER B 112 20250827 "2025-08-27 - LÜn - 10298 - Kapitalisering av rÑnta" 20251022
+{
+#TRANS 1381 {"6" "10298" } 1614.00 20250827 "2025-08-27 - LÜn - 10298 - Kapitalisering av rÑnta"
+#TRANS 3100 {"6" "10298" } -1614.00 20250827 "2025-08-27 - LÜn - 10298 - Kapitalisering av rÑnta"
+}
+
+#VER B 113 20250827 "2025-08-27 - LÜn -11593- Kapitalisering av rÑnta" 20251022
+{
+#TRANS 1381 {"6" "11593" } 134.00 20250827 "2025-08-27 - LÜn -11593- Kapitalisering av rÑnta"
+#TRANS 3100 {"6" "11593" } -134.00 20250827 "2025-08-27 - LÜn -11593- Kapitalisering av rÑnta"
+}
+
+#VER B 114 20250926 "LÜn 11049 - Inbetalning - Skuldsanering" 20251022
+{
+#TRANS 1930 {"6" "11049" } 19.00 20250926 "LÜn 11049 - Inbetalning - Skuldsanering"
+#TRANS 1381 {"6" "11049" } -19.00 20250926 "LÜn 11049 - Inbetalning - Skuldsanering"
+}
+
+#VER B 115 20250929 "2025-09-29 - Lan - 11619 & Lan - 11007 - Kvitto, KFM (2 579)kr" 20251022
+{
+#TRANS 1930 {"6" "11619" } 2579.00 20250929 "2025-09-29 - Lan - 11619 & Lan - 11007 - Kvitto, KFM (2 5"
+#TRANS 3100 {"6" "11619" } -1957.00 20250929 "2025-09-29 - Lan - 11619 & Lan - 11007 - Kvitto, KFM (2 5"
+#TRANS 3100 {"6" "11007" } -622.00 20250929 "2025-09-29 - Lan - 11619 & Lan - 11007 - Kvitto, KFM (2 5"
+}
+
+#VER B 116 20250930 "LÜn - KFM - Kvitto - 2025-09-30 - Lan - 11023 - Kvitto, KFM (936)kr" 20251022
+{
+#TRANS 1930 {"6" "11023" } 936.00 20250930 "LÜn - KFM - Kvitto - 2025-09-30 - Lan - 11023 - Kvitto, KF"
+#TRANS 3100 {"6" "11023" } -936.00 20250930 "LÜn - KFM - Kvitto - 2025-09-30 - Lan - 11023 - Kvitto, KF"
+}
+
+#VER B 117 20251001 "LÜn - KFM - Kvitto - 2025-10-01 - Lan - 11247 - Kvitto, KFM (144)kr" 20251023
+{
+#TRANS 1930 {"6" "11247" } 144.00 20251001 "LÜn - KFM - Kvitto - 2025-10-01 - Lan - 11247 - Kvitto, KF"
+#TRANS 3100 {"6" "11247" } -144.00 20251001 "LÜn - KFM - Kvitto - 2025-10-01 - Lan - 11247 - Kvitto, KF"
+}
+
+#VER B 118 20251002 "LÜn - KFM - Kvitto  - 2025-10-02 - Lan - 11569 - Kvitto, KFM (602)kr" 20251023
+{
+#TRANS 1930 {"6" "11569" } 602.00 20251002 "LÜn - KFM - Kvitto  - 2025-10-02 - Lan - 11569 - Kvitto, K"
+#TRANS 3100 {"6" "11569" } -602.00 20251002 "LÜn - KFM - Kvitto  - 2025-10-02 - Lan - 11569 - Kvitto, K"
+}
+
+#VER B 119 20251002 "LÜn - KFM - Kvitto - 2025-10-02 - Lan - 11569 - Kvitto, KFM (629)kr" 20251023
+{
+#TRANS 1930 {"6" "11569" } 629.00 20251002 "LÜn - KFM - Kvitto - 2025-10-02 - Lan - 11569 - Kvitto, KF"
+#TRANS 3100 {"6" "11569" } -629.00 20251002 "LÜn - KFM - Kvitto - 2025-10-02 - Lan - 11569 - Kvitto, KF"
+}
+
+#VER B 120 20251009 "LÜn - KFM - Kvitto - 2025-10-09 - Lan - 10207 - Kvitto, KFM (663)kr" 20251023
+{
+#TRANS 1930 {"6" "10207" } 663.00 20251009 "LÜn - KFM - Kvitto - 2025-10-09 - Lan - 10207 - Kvitto, KF"
+#TRANS 3100 {"6" "10207" } -663.00 20251009 "LÜn - KFM - Kvitto - 2025-10-09 - Lan - 10207 - Kvitto, KF"
+}
