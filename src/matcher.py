@@ -348,23 +348,37 @@ class InvoiceMatcher:
         if not candidates:
             return None, "No clearing found (all matching clearings already used)"
 
-        # Extract invoice numbers for better matching
+        # Extract invoice numbers and suppliers for better matching
         receipt_invoice_no = receipt.voucher.extract_invoice_number()
+        receipt_supplier = receipt.voucher.extract_supplier()
 
-        # Calculate days and check invoice number match for each candidate
-        candidates_with_info = [
-            (c,
-             (c.date - receipt.date).days,
-             c.voucher.extract_invoice_number() == receipt_invoice_no if receipt_invoice_no else False)
-            for c in candidates
-        ]
+        # Calculate days and check invoice number + supplier match for each candidate
+        candidates_with_info = []
+        for c in candidates:
+            days_diff = (c.date - receipt.date).days
+            clearing_invoice_no = c.voucher.extract_invoice_number()
+            clearing_supplier = c.voucher.extract_supplier()
+
+            # Check if invoice numbers match
+            invoice_match = (clearing_invoice_no == receipt_invoice_no
+                           if (receipt_invoice_no and clearing_invoice_no) else False)
+
+            # Check if suppliers match (case-insensitive)
+            supplier_match = (clearing_supplier and receipt_supplier and
+                            clearing_supplier.lower() == receipt_supplier.lower())
+
+            # Both should match for standardized format
+            both_match = invoice_match and supplier_match
+
+            candidates_with_info.append((c, days_diff, invoice_match, supplier_match, both_match))
 
         # Sort by:
-        # 1. Invoice number match (True before False)
-        # 2. Days difference (closest first)
-        candidates_with_info.sort(key=lambda x: (not x[2], x[1]))
+        # 1. Both match (invoice# AND supplier) - highest priority
+        # 2. Invoice number match only
+        # 3. Days difference (closest first)
+        candidates_with_info.sort(key=lambda x: (not x[4], not x[2], x[1]))
 
-        best_clearing, days, invoice_match = candidates_with_info[0]
+        best_clearing, days, invoice_match, supplier_match, both_match = candidates_with_info[0]
 
         # Build comment based on day count
         if days == 0:
@@ -376,16 +390,30 @@ class InvoiceMatcher:
         else:
             return None, f"Clearing found but {days} days after receipt (exceeds max {self.max_days} days)"
 
-        # Note if invoice numbers matched
-        if invoice_match:
-            comment += " (invoice# match)"
+        # Add match quality indicators
+        if both_match:
+            comment += " ✓ FULL MATCH (supplier + invoice#)"
+        elif invoice_match and not supplier_match:
+            # Invoice matches but supplier doesn't - flag for SIE file correction
+            receipt_sup = receipt.voucher.extract_supplier() or "?"
+            clearing_sup = best_clearing.voucher.extract_supplier() or "?"
+            comment += f" ⚠ WARNING: Invoice# matches but SUPPLIER MISMATCH (Receipt: {receipt_sup} vs Clearing: {clearing_sup}) - CHECK SIE FILE"
+        elif supplier_match and not invoice_match:
+            # Supplier matches but invoice doesn't - flag for SIE file correction
+            receipt_inv = receipt.voucher.extract_invoice_number() or "?"
+            clearing_inv = best_clearing.voucher.extract_invoice_number() or "?"
+            comment += f" ⚠ WARNING: Supplier matches but INVOICE# MISMATCH (Receipt: {receipt_inv} vs Clearing: {clearing_inv}) - CHECK SIE FILE"
+        elif not invoice_match and not supplier_match:
+            # Neither matches - either old format or needs correction
+            if receipt_invoice_no or receipt_supplier:
+                comment += " ⚠ WARNING: NO MATCH - Possible old format or needs SIE file correction"
 
         # Check for cross-year payment
         if receipt_year and best_clearing.date.year != receipt_year:
             comment += f" [CROSS-YEAR: {receipt_year} invoice paid in {best_clearing.date.year}]"
 
         # Check for ambiguity (multiple candidates with same days)
-        same_day_candidates = [c for c, d, _ in candidates_with_info if d == days]
+        same_day_candidates = [c for c, d, _, _, _ in candidates_with_info if d == days]
         if len(same_day_candidates) > 1:
             comment += f" (Warning: {len(same_day_candidates)} candidates with same date)"
 

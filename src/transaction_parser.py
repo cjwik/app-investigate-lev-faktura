@@ -71,19 +71,55 @@ class Voucher:
         total = sum(t.amount for t in self.transactions)
         return abs(total) < 0.01
 
+    def extract_supplier(self) -> Optional[str]:
+        """
+        Extracts supplier name from standardized voucher description.
+
+        Standardized format:
+        - Receipt: "Leverantörsfaktura - Mottagen - [Supplier] - [Invoice#]"
+        - Payment: "Leverantörsfaktura - Betalt - [Supplier] - [Invoice#] [optional info]"
+
+        Returns the supplier name (3rd field) or None if not in standardized format.
+        """
+        parts = [p.strip() for p in self.description.split(' - ')]
+
+        # Check for standardized format
+        if len(parts) >= 3 and parts[0] == "Leverantörsfaktura":
+            if parts[1] in ["Mottagen", "Betalt"]:
+                return parts[2]
+
+        return None
+
     def extract_invoice_number(self) -> Optional[str]:
         """
-        Extracts invoice number from voucher description.
+        Extracts invoice number from standardized voucher description.
 
-        Common patterns:
-        - "Faktura - 4993255803"
-        - "Ahsell - 7011905309"
-        - "31641715"
+        Standardized format:
+        - Receipt: "Leverantörsfaktura - Mottagen - [Supplier] - [Invoice#]"
+        - Payment: "Leverantörsfaktura - Betalt - [Supplier] - [Invoice#] [optional info]"
 
-        Returns the first sequence of 8+ digits found in the description.
+        The invoice number is in the 4th field and may be followed by correction info in parentheses.
+        Example: "4962010809 (korrigerad med verifikation A532...)"
+
+        For non-standardized format (old data), falls back to finding first 8+ digit sequence.
+
+        Returns the invoice number or None if not found.
         """
         import re
-        # Look for sequences of 8 or more digits
+
+        parts = [p.strip() for p in self.description.split(' - ')]
+
+        # Try standardized format first
+        if len(parts) >= 4 and parts[0] == "Leverantörsfaktura":
+            if parts[1] in ["Mottagen", "Betalt"]:
+                # 4th field contains invoice number, possibly with correction info
+                invoice_field = parts[3]
+                # Extract first word (invoice number) before any parentheses or spaces
+                match = re.match(r'^(\d+)', invoice_field)
+                if match:
+                    return match.group(1)
+
+        # Fallback: Look for sequences of 8+ digits anywhere in description
         match = re.search(r'\d{8,}', self.description)
         return match.group(0) if match else None
 
