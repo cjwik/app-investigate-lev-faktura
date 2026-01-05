@@ -66,8 +66,8 @@ python -m pytest tests/test_2024_report_verification.py -v
 # Run just the correction tests
 python -m pytest tests/test_2024_corrections.py -v
 
-# Run the full report regression test
-python -m pytest tests/test_report_regression.py -v
+# Run 2025 self-canceling tests
+python -m pytest tests/test_2025_self_canceling.py -v
 
 # Run all tests
 python -m pytest tests/ -v
