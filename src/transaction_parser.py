@@ -77,8 +77,8 @@ class Voucher:
 
         Standardized format:
         - Receipt: "Leverantörsfaktura - Mottagen - [Supplier] - [Invoice#]"
-        - Payment: "Leverantörsfaktura - Betalt - [Supplier] - [Invoice#] [optional info]"
-        - Same-voucher: "Leverantörsfaktura - MottagenBetalt - [Supplier] - [Invoice#]"
+        - Payment: "Leverantörsfaktura - Betalat - [Supplier] - [Invoice#] [optional info]"
+        - Same-voucher: "Leverantörsfaktura - MottagenBetalat - [Supplier] - [Invoice#]"
 
         Returns the supplier name (3rd field) or None if not in standardized format.
         """
@@ -86,7 +86,7 @@ class Voucher:
 
         # Check for standardized format
         if len(parts) >= 3 and parts[0] == "Leverantörsfaktura":
-            if parts[1] in ["Mottagen", "Betalt", "MottagenBetalt"]:
+            if parts[1] in ["Mottagen", "Betalat", "MottagenBetalat"]:
                 return parts[2]
 
         return None
@@ -97,8 +97,8 @@ class Voucher:
 
         Standardized format:
         - Receipt: "Leverantörsfaktura - Mottagen - [Supplier] - [Invoice#]"
-        - Payment: "Leverantörsfaktura - Betalt - [Supplier] - [Invoice#] [optional info]"
-        - Same-voucher: "Leverantörsfaktura - MottagenBetalt - [Supplier] - [Invoice#]"
+        - Payment: "Leverantörsfaktura - Betalat - [Supplier] - [Invoice#] [optional info]"
+        - Same-voucher: "Leverantörsfaktura - MottagenBetalat - [Supplier] - [Invoice#]"
 
         The invoice number is in the 4th field and may be followed by correction info in parentheses.
         Example: "4962010809 (korrigerad med verifikation A532...)"
@@ -113,7 +113,7 @@ class Voucher:
 
         # Try standardized format first
         if len(parts) >= 4 and parts[0] == "Leverantörsfaktura":
-            if parts[1] in ["Mottagen", "Betalt", "MottagenBetalt"]:
+            if parts[1] in ["Mottagen", "Betalat", "MottagenBetalat"]:
                 # 4th field contains invoice number, possibly with correction info
                 invoice_field = parts[3]
                 # Extract first word (invoice number) before any parentheses or spaces

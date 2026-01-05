@@ -66,13 +66,13 @@ if trans_2440.amount < 0:  # ← NEGATIVE = Kredit = Receipt
 
 ### Standardized Title Format
 ```
-Leverantörsfaktura - Betalt - [Supplier] - [Invoice#] [optional info]
+Leverantörsfaktura - Betalat - [Supplier] - [Invoice#] [optional info]
 ```
 
 **Example:**
 ```
-Leverantörsfaktura - Betalt - Centro - 3677881
-Leverantörsfaktura - Betalt - Ahsell - 4962010809 (korrigerad med verifikation A532)
+Leverantörsfaktura - Betalat - Centro - 3677881
+Leverantörsfaktura - Betalat - Ahsell - 4962010809 (korrigerad med verifikation A532)
 ```
 
 ### Required Account Structure
@@ -121,7 +121,7 @@ for trans_2440 in trans_2440_list:
 ```
 
 ✅ **Valid Payment Checks:**
-1. Title: "Leverantörsfaktura - Betalt - [Supplier] - [Invoice#]"
+1. Title: "Leverantörsfaktura - Betalat - [Supplier] - [Invoice#]"
 2. Account 2440 exists with **POSITIVE** amount (Debet)
 3. Account 1930 exists with **NEGATIVE** amount (Kredit)
 4. BOTH accounts in same voucher
@@ -198,12 +198,12 @@ elif not invoice_match and not supplier_match:
 
 **Standardized Title Format:**
 ```
-Leverantörsfaktura - MottagenBetalt - [Supplier] - [Invoice#]
+Leverantörsfaktura - MottagenBetalat - [Supplier] - [Invoice#]
 ```
 
 **Example:**
 ```
-Leverantörsfaktura - MottagenBetalt - Ahsell - 7058996807
+Leverantörsfaktura - MottagenBetalat - Ahsell - 7058996807
 ```
 
 **Account Structure:**
@@ -222,7 +222,7 @@ Leverantörsfaktura - MottagenBetalt - Ahsell - 7058996807
 - Creates BOTH a receipt event (2440 Kredit) AND a clearing event (2440 Debet + 1930 Kredit)
 - Matches them together (same voucher)
 - Status: "Receipt and clearing in same voucher"
-- Should use "MottagenBetalt" in title to indicate combined receipt+payment
+- Should use "MottagenBetalat" in title to indicate combined receipt+payment
 
 **Code:** matcher.py lines 437-440
 
@@ -266,7 +266,7 @@ Leverantörsfaktura - MottagenBetalt - Ahsell - 7058996807
 
 **Examples:**
 ```
-A5: Leverantörsfaktura - Betalt - Ahsell - 4962010809 (korrigerad med verifikation A532)
+A5: Leverantörsfaktura - Betalat - Ahsell - 4962010809 (korrigerad med verifikation A532)
 A532: Korrigering av ver.nr. A5
 ```
 
@@ -319,7 +319,7 @@ A532: Korrigering av ver.nr. A5
 
 ### For Payment Vouchers
 
-- [ ] Title format: `Leverantörsfaktura - Betalt - [Supplier] - [Invoice#]`
+- [ ] Title format: `Leverantörsfaktura - Betalat - [Supplier] - [Invoice#]`
 - [ ] Account 2440 exists
 - [ ] Account 2440 amount is **POSITIVE** (Debet)
 - [ ] Account 1930 exists
@@ -345,8 +345,8 @@ A532: Korrigering av ver.nr. A5
 | Voucher Type | 2440 | 1930 | Title |
 |--------------|------|------|-------|
 | **Receipt (Invoice)** | Kredit (negative) | NONE | Leverantörsfaktura - Mottagen - [Supplier] - [Invoice#] |
-| **Payment (Clearing)** | Debet (positive) | Kredit (negative) | Leverantörsfaktura - Betalt - [Supplier] - [Invoice#] |
-| **Same-Voucher Payment** | Both Kredit + Debet | Kredit (negative) | Leverantörsfaktura - MottagenBetalt - [Supplier] - [Invoice#] |
+| **Payment (Clearing)** | Debet (positive) | Kredit (negative) | Leverantörsfaktura - Betalat - [Supplier] - [Invoice#] |
+| **Same-Voucher Payment** | Both Kredit + Debet | Kredit (negative) | Leverantörsfaktura - MottagenBetalat - [Supplier] - [Invoice#] |
 | **Credit Note** | Debet (positive) | NONE | Leverantörsfaktura - Mottagen - [Supplier] - [Invoice#] |
 | **Self-Canceling** | Sum ≈ 0 | NONE | (any) - EXCLUDED |
 | **Correction** | (any) | (any) | Contains "korrigerad" or "Korrigering" - EXCLUDED |
@@ -377,7 +377,7 @@ Date: 2025-03-08
 
 ### Step 2: Payment Voucher (A137)
 ```
-Title: Leverantörsfaktura - Betalt - Centro - 3677881
+Title: Leverantörsfaktura - Betalat - Centro - 3677881
 Date: 2025-03-11
 
 #VER A137 20250311
@@ -422,7 +422,7 @@ Invoice#: "31641715"
 
 ### Payment Voucher (A66) - OLD FORMAT
 ```
-Title: Leverantörsfaktura - 2025-02-10 - Betalt - Elektroskandia - 31641715
+Title: Leverantörsfaktura - 2025-02-10 - Betalat - Elektroskandia - 31641715
 Supplier: ? (can't extract, wrong format)
 Invoice#: "31641715"
 ```
@@ -434,7 +434,7 @@ Invoice#: "31641715"
 
 **Action:** Update A66 title to standardized format:
 ```
-Leverantörsfaktura - Betalt - Elektroskandia - 31641715
+Leverantörsfaktura - Betalat - Elektroskandia - 31641715
 ```
 
 ---
