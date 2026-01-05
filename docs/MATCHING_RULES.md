@@ -196,6 +196,16 @@ elif not invoice_match and not supplier_match:
 
 **Scenario:** Receipt and payment in the SAME voucher (immediate payment)
 
+**Standardized Title Format:**
+```
+Leverantörsfaktura - MottagenBetalt - [Supplier] - [Invoice#]
+```
+
+**Example:**
+```
+Leverantörsfaktura - MottagenBetalt - Ahsell - 7058996807
+```
+
 **Account Structure:**
 ```
 #VER A83 20241015
@@ -212,6 +222,7 @@ elif not invoice_match and not supplier_match:
 - Creates BOTH a receipt event (2440 Kredit) AND a clearing event (2440 Debet + 1930 Kredit)
 - Matches them together (same voucher)
 - Status: "Receipt and clearing in same voucher"
+- Should use "MottagenBetalt" in title to indicate combined receipt+payment
 
 **Code:** matcher.py lines 437-440
 
@@ -335,6 +346,7 @@ A532: Korrigering av ver.nr. A5
 |--------------|------|------|-------|
 | **Receipt (Invoice)** | Kredit (negative) | NONE | Leverantörsfaktura - Mottagen - [Supplier] - [Invoice#] |
 | **Payment (Clearing)** | Debet (positive) | Kredit (negative) | Leverantörsfaktura - Betalt - [Supplier] - [Invoice#] |
+| **Same-Voucher Payment** | Both Kredit + Debet | Kredit (negative) | Leverantörsfaktura - MottagenBetalt - [Supplier] - [Invoice#] |
 | **Credit Note** | Debet (positive) | NONE | Leverantörsfaktura - Mottagen - [Supplier] - [Invoice#] |
 | **Self-Canceling** | Sum ≈ 0 | NONE | (any) - EXCLUDED |
 | **Correction** | (any) | (any) | Contains "korrigerad" or "Korrigering" - EXCLUDED |

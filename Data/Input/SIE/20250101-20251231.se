@@ -340,12 +340,12 @@
 #TRANS 3740 {} 0.25 20250109 "Leverant”rsfaktura - Betalt - Ahsell - 4962010809"
 }
 
-#VER A 6 20250109 "Ink”p - varor - Ahsell - Har betalat - Faktura - 4941805303" 20250121
+#VER A 6 20250109 "Leverant”rsfaktura - Betalt - Ahsell - 4941805303" 20250121
 {
-#TRANS 1930 {} -223.00 20250109 "Ink”p - varor - Ahsell - Har betalat - Faktura - 4941805303"
-#TRANS 4000 {} 178.28 20250109 "Ink”p - varor - Ahsell - Har betalat - Faktura - 4941805303"
-#TRANS 2641 {} 44.58 20250109 "Ink”p - varor - Ahsell - Har betalat - Faktura - 4941805303"
-#TRANS 3740 {} 0.14 20250109 "Ink”p - varor - Ahsell - Har betalat - Faktura - 4941805303"
+#TRANS 1930 {} -223.00 20250109 "Leverant”rsfaktura - Betalt - Ahsell - 4941805303"
+#TRANS 4000 {} 178.28 20250109 "Leverant”rsfaktura - Betalt - Ahsell - 4941805303"
+#TRANS 2641 {} 44.58 20250109 "Leverant”rsfaktura - Betalt - Ahsell - 4941805303"
+#TRANS 3740 {} 0.14 20250109 "Leverant”rsfaktura - Betalt - Ahsell - 4941805303"
 }
 
 #VER A 7 20250113 "Ink”p - varor - Bauhaus - KontantFaktura - 401870474" 20250121
@@ -355,52 +355,52 @@
 #TRANS 2641 {} 32.78 20250113 "Ink”p - varor - Bauhaus - KontantFaktura - 401870474"
 }
 
-#VER A 8 20250113 "Leverant”rsfaktura - 2025-01-13 - Ahsell - Faktura - 4971998804" 20250121
+#VER A 8 20250113 "Leverant”rsfaktura - Mottagen - Ahsell - 4971998804" 20250121
 {
-#TRANS 2440 {} -343.00 20250113 "Leverant”rsfaktura - 2025-01-13 - Ahsell - Faktura - 497199"
-#TRANS 2641 {} 68.56 20250113 "Leverant”rsfaktura - 2025-01-13 - Ahsell - Faktura - 497199"
-#TRANS 4000 {} 274.25 20250113 "Leverant”rsfaktura - 2025-01-13 - Ahsell - Faktura - 497199"
-#TRANS 3740 {} 0.19 20250113 "Leverant”rsfaktura - 2025-01-13 - Ahsell - Faktura - 497199"
+#TRANS 2440 {} -343.00 20250113 "Leverant”rsfaktura - Mottagen - Ahsell - 4971998804"
+#TRANS 2641 {} 68.56 20250113 "Leverant”rsfaktura - Mottagen - Ahsell - 4971998804"
+#TRANS 4000 {} 274.25 20250113 "Leverant”rsfaktura - Mottagen - Ahsell - 4971998804"
+#TRANS 3740 {} 0.19 20250113 "Leverant”rsfaktura - Mottagen - Ahsell - 4971998804"
 }
 
-#VER A 9 20250113 "Leverant”rsfaktura - 2025-01-13 - Ahsell - Faktura - 4972259909" 20250121
+#VER A 9 20250113 "Leverant”rsfaktura - Mottagen - Ahsell -  4972259909" 20250121
 {
-#TRANS 2440 {} -70.00 20250113 "Leverant”rsfaktura - 2025-01-13 - Ahsell - Faktura - 497225"
-#TRANS 2641 {} 13.92 20250113 "Leverant”rsfaktura - 2025-01-13 - Ahsell - Faktura - 497225"
-#TRANS 4000 {} 55.69 20250113 "Leverant”rsfaktura - 2025-01-13 - Ahsell - Faktura - 497225"
-#TRANS 3740 {} 0.39 20250113 "Leverant”rsfaktura - 2025-01-13 - Ahsell - Faktura - 497225"
+#TRANS 2440 {} -70.00 20250113 "Leverant”rsfaktura - Mottagen - Ahsell -  4972259909"
+#TRANS 2641 {} 13.92 20250113 "Leverant”rsfaktura - Mottagen - Ahsell -  4972259909"
+#TRANS 4000 {} 55.69 20250113 "Leverant”rsfaktura - Mottagen - Ahsell -  4972259909"
+#TRANS 3740 {} 0.39 20250113 "Leverant”rsfaktura - Mottagen - Ahsell -  4972259909"
 }
 
-#VER A 10 20250114 "Leverant”rsfaktura - 2025-01-14 - Ahsell - Faktura - 4976271009" 20250121
+#VER A 10 20250114 "Leverant”rsfaktura - Mottagen - Ahsell - 4976271009" 20250121
 {
-#TRANS 2440 {} -298.00 20250114 "Leverant”rsfaktura - 2025-01-14 - Ahsell - Faktura - 497627"
-#TRANS 2641 {} 59.70 20250114 "Leverant”rsfaktura - 2025-01-14 - Ahsell - Faktura - 497627"
-#TRANS 4000 {} 238.78 20250114 "Leverant”rsfaktura - 2025-01-14 - Ahsell - Faktura - 497627"
-#TRANS 3740 {} -0.48 20250114 "Leverant”rsfaktura - 2025-01-14 - Ahsell - Faktura - 497627"
+#TRANS 2440 {} -298.00 20250114 "Leverant”rsfaktura - Mottagen - Ahsell - 4976271009"
+#TRANS 2641 {} 59.70 20250114 "Leverant”rsfaktura - Mottagen - Ahsell - 4976271009"
+#TRANS 4000 {} 238.78 20250114 "Leverant”rsfaktura - Mottagen - Ahsell - 4976271009"
+#TRANS 3740 {} -0.48 20250114 "Leverant”rsfaktura - Mottagen - Ahsell - 4976271009"
 }
 
-#VER A 11 20250114 "Leverant”rsfaktura - 2025-01-14 - Ahsell - Faktura - 4977841008" 20250121
+#VER A 11 20250114 "Leverant”rsfaktura - Mottagen - Ahsell - 4977841008" 20250121
 {
-#TRANS 2440 {} -438.00 20250114 "Leverant”rsfaktura - 2025-01-14 - Ahsell - Faktura - 497784"
-#TRANS 2641 {} 87.50 20250114 "Leverant”rsfaktura - 2025-01-14 - Ahsell - Faktura - 497784"
-#TRANS 4000 {} 350.00 20250114 "Leverant”rsfaktura - 2025-01-14 - Ahsell - Faktura - 497784"
-#TRANS 3740 {} 0.50 20250114 "Leverant”rsfaktura - 2025-01-14 - Ahsell - Faktura - 497784"
+#TRANS 2440 {} -438.00 20250114 "Leverant”rsfaktura - Mottagen - Ahsell - 4977841008"
+#TRANS 2641 {} 87.50 20250114 "Leverant”rsfaktura - Mottagen - Ahsell - 4977841008"
+#TRANS 4000 {} 350.00 20250114 "Leverant”rsfaktura - Mottagen - Ahsell - 4977841008"
+#TRANS 3740 {} 0.50 20250114 "Leverant”rsfaktura - Mottagen - Ahsell - 4977841008"
 }
 
-#VER A 12 20250114 "Leverant”rsfaktura - 2025-01-14 - Dahl - Faktura - 124479044" 20250121
+#VER A 12 20250114 "Leverant”rsfaktura - Mottagen - Dahl - 124479044" 20250121
 {
-#TRANS 2440 {} -27.00 20250114 "Leverant”rsfaktura - 2025-01-14 - Dahl - Faktura - 124479044"
-#TRANS 2641 {} 5.33 20250114 "Leverant”rsfaktura - 2025-01-14 - Dahl - Faktura - 124479044"
-#TRANS 4000 {} 21.30 20250114 "Leverant”rsfaktura - 2025-01-14 - Dahl - Faktura - 124479044"
-#TRANS 3740 {} 0.37 20250114 "Leverant”rsfaktura - 2025-01-14 - Dahl - Faktura - 12447904"
+#TRANS 2440 {} -27.00 20250114 "Leverant”rsfaktura - Mottagen - Dahl - 124479044"
+#TRANS 2641 {} 5.33 20250114 "Leverant”rsfaktura - Mottagen - Dahl - 124479044"
+#TRANS 4000 {} 21.30 20250114 "Leverant”rsfaktura - Mottagen - Dahl - 124479044"
+#TRANS 3740 {} 0.37 20250114 "Leverant”rsfaktura - Mottagen - Dahl - 124479044"
 }
 
-#VER A 13 20250116 "Leverant”rsfaktura - 2025-01-16 - Dahl - Faktura - 124513689" 20250121
+#VER A 13 20250116 "Leverant”rsfaktura - Mottagen - Dahl - 124513689" 20250121
 {
-#TRANS 2440 {} -2419.00 20250116 "Leverant”rsfaktura - 2025-01-16 - Dahl - Faktura - 124513689"
-#TRANS 2641 {} 483.75 20250116 "Leverant”rsfaktura - 2025-01-16 - Dahl - Faktura - 124513689"
-#TRANS 4000 {} 1935.00 20250116 "Leverant”rsfaktura - 2025-01-16 - Dahl - Faktura - 124513689"
-#TRANS 3740 {} 0.25 20250116 "Leverant”rsfaktura - 2025-01-16 - Dahl - Faktura - 12451368"
+#TRANS 2440 {} -2419.00 20250116 "Leverant”rsfaktura - Mottagen - Dahl - 124513689"
+#TRANS 2641 {} 483.75 20250116 "Leverant”rsfaktura - Mottagen - Dahl - 124513689"
+#TRANS 4000 {} 1935.00 20250116 "Leverant”rsfaktura - Mottagen - Dahl - 124513689"
+#TRANS 3740 {} 0.25 20250116 "Leverant”rsfaktura - Mottagen - Dahl - 124513689"
 }
 
 #VER A 14 20250117 "Ink”p - varor - 2025-01-17 - Byggmax - Kvitto - CO1323-00101065" 20250121
@@ -410,28 +410,28 @@
 #TRANS 2641 {} 15.99 20250117 "Ink”p - varor - 2025-01-17 - Byggmax - Kvitto - CO1323-0010"
 }
 
-#VER A 15 20250117 "Leverant”rsfaktura - 2025-01-17 - Lundquist Lindroth - Faktura - 20214827311" 20250121
+#VER A 15 20250117 "Leverant”rsfaktura - Mottagen - LL - 20214827311" 20250121
 {
-#TRANS 2440 {} -159.00 20250117 "Leverant”rsfaktura - 2025-01-17 - Lundquist Lindroth - Fakt"
-#TRANS 2641 {} 31.86 20250117 "Leverant”rsfaktura - 2025-01-17 - Lundquist Lindroth - Fakt"
-#TRANS 4000 {} 127.44 20250117 "Leverant”rsfaktura - 2025-01-17 - Lundquist Lindroth - Fakt"
-#TRANS 3740 {} -0.30 20250117 "Leverant”rsfaktura - 2025-01-17 - Lundquist Lindroth - Fakt"
+#TRANS 2440 {} -159.00 20250117 "Leverant”rsfaktura - Mottagen - LL - 20214827311"
+#TRANS 2641 {} 31.86 20250117 "Leverant”rsfaktura - Mottagen - LL - 20214827311"
+#TRANS 4000 {} 127.44 20250117 "Leverant”rsfaktura - Mottagen - LL - 20214827311"
+#TRANS 3740 {} -0.30 20250117 "Leverant”rsfaktura - Mottagen - LL - 20214827311"
 }
 
-#VER A 16 20250118 "Leverant”rsfaktura - 2025-01-18 - Ahsell - Faktura - 4988847408" 20250121
+#VER A 16 20250118 "Leverant”rsfaktura - Mottagen - Ahsell - 4988847408" 20250121
 {
-#TRANS 2440 {} -1252.00 20250118 "Leverant”rsfaktura - 2025-01-18 - Ahsell - Faktura - 498884"
-#TRANS 2641 {} 250.38 20250118 "Leverant”rsfaktura - 2025-01-18 - Ahsell - Faktura - 498884"
-#TRANS 4000 {} 1001.47 20250118 "Leverant”rsfaktura - 2025-01-18 - Ahsell - Faktura - 498884"
-#TRANS 3740 {} 0.15 20250118 "Leverant”rsfaktura - 2025-01-18 - Ahsell - Faktura - 498884"
+#TRANS 2440 {} -1252.00 20250118 "Leverant”rsfaktura - Mottagen - Ahsell - 4988847408"
+#TRANS 2641 {} 250.38 20250118 "Leverant”rsfaktura - Mottagen - Ahsell - 4988847408"
+#TRANS 4000 {} 1001.47 20250118 "Leverant”rsfaktura - Mottagen - Ahsell - 4988847408"
+#TRANS 3740 {} 0.15 20250118 "Leverant”rsfaktura - Mottagen - Ahsell - 4988847408"
 }
 
-#VER A 17 20250120 "Leverant”rsfaktura - 2025-01-20 - Ahsell - Faktura - 4989649407" 20250121
+#VER A 17 20250120 "Leverant”rsfaktura - Mottagen - Ahsell - 4989649407" 20250121
 {
-#TRANS 2440 {} -197.00 20250120 "Leverant”rsfaktura - 2025-01-20 - Ahsell - Faktura - 498964"
-#TRANS 2641 {} 39.41 20250120 "Leverant”rsfaktura - 2025-01-20 - Ahsell - Faktura - 498964"
-#TRANS 4000 {} 157.62 20250120 "Leverant”rsfaktura - 2025-01-20 - Ahsell - Faktura - 498964"
-#TRANS 3740 {} -0.03 20250120 "Leverant”rsfaktura - 2025-01-20 - Ahsell - Faktura - 498964"
+#TRANS 2440 {} -197.00 20250120 "Leverant”rsfaktura - Mottagen - Ahsell - 4989649407"
+#TRANS 2641 {} 39.41 20250120 "Leverant”rsfaktura - Mottagen - Ahsell - 4989649407"
+#TRANS 4000 {} 157.62 20250120 "Leverant”rsfaktura - Mottagen - Ahsell - 4989649407"
+#TRANS 3740 {} -0.03 20250120 "Leverant”rsfaktura - Mottagen - Ahsell - 4989649407"
 }
 
 #VER A 18 20250120 "Ink”p - varor - 2025-01-20 - Elektroskandia" 20250121
@@ -456,16 +456,16 @@
 #TRANS 2641 {} 11.29 20250120 "Ink”p - varor - 2025-01-20 - Bauhaus - KontantFaktura - 401"
 }
 
-#VER A 21 20250122 "LeveransKonto 2025-01-22 - Har betalat - Ahsell - Faktura - 4972259909" 20250122
+#VER A 21 20250122 "Leverant”rsfaktura -Betalt- Ahsell - 4972259909" 20250122
 {
-#TRANS 1930 {} -70.00 20250122 "LeveransKonto 2025-01-22 - Har betalat - Ahsell - Faktura -"
-#TRANS 2440 {} 70.00 20250122 "LeveransKonto 2025-01-22 - Har betalat - Ahsell - Faktura -"
+#TRANS 1930 {} -70.00 20250122 "Leverant”rsfaktura -Betalt- Ahsell - 4972259909"
+#TRANS 2440 {} 70.00 20250122 "Leverant”rsfaktura -Betalt- Ahsell - 4972259909"
 }
 
-#VER A 22 20250122 "LeveransKonto - 2025-01-22 - Har betalat - Ahsell - Faktura - 4989649407" 20250122
+#VER A 22 20250122 "Leverant”rsfaktura - Betalt - Ahsell - 4989649407" 20250122
 {
-#TRANS 1930 {} -197.00 20250122 "LeveransKonto - 2025-01-22 - Har betalat - Ahsell - Faktura"
-#TRANS 2440 {} 197.00 20250122 "LeveransKonto - 2025-01-22 - Har betalat - Ahsell - Faktura"
+#TRANS 1930 {} -197.00 20250122 "Leverant”rsfaktura - Betalt - Ahsell - 4989649407"
+#TRANS 2440 {} 197.00 20250122 "Leverant”rsfaktura - Betalt - Ahsell - 4989649407"
 }
 
 #VER A 23 20250122 "LeveransKonto - 2025-01-22 - Har betalat - Ahsell - Faktura - 4976271009" 20250122
@@ -480,10 +480,10 @@
 #TRANS 2440 {} 343.00 20250122 "LeveransKonto - 2025-01-22 - Har betalat - Ahsell - Faktura"
 }
 
-#VER A 25 20250122 "LeveransKonto - 2025-01-22 - Har betalat - Ahsell - Faktura - 4977841008" 20250122
+#VER A 25 20250122 "Leverant”rsfaktura - Betalt - Ahsell - 4977841008" 20250122
 {
-#TRANS 1930 {} -438.00 20250122 "LeveransKonto - 2025-01-22 - Har betalat - Ahsell - Faktura"
-#TRANS 2440 {} 438.00 20250122 "LeveransKonto - 2025-01-22 - Har betalat - Ahsell - Faktura"
+#TRANS 1930 {} -438.00 20250122 "Leverant”rsfaktura - Betalt - Ahsell - 4977841008"
+#TRANS 2440 {} 438.00 20250122 "Leverant”rsfaktura - Betalt - Ahsell - 4977841008"
 }
 
 #VER A 26 20250122 "LeveransKonto - 2025-01-22 - Har betalat - Ahsell - Faktura - 4988847408" 20250122
@@ -492,10 +492,10 @@
 #TRANS 2440 {} 1252.00 20250122 "LeveransKonto - 2025-01-22 - Har betalat - Ahsell - Faktura"
 }
 
-#VER A 27 20250122 "LeveransKonto - 2025-01-22 - Har betalat - Dahl - Faktura - 124479044" 20250122
+#VER A 27 20250122 "Leverant”rsfaktura - Betalt - Dahl - 124479044" 20250122
 {
-#TRANS 1930 {} -27.00 20250122 "LeveransKonto - 2025-01-22 - Har betalat - Dahl - Faktura -"
-#TRANS 2440 {} 27.00 20250122 "LeveransKonto - 2025-01-22 - Har betalat - Dahl - Faktura -"
+#TRANS 1930 {} -27.00 20250122 "Leverant”rsfaktura - Betalt - Dahl - 124479044"
+#TRANS 2440 {} 27.00 20250122 "Leverant”rsfaktura - Betalt - Dahl - 124479044"
 }
 
 #VER A 28 20250122 "LeveransKonto - 2025-01-22 - Har betalat - Dahl - Faktura - 124513689" 20250122
@@ -888,12 +888,12 @@
 #TRANS 3740 {} -0.31 20250215 "Leverant”rsfaktura - 2025-02-15 - Ahsell - Faktura - 705899"
 }
 
-#VER A 84 20250215 "Leverant”rsfaktura - 2025-02-15 - Renta - Faktura - 3370521" 20250218
+#VER A 84 20250215 "Leverant”rsfaktura - Mottagen - Renta - 3370521" 20250218
 {
-#TRANS 2440 {} -2577.00 20250215 "Leverant”rsfaktura - 2025-02-15 - Renta - Faktura - 3370521"
-#TRANS 2641 {} 515.46 20250215 "Leverant”rsfaktura - 2025-02-15 - Renta - Faktura - 3370521"
-#TRANS 4000 {} 2061.84 20250215 "Leverant”rsfaktura - 2025-02-15 - Renta - Faktura - 3370521"
-#TRANS 3740 {} -0.30 20250215 "Leverant”rsfaktura - 2025-02-15 - Renta - Faktura - 3370521"
+#TRANS 2440 {} -2577.00 20250215 "Leverant”rsfaktura - Mottagen - Renta - 3370521"
+#TRANS 2641 {} 515.46 20250215 "Leverant”rsfaktura - Mottagen - Renta - 3370521"
+#TRANS 4000 {} 2061.84 20250215 "Leverant”rsfaktura - Mottagen - Renta - 3370521"
+#TRANS 3740 {} -0.30 20250215 "Leverant”rsfaktura - Mottagen - Renta - 3370521"
 }
 
 #VER A 85 20250217 "Ink”p - varor - 2025-02-17 - Optimera(523 kr)" 20250218
@@ -993,10 +993,10 @@
 #TRANS 2440 {} 759.00 20250221 "LeveransKonto - 2025-02-21 - Har betalat - Dahl - Faktura -"
 }
 
-#VER A 99 20250221 "LeveransKonto - 2025-02-21 - Har betalat - Renta - Faktura - 3370521" 20250303
+#VER A 99 20250221 "Leverant”rsfaktura - Betalt - Renta - 3370521" 20250303
 {
-#TRANS 1930 {} -2577.00 20250221 "LeveransKonto - 2025-02-21 - Har betalat - Renta - Faktura "
-#TRANS 2440 {} 2577.00 20250221 "LeveransKonto - 2025-02-21 - Har betalat - Renta - Faktura "
+#TRANS 1930 {} -2577.00 20250221 "Leverant”rsfaktura - Betalt - Renta - 3370521"
+#TRANS 2440 {} 2577.00 20250221 "Leverant”rsfaktura - Betalt - Renta - 3370521"
 }
 
 #VER A 100 20250221 "Ink”p - varor - 2025-02-21 - Swedol" 20250303
@@ -1072,12 +1072,12 @@
 #TRANS 2641 {} 240.91 20250303 "Ink”p - varor - 2025-03-03 -Bauhaus - KontantFaktura - 4020"
 }
 
-#VER A 110 20250228 "Leverant”rsfaktura - 2025-02-28 - Centro - Faktura - 3675081" 20250303
+#VER A 110 20250228 "Leverant”rsfaktura - Mottagen - Centro - 3675081" 20250303
 {
-#TRANS 2440 {} -178.00 20250228 "Leverant”rsfaktura - 2025-02-28 - Centro - Faktura - 3675081"
-#TRANS 2641 {} 35.52 20250228 "Leverant”rsfaktura - 2025-02-28 - Centro - Faktura - 3675081"
-#TRANS 4000 {} 142.08 20250228 "Leverant”rsfaktura - 2025-02-28 - Centro - Faktura - 3675081"
-#TRANS 3740 {} 0.40 20250228 "Leverant”rsfaktura - 2025-02-28 - Centro - Faktura - 367508"
+#TRANS 2440 {} -178.00 20250228 "Leverant”rsfaktura - Mottagen - Centro - 3675081"
+#TRANS 2641 {} 35.52 20250228 "Leverant”rsfaktura - Mottagen - Centro - 3675081"
+#TRANS 4000 {} 142.08 20250228 "Leverant”rsfaktura - Mottagen - Centro - 3675081"
+#TRANS 3740 {} 0.40 20250228 "Leverant”rsfaktura - Mottagen - Centro - 3675081"
 }
 
 #VER A 111 20250303 "2025-03-03 - Centro - Faktura - 3674824 - Faktura och kreditfaktura i samma" 20250310
@@ -1166,10 +1166,10 @@
 #TRANS 2440 {} 2568.00 20250305 "LeveransKonto - 2025-03-05 - Har betalat - Dahl - Faktura -"
 }
 
-#VER A 123 20250305 "LeveransKonto - 2025-03-05 - Har betalat - Centro - Faktura - 3675081(178 kr)" 20250310
+#VER A 123 20250305 "Leverant”rsfaktura - Betalt - Centro - 3675081" 20250310
 {
-#TRANS 1930 {} -178.00 20250305 "LeveransKonto - 2025-03-05 - Har betalat - Centro - Faktura"
-#TRANS 2440 {} 178.00 20250305 "LeveransKonto - 2025-03-05 - Har betalat - Centro - Faktura"
+#TRANS 1930 {} -178.00 20250305 "Leverant”rsfaktura - Betalt - Centro - 3675081"
+#TRANS 2440 {} 178.00 20250305 "Leverant”rsfaktura - Betalt - Centro - 3675081"
 }
 
 #VER A 124 20250305 "Leverant”rsfaktura - 2025-03-05 - Kakelspecialisten - Faktura - 1763819909" 20250310
@@ -1209,12 +1209,12 @@
 #TRANS 5410 {} 6075.00 20250307 "Klaravik - stenkap"
 }
 
-#VER A 129 20250308 "Leverant”rsfaktura - 2025-03-08 - Centro - Faktura - 3677881" 20250310
+#VER A 129 20250308 "Leverant”rsfaktura - Mottagen - Centro - 3677881" 20250310
 {
-#TRANS 2440 {} -163.00 20250308 "Leverant”rsfaktura - 2025-03-08 - Centro - Faktura - 3677881"
-#TRANS 2641 {} 32.50 20250308 "Leverant”rsfaktura - 2025-03-08 - Centro - Faktura - 3677881"
-#TRANS 4000 {} 130.00 20250308 "Leverant”rsfaktura - 2025-03-08 - Centro - Faktura - 3677881"
-#TRANS 3740 {} 0.50 20250308 "Leverant”rsfaktura - 2025-03-08 - Centro - Faktura - 367788"
+#TRANS 2440 {} -163.00 20250308 "Leverant”rsfaktura - Mottagen - Centro - 3677881"
+#TRANS 2641 {} 32.50 20250308 "Leverant”rsfaktura - Mottagen - Centro - 3677881"
+#TRANS 4000 {} 130.00 20250308 "Leverant”rsfaktura - Mottagen - Centro - 3677881"
+#TRANS 3740 {} 0.50 20250308 "Leverant”rsfaktura - Mottagen - Centro - 3677881"
 }
 
 #VER A 130 20250307 "Ink”p - varor - 2025-03-07 - Kakellagret - Kvitto 2 264 kr)" 20250325
@@ -1266,10 +1266,10 @@
 #TRANS 2440 {} 92.00 20250311 "LeveransKonto - 2025-03-11- Har betalat - Dahl - Faktura - "
 }
 
-#VER A 137 20250311 "LeveransKonto - 2025-03-11 - Har betalat - Centro - Faktura - 3677881(163 kr)( 163 kr)" 20250325
+#VER A 137 20250311 "Leverant”rsfakturan - Betalt - Centro - 3677881" 20250325
 {
-#TRANS 1930 {} -163.00 20250311 "LeveransKonto - 2025-03-11 - Har betalat - Centro - Faktura"
-#TRANS 2440 {} 163.00 20250311 "LeveransKonto - 2025-03-11 - Har betalat - Centro - Faktura"
+#TRANS 1930 {} -163.00 20250311 "Leverant”rsfakturan - Betalt - Centro - 3677881"
+#TRANS 2440 {} 163.00 20250311 "Leverant”rsfakturan - Betalt - Centro - 3677881"
 }
 
 #VER A 138 20250311 "LeveransKonto - 2025-03-11 - Har betalat - Centro - Faktura (denna „r den r„tta och skall betalas) - 3675453(1 590 kkr)" 20250325
