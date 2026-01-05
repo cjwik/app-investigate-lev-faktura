@@ -66,6 +66,9 @@ python -m pytest tests/test_2024_report_verification.py -v
 # Run just the correction tests
 python -m pytest tests/test_2024_corrections.py -v
 
+# Run the full report regression test
+python -m pytest tests/test_report_regression.py -v
+
 # Run all tests
 python -m pytest tests/ -v
 ```
