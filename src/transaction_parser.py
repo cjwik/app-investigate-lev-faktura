@@ -71,6 +71,22 @@ class Voucher:
         total = sum(t.amount for t in self.transactions)
         return abs(total) < 0.01
 
+    def extract_invoice_number(self) -> Optional[str]:
+        """
+        Extracts invoice number from voucher description.
+
+        Common patterns:
+        - "Faktura - 4993255803"
+        - "Ahsell - 7011905309"
+        - "31641715"
+
+        Returns the first sequence of 8+ digits found in the description.
+        """
+        import re
+        # Look for sequences of 8 or more digits
+        match = re.search(r'\d{8,}', self.description)
+        return match.group(0) if match else None
+
     def __repr__(self):
         return f"Voucher({self.voucher_id}, {self.date.date()}, {len(self.transactions)} trans)"
 
