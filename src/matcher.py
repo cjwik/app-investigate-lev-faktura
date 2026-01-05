@@ -198,8 +198,12 @@ class InvoiceMatcher:
         - 2440 Debet (positive) WITHOUT 1930 in voucher → Credit note receipt
 
         Note: A voucher can have both receipt and clearing (same-voucher payment)
+
+        Exclusions:
+        - Self-canceling vouchers without payment (invoice + credit in same voucher, no 1930)
         """
         receipts = []
+        excluded_self_canceling = []
 
         for voucher in vouchers:
             # Only process vouchers with account 2440
@@ -209,6 +213,16 @@ class InvoiceMatcher:
             # Get all 2440 transactions
             trans_2440_list = voucher.get_transactions_by_account("2440")
             has_1930 = voucher.has_account("1930")
+
+            # Check for self-canceling vouchers without payment
+            # (e.g., invoice + credit note in same voucher)
+            total_2440 = sum(t.amount for t in trans_2440_list)
+            is_self_canceling_without_payment = (abs(total_2440) < 0.01 and not has_1930)
+
+            if is_self_canceling_without_payment:
+                excluded_self_canceling.append(voucher.voucher_id)
+                logger.info(f"Excluding self-canceling voucher without payment: {voucher.voucher_id}")
+                continue
 
             for trans_2440 in trans_2440_list:
                 # Receipt identification per transaction:
@@ -238,6 +252,8 @@ class InvoiceMatcher:
         credit_notes = sum(1 for r in receipts if r.is_credit_note)
         logger.info(f"  - Normal invoices: {len(receipts) - credit_notes}")
         logger.info(f"  - Credit notes: {credit_notes}")
+        if excluded_self_canceling:
+            logger.info(f"  - Excluded self-canceling without payment: {excluded_self_canceling}")
 
         return receipts
 
