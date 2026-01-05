@@ -116,7 +116,8 @@ def cmd_matchclean(args: argparse.Namespace) -> int:
     # Find all CSV files in reports directory (validation and any old exception files)
     validation_files = list(config.REPORTS_DIR.glob("invoice_validation_*.csv"))
     exception_files = list(config.REPORTS_DIR.glob("invoice_exceptions_*.csv"))
-    report_files = validation_files + exception_files
+    summary_files = list(config.REPORTS_DIR.glob("summary_*.csv"))
+    report_files = validation_files + exception_files + summary_files
 
     if not report_files:
         logger.info("No report files to remove")
