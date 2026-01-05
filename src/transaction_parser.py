@@ -79,13 +79,14 @@ class Voucher:
         - Receipt: "Leverantörsfaktura - Mottagen - [Supplier] - [Invoice#]"
         - Payment: "Leverantörsfaktura - Betalat - [Supplier] - [Invoice#] [optional info]"
         - Same-voucher: "Leverantörsfaktura - MottagenBetalat - [Supplier] - [Invoice#]"
+        - Credit Receipt: "Leverantörskreditfaktura - Mottagen - [Supplier] - [Invoice#]"
 
         Returns the supplier name (3rd field) or None if not in standardized format.
         """
         parts = [p.strip() for p in self.description.split(' - ')]
 
-        # Check for standardized format
-        if len(parts) >= 3 and parts[0] == "Leverantörsfaktura":
+        # Check for standardized format (both regular and credit invoices)
+        if len(parts) >= 3 and parts[0] in ["Leverantörsfaktura", "Leverantörskreditfaktura"]:
             if parts[1] in ["Mottagen", "Betalat", "MottagenBetalat"]:
                 return parts[2]
 
@@ -99,6 +100,7 @@ class Voucher:
         - Receipt: "Leverantörsfaktura - Mottagen - [Supplier] - [Invoice#]"
         - Payment: "Leverantörsfaktura - Betalat - [Supplier] - [Invoice#] [optional info]"
         - Same-voucher: "Leverantörsfaktura - MottagenBetalat - [Supplier] - [Invoice#]"
+        - Credit Receipt: "Leverantörskreditfaktura - Mottagen - [Supplier] - [Invoice#]"
 
         The invoice number is in the 4th field and may be followed by correction info in parentheses.
         Example: "4962010809 (korrigerad med verifikation A532...)"
@@ -111,8 +113,8 @@ class Voucher:
 
         parts = [p.strip() for p in self.description.split(' - ')]
 
-        # Try standardized format first
-        if len(parts) >= 4 and parts[0] == "Leverantörsfaktura":
+        # Try standardized format first (both regular and credit invoices)
+        if len(parts) >= 4 and parts[0] in ["Leverantörsfaktura", "Leverantörskreditfaktura"]:
             if parts[1] in ["Mottagen", "Betalat", "MottagenBetalat"]:
                 # 4th field contains invoice number, possibly with correction info
                 invoice_field = parts[3]

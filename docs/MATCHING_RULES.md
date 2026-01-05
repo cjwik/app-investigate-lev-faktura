@@ -279,13 +279,23 @@ A532: Korrigering av ver.nr. A5
 
 ---
 
-### 4.4 Credit Notes
+### 4.4 Credit Notes (Credit Invoices)
 
 **Scenario:** Refund or credit from supplier
 
+**Standardized Title Format:**
+```
+Leverantörskreditfaktura - Mottagen - [Supplier] - [Invoice#]
+```
+
+**Example:**
+```
+Leverantörskreditfaktura - Mottagen - Dahl - 125195371
+```
+
 **Account Structure:**
 ```
-#VER A150 20241025
+#VER A186 20250415
   {
     #TRANS 2440 {} 500.00     ← POSITIVE Debet (but NO 1930)
     #TRANS 4000 {} -400.00    ← Reverse expense
@@ -295,10 +305,28 @@ A532: Korrigering av ver.nr. A5
 
 **Key Difference:** 2440 Debet (positive) but **NO 1930** account
 
+**Validation:**
+- First word: "Leverantörskreditfaktura" (instead of "Leverantörsfaktura")
+- Second word: "Mottagen" (receipt of credit)
+- Third word: Supplier name
+- Fourth word: Credit invoice number
+- Account 2440: Debet (positive) - reduces our debt
+- NO account 1930 (no bank transaction at receipt time)
+
 **System Behavior:**
 - Identified as **credit note receipt** (not a payment)
 - Matched with clearing like normal invoices
+- Supplier and invoice number extracted using same rules as regular invoices
 - Flag: `is_credit_note=True`
+
+**Clearing Format:**
+When the credit is applied/cleared, it should follow:
+```
+Leverantörskreditfaktura - Betalat - [Supplier] - [Invoice#]
+```
+With account structure:
+- 2440 Kredit (negative) - reverses the credit
+- 1930 Debet (positive) - money comes into bank OR applied against another invoice
 
 **Code:** matcher.py lines 241-249
 
@@ -347,7 +375,8 @@ A532: Korrigering av ver.nr. A5
 | **Receipt (Invoice)** | Kredit (negative) | NONE | Leverantörsfaktura - Mottagen - [Supplier] - [Invoice#] |
 | **Payment (Clearing)** | Debet (positive) | Kredit (negative) | Leverantörsfaktura - Betalat - [Supplier] - [Invoice#] |
 | **Same-Voucher Payment** | Both Kredit + Debet | Kredit (negative) | Leverantörsfaktura - MottagenBetalat - [Supplier] - [Invoice#] |
-| **Credit Note** | Debet (positive) | NONE | Leverantörsfaktura - Mottagen - [Supplier] - [Invoice#] |
+| **Credit Invoice Receipt** | Debet (positive) | NONE | Leverantörskreditfaktura - Mottagen - [Supplier] - [Invoice#] |
+| **Credit Invoice Clearing** | Kredit (negative) | Debet (positive) | Leverantörskreditfaktura - Betalat - [Supplier] - [Invoice#] |
 | **Self-Canceling** | Sum ≈ 0 | NONE | (any) - EXCLUDED |
 | **Correction** | (any) | (any) | Contains "korrigerad" or "Korrigering" - EXCLUDED |
 
