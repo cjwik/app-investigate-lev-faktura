@@ -1,0 +1,67 @@
+{
+  "description": "Expected results for 2024 SIE file matching. This file serves as a regression test baseline.",
+  "sie_file": "Data/Input/SIE/20240101-20241231.se",
+  "last_verified": "2026-01-05",
+
+  "bookkeeping_totals": {
+    "kredit_receipts": 36225.10,
+    "debet_clearings": 33896.10,
+    "outstanding_balance": 2329.00
+  },
+
+  "correction_vouchers": {
+    "excluded_ids": ["A120", "A131", "A143", "A168", "A169", "A170"],
+    "pairs": [
+      {"voucher1": "A120", "voucher2": "A131", "description": "Nibe payment", "has_2440": true, "has_1930": true},
+      {"voucher1": "A143", "voucher2": "A170", "description": "Bauhaus invoice", "has_2440": true, "has_1930": false},
+      {"voucher1": "A168", "voucher2": "A169", "description": "Interest income", "has_2440": false, "has_1930": false}
+    ]
+  },
+
+  "validation_summary": {
+    "total_invoice_cases": 43,
+    "paid_ok": 37,
+    "unpaid_missing_clearing": 6,
+    "needs_review": 0
+  },
+
+  "outstanding_invoices": [
+    {"voucher_id": "A133", "amount": -776.00, "supplier": "Ahlsell"},
+    {"voucher_id": "A136", "amount": -309.00, "supplier": "Ahlsell"},
+    {"voucher_id": "A137", "amount": -398.00, "supplier": "Ahlsell"},
+    {"voucher_id": "A138", "amount": -327.00, "supplier": "Ahlsell"},
+    {"voucher_id": "A149", "amount": -296.00, "supplier": "Dahl"},
+    {"voucher_id": "A163", "amount": -223.00, "supplier": ""}
+  ],
+
+  "critical_matches": [
+    {
+      "receipt_id": "A49",
+      "clearing_id": "A53",
+      "amount": 1906.00,
+      "days_diff": 1,
+      "status": "OK",
+      "comment": "Clearing found 1 day after receipt"
+    },
+    {
+      "receipt_id": "A110",
+      "clearing_id": "A123",
+      "amount": 50.00,
+      "days_diff": 1,
+      "status": "OK",
+      "comment": "Clearing found 1 day after receipt"
+    }
+  ],
+
+  "same_voucher_payments": [
+    "A83",
+    "A89",
+    "A94"
+  ],
+
+  "same_date_payments": [
+    {"receipt": "A38", "clearing": "A41", "date": "2024-10-10"},
+    {"receipt": "A39", "clearing": "A43", "date": "2024-10-10"},
+    {"receipt": "A40", "clearing": "A42", "date": "2024-10-10"}
+  ]
+}

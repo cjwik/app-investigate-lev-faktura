@@ -4,54 +4,45 @@
 #FORMAT PC8
 #GEN 20260104 "Carl-Johan Wik"
 #SIETYP 4
-#ORGNR 559064-1337
-#FNAMN "NC Finance AB"
+#ORGNR 559485-7384
+#FNAMN "Nuvado AB"
 #RAR 0 20240101 20241231
-#RAR -1 20230101 20231231
 #KPTYP EUBAS97
 #VALUTA SEK
 
 #KONTO 1210 "Maskiner och andra tekniska anlÑggningar"
 #KONTO 1220 "Inventarier och verktyg"
-#KONTO 1229 "Ack avskrivn inv/verktyg"
+#KONTO 1229 "Ackumulerade avskrivningar pÜ inventarier och verktyg"
 #KONTO 1337 "Ackumulerade nedskrivningar av andelar i îvriga fîretag som"
 #KONTO 1357 "Andelar i handelsbolag, andra fîretag"
-#KONTO 1381 "LÜngfristiga reversfordringar"
 #KONTO 1382 "LÜngfristiga fordringar hos anstÑllda"
 #KONTO 1388 "LÜngfristiga kundfordringar"
-#KONTO 1389 "Ackumulerade nedskrivningar av andra lÜngfristiga fordringa"
-#KONTO 1470 "PÜgÜende arbete"
+#KONTO 1470 "PÜgÜende arbeten"
 #KONTO 1510 Kundfordringar
-#KONTO 1511 "Kundfordringar pÜminnelsavgift"
 #KONTO 1518 "Ej reskontrafîrda kundfordringar"
 #KONTO 1519 "Nedskrivning av kundfordringar"
 #KONTO 1549 "Nedskrivning av ej reskontrafîrda kundfordringar"
 #KONTO 1630 "AvrÑkning fîr skatter och avgifter (skattekonto)"
 #KONTO 1640 Skattefordringar
 #KONTO 1650 Momsfordran
-#KONTO 1680 "Andra kortfristiga fordringar"
-#KONTO 1682 "Kortfristiga lÜnefordringar"
 #KONTO 1684 "Kortfristiga fordringar hos leverantîrer"
 #KONTO 1700 "Fîrutbetalda kostnader/interimsfordringar"
-#KONTO 1790 "ôvriga fîrutbetalda kostnader o upplupna intÑkter"
+#KONTO 1790 "ôvriga fîrutbetalda kostnader och upplupna intÑkter"
 #KONTO 1910 Kassa
-#KONTO 1920 PlusGiro
-#KONTO 1930 "Fîretagskonto/checkkonto/affÑrskonto (BG)"
-#KONTO 1940 "ôvriga bankkonton (AK)"
-#KONTO 1980 Valutakonton
+#KONTO 1930 Fîretagskonto/checkkonto/affÑrskonto
+#KONTO 1940 "ôvriga bankkonton"
+#KONTO 2013 "ôvriga egna uttag"
 #KONTO 2018 "ôvriga egna insÑttningar"
 #KONTO 2081 Aktiekapital
 #KONTO 2086 Reservfond
+#KONTO 2087 "Bunden îverkursfond"
 #KONTO 2091 "Balanserad vinst eller fîrlust"
-#KONTO 2093 AktieÑgartillskott
+#KONTO 2093 "ErhÜllna aktieÑgartillskott"
 #KONTO 2098 "Vinst eller fîrlust frÜn fîregÜende Ür"
 #KONTO 2099 "èrets resultat"
-#KONTO 2110 "Periodiseringsfond TAX 2010"
-#KONTO 2111 "Periodiseringsfond TAX 2011"
-#KONTO 2112 "Periodiseringsfond TAX 2012"
-#KONTO 2113 "Periodiseringsfond TAX 2013"
+#KONTO 2110 Periodiseringsfonder
 #KONTO 2121 "Periodiseringsfond 2021"
-#KONTO 2124 "Periodiseringsfond 2024"
+#KONTO 2122 "Periodiseringsfond 2022"
 #KONTO 2125 "Periodiseringsfond 2025"
 #KONTO 2126 "Periodiseringsfond 2026"
 #KONTO 2127 "Periodiseringsfond 2027"
@@ -67,8 +58,9 @@
 #KONTO 2137 "Periodiseringsfond 2027 - nr 2"
 #KONTO 2138 "Periodiseringsfond 2028 - nr 2"
 #KONTO 2139 "Periodiseringsfond 2019 - nr 2"
-#KONTO 2150 "Ack îveravskrivningar"
+#KONTO 2150 "Ackumulerade îveravskrivningar"
 #KONTO 2390 "ôvriga lÜngfristiga skulder"
+#KONTO 2392 "Villkorliga lÜngfristiga skulder"
 #KONTO 2393 "LÜn frÜn nÑrstÜende personer, lÜngfristig del"
 #KONTO 2399 "ôvriga lÜngfristiga skulder"
 #KONTO 2420 "Fîrskott frÜn kunder"
@@ -79,52 +71,50 @@
 #KONTO 2518 "Betald F-skatt"
 #KONTO 2611 "UtgÜende moms pÜ fîrsÑljning inom Sverige, 25%"
 #KONTO 2612 "UtgÜende moms pÜ egna uttag, 25%"
-#KONTO 2614 "UtgÜende moms omvÑnd skattskyldighet, 25%"
-#KONTO 2615 "UtgÜende moms import av varor, 25%"
+#KONTO 2614 "UtgÜende moms omvÑnd skattskyldighet 25 %"
+#KONTO 2615 "UtgÜende moms import av varor 25%"
+#KONTO 2619 "UtgÜende moms pÜ fîrsÑljning inom EU, OSS"
 #KONTO 2621 "UtgÜende moms pÜ fîrsÑljning inom Sverige, 12%"
-#KONTO 2624 "UtgÜende moms omvÑnd skattskyldighet, 12%"
+#KONTO 2624 "UtgÜende moms omvÑnd skattskyldighet 12 %"
 #KONTO 2631 "UtgÜende moms pÜ fîrsÑljning inom Sverige, 6%"
-#KONTO 2634 "UtgÜende moms omvÑnd skattskyldighet, 6%"
+#KONTO 2634 "UtgÜende moms omvÑnd skattskyldighet 6 %"
 #KONTO 2641 "Debiterad ingÜende moms"
 #KONTO 2645 "BerÑknad ingÜende moms pÜ fîrvÑrv frÜn utlandet"
-#KONTO 2647 "Ing moms omvÑnd skattskyld varor o tjÑnster i Sv"
+#KONTO 2647 "IngÜende moms omvÑnd skattskyldighet varor och tjÑnster i S"
 #KONTO 2650 "Redovisningskonto fîr moms"
 #KONTO 2710 Personalskatt
-#KONTO 2730 "Lagstadgade sociala avgifter o sÑrskild lîneskatt"
+#KONTO 2730 "Lagstadgade sociala avgifter och sÑrskild lîneskatt"
 #KONTO 2731 "AvrÑkning lagstadgade sociala avgifter"
 #KONTO 2732 "AvrÑkning sÑrskild lîneskatt"
 #KONTO 2790 "ôvriga lîneavdrag"
 #KONTO 2794 Fackfîreningsavgifter
 #KONTO 2890 "ôvriga kortfristiga skulder"
-#KONTO 2893 "Skulder till nÑrstÜende personer, kortfristig del"
-#KONTO 2896 "Skuld till personal - dricks"
-#KONTO 2899 "ôvriga kortfristiga skulder"
 #KONTO 2910 "Upplupna lîner"
 #KONTO 2920 "Upplupna semesterlîner"
 #KONTO 2940 "Upplupna lagstadgade sociala och andra avgifter"
 #KONTO 2941 "BerÑknade upplupna lagstadgade sociala avgifter"
 #KONTO 2950 "Upplupna avtalade sociala avgifter"
-#KONTO 2959 "Uppl. avt. Pens.fîrsÑkr.premier, deklarationspost"
-#KONTO 2960 "Upplupna rÑntekostnader"
-#KONTO 2990 "ôvriga upplupna kostnader o fîrutbetalda intÑkter"
+#KONTO 2959 "Upplupna avtalade pensionsfîrsÑkringsavgifter, deklarations"
+#KONTO 2990 "ôvriga upplupna kostnader och fîrutbetalda intÑkter"
 #KONTO 2999 OBS-konto
-#KONTO 3041 "FîrsÑljning tjÑnster 25% moms Sv"
-#KONTO 3042 "FîrsÑljning tjÑnster 12% moms Sv"
-#KONTO 3043 "FîrsÑljning tjÑnster 6% moms Sv"
+#KONTO 3041 "FîrsÑljn tjÑnst 25% sv"
+#KONTO 3042 "FîrsÑljn tjÑnst 12% sv"
+#KONTO 3043 "FîrsÑljn tjÑnst 6% sv"
 #KONTO 3044 "FîrsÑljn tjÑnst sv momsfri"
-#KONTO 3045 "FîrsÑlj tjÑnst utanfîr EU"
-#KONTO 3046 "FîrsÑlj tjÑnst till EU momspl"
-#KONTO 3048 "FîrsÑljning tjÑnster EU momsfri"
-#KONTO 3051 "FîrsÑljning varor 25% moms Sv"
-#KONTO 3052 "FîrsÑljning varor 12% moms Sv"
-#KONTO 3053 "FîrsÑljning varor 6% moms Sv"
+#KONTO 3045 "FîrsÑljn tjÑnst utanfîr EG momsfri"
+#KONTO 3046 "FîrsÑljn tjÑnst till EG 25%"
+#KONTO 3048 "FîrsÑljn tjÑnst EG momsfri"
+#KONTO 3051 "FîrsÑljn varor 25% sv"
+#KONTO 3052 "FîrsÑljn varor 12% sv"
+#KONTO 3053 "FîrsÑljn varor 6% sv"
 #KONTO 3054 "FîrsÑljn varor sv momsfri"
-#KONTO 3055 "FîrsÑljn varor utanfîr EU momsfri"
-#KONTO 3056 "FîrsÑljning varor till EU 25% moms"
-#KONTO 3057 "Treparts fîrsÑlj varor till EU 25%"
-#KONTO 3058 "FîrsÑljning varor EU momsfri"
-#KONTO 3100 RÑnteintÑkter
-#KONTO 3231 "FîrsÑljning inom byggsektorn, omv skattskyld moms"
+#KONTO 3055 "FîrsÑljn varor utanfîr EG momsfri"
+#KONTO 3056 "FîrsÑljn varor till EG 25% momspliktig"
+#KONTO 3057 "Treparts fîrsÑljn varor till EG 25%"
+#KONTO 3058 "FîrsÑljn varor EG momsfri"
+#KONTO 3109 "FîrsÑljning varor till annat EU-land, OSS"
+#KONTO 3231 "FîrsÑljning inom byggsektorn, omvÑnd skattskyldighet moms"
+#KONTO 3309 "FîrsÑljning tjÑnster till annat EU-land, OSS"
 #KONTO 3510 "Fakturerat emballage"
 #KONTO 3520 "Fakturerade frakter"
 #KONTO 3521 "Fakturerade frakter, EU-land"
@@ -140,40 +130,39 @@
 #KONTO 3690 "ôvriga sidointÑkter"
 #KONTO 3740 "ôres- och kronutjÑmning"
 #KONTO 3950 "ètervunna, tidigare avskrivna kundfordringar"
-#KONTO 3960 "Valutakursvinster fordr/skulder av rîrelsekaraktÑr"
+#KONTO 3960 "Valutakursvinster pÜ fordringar och skulder av rîrelsekarak"
 #KONTO 3970 "Vinst vid avyttring av immateriella och materiella anlÑggni"
-#KONTO 3971 "Vinst vid avyttring av immateriella anlÑggn.tillg."
+#KONTO 3971 "Vinst vid avyttring av immateriella anlÑggningstillgÜngar"
 #KONTO 3980 "ErhÜllna offentliga bidrag"
 #KONTO 4000 "Inkîp av varor frÜn Sverige"
-#KONTO 4056 "Inkîp varor frÜn EU 25% moms"
-#KONTO 4057 "Inkîp varor frÜn EU 12% moms"
-#KONTO 4058 "Inkîp varor EU momsfri"
+#KONTO 4056 "Inkîp varor 25% EG"
+#KONTO 4057 "Inkîp varor 12% EG"
+#KONTO 4058 "Inkîp varor EG 6%"
 #KONTO 4059 "Inkîp varor EG momsfri"
 #KONTO 4400 "Momspliktiga inkîp i Sverige"
-#KONTO 4415 "Inkîpta varor Sv, omv skattskyld, 25%"
+#KONTO 4415 "Inkîpta varor i Sverige, omvÑnd skattskyldighet, 25 % moms"
 #KONTO 4416 "Inkîpta varor i Sverige, omvÑnd skattskyldighet, 12 % moms"
 #KONTO 4417 "Inkîpta varor i Sverige, omvÑnd skattskyldighet, 6 % moms"
 #KONTO 4500 "ôvriga momspliktiga inkîp"
-#KONTO 4531 "Inkîp av tjÑnst frÜn land utanfîr EU, 25%"
+#KONTO 4531 "Inkîp av tjÑnster frÜn ett land utanfîr EU, 25 % moms"
 #KONTO 4532 "Inkîp av tjÑnster frÜn ett land utanfîr EU, 12 % moms"
 #KONTO 4533 "Inkîp av tjÑnster frÜn ett land utanfîr EU, 6 % moms"
-#KONTO 4545 "Import av varor, 25% moms"
-#KONTO 4546 "Import av varor, 12% moms"
-#KONTO 4547 "Import av varor, 6% moms"
+#KONTO 4545 "Import av varor, 25 % moms"
+#KONTO 4546 "Import av varor, 12 % moms"
+#KONTO 4547 "Import av varor, 6 % moms"
 #KONTO 4549 "Motkonto beskattningsunderlag import"
 #KONTO 4700 "Reduktion av inkîpspriser (gruppkonto)"
 #KONTO 4900 "FîrÑndring av lager (gruppkonto)"
-#KONTO 4990 "FîrÑndring av lager o pÜgÜende arbeten"
 #KONTO 5000 "Lokalkostnader (gruppkonto)"
-#KONTO 5200 "Hyra av anlÑggningstillgÜngar"
+#KONTO 5200 "Hyra av anlÑggningstillgÜngar (gruppkonto)"
 #KONTO 5400 "Fîrbrukningsinventarier och fîrbrukningsmaterial (gruppkont"
 #KONTO 5410 Fîrbrukningsinventarier
 #KONTO 5420 Programvaror
 #KONTO 5460 Fîrbrukningsmaterial
 #KONTO 5480 "ArbetsklÑder och skyddsmaterial"
-#KONTO 5600 "Kostnader fîr transportmedel"
+#KONTO 5600 "Kostnader fîr transportmedel (gruppkonto)"
 #KONTO 5610 Personbilskostnader
-#KONTO 5611 "Drivmedel personbilar"
+#KONTO 5611 "Drivmedel fîr personbilar"
 #KONTO 5612 "FîrsÑkring och skatt fîr personbilar"
 #KONTO 5613 "Reparation och underhÜll av personbilar"
 #KONTO 5615 "Leasing av personbilar"
@@ -187,30 +176,24 @@
 #KONTO 5670 "BÜt-, flygplans- och helikopterkostnader"
 #KONTO 5690 "ôvriga kostnader fîr transportmedel"
 #KONTO 5700 "Frakter och transporter (gruppkonto)"
-#KONTO 5800 Resekostnader
+#KONTO 5800 "Resekostnader (gruppkonto)"
 #KONTO 5900 "Reklam och PR (gruppkonto)"
 #KONTO 6000 "ôvriga fîrsÑljningskostnader (gruppkonto)"
 #KONTO 6044 "Avgift kortbetalning Webshop"
 #KONTO 6071 "Representation, avdragsgill"
 #KONTO 6072 "Representation, ej avdragsgill"
-#KONTO 6090 "ôvriga fîrsÑljningskostnader"
 #KONTO 6100 "Kontorsmateriel och trycksaker (gruppkonto)"
 #KONTO 6200 "Tele och post (gruppkonto)"
-#KONTO 6250 Postbefordran
 #KONTO 6300 "FîretagsfîrsÑkringar och îvriga riskkostnader (gruppkonto)"
 #KONTO 6350 "Fîrluster pÜ kundfordringar"
 #KONTO 6351 "Konstaterade fîrluster pÜ kundfordringar"
 #KONTO 6352 "Befarade fîrluster pÜ kundfordringar"
 #KONTO 6358 "Befarade fîrluster pÜ kundfordringar, OSS"
 #KONTO 6359 "Konstaterade fîrluster pÜ kundfordringar, OSS"
-#KONTO 6380 "Fîrluster pÜ îvriga fordringar"
-#KONTO 6420 "ErsÑttning till revisor"
+#KONTO 6420 "ErsÑttningar till revisor"
 #KONTO 6500 "ôvriga externa tjÑnster (gruppkonto)"
-#KONTO 6530 RedovisningstjÑnster
-#KONTO 6540 IT-tjÑnster
 #KONTO 6570 Bankkostnader
-#KONTO 6580 "Advokat- och rÑttegÜngskostnader"
-#KONTO 6800 "Inhyrd personal"
+#KONTO 6800 "Inhyrd personal (gruppkonto)"
 #KONTO 6810 "Inhyrd produktionspersonal"
 #KONTO 6820 "Inhyrd lagerpersonal"
 #KONTO 6830 "Inhyrd transportpersonal"
@@ -221,7 +204,6 @@
 #KONTO 6880 "Inhyrda fîretagsledare"
 #KONTO 6890 "ôvrig inhyrd personal"
 #KONTO 6900 "ôvriga externa kostnader (gruppkonto)"
-#KONTO 6950 "Tillsynsavgifter myndigheter"
 #KONTO 6991 "ôvriga externa kostnader, avdragsgilla"
 #KONTO 6992 "ôvriga externa kostnader, ej avdragsgilla"
 #KONTO 7000 "Lîner till kollektivanstÑllda (gruppkonto)"
@@ -237,24 +219,23 @@
 #KONTO 7350 "ErsÑttningar fîr fîreskrivna arbetsklÑder"
 #KONTO 7380 "Kostnader fîr fîrmÜner till anstÑllda"
 #KONTO 7390 "ôvriga kostnadsersÑttningar och fîrmÜner"
-#KONTO 7399 "Motkontering av fîrmÜn"
+#KONTO 7399 "Motkontering fîrmÜner"
 #KONTO 7410 PensionsfîrsÑkringspremier
 #KONTO 7500 "Sociala och andra avgifter enligt lag och avtal (gruppkonto"
-#KONTO 7510 "Arbetsgivaravgifter 31,42%"
+#KONTO 7510 "Arbetsgivaravgifter 31,42 %"
 #KONTO 7513 "Arbetsgivaravgift avdrag forskning"
 #KONTO 7514 "Arbetsgivaravgift fîrsta anstÑlld"
-#KONTO 7521 "Avgifter fîr lîner och ersÑttningar"
 #KONTO 7533 "SÑrskild lîneskatt fîr pensionskostnader"
-#KONTO 7560 "Arbetsgivaravgifter 25,46%"
-#KONTO 7600 "ôvriga personalkostnader"
-#KONTO 7831 "Avskrivn pÜ maskiner o andra tekniska anlÑggn"
+#KONTO 7560 "Arbetsgivaravgifter 25,46 %"
+#KONTO 7600 "ôvriga personalkostnader (gruppkonto)"
+#KONTO 7699 "ôvriga personalkostnader"
+#KONTO 7831 "Avskrivningar pÜ maskiner och andra tekniska anlÑggningar"
 #KONTO 7832 "Avskrivningar pÜ inventarier och verktyg"
-#KONTO 7960 "Valutakursfîrl fordr o skulder rîrelsekaraktÑr"
+#KONTO 7960 "Valutakursfîrluster pÜ fordringar och skulder av rîrelsekar"
 #KONTO 7973 "Fîrlust vid avyttring av maskiner och inventarier"
 #KONTO 8314 "Skattefria rÑnteintÑkter"
 #KONTO 8330 "Valutakursdifferenser pÜ kortfristiga fordringar och placer"
-#KONTO 8400 RÑntekostnader
-#KONTO 8415 "RÑntekostnader fîr andra skulder till kreditinstitut"
+#KONTO 8400 "RÑntekostnader (gruppkonto)"
 #KONTO 8422 "DrîjsmÜlsrÑntor fîr leverantîrsskulder"
 #KONTO 8423 "RÑntekostnader fîr skatter och avgifter"
 #KONTO 8430 "Valutakursdifferenser pÜ skulder"
@@ -263,2196 +244,1256 @@
 #KONTO 8850 "FîrÑndring av îveravskrivningar"
 #KONTO 8910 "Skatt som belastar Ürets resultat"
 #KONTO 8999 "èrets resultat"
-#DIM 6 Projekt
-#DIM 1 Resultatenhet
-#OBJEKT 6 10066 "LÜn 10066 - Bang-On Bootdee"
-#OBJEKT 6 10009 "LÜn 10009 - Buajan Thiangyotha"
-#OBJEKT 6 10041 "LÜn 10041 - Maruta Lundgren"
-#OBJEKT 6 10017 "LÜn 10017 - Sitthichai  Reangklang"
-#OBJEKT 6 10033 "LÜn 10033 - Karistha Sathapitanon"
-#OBJEKT 6 10025 "LÜn 10025 - Nattakan Apsuwan"
-#OBJEKT 6 10058 "LÜn 10058 - Surapee Chaisuntorn"
-#OBJEKT 6 10108 "LÜn 10108 - Anders Mattias Waern"
-#OBJEKT 6 10181 "LÜn 10181 - Andreas Mikael Liakka"
-#OBJEKT 6 10165 "LÜn 10165 - Johan Resman"
-#OBJEKT 6 10173 "LÜn 10173 - Boris Gavric"
-#OBJEKT 6 10157 "LÜn 10157 - Lina Catarina Forslind Nilsson"
-#OBJEKT 6 10116 "LÜn 10116 - Peter Frans Mikael Einarsson"
-#OBJEKT 6 10074 "LÜn 10074 - Emelie Christina Fellhammar"
-#OBJEKT 6 10124 "LÜn 10124 - Mattias NorÇn"
-#OBJEKT 6 10090 "LÜn 10090 - Lindha Larsson"
-#OBJEKT 6 10082 "LÜn 10082 - Emelie Rebecka Nordvall"
-#OBJEKT 6 10207 "LÜn 10207 - Ahlan Solmus"
-#OBJEKT 6 10223 "LÜn 10223 - Jimmie Daniel Olsson"
-#OBJEKT 6 10231 "LÜn 10231 - Aida Alagic"
-#OBJEKT 6 10272 "LÜn 10272 - Wannaphaka Soodsakhorn"
-#OBJEKT 6 10256 "LÜn 10256 - Gerth Erik Jimmy Sundell"
-#OBJEKT 6 10140 "LÜn 10140 - Glenn Lennart Lundberg"
-#OBJEKT 6 10264 "LÜn 10264 - Sarah Pernilla VisÇn"
-#OBJEKT 6 10199 "LÜn 10199 - Egzon Maholli"
-#OBJEKT 6 10280 "LÜn 10280 - Johan Erik Lindstrîm"
-#OBJEKT 6 10298 "LÜn 10298 - Helena Jeanette Lundberg"
-#OBJEKT 6 10215 "LÜn 10215 - Andreas Fast"
-#OBJEKT 6 10132 "LÜn 10132 - Kim Berg"
-#OBJEKT 6 10249 "LÜn 10249 - Mikael Andreas Dovermyr"
-#OBJEKT 6 10330 "LÜn 10330 - Khanittha Ngorsungnoen"
-#OBJEKT 6 10355 "LÜn 10355 - Suwana Wongjantharueang"
-#OBJEKT 6 10306 "LÜn 10306 - Somdiang Berglund"
-#OBJEKT 6 10322 "LÜn 10322 - Aimon Janahan"
-#OBJEKT 6 10348 "LÜn 10348 - Waree Gabrielsson Daituktang"
-#OBJEKT 6 10314 "LÜn 10314 - Phasorn  Klongphimai"
-#OBJEKT 6 10363 "LÜn 10363 - Supoj Kerdbuengpraw"
-#OBJEKT 6 10389 "LÜn 10389 - Thananya Klevell"
-#OBJEKT 6 10371 "LÜn 10371 - Adipa  Pradapthong Sernefors"
-#OBJEKT 6 10397 "LÜn 10397 - Chantima Andersson"
-#OBJEKT 6 10405 "LÜn 10405 - Sunisa Srichok"
-#OBJEKT 6 10413 "LÜn 10413 - Kunyarat Rungklang"
-#OBJEKT 6 10421 "LÜn 10421 - Padcharaporn Deeudom"
-#OBJEKT 6 10439 "LÜn 10439 - Onanong Sakong"
-#OBJEKT 6 10447 "LÜn 10447 - Nattakan Apsuwan"
-#OBJEKT 6 10454 "LÜn 10454 - Supaporn Aronsen"
-#OBJEKT 6 10470 "LÜn 10470 - Stefan Klang"
-#OBJEKT 6 10496 "LÜn 10496 - Torbjîrn Thorstensson"
-#OBJEKT 6 10488 "LÜn 10488 - Andreas Eriksson"
-#OBJEKT 6 10462 "LÜn 10462 - Mirhad Alagic"
-#OBJEKT 6 10504 "LÜn 10504 - Sunisa Srichok"
-#OBJEKT 6 10538 "LÜn 10538 - Suwanna Wongjantharueang"
-#OBJEKT 6 10546 "LÜn 10546 - Maruta Lundgren"
-#OBJEKT 6 10553 "LÜn 10553 - Thananya Klevell"
-#OBJEKT 6 10512 "LÜn 10512 - Chantima Andersson"
-#OBJEKT 6 10520 "LÜn 10520 - Casper Willmarsson"
-#OBJEKT 6 10561 "LÜn 10561 - Champa Jiacharoen"
-#OBJEKT 6 10595 "LÜn 10595 - Parawee  Anutianchai Blom"
-#OBJEKT 6 10603 "LÜn 10603 - Kantana Mina"
-#OBJEKT 6 10579 "LÜn 10579 - Ketkanok Illes"
-#OBJEKT 6 10587 "LÜn 10587 - Khwanhatai Tuayprasert"
-#OBJEKT 6 10652 "LÜn 10652 - Maleewan Nystrîm"
-#OBJEKT 6 10637 "LÜn 10637 - Sanitsuda Insaard"
-#OBJEKT 6 10660 "LÜn 10660 - Kamlai Ratchadej"
-#OBJEKT 6 10629 "LÜn 10629 - Suphaphon Wakoetpem Andersson"
-#OBJEKT 6 10645 "LÜn 10645 - Kitikan Chueamkaew"
-#OBJEKT 6 10611 "LÜn 10611 - Duangkamol Jampakaew Hamann"
-#OBJEKT 6 10678 "LÜn 10678 - Tobias Nilsson"
-#OBJEKT 6 10694 "LÜn 10694 - Daniel Karlsson"
-#OBJEKT 6 10686 "LÜn 10686 - Jîrgen Torstensson"
-#OBJEKT 6 10702 "LÜn 10702 - Jîrgen Ingelsson"
-#OBJEKT 6 10710 "LÜn 10710 - Fredrik Nystrîm"
-#OBJEKT 6 10728 "LÜn 10728 - Kari MÑkelÑ"
-#OBJEKT 6 10744 "LÜn 10744 - Daniel Maront"
-#OBJEKT 6 10736 "LÜn 10736 - Eliott Friberg"
-#OBJEKT 6 10751 "LÜn 10751 - Niklas Johansson"
-#OBJEKT 6 10777 "LÜn 10777 - Markus Karlsson"
-#OBJEKT 6 10769 "LÜn 10769 - Christian Claesson"
-#OBJEKT 6 10785 "LÜn 10785 - Wanpen Thongnak"
-#OBJEKT 6 10793 "LÜn 10793 - Nalini Serabut"
-#OBJEKT 6 10801 "LÜn 10801 - Katrin Lilja"
-#OBJEKT 6 10819 "LÜn 10819 - Linus Knutsson"
-#OBJEKT 6 10827 "LÜn 10827 - Kristian èstrand"
-#OBJEKT 6 10835 "LÜn 10835 - Nassuda Sikaew"
-#OBJEKT 6 10843 "LÜn 10843 - Waree Gabrielsson Daituktang"
-#OBJEKT 6 10850 "LÜn 10850 - Maleewan Nystrîm"
-#OBJEKT 6 10868 "LÜn 10868 - Lina Svensson"
-#OBJEKT 6 10884 "LÜn 10884 - Vanphensiri SÑll "
-#OBJEKT 6 10892 "LÜn 10892 - Saijit Nantikaew"
-#OBJEKT 6 10876 "LÜn 10876 - Rungnapha Thueanphrom"
-#OBJEKT 6 10900 "LÜn 10900 - Kristofer Hjelm"
-#OBJEKT 6 10918 "LÜn 10918 - Helena SÑlgstrîm"
-#OBJEKT 6 10926 "LÜn 10926 - Chamnan Kasemets"
-#OBJEKT 6 10934 "LÜn 10934 - Boonyawee  Kuntharup"
-#OBJEKT 6 10942 "LÜn 10942 - Robert David Kenyon"
-#OBJEKT 6 10959 "LÜn 10959 - Berniel Arvidsson"
-#OBJEKT 6 10967 "LÜn 10967 - Karistha Sathapitanon"
-#OBJEKT 6 10983 "LÜn 10983 -  Jirawan Nadee"
-#OBJEKT 6 10991 "LÜn 10991 - Punyada Phetnoo"
-#OBJEKT 6 11007 "LÜn 11007 - Mathias Wastesson"
-#OBJEKT 6 11056 "LÜn 11056 - Maleewan Nystrîm"
-#OBJEKT 6 11015 "LÜn 11015 - Buajan Thiangyotha"
-#OBJEKT 6 11049 "LÜn 11049 - Christopher HÜkansson Hjelm"
-#OBJEKT 6 11023 "LÜn 11023 - Nattakan Apsuwan"
-#OBJEKT 6 11031 "LÜn 11031 - Sunisa Srichok"
-#OBJEKT 6 11064 "LÜn 11064 - Johan ôberg"
-#OBJEKT 6 11080 "LÜn 11080 - Jonathan Ledin"
-#OBJEKT 6 11072 "LÜn 11072 - Thepthong Lundkvist"
-#OBJEKT 6 11098 "LÜn 11098 - Jasmin Nilsson"
-#OBJEKT 6 11106 "LÜn 11106 - Fredrik ThornÇus"
-#OBJEKT 6 11114 "LÜn 11114 - Peter Andersson"
-#OBJEKT 6 11122 "LÜn 11122 - Nicole Hildenborg"
-#OBJEKT 6 11130 "LÜn 11130 - Anders BÑckstrîm"
-#OBJEKT 6 11148 "LÜn 11148 - Supoj Kerdbuengpraw"
-#OBJEKT 6 11155 "LÜn 11155 - Pairat Chiangwong"
-#OBJEKT 6 11163 "LÜn 11163 - Kaewmalee Asa"
-#OBJEKT 6 11171 "LÜn 11171 - Phuwadon Rachawong"
-#OBJEKT 6 11213 "LÜn 11213 - Kamlai Ratchadej"
-#OBJEKT 6 11189 "LÜn 11189 - Jerker Croissier"
-#OBJEKT 6 11190 "LÜn 11197 - Thepthong Lundkvist "
-#OBJEKT 6 11197 "LÜn 11197 - Thepthong Lundkvist"
-#OBJEKT 6 11205 "LÜn 11205 - Buajan Thiangyotha"
-#OBJEKT 6 11221 "LÜn 11221 Nassuda Sikaew"
-#OBJEKT 6 11247 "LÜn 11247 Maruta Lundgren"
-#OBJEKT 6 11239 "LÜn 11239 Nalini Serabut"
-#OBJEKT 6 11254 "LÜn 11254 Mustapha Dana"
-#OBJEKT 6 11262 "LÜn 11262 - Mikael Kristiansson"
-#OBJEKT 6 11270 "LÜn 11270 - Nattasinee Ploktong"
-#OBJEKT 6 11271 "LÜn 11270 - Nattasinee Ploktong"
-#OBJEKT 6 11288 "LÜn 11288 Kevin NeemÇ"
-#OBJEKT 6 11296 "LÜn 11296 Sofia Skinnari"
-#OBJEKT 6 11304 "LÜn 11304 Rungruang Chaiyasit"
-#OBJEKT 6 11312 "LÜn 11312 Stephanie Zedlitz-N"
-#OBJEKT 6 11313 "LÜn 11320 Somkiat Onbut"
-#OBJEKT 6 11338 "LÜn 11338 - Rungnapha Thueanphrom"
-#OBJEKT 6 11346 "LÜn 11346 Maleewan Nystrîm"
-#OBJEKT 6 11353 "LÜn 11353 Praphasiri Kakarndee"
-#OBJEKT 6 11361 "LÜn 11361 Somkiat Onbut"
-#OBJEKT 6 11379 "LÜn 11379 Sumran Sawatdi"
-#OBJEKT 6 11388 "LÜn 11395 Kenneth SÑrÇn"
-#OBJEKT 6 11387 "LÜn 11387 A Saenla Iad"
-#OBJEKT 6 11411 "LÜn 11411 Martin Vinterell"
-#OBJEKT 6 11403 "LÜn 11403 Erik Westerholm"
-#OBJEKT 6 11429 "LÜn 11429 Atcharaporn Gustafsson"
-#OBJEKT 6 11445 "LÜn 11445 Robin Gustavsson"
-#OBJEKT 6 11437 "LÜn 11437 Benon Kassabian"
-#OBJEKT 6 11452 "LÜn 11452 Samuel Donkor"
-#OBJEKT 6 11460 "LÜn 11460  Panatda ôstman"
-#OBJEKT 6 11478 "LÜn 11478 Sam Butlakron"
-#OBJEKT 6 11486 "LÜn 11486 Supaporn Phungern"
-#OBJEKT 6 11494 "LÜn 11494 Rungruang Chaiyasit"
-#OBJEKT 6 11510 "LÜn 11510 Nathalie Ekbom"
-#OBJEKT 6 11502 "LÜn 11502 Thomas Prebensen"
-#OBJEKT 6 11528 "LÜn 11528 Ulf Lundin"
-#OBJEKT 6 11536 "LÜn 11536 Linus Holm"
-#OBJEKT 6 11544 "LÜn 11544 - MÜns Granîî"
-#OBJEKT 6 11551 "LÜn - 11551 -  Kamlai Ratchadej"
-#OBJEKT 6 11569 "LÜn 11569 Rungruang Chaiyasit"
-#OBJEKT 6 11577 "LÜn 11577 Supanai Baipa-Om"
-#OBJEKT 6 11585 "LÜn 11585 - Nassuda Sikaew"
-#OBJEKT 6 11593 "LÜn 11593 Nattasinee Ploktong"
-#OBJEKT 6 11601 "LÜn 11601 Samruay Junsuwan"
-#OBJEKT 6 11619 "LÜn 11619 - Sumran Sawatdi"
-#OBJEKT 6 11627 "LÜn 11627 Suriyan Sawatdi"
-#OBJEKT 6 11635 "LÜn 11635 - Maleewan Nystrîm"
-#OBJEKT 6 11643 "LÜn 11643 Kamlai Ratchadej"
-#OBJEKT 6 11650 "LÜn 11650 Jirarat Stenson"
-#OBJEKT 6 11676 "LÜn 11676 - Rungnapha Thueanphrom"
-#OBJEKT 6 11668 "LÜn 11668 - Natthakarn  Inklub "
-#OBJEKT 6 11684 "LÜn 11684 Kamlai Ratchadej"
-#OBJEKT 6 11692 "LÜn 11692 Maleewan Nystrîm"
-
-#IB 0 1381 454667.00
-#IB 0 1511 27559.00
-#IB 0 1519 -11989.00
-#IB 0 1630 5107.00
-#IB 0 1682 304955.00
-#IB 0 1930 1437487.80
-#IB 0 1940 38000.00
-#IB 0 2081 -50000.00
-#IB 0 2091 -531378.74
-#IB 0 2099 57760.94
-#IB 0 2393 -1677168.00
-#IB 0 2510 -4686.00
-#IB 0 2960 -50315.00
-
-#UB 0 1381 296593.00
-#UB 0 1511 25155.00
-#UB 0 1519 -11989.00
-#UB 0 1630 299.00
-#UB 0 1682 285384.00
-#UB 0 1930 1555756.55
-#UB 0 1940 38000.00
-#UB 0 2081 -50000.00
-#UB 0 2091 -473617.80
-#UB 0 2099 6587.25
-#UB 0 2393 -1672168.00
-
-#RES 0 3100 -99904.00
-#RES 0 3596 -6000.00
-#RES 0 3950 -40667.00
-#RES 0 5420 2535.00
-#RES 0 5900 425.00
-#RES 0 6090 7431.00
-#RES 0 6250 7600.00
-#RES 0 6380 119945.00
-#RES 0 6530 13500.00
-#RES 0 6570 1600.25
-#RES 0 8314 -30.00
-#RES 0 8423 152.00
-#RES 0 8999 -6587.25
-
-#IB -1 1381 691564.00
-#IB -1 1511 21113.00
-#IB -1 1519 -11989.00
-#IB -1 1630 23034.00
-#IB -1 1682 298873.00
-#IB -1 1930 1310550.74
-#IB -1 1940 38000.00
-#IB -1 2081 -50000.00
-#IB -1 2091 -513482.99
-#IB -1 2099 -17895.75
-#IB -1 2121 -35000.00
-#IB -1 2393 -1677168.00
-#IB -1 2510 -27284.00
-#IB -1 2960 -50315.00
-
-#UB -1 1381 454667.00
-#UB -1 1511 27559.00
-#UB -1 1519 -11989.00
-#UB -1 1630 5107.00
-#UB -1 1682 304955.00
-#UB -1 1930 1437487.80
-#UB -1 1940 38000.00
-#UB -1 2081 -50000.00
-#UB -1 2091 -531378.74
-#UB -1 2099 57760.94
-#UB -1 2393 -1677168.00
-#UB -1 2510 -4686.00
-#UB -1 2960 -50315.00
-
-#RES -1 3100 -182463.06
-#RES -1 3596 -12000.00
-#RES -1 3950 -30103.00
-#RES -1 5420 3285.00
-#RES -1 5900 850.00
-#RES -1 6090 11466.00
-#RES -1 6250 7125.00
-#RES -1 6380 149857.00
-#RES -1 6420 37500.00
-#RES -1 6530 14575.00
-#RES -1 6570 2014.00
-#RES -1 6950 40137.00
-#RES -1 8314 -73.00
-#RES -1 8415 50315.00
-#RES -1 8423 276.00
-#RES -1 8819 -35000.00
-#RES -1 8999 -57760.94
-
-#VER A 1 20240102 "2024-01-01 - Utebetal,FôRETAGSPAKET" 20240111
-{
-#TRANS 6570 {} 1250.00 20240102 "2024-01-01 - Utebetal,FôRETAGSPAKET"
-#TRANS 1930 {} -1250.00 20240102 "2024-01-01 - Utebetal,FôRETAGSPAKET"
-}
-
-#VER A 2 20240111 "2024-01-11 - Utebetal - KFM,117030239224" 20240117
-{
-#TRANS 6090 {} 300.00 20240111 "2024-01-11 - Utebetal - KFM,117030239224"
-#TRANS 1930 {} -300.00 20240111 "2024-01-11 - Utebetal - KFM,117030239224"
-}
-
-#VER A 3 20240111 "èterfîring Kortfristiga Krediter" 20240126
-{
-#TRANS 1381 {} 304955.00 20240111 "èterfîring Kortfristiga Krediter"
-#TRANS 1682 {} -304955.00 20240111 "èterfîring Kortfristiga Krediter"
-}
-
-#VER A 4 20240129 "2024-01-29 - Utebetal - Nam-Oi, rÑnta" 20240215
-{
-#TRANS 2960 {} 30341.00 20240129 "2024-01-29 - Utebetal - Nam-Oi, rÑnta"
-#TRANS 1930 {} -30341.00 20240129 "2024-01-29 - Utebetal - Nam-Oi, rÑnta"
-}
-
-#VER A 5 20240131 "2024-01-31 - Lan - 10710 - Kvitto,KFM" 20240215
-{
-#TRANS 6090 {} 258.00 20240131 "2024-01-31 - Lan - 10710 - Kvitto,KFM"
-#TRANS 1930 {} -258.00 20240131 "2024-01-31 - Lan - 10710 - Kvitto,KFM"
-}
-
-#VER A 6 20240220 "2024-02-20 - Utebetal - KFM,117030917621" 20240221
-{
-#TRANS 6090 {} 300.00 20240220 "2024-02-20 - Utebetal - KFM,117030917621"
-#TRANS 1930 {} -300.00 20240220 "2024-02-20 - Utebetal - KFM,117030917621"
-}
-
-#VER A 7 20240307 "2024-03-07 - Utebetal - KFM,113056989024" 20240319
-{
-#TRANS 6090 {} 600.00 20240307 "2024-03-07 - Utebetal - KFM,113056989024"
-#TRANS 1930 {} -600.00 20240307 "2024-03-07 - Utebetal - KFM,113056989024"
-}
-
-#VER A 8 20240312 "2024-03-12- Utebetal - KFM,113057355829" 20240319
-{
-#TRANS 6090 {} 474.00 20240312 "2024-03-12- Utebetal - KFM,113057355829"
-#TRANS 1930 {} -474.00 20240312 "2024-03-12- Utebetal - KFM,113057355829"
-}
-
-#VER A 9 20240402 "2024-04-02 - Utebetal - KFM,117031531827" 20240421
-{
-#TRANS 6090 {} 300.00 20240402 "2024-04-02 - Utebetal - KFM,117031531827"
-#TRANS 1930 {} -300.00 20240402 "2024-04-02 - Utebetal - KFM,117031531827"
-}
-
-#VER A 10 20240402 "2024-04-02 - Utebetal - KFM,110357731524" 20240421
-{
-#TRANS 6090 {} 600.00 20240402 "2024-04-02 - Utebetal - KFM,110357731524"
-#TRANS 1930 {} -600.00 20240402 "2024-04-02 - Utebetal - KFM,110357731524"
-}
-
-#VER A 11 20240409 "2024-04-09 - Utebetal -Utebetalat - RÑntar till Nam-Oi" 20240421
-{
-#TRANS 2960 {} 19974.00 20240409 "2024-04-09 - Utebetal -Utebetalat - RÑntar till Nam-Oi"
-#TRANS 1930 {} -19974.00 20240409 "2024-04-09 - Utebetal -Utebetalat - RÑntar till Nam-Oi"
-}
-
-#VER A 12 20240411 "2024-04-11 - Internet Bet - BOLAGSVERKETFakturor" 20240426
-{
-#TRANS 1930 {} -125.00 20240411 "2024-04-11 - Internet Bet - BOLAGSVERKETFakturor"
-#TRANS 6090 {} 125.00 20240411 "2024-04-11 - Internet Bet - BOLAGSVERKETFakturor"
-}
-
-#VER A 13 20240416 "2024-04-16 - Utebetal - KFM,117031719125" 20240426
-{
-#TRANS 6090 {} 300.00 20240416 "2024-04-16 - Utebetal - KFM,117031719125"
-#TRANS 1930 {} -300.00 20240416 "2024-04-16 - Utebetal - KFM,117031719125"
-}
-
-#VER A 14 20240416 "2024-04-16 - Utebetal - KFM,117031614920" 20240426
-{
-#TRANS 6090 {} 300.00 20240416 "2024-04-16 - Utebetal - KFM,117031614920"
-#TRANS 1930 {} -300.00 20240416 "2024-04-16 - Utebetal - KFM,117031614920"
-}
-
-#VER A 15 20240423 "2024-04-23 - Utebetal - KFM,11305867520" 20240426
-{
-#TRANS 6090 {} 600.00 20240423 "2024-04-23 - Utebetal - KFM,11305867520"
-#TRANS 1930 {} -600.00 20240423 "2024-04-23 - Utebetal - KFM,11305867520"
-}
-
-#VER A 16 20240423 "2024-04-23 - Utebetal - Porst,902856660425" 20240426
-{
-#TRANS 1930 {} -3800.00 20240423 "2024-04-23 - Utebetal - Porst,902856660425"
-#TRANS 6250 {} 3800.00 20240423 "2024-04-23 - Utebetal - Porst,902856660425"
-}
-
-#VER A 17 20240514 "2024-05-14 - Utebetal - KFM,117031935820" 20240520
-{
-#TRANS 6090 {} 300.00 20240514 "2024-05-14 - Utebetal - KFM,117031935820"
-#TRANS 1930 {} -300.00 20240514 "2024-05-14 - Utebetal - KFM,117031935820"
-}
-
-#VER A 18 20240514 "2024-05-14 - Utebetal - KFM,117032021927" 20240520
-{
-#TRANS 6090 {} 300.00 20240514 "2024-05-14 - Utebetal - KFM,117032021927"
-#TRANS 1930 {} -300.00 20240514 "2024-05-14 - Utebetal - KFM,117032021927"
-}
-
-#VER A 19 20240520 "2024-05-20 - Betalat - Bankavgifter" 20240520
-{
-#TRANS 6570 {} 116.00 20240520 "2024-05-20 - Betalat - Bankavgifter"
-#TRANS 1930 {} -116.00 20240520 "2024-05-20 - Betalat - Bankavgifter"
-}
-
-#VER A 20 20240529 "2024-05-29 - Utebetal - KFM, 117032104723" 20240801
-{
-#TRANS 6090 {} 300.00 20240529 "2024-05-29 - Utebetal - KFM, 117032104723"
-#TRANS 1930 {} -300.00 20240529 "2024-05-29 - Utebetal - KFM, 117032104723"
-}
-
-#VER A 21 20240731 "2024-07-31 - E-Faktura,MÜn" 20240819
-{
-#TRANS 1930 {} -131.25 20240731 "2024-07-31 - E-Faktura,MÜn"
-#TRANS 6570 {} 131.25 20240731 "2024-07-31 - E-Faktura,MÜn"
-}
-
-#VER A 22 20240802 "2024-08-02 - Klara Consulting AB - Faktura,58170" 20240819
-{
-#TRANS 1930 {} -13500.00 20240802 "2024-08-02 - Klara Consulting AB - Faktura,58170"
-#TRANS 6530 {} 13500.00 20240802 "2024-08-02 - Klara Consulting AB - Faktura,58170"
-}
-
-#VER A 23 20240813 "2024-08-13 - Utebetal - Visma Spcs AB - 14165290" 20240819
-{
-#TRANS 1930 {} -2535.00 20240813 "2024-08-13 - Utebetal - Visma Spcs AB - 14165290"
-#TRANS 5420 {} 2535.00 20240813 "2024-08-13 - Utebetal - Visma Spcs AB - 14165290"
-}
-
-#VER A 24 20240821 "2024-08-21 - Utebatalat - KFM,113061387024" 20240907
-{
-#TRANS 1930 {} -500.00 20240821 "2024-08-21 - Utebatalat - KFM,113061387024"
-#TRANS 6090 {} 500.00 20240821 "2024-08-21 - Utebatalat - KFM,113061387024"
-}
-
-#VER A 25 20240821 "2024-08-21 - Utebatalat - KFM,113061204229" 20240907
-{
-#TRANS 1930 {} -600.00 20240821 "2024-08-21 - Utebatalat - KFM,113061204229"
-#TRANS 6090 {} 600.00 20240821 "2024-08-21 - Utebatalat - KFM,113061204229"
-}
-
-#VER A 26 20240920 "Utebetalat till - Carl-Johan Wik" 20240920
-{
-#TRANS 1930 {} -5000.00 20240920 "Utebetalat till - Carl-Johan Wik"
-#TRANS 2393 {} 5000.00 20240920 "Utebetalat till - Carl-Johan Wik"
-}
-
-#VER A 27 20241003 "2024-10-03 - Utebetalat - KFM, 113063132121" 20241022
-{
-#TRANS 6090 {} 600.00 20241003 "2024-10-03 - Utebetalat - KFM, 113063132121"
-#TRANS 1930 {} -600.00 20241003 "2024-10-03 - Utebetalat - KFM, 113063132121"
-}
-
-#VER A 28 20241021 "2024-10-21 - Utebetalat - PostNord,902916689224" 20241025
-{
-#TRANS 1930 {} -3800.00 20241021 "2024-10-21 - Utebetalat - PostNord,902916689224"
-#TRANS 6250 {} 3800.00 20241021 "2024-10-21 - Utebetalat - PostNord,902916689224"
-}
-
-#VER A 29 20241111 "2024-11-11 - Utebetalat - KFM,nr,117034281123" 20241120
-{
-#TRANS 6090 {} 300.00 20241111 "2024-11-11 - Utebetalat - KFM,nr,117034281123"
-#TRANS 1930 {} -300.00 20241111 "2024-11-11 - Utebetalat - KFM,nr,117034281123"
-}
-
-#VER A 30 20241119 "2024-11-19 -Utebetalat - Bankavgifter" 20241120
-{
-#TRANS 6570 {} 103.00 20241119 "2024-11-19 -Utebetalat - Bankavgifter"
-#TRANS 1930 {} -103.00 20241119 "2024-11-19 -Utebetalat - Bankavgifter"
-}
-
-#VER A 31 20241204 "2024-12-04 - Utebetalat - KFM,113064763429" 20250121
-{
-#TRANS 6090 {} 374.00 20241204 "2024-12-04 - Utebetalat - KFM,113064763429"
-#TRANS 1930 {} -374.00 20241204 "2024-12-04 - Utebetalat - KFM,113064763429"
-}
-
-#VER A 32 20241216 "2024-12-16 - Utebetalat - HB KORT" 20250121
-{
-#TRANS 5900 {} 425.00 20241216 "2024-12-16 - Utebetalat - HB KORT"
-#TRANS 1930 {} -425.00 20241216 "2024-12-16 - Utebetalat - HB KORT"
-}
-
-#VER A 33 20241231 "Kortfristiga krediter" 20250205
-{
-#TRANS 1381 {} -285384.00 20241231 "Kortfristiga krediter"
-#TRANS 1682 {} 285384.00 20241231 "Kortfristiga krediter"
-}
-
-#VER A 34 20241231 "Ombokning fg Ürs resultat" 20250415
-{
-#TRANS 2099 {} -57760.94 20241231 "Ombokning fg Ürs resultat"
-#TRANS 2091 {} 57760.94 20241231 "Ombokning fg Ürs resultat"
-}
-
-#VER A 35 20241231 "Skattekonto 2023" 20250415
-{
-#TRANS 1630 {} 8.00 20241231 "Skattekonto 2023"
-#TRANS 8314 {} -8.00 20241231 "Skattekonto 2023"
-#TRANS 1630 {} 8.00 20241231 "Skattekonto 2023"
-#TRANS 8314 {} -8.00 20241231 "Skattekonto 2023"
-#TRANS 1630 {} 9.00 20241231 "Skattekonto 2023"
-#TRANS 8314 {} -9.00 20241231 "Skattekonto 2023"
-#TRANS 1630 {} -4686.00 20241231 "Skattekonto 2023"
-#TRANS 2510 {} 4686.00 20241231 "Skattekonto 2023"
-#TRANS 1630 {} -124.00 20241231 "Skattekonto 2023"
-#TRANS 8423 {} 124.00 20241231 "Skattekonto 2023"
-#TRANS 1630 {} 1.00 20241231 "Skattekonto 2023"
-#TRANS 8314 {} -1.00 20241231 "Skattekonto 2023"
-#TRANS 1630 {} -28.00 20241231 "Skattekonto 2023"
-#TRANS 8423 {} 28.00 20241231 "Skattekonto 2023"
-#TRANS 1630 {} 1.00 20241231 "Skattekonto 2023"
-#TRANS 8314 {} -1.00 20241231 "Skattekonto 2023"
-#TRANS 1630 {} 1.00 20241231 "Skattekonto 2023"
-#TRANS 8314 {} -1.00 20241231 "Skattekonto 2023"
-#TRANS 1630 {} 1.00 20241231 "Skattekonto 2023"
-#TRANS 8314 {} -1.00 20241231 "Skattekonto 2023"
-#TRANS 1630 {} 1.00 20241231 "Skattekonto 2023"
-#TRANS 8314 {} -1.00 20241231 "Skattekonto 2023"
-}
-
-#VER A 36 20241231 "èrets resultat" 20250416
-{
-#TRANS 8999 {} -6587.25 20241231 "èrets resultat"
-#TRANS 2099 {} 6587.25 20241231 "èrets resultat"
-}
-
-#VER B 1 20240103 "LÜn 10694 - Inbetalning - Kvitto KFM" 20240111
-{
-#TRANS 1930 {"6" "10694" } 476.00 20240103 "LÜn 10694 - Inbetalning - Kvitto KFM"
-#TRANS 3100 {"6" "10694" } -476.00 20240103 "LÜn 10694 - Inbetalning - Kvitto KFM"
-}
-
-#VER B 2 20240103 "LÜn 11619 - Inbetalning - Kvitto KFM" 20240111
-{
-#TRANS 1930 {"6" "11619" } 568.00 20240103 "LÜn 11619 - Inbetalning - Kvitto KFM"
-#TRANS 3100 {"6" "11619" } -299.00 20240103 "LÜn 11619 - Inbetalning - Kvitto KFM"
-#TRANS 1511 {"6" "11619" } -269.00 20240103 "LÜn 11619 - Inbetalning - Kvitto KFM"
-}
-
-#VER B 3 20240104 "LÜn 11668 - Inbetalning" 20240112
-{
-#TRANS 1930 {"6" "11668" } 21012.00 20240104 "LÜn 11668 - Inbetalning"
-#TRANS 1381 {"6" "11668" } -20907.00 20240104 "LÜn 11668 - Inbetalning"
-#TRANS 3100 {"6" "11668" } -105.00 20240104 "LÜn 11668 - Inbetalning"
-}
-
-#VER B 4 20240105 "LÜn 11130 - Inbetalning" 20240112
-{
-#TRANS 1930 {"6" "11130" } 750.00 20240105 "LÜn 11130 - Inbetalning"
-#TRANS 1381 {"6" "11130" } -644.00 20240105 "LÜn 11130 - Inbetalning"
-#TRANS 3100 {"6" "11130" } -106.00 20240105 "LÜn 11130 - Inbetalning"
-}
-
-#VER B 5 20240109 "LÜn 11197 - Inbetalning - Kvitto KFM" 20240117
-{
-#TRANS 1930 {"6" "11197" } 327.00 20240109 "LÜn 11197 - Inbetalning - Kvitto KFM"
-#TRANS 1511 {"6" "11197" } -327.00 20240109 "LÜn 11197 - Inbetalning - Kvitto KFM"
-}
-
-#VER B 6 20240110 "LÜn 10678 - Inbetalning - Kvitto KFM" 20240117
-{
-#TRANS 1930 {"6" "10678" } 948.00 20240110 "LÜn 10678 - Inbetalning - Kvitto KFM"
-#TRANS 1381 {"6" "10678" } -548.00 20240110 "LÜn 10678 - Inbetalning - Kvitto KFM"
-#TRANS 3100 {"6" "10678" } -400.00 20240110 "LÜn 10678 - Inbetalning - Kvitto KFM"
-}
-
-#VER B 7 20240115 "LÜn 11668 - Inbetalning" 20240117
-{
-#TRANS 1930 {"6" "11668" } 17.00 20240115 "LÜn 11668 - Inbetalning"
-#TRANS 1381 {"6" "11668" } -16.00 20240115 "LÜn 11668 - Inbetalning"
-#TRANS 3100 {"6" "11668" } -1.00 20240115 "LÜn 11668 - Inbetalning"
-}
-
-#VER B 8 20240115 "LÜn 10108 - BetalningsfîrelÑggande" 20240117
-{
-#TRANS 1511 {"6" "10108" } 680.00 20240115 "LÜn 10108 - BetalningsfîrelÑggande"
-#TRANS 3596 {"6" "10108" } -680.00 20240115 "LÜn 10108 - BetalningsfîrelÑggande"
-#TRANS 6380 {"6" "10108" } 24311.00 20240115 "LÜn 10108 - BetalningsfîrelÑggande"
-#TRANS 1389 {"6" "10108" } -24311.00 20240115 "LÜn 10108 - BetalningsfîrelÑggande"
-#TRANS 1389 {"6" "10108" } 24311.00 20240115 "LÜn 10108 - BetalningsfîrelÑggande"
-#TRANS 1381 {"6" "10108" } -24311.00 20240115 "LÜn 10108 - BetalningsfîrelÑggande"
-}
-
-#VER B 9 20240115 "LÜn 11148 - BetalningsfîrelÑggande" 20240117
-{
-#TRANS 1511 {"6" "11148" } 680.00 20240115 "LÜn 11148 - BetalningsfîrelÑggande"
-#TRANS 3596 {"6" "11148" } -680.00 20240115 "LÜn 11148 - BetalningsfîrelÑggande"
-#TRANS 6380 {"6" "11148" } 6887.00 20240115 "LÜn 11148 - BetalningsfîrelÑggande"
-#TRANS 1389 {"6" "11148" } -6887.00 20240115 "LÜn 11148 - BetalningsfîrelÑggande"
-#TRANS 1389 {"6" "11148" } 6887.00 20240115 "LÜn 11148 - BetalningsfîrelÑggande"
-#TRANS 1381 {"6" "11148" } -6887.00 20240115 "LÜn 11148 - BetalningsfîrelÑggande"
-}
-
-#VER B 10 20240115 "LÜn 10298 - BetalningspÜminnelse" 20240117
-{
-#TRANS 1511 {"6" "10298" } 60.00 20240115 "LÜn 10298 - BetalningspÜminnelse"
-#TRANS 3596 {"6" "10298" } -60.00 20240115 "LÜn 10298 - BetalningspÜminnelse"
-}
-
-#VER B 11 20240115 "LÜn 10371 - BetalningspÜminnelse" 20240117
-{
-#TRANS 1511 {"6" "10371" } 60.00 20240115 "LÜn 10371 - BetalningspÜminnelse"
-#TRANS 3596 {"6" "10371" } -60.00 20240115 "LÜn 10371 - BetalningspÜminnelse"
-}
-
-#VER B 12 20240115 "LÜn 10454 - Inkasso" 20240117
-{
-#TRANS 1511 {"6" "10454" } 180.00 20240115 "LÜn 10454 - Inkasso"
-#TRANS 3596 {"6" "10454" } -180.00 20240115 "LÜn 10454 - Inkasso"
-}
-
-#VER B 13 20240115 "LÜn 10595 - Inkasso" 20240117
-{
-#TRANS 1511 {"6" "10595" } 180.00 20240115 "LÜn 10595 - Inkasso"
-#TRANS 3596 {"6" "10595" } -180.00 20240115 "LÜn 10595 - Inkasso"
-}
-
-#VER B 14 20240115 "LÜn 11676 - Inkasso" 20240117
-{
-#TRANS 1511 {"6" "11676" } 180.00 20240115 "LÜn 11676 - Inkasso"
-#TRANS 3596 {"6" "11676" } -180.00 20240115 "LÜn 11676 - Inkasso"
-#TRANS 6380 {"6" "11676" } 6173.00 20240115 "LÜn 11676 - Inkasso"
-#TRANS 1389 {"6" "11676" } -6173.00 20240115 "LÜn 11676 - Inkasso"
-#TRANS 1389 {"6" "11676" } 6173.00 20240115 "LÜn 11676 - Inkasso"
-#TRANS 1381 {"6" "11676" } -6173.00 20240115 "LÜn 11676 - Inkasso"
-}
-
-#VER B 15 20240115 "LÜn 10702 - BetalningspÜminnelse" 20240117
-{
-#TRANS 1511 {"6" "10702" } 60.00 20240115 "LÜn 10702 - BetalningspÜminnelse"
-#TRANS 3596 {"6" "10702" } -60.00 20240115 "LÜn 10702 - BetalningspÜminnelse"
-}
-
-#VER B 16 20240115 "LÜn 11395 - BetalningspÜminnelse" 20240117
-{
-#TRANS 1511 {"6" "11388" } 60.00 20240115 "LÜn 11395 - BetalningspÜminnelse"
-#TRANS 3596 {"6" "11388" } -60.00 20240115 "LÜn 11395 - BetalningspÜminnelse"
-}
-
-#VER B 17 20240125 "LÜn 10702 - Inbetalning" 20240215
-{
-#TRANS 1930 {"6" "10702" } 869.00 20240125 "LÜn 10702 - Inbetalning"
-#TRANS 1381 {"6" "10702" } -584.00 20240125 "LÜn 10702 - Inbetalning"
-#TRANS 3100 {"6" "10702" } -105.00 20240125 "LÜn 10702 - Inbetalning"
-#TRANS 1511 {"6" "10702" } -180.00 20240125 "LÜn 10702 - Inbetalning"
-}
-
-#VER B 18 20240126 "LÜn 11114 - Inbetalning - Kvitto KFM" 20240215
-{
-#TRANS 1930 {"6" "11114" } 630.00 20240126 "LÜn 11114 - Inbetalning - Kvitto KFM"
-#TRANS 1511 {"6" "11114" } -630.00 20240126 "LÜn 11114 - Inbetalning - Kvitto KFM"
-}
-
-#VER B 19 20240129 "LÜn 10371 - Inbetalning" 20240215
-{
-#TRANS 1930 {"6" "10371" } 1000.00 20240129 "LÜn 10371 - Inbetalning"
-#TRANS 1381 {"6" "10371" } -305.00 20240129 "LÜn 10371 - Inbetalning"
-#TRANS 3100 {"6" "10371" } -635.00 20240129 "LÜn 10371 - Inbetalning"
-#TRANS 1511 {"6" "10371" } -60.00 20240129 "LÜn 10371 - Inbetalning"
-}
-
-#VER B 20 20240129 "LÜn 11692 - Inbetalning" 20240215
-{
-#TRANS 1930 {"6" "11692" } 1200.00 20240129 "LÜn 11692 - Inbetalning"
-#TRANS 1381 {"6" "11692" } -917.00 20240129 "LÜn 11692 - Inbetalning"
-#TRANS 3100 {"6" "11692" } -283.00 20240129 "LÜn 11692 - Inbetalning"
-}
-
-#VER B 21 20240129 "LÜn 11593 - Inbetalning" 20240215
-{
-#TRANS 1930 {"6" "11593" } 958.00 20240129 "LÜn 11593 - Inbetalning"
-#TRANS 1381 {"6" "11593" } -619.00 20240129 "LÜn 11593 - Inbetalning"
-#TRANS 3100 {"6" "11593" } -339.00 20240129 "LÜn 11593 - Inbetalning"
-}
 
-#VER B 22 20240129 "LÜn 11387 - Inbetalning" 20240215
-{
-#TRANS 1930 {"6" "11387" } 749.00 20240129 "LÜn 11387 - Inbetalning"
-#TRANS 1381 {"6" "11387" } -418.00 20240129 "LÜn 11387 - Inbetalning"
-#TRANS 3100 {"6" "11387" } -331.00 20240129 "LÜn 11387 - Inbetalning"
-}
-
-#VER B 23 20240129 "LÜn 10298 - Kapitalisering av rÑnta" 20240215
-{
-#TRANS 1381 {"6" "10298" } 1229.00 20240129 "LÜn 10298 - Kapitalisering av rÑnta"
-#TRANS 3100 {"6" "10298" } -1229.00 20240129 "LÜn 10298 - Kapitalisering av rÑnta"
-}
-
-#VER B 24 20240129 "LÜn 10702 - Kapitalisering av rÑnta" 20240215
-{
-#TRANS 1381 {"6" "10702" } 13.00 20240129 "LÜn 10702 - Kapitalisering av rÑnta"
-#TRANS 3100 {"6" "10702" } -13.00 20240129 "LÜn 10702 - Kapitalisering av rÑnta"
-}
-
-#VER B 25 20240129 "LÜn 11130 - Kapitalisering av rÑnta" 20240215
-{
-#TRANS 1381 {"6" "11130" } 306.00 20240129 "LÜn 11130 - Kapitalisering av rÑnta"
-#TRANS 3100 {"6" "11130" } -306.00 20240129 "LÜn 11130 - Kapitalisering av rÑnta"
-}
-
-#VER B 26 20240129 "LÜn 11395 - Kapitalisering av rÑnta" 20240215
-{
-#TRANS 1381 {"6" "11388" } 572.00 20240129 "LÜn 11395 - Kapitalisering av rÑnta"
-#TRANS 3100 {"6" "11388" } -572.00 20240129 "LÜn 11395 - Kapitalisering av rÑnta"
-}
-
-#VER B 27 20240129 "LÜn 11569 - Kapitalisering av rÑnta" 20240215
-{
-#TRANS 1381 {"6" "11569" } 436.00 20240129 "LÜn 11569 - Kapitalisering av rÑnta"
-#TRANS 3100 {"6" "11569" } -436.00 20240129 "LÜn 11569 - Kapitalisering av rÑnta"
-}
-
-#VER B 28 20240129 "LÜn 11676 - Kapitalisering av rÑnta" 20240215
-{
-#TRANS 1381 {"6" "11676" } 564.00 20240129 "LÜn 11676 - Kapitalisering av rÑnta"
-#TRANS 3100 {"6" "11676" } -564.00 20240129 "LÜn 11676 - Kapitalisering av rÑnta"
-}
-
-#VER B 29 20240129 "LÜn 10249 - Inbetalning - Kvitto KFM" 20240215
-{
-#TRANS 1930 {"6" "10249" } 114.00 20240129 "LÜn 10249 - Inbetalning - Kvitto KFM"
-#TRANS 3100 {"6" "10249" } -114.00 20240129 "LÜn 10249 - Inbetalning - Kvitto KFM"
-}
-
-#VER B 30 20240129 "LÜn 11619 - LÜn - 11007 - Inbetalning - Kvitto KFM" 20240215
-{
-#TRANS 1930 {} 848.00 20240129 "LÜn 11619 - LÜn - 11007 - Inbetalning - Kvitto KFM"
-#TRANS 3100 {"6" "11619" } -248.00 20240129 "LÜn 11619 - LÜn - 11007 - Inbetalning - Kvitto KFM"
-#TRANS 3100 {"6" "11007" } -600.00 20240129 "LÜn 11619 - LÜn - 11007 - Inbetalning - Kvitto KFM"
-}
-
-#VER B 31 20240130 "LÜn 11445 - Inbetalning - Kvitto KFM" 20240215
-{
-#TRANS 1930 {"6" "11445" } 804.00 20240130 "LÜn 11445 - Inbetalning - Kvitto KFM"
-#TRANS 1381 {"6" "11445" } -644.00 20240130 "LÜn 11445 - Inbetalning - Kvitto KFM"
-#TRANS 3100 {"6" "11445" } -160.00 20240130 "LÜn 11445 - Inbetalning - Kvitto KFM"
-}
-
-#VER B 32 20240131 "LÜn 10710 - Inbetalning - Kvitto KFM" 20240215
-{
-#TRANS 1930 {"6" "10710" } 451.00 20240131 "LÜn 10710 - Inbetalning - Kvitto KFM"
-#TRANS 3100 {"6" "10710" } -451.00 20240131 "LÜn 10710 - Inbetalning - Kvitto KFM"
-}
-
-#VER B 33 20240201 "LÜn 10678 - Inbetalning - Kvitto KFM" 20240215
-{
-#TRANS 1930 {"6" "10678" } 685.00 20240201 "LÜn 10678 - Inbetalning - Kvitto KFM"
-#TRANS 1381 {"6" "10678" } -399.00 20240201 "LÜn 10678 - Inbetalning - Kvitto KFM"
-#TRANS 3100 {"6" "10678" } -286.00 20240201 "LÜn 10678 - Inbetalning - Kvitto KFM"
-}
-
-#VER B 34 20240205 "LÜn 11445 - Inbetalning - Kvitto KFM" 20240215
-{
-#TRANS 1930 {"6" "11445" } 2250.00 20240205 "LÜn 11445 - Inbetalning - Kvitto KFM"
-#TRANS 1381 {"6" "11445" } -2234.00 20240205 "LÜn 11445 - Inbetalning - Kvitto KFM"
-#TRANS 3100 {"6" "11445" } -16.00 20240205 "LÜn 11445 - Inbetalning - Kvitto KFM"
-#TRANS 1389 {"6" "11445" } 686.00 20240205 "LÜn 11445 - Inbetalning - Kvitto KFM"
-#TRANS 3950 {"6" "11445" } -686.00 20240205 "LÜn 11445 - Inbetalning - Kvitto KFM"
-#TRANS 1381 {"6" "11445" } 686.00 20240205 "LÜn 11445 - Inbetalning - Kvitto KFM"
-#TRANS 1389 {"6" "11445" } -686.00 20240205 "LÜn 11445 - Inbetalning - Kvitto KFM"
-}
-
-#VER B 35 20240205 "LÜn 11197 - Inbetalning - Kvitto KFM" 20240215
-{
-#TRANS 1930 {"6" "11197" } 342.00 20240205 "LÜn 11197 - Inbetalning - Kvitto KFM"
-#TRANS 3100 {"6" "11197" } -36.00 20240205 "LÜn 11197 - Inbetalning - Kvitto KFM"
-#TRANS 1511 {"6" "11197" } -306.00 20240205 "LÜn 11197 - Inbetalning - Kvitto KFM"
-}
-
-#VER B 36 20240205 "LÜn 11197 - Inbetalning - Kvitto KFM" 20240215
-{
-#TRANS 1930 {"6" "11197" } 347.00 20240205 "LÜn 11197 - Inbetalning - Kvitto KFM"
-#TRANS 1511 {"6" "11197" } -347.00 20240205 "LÜn 11197 - Inbetalning - Kvitto KFM"
-}
-
-#VER B 37 20240205 "LÜn 11023 - Inbetalning - Kvitto KFM" 20240215
-{
-#TRANS 1930 {"6" "11023" } 543.00 20240205 "LÜn 11023 - Inbetalning - Kvitto KFM"
-#TRANS 1511 {"6" "11023" } -543.00 20240205 "LÜn 11023 - Inbetalning - Kvitto KFM"
-}
-
-#VER B 38 20240206 "LÜn 10702 - Inbetalning/ Nedskrivning Üterfîring - Kapital och Avgifter" 20240219
-{
-#TRANS 1930 {"6" "10702" } 809.00 20240206 "LÜn 10702 - Inbetalning/ Nedskrivning Üterfîring - Kapital "
-#TRANS 1381 {"6" "10702" } -602.00 20240206 "LÜn 10702 - Inbetalning/ Nedskrivning Üterfîring - Kapital "
-#TRANS 3100 {"6" "10702" } -27.00 20240206 "LÜn 10702 - Inbetalning/ Nedskrivning Üterfîring - Kapital "
-#TRANS 1511 {"6" "10702" } -180.00 20240206 "LÜn 10702 - Inbetalning/ Nedskrivning Üterfîring - Kapital "
-#TRANS 1511 {"6" "10702" } 60.00 20240206 "LÜn 10702 - Inbetalning/ Nedskrivning Üterfîring - Kapital "
-#TRANS 3950 {"6" "10702" } -60.00 20240206 "LÜn 10702 - Inbetalning/ Nedskrivning Üterfîring - Kapital "
-}
-
-#VER B 39 20240206 "LÜn 11395 - Inbetalning" 20240219
-{
-#TRANS 1930 {"6" "11388" } 1000.00 20240206 "LÜn 11395 - Inbetalning"
-#TRANS 1381 {"6" "11388" } -793.00 20240206 "LÜn 11395 - Inbetalning"
-#TRANS 3100 {"6" "11388" } -147.00 20240206 "LÜn 11395 - Inbetalning"
-#TRANS 1511 {"6" "11388" } -60.00 20240206 "LÜn 11395 - Inbetalning"
-}
-
-#VER B 40 20240219 "LÜn 11130 - Inbetalning" 20240221
-{
-#TRANS 1930 {"6" "11130" } 900.00 20240219 "LÜn 11130 - Inbetalning"
-#TRANS 1381 {"6" "11130" } -627.00 20240219 "LÜn 11130 - Inbetalning"
-#TRANS 3100 {"6" "11130" } -273.00 20240219 "LÜn 11130 - Inbetalning"
-}
-
-#VER B 41 20240220 "LÜn 11569 - Inkasso" 20240318
-{
-#TRANS 1511 {"6" "11569" } 180.00 20240220 "LÜn 11569 - Inkasso"
-#TRANS 3596 {"6" "11569" } -180.00 20240220 "LÜn 11569 - Inkasso"
-}
-
-#VER B 42 20240221 "LÜn 11023 - Inbetalning - Kvitto KFM" 20240318
-{
-#TRANS 1930 {"6" "11023" } 348.00 20240221 "LÜn 11023 - Inbetalning - Kvitto KFM"
-#TRANS 1511 {"6" "11023" } -348.00 20240221 "LÜn 11023 - Inbetalning - Kvitto KFM"
-}
-
-#VER B 43 20240223 "LÜn 11619 - Inbetalning - Kvitto KFM" 20240318
-{
-#TRANS 1930 {"6" "11619" } 258.00 20240223 "LÜn 11619 - Inbetalning - Kvitto KFM"
-#TRANS 3100 {"6" "11619" } -258.00 20240223 "LÜn 11619 - Inbetalning - Kvitto KFM"
-}
-
-#VER B 44 20240226 "LÜn 11114 - Inbetalning - Kvitto KFM" 20240318
-{
-#TRANS 1930 {"6" "11114" } 551.00 20240226 "LÜn 11114 - Inbetalning - Kvitto KFM"
-#TRANS 3100 {"6" "11114" } -551.00 20240226 "LÜn 11114 - Inbetalning - Kvitto KFM"
-}
-
-#VER B 45 20240227 "LÜn 10371 - Inbetalning" 20240318
-{
-#TRANS 1930 {"6" "10371" } 1000.00 20240227 "LÜn 10371 - Inbetalning"
-#TRANS 1381 {"6" "10371" } -440.00 20240227 "LÜn 10371 - Inbetalning"
-#TRANS 3100 {"6" "10371" } -560.00 20240227 "LÜn 10371 - Inbetalning"
-}
-
-#VER B 46 20240227 "LÜn 11692 - Inbetalning" 20240318
-{
-#TRANS 1930 {"6" "11692" } 1200.00 20240227 "LÜn 11692 - Inbetalning"
-#TRANS 1381 {"6" "11692" } -965.00 20240227 "LÜn 11692 - Inbetalning"
-#TRANS 3100 {"6" "11692" } -235.00 20240227 "LÜn 11692 - Inbetalning"
-}
-
-#VER B 47 20240227 "LÜn 11130 - Inbetalning" 20240318
-{
-#TRANS 1930 {"6" "11130" } 750.00 20240227 "LÜn 11130 - Inbetalning"
-#TRANS 1381 {"6" "11130" } -649.00 20240227 "LÜn 11130 - Inbetalning"
-#TRANS 3100 {"6" "11130" } -101.00 20240227 "LÜn 11130 - Inbetalning"
-}
+#UB 0 1630 3629.00
+#UB 0 1684 909.21
+#UB 0 1930 28203.74
+#UB 0 2081 -25000.00
+#UB 0 2093 -200000.00
+#UB 0 2099 158788.45
+#UB 0 2440 -2329.00
+#UB 0 2641 488.60
+#UB 0 2650 35310.00
 
-#VER B 48 20240227 "LÜn 11593 - Inbetalning" 20240318
-{
-#TRANS 1930 {"6" "11593" } 958.00 20240227 "LÜn 11593 - Inbetalning"
-#TRANS 1381 {"6" "11593" } -663.00 20240227 "LÜn 11593 - Inbetalning"
-#TRANS 3100 {"6" "11593" } -295.00 20240227 "LÜn 11593 - Inbetalning"
-}
-
-#VER B 49 20240227 "LÜn 10298 - Kapitalisering av rÑnta" 20240318
-{
-#TRANS 1381 {"6" "10298" } 1143.00 20240227 "LÜn 10298 - Kapitalisering av rÑnta"
-#TRANS 3100 {"6" "10298" } -1143.00 20240227 "LÜn 10298 - Kapitalisering av rÑnta"
-}
-
-#VER B 50 20240227 "LÜn 10702 - Kapitalisering av rÑnta" 20240318
-{
-#TRANS 1381 {"6" "10702" } 59.00 20240227 "LÜn 10702 - Kapitalisering av rÑnta"
-#TRANS 3100 {"6" "10702" } -59.00 20240227 "LÜn 10702 - Kapitalisering av rÑnta"
-}
-
-#VER B 51 20240227 "LÜn 11387 - Kapitalisering av rÑnta" 20240318
-{
-#TRANS 1381 {"6" "11387" } 292.00 20240227 "LÜn 11387 - Kapitalisering av rÑnta"
-#TRANS 3100 {"6" "11387" } -292.00 20240227 "LÜn 11387 - Kapitalisering av rÑnta"
-}
-
-#VER B 52 20240227 "LÜn 11395 - Kapitalisering av rÑnta" 20240318
-{
-#TRANS 1381 {"6" "11388" } 373.00 20240227 "LÜn 11395 - Kapitalisering av rÑnta"
-#TRANS 3100 {"6" "11388" } -373.00 20240227 "LÜn 11395 - Kapitalisering av rÑnta"
-}
-
-#VER B 53 20240227 "LÜn 11569 - Kapitalisering av rÑnta" 20240318
-{
-#TRANS 1381 {"6" "11569" } 404.00 20240227 "LÜn 11569 - Kapitalisering av rÑnta"
-#TRANS 3100 {"6" "11569" } -404.00 20240227 "LÜn 11569 - Kapitalisering av rÑnta"
-}
-
-#VER B 54 20240227 "LÜn 11676 - Kapitalisering av rÑnta" 20240318
-{
-#TRANS 1381 {"6" "11676" } 523.00 20240227 "LÜn 11676 - Kapitalisering av rÑnta"
-#TRANS 3100 {"6" "11676" } -523.00 20240227 "LÜn 11676 - Kapitalisering av rÑnta"
-}
-
-#VER B 55 20240227 "LÜn 10249 - Inbetalning - Kvitto KFM" 20240319
-{
-#TRANS 1930 {"6" "10249" } 120.00 20240227 "LÜn 10249 - Inbetalning - Kvitto KFM"
-#TRANS 3100 {"6" "10249" } -120.00 20240227 "LÜn 10249 - Inbetalning - Kvitto KFM"
-}
-
-#VER B 56 20240227 "LÜn 11445 - Inbetalning - Kvitto KFM" 20240319
-{
-#TRANS 1930 {"6" "11445" } 612.00 20240227 "LÜn 11445 - Inbetalning - Kvitto KFM"
-#TRANS 1381 {"6" "11445" } -559.00 20240227 "LÜn 11445 - Inbetalning - Kvitto KFM"
-#TRANS 3100 {"6" "11445" } -53.00 20240227 "LÜn 11445 - Inbetalning - Kvitto KFM"
-#TRANS 1389 {"6" "11445" } 559.00 20240227 "LÜn 11445 - Inbetalning - Kvitto KFM"
-#TRANS 3950 {"6" "11445" } -559.00 20240227 "LÜn 11445 - Inbetalning - Kvitto KFM"
-#TRANS 1381 {"6" "11445" } 559.00 20240227 "LÜn 11445 - Inbetalning - Kvitto KFM"
-#TRANS 1389 {"6" "11445" } -559.00 20240227 "LÜn 11445 - Inbetalning - Kvitto KFM"
-}
-
-#VER B 57 20240228 "LÜn 11007 - Inbetalning - Kvitto KFM" 20240319
-{
-#TRANS 1930 {"6" "11007" } 591.00 20240228 "LÜn 11007 - Inbetalning - Kvitto KFM"
-#TRANS 3100 {"6" "11007" } -591.00 20240228 "LÜn 11007 - Inbetalning - Kvitto KFM"
-}
-
-#VER B 58 20240228 "LÜn 10173 - Inbetalning" 20240319
-{
-#TRANS 1930 {"6" "10173" } 5000.00 20240228 "LÜn 10173 - Inbetalning"
-#TRANS 1381 {"6" "10173" } -5000.00 20240228 "LÜn 10173 - Inbetalning"
-}
-
-#VER B 59 20240229 "LÜn 10694 - Inbetalning" 20240319
-{
-#TRANS 1930 {"6" "10694" } 380.00 20240229 "LÜn 10694 - Inbetalning"
-#TRANS 3100 {"6" "10694" } -380.00 20240229 "LÜn 10694 - Inbetalning"
-}
-
-#VER B 60 20240229 "LÜn 10710 - Inbetalning" 20240319
-{
-#TRANS 1930 {"6" "10710" } 505.00 20240229 "LÜn 10710 - Inbetalning"
-#TRANS 1381 {"6" "10710" } -126.00 20240229 "LÜn 10710 - Inbetalning"
-#TRANS 3100 {"6" "10710" } -379.00 20240229 "LÜn 10710 - Inbetalning"
-}
-
-#VER B 61 20240303 "LÜn 10678 - Inbetalning" 20240319
-{
-#TRANS 1930 {"6" "10678" } 1541.00 20240303 "LÜn 10678 - Inbetalning"
-#TRANS 1381 {"6" "10678" } -1163.00 20240303 "LÜn 10678 - Inbetalning"
-#TRANS 3100 {"6" "10678" } -378.00 20240303 "LÜn 10678 - Inbetalning"
-#TRANS 1389 {"6" "10678" } 847.00 20240303 "LÜn 10678 - Inbetalning"
-#TRANS 3950 {"6" "10678" } -847.00 20240303 "LÜn 10678 - Inbetalning"
-#TRANS 1381 {"6" "10678" } 847.00 20240303 "LÜn 10678 - Inbetalning"
-#TRANS 1389 {"6" "10678" } -847.00 20240303 "LÜn 10678 - Inbetalning"
-}
-
-#VER B 62 20240313 "LÜn 10298 - Inbetalning" 20240319
-{
-#TRANS 1930 {"6" "10298" } 1260.00 20240313 "LÜn 10298 - Inbetalning"
-#TRANS 1381 {"6" "10298" } -594.00 20240313 "LÜn 10298 - Inbetalning"
-#TRANS 3100 {"6" "10298" } -606.00 20240313 "LÜn 10298 - Inbetalning"
-#TRANS 1511 {"6" "10298" } -60.00 20240313 "LÜn 10298 - Inbetalning"
-}
-
-#VER B 63 20240320 "LÜn 10702 - BetalningspÜminnelse" 20240325
-{
-#TRANS 1511 {"6" "10702" } 60.00 20240320 "LÜn 10702 - BetalningspÜminnelse"
-#TRANS 3596 {"6" "10702" } -60.00 20240320 "LÜn 10702 - BetalningspÜminnelse"
-}
-
-#VER B 64 20240320 "LÜn 11387 - BetalningspÜminnelse" 20240325
-{
-#TRANS 1511 {"6" "11387" } 60.00 20240320 "LÜn 11387 - BetalningspÜminnelse"
-#TRANS 3596 {"6" "11387" } -60.00 20240320 "LÜn 11387 - BetalningspÜminnelse"
-}
-
-#VER B 65 20240320 "LÜn 11395 - BetalningspÜminnelse" 20240325
-{
-#TRANS 1511 {"6" "11388" } 60.00 20240320 "LÜn 11395 - BetalningspÜminnelse"
-#TRANS 3596 {"6" "11388" } -60.00 20240320 "LÜn 11395 - BetalningspÜminnelse"
-}
-
-#VER B 66 20240320 "LÜn 11197 - Inbetalning - Kvitto KFM" 20240419
-{
-#TRANS 1930 {"6" "11197" } 346.00 20240320 "LÜn 11197 - Inbetalning - Kvitto KFM"
-#TRANS 3100 {"6" "11197" } -346.00 20240320 "LÜn 11197 - Inbetalning - Kvitto KFM"
-}
-
-#VER B 67 20240321 "LÜn 11114 - Inbetalning - Kvitto KFM" 20240419
-{
-#TRANS 1930 {"6" "11114" } 464.00 20240321 "LÜn 11114 - Inbetalning - Kvitto KFM"
-#TRANS 3100 {"6" "11114" } -464.00 20240321 "LÜn 11114 - Inbetalning - Kvitto KFM"
-}
-
-#VER B 68 20240325 "LÜn 11619 - Inbetalning - Kvitto KFM" 20240419
-{
-#TRANS 1930 {"6" "11619" } 423.00 20240325 "LÜn 11619 - Inbetalning - Kvitto KFM"
-#TRANS 3100 {"6" "11619" } -423.00 20240325 "LÜn 11619 - Inbetalning - Kvitto KFM"
-}
-
-#VER B 69 20240325 "LÜn 10454 - BetalningsfîrelÑggande/Nedskrivning" 20240419
-{
-#TRANS 6380 {"6" "10454" } 24380.00 20240325 "LÜn 10454 - BetalningsfîrelÑggande/Nedskrivning"
-#TRANS 1389 {"6" "10454" } -24380.00 20240325 "LÜn 10454 - BetalningsfîrelÑggande/Nedskrivning"
-#TRANS 1389 {"6" "10454" } 24380.00 20240325 "LÜn 10454 - BetalningsfîrelÑggande/Nedskrivning"
-#TRANS 1381 {"6" "10454" } -24380.00 20240325 "LÜn 10454 - BetalningsfîrelÑggande/Nedskrivning"
-#TRANS 1511 {"6" "10454" } 680.00 20240325 "LÜn 10454 - BetalningsfîrelÑggande/Nedskrivning"
-#TRANS 3596 {"6" "10454" } -680.00 20240325 "LÜn 10454 - BetalningsfîrelÑggande/Nedskrivning"
-}
-
-#VER B 70 20240325 "LÜn 11569 - BetalningsfîrelÑggande/Nedskrivning" 20240419
-{
-#TRANS 6380 {"6" "11569" } 9944.00 20240325 "LÜn 11569 - BetalningsfîrelÑggande/Nedskrivning"
-#TRANS 1389 {"6" "11569" } -9944.00 20240325 "LÜn 11569 - BetalningsfîrelÑggande/Nedskrivning"
-#TRANS 1389 {"6" "11569" } 9944.00 20240325 "LÜn 11569 - BetalningsfîrelÑggande/Nedskrivning"
-#TRANS 1381 {"6" "11569" } -9944.00 20240325 "LÜn 11569 - BetalningsfîrelÑggande/Nedskrivning"
-#TRANS 1511 {"6" "11569" } 680.00 20240325 "LÜn 11569 - BetalningsfîrelÑggande/Nedskrivning"
-#TRANS 3596 {"6" "11569" } -680.00 20240325 "LÜn 11569 - BetalningsfîrelÑggande/Nedskrivning"
-}
-
-#VER B 71 20240325 "LÜn 11676 - BetalningsfîrelÑggande" 20240419
-{
-#TRANS 1511 {"6" "11676" } 680.00 20240325 "LÜn 11676 - BetalningsfîrelÑggande"
-#TRANS 3596 {"6" "11676" } -680.00 20240325 "LÜn 11676 - BetalningsfîrelÑggande"
-}
-
-#VER B 72 20240326 "LÜn 10694 - Inbetalning - Kvitto KFM" 20240419
-{
-#TRANS 1930 {"6" "10694" } 492.00 20240326 "LÜn 10694 - Inbetalning - Kvitto KFM"
-#TRANS 3100 {"6" "10694" } -492.00 20240326 "LÜn 10694 - Inbetalning - Kvitto KFM"
-}
-
-#VER B 73 20240326 "LÜn 11007 - Inbetalning - Kvitto KFM" 20240419
-{
-#TRANS 1930 {"6" "11007" } 594.00 20240326 "LÜn 11007 - Inbetalning - Kvitto KFM"
-#TRANS 3100 {"6" "11007" } -594.00 20240326 "LÜn 11007 - Inbetalning - Kvitto KFM"
-}
+#RES 0 3740 -1.28
+#RES 0 4000 152238.93
+#RES 0 5410 2936.20
+#RES 0 5460 776.60
+#RES 0 5700 313.00
+#RES 0 6570 2500.00
+#RES 0 7699 28.00
+#RES 0 8314 -3.00
+#RES 0 8999 -158788.45
 
-#VER B 74 20240327 "LÜn 10371 - Inbetalning" 20240419
+#VER A 1 20240806 "Aktiekapital - insÑttning" 20240819
 {
-#TRANS 1930 {"6" "10371" } 1000.00 20240327 "LÜn 10371 - Inbetalning"
-#TRANS 1381 {"6" "10371" } -461.00 20240327 "LÜn 10371 - Inbetalning"
-#TRANS 3100 {"6" "10371" } -539.00 20240327 "LÜn 10371 - Inbetalning"
+#TRANS 1930 {} 25000.00 20240806 "Aktiekapital - insÑttning"
+#TRANS 2081 {} -25000.00 20240806 "Aktiekapital - insÑttning"
 }
 
-#VER B 75 20240327 "LÜn 11692 - Inbetalning" 20240419
+#VER A 2 20240806 Bankavgift 20240819
 {
-#TRANS 1930 {"6" "11692" } 1200.00 20240327 "LÜn 11692 - Inbetalning"
-#TRANS 1381 {"6" "11692" } -986.00 20240327 "LÜn 11692 - Inbetalning"
-#TRANS 3100 {"6" "11692" } -214.00 20240327 "LÜn 11692 - Inbetalning"
+#TRANS 1930 {} -2500.00 20240806 "Bankavgift"
+#TRANS 6570 {} 2500.00 20240806 "Bankavgift"
 }
 
-#VER B 76 20240327 "LÜn 10702 - Inbetalning" 20240419
+#VER A 3 20240813 AktieÑgaretillskott 20240819
 {
-#TRANS 1930 {"6" "10702" } 809.00 20240327 "LÜn 10702 - Inbetalning"
-#TRANS 1381 {"6" "10702" } -667.00 20240327 "LÜn 10702 - Inbetalning"
-#TRANS 3100 {"6" "10702" } -82.00 20240327 "LÜn 10702 - Inbetalning"
-#TRANS 1511 {"6" "10702" } -60.00 20240327 "LÜn 10702 - Inbetalning"
+#TRANS 1930 {} 50000.00 20240813 "AktieÑgaretillskott"
+#TRANS 2093 {} -50000.00 20240813 "AktieÑgaretillskott"
 }
 
-#VER B 77 20240327 "LÜn 11593 - Inbetalning" 20240419
+#VER A 4 20240814 "Inkîp - Verktyg" 20240822
 {
-#TRANS 1930 {"6" "11593" } 958.00 20240327 "LÜn 11593 - Inbetalning"
-#TRANS 1381 {"6" "11593" } -677.00 20240327 "LÜn 11593 - Inbetalning"
-#TRANS 3100 {"6" "11593" } -281.00 20240327 "LÜn 11593 - Inbetalning"
+#TRANS 1930 {} -3769.00 20240814 "Inkîp - Verktyg"
+#TRANS 2641 {} 753.80 20240814 "Inkîp - Verktyg"
+#TRANS 5700 {} 79.00 20240814 "Inkîp - Verktyg"
+#TRANS 5410 {} 2936.20 20240814 "Inkîp - Verktyg"
 }
 
-#VER B 78 20240327 "LÜn 10298 - Kapitalisering av rÑnta" 20240419
+#VER A 5 20240814 "Inkîp - Varor" 20240822
 {
-#TRANS 1381 {"6" "10298" } 559.00 20240327 "LÜn 10298 - Kapitalisering av rÑnta"
-#TRANS 3100 {"6" "10298" } -559.00 20240327 "LÜn 10298 - Kapitalisering av rÑnta"
+#TRANS 1930 {} -236.00 20240814 "Inkîp - Varor"
+#TRANS 4000 {} 188.80 20240814 "Inkîp - Varor"
+#TRANS 2641 {} 47.20 20240814 "Inkîp - Varor"
 }
 
-#VER B 79 20240327 "LÜn 11130 - Kapitalisering av rÑnta" 20240419
+#VER A 6 20240814 "Inkîp - Varor" 20240822
 {
-#TRANS 1381 {"6" "11130" } 350.00 20240327 "LÜn 11130 - Kapitalisering av rÑnta"
-#TRANS 3100 {"6" "11130" } -350.00 20240327 "LÜn 11130 - Kapitalisering av rÑnta"
+#TRANS 1930 {} -263.76 20240814 "Inkîp - Varor"
+#TRANS 2641 {} 52.75 20240814 "Inkîp - Varor"
+#TRANS 5700 {} 80.00 20240814 "Inkîp - Varor"
+#TRANS 4000 {} 131.01 20240814 "Inkîp - Varor"
 }
 
-#VER B 80 20240327 "LÜn 11387 - Kapitalisering av rÑnta" 20240419
+#VER A 7 20240815 "Inkîp - Varor" 20240822
 {
-#TRANS 1381 {"6" "11387" } 298.00 20240327 "LÜn 11387 - Kapitalisering av rÑnta"
-#TRANS 3100 {"6" "11387" } -298.00 20240327 "LÜn 11387 - Kapitalisering av rÑnta"
+#TRANS 1930 {} -670.00 20240815 "Inkîp - Varor"
+#TRANS 4000 {} 536.05 20240815 "Inkîp - Varor"
+#TRANS 2641 {} 134.01 20240815 "Inkîp - Varor"
+#TRANS 3740 {} -0.06 20240815 "Inkîp - Varor"
 }
 
-#VER B 81 20240327 "LÜn 11395 - Kapitalisering av rÑnta" 20240419
+#VER A 8 20240815 "Inkîp - Varor" 20240822
 {
-#TRANS 1381 {"6" "11388" } 522.00 20240327 "LÜn 11395 - Kapitalisering av rÑnta"
-#TRANS 3100 {"6" "11388" } -522.00 20240327 "LÜn 11395 - Kapitalisering av rÑnta"
+#TRANS 1930 {} -1689.42 20240815 "Inkîp - Varor"
+#TRANS 2641 {} 337.88 20240815 "Inkîp - Varor"
+#TRANS 4000 {} 1351.54 20240815 "Inkîp - Varor"
 }
 
-#VER B 82 20240328 "LÜn 11445 - Inbetalning - Kvitto KFM" 20240421
+#VER A 9 20240819 "Inkîp - Varor" 20240822
 {
-#TRANS 1930 {"6" "11445" } 548.00 20240328 "LÜn 11445 - Inbetalning - Kvitto KFM"
-#TRANS 1381 {"6" "11445" } -494.00 20240328 "LÜn 11445 - Inbetalning - Kvitto KFM"
-#TRANS 3100 {"6" "11445" } -54.00 20240328 "LÜn 11445 - Inbetalning - Kvitto KFM"
-#TRANS 1389 {"6" "11445" } 494.00 20240328 "LÜn 11445 - Inbetalning - Kvitto KFM"
-#TRANS 3950 {"6" "11445" } -494.00 20240328 "LÜn 11445 - Inbetalning - Kvitto KFM"
-#TRANS 1381 {"6" "11445" } 494.00 20240328 "LÜn 11445 - Inbetalning - Kvitto KFM"
-#TRANS 1389 {"6" "11445" } -494.00 20240328 "LÜn 11445 - Inbetalning - Kvitto KFM"
+#TRANS 1930 {} -2476.00 20240819 "Inkîp - Varor"
+#TRANS 2641 {} 495.25 20240819 "Inkîp - Varor"
+#TRANS 4000 {} 1981.00 20240819 "Inkîp - Varor"
+#TRANS 3740 {} -0.25 20240819 "Inkîp - Varor"
 }
 
-#VER B 83 20240402 "LÜn 10710 - Inbetalning - Kvitto KFM" 20240421
+#VER A 10 20240820 "Inkîp - Varor" 20240823
 {
-#TRANS 1930 {"6" "10710" } 425.00 20240402 "LÜn 10710 - Inbetalning - Kvitto KFM"
-#TRANS 1381 {"6" "10710" } -149.00 20240402 "LÜn 10710 - Inbetalning - Kvitto KFM"
-#TRANS 3100 {"6" "10710" } -276.00 20240402 "LÜn 10710 - Inbetalning - Kvitto KFM"
+#TRANS 1930 {} -139.00 20240820 "Inkîp - Varor"
+#TRANS 2641 {} 27.80 20240820 "Inkîp - Varor"
+#TRANS 4000 {} 111.20 20240820 "Inkîp - Varor"
 }
 
-#VER B 84 20240405 "LÜn 10702 - Inbetalning" 20240421
+#VER A 11 20240820 "Inkîp - Varor" 20240823
 {
-#TRANS 1930 {"6" "10702" } 869.00 20240405 "LÜn 10702 - Inbetalning"
-#TRANS 1381 {"6" "10702" } -848.00 20240405 "LÜn 10702 - Inbetalning"
-#TRANS 3100 {"6" "10702" } -21.00 20240405 "LÜn 10702 - Inbetalning"
+#TRANS 1930 {} -716.85 20240820 "Inkîp - Varor"
+#TRANS 2641 {} 143.37 20240820 "Inkîp - Varor"
+#TRANS 4000 {} 573.48 20240820 "Inkîp - Varor"
 }
 
-#VER B 85 20240405 "LÜn 10678 - Inbetalning - Kvitto KFM" 20240421
+#VER A 12 20240826 "Inkîp - Varor" 20240827
 {
-#TRANS 1930 {"6" "10678" } 1212.00 20240405 "LÜn 10678 - Inbetalning - Kvitto KFM"
-#TRANS 1381 {"6" "10678" } -885.00 20240405 "LÜn 10678 - Inbetalning - Kvitto KFM"
-#TRANS 3100 {"6" "10678" } -327.00 20240405 "LÜn 10678 - Inbetalning - Kvitto KFM"
-#TRANS 1389 {"6" "10678" } 885.00 20240405 "LÜn 10678 - Inbetalning - Kvitto KFM"
-#TRANS 3950 {"6" "10678" } -885.00 20240405 "LÜn 10678 - Inbetalning - Kvitto KFM"
-#TRANS 1381 {"6" "10678" } 885.00 20240405 "LÜn 10678 - Inbetalning - Kvitto KFM"
-#TRANS 1389 {"6" "10678" } -885.00 20240405 "LÜn 10678 - Inbetalning - Kvitto KFM"
+#TRANS 1930 {} -338.00 20240826 "Inkîp - Varor"
+#TRANS 2641 {} 67.60 20240826 "Inkîp - Varor"
+#TRANS 4000 {} 270.40 20240826 "Inkîp - Varor"
 }
 
-#VER B 86 20240408 "LÜn 11395 - Inbetalning" 20240421
+#VER A 13 20240826 "Inkîp - Varor" 20240827
 {
-#TRANS 1930 {"6" "11388" } 1000.00 20240408 "LÜn 11395 - Inbetalning"
-#TRANS 1381 {"6" "11388" } -719.00 20240408 "LÜn 11395 - Inbetalning"
-#TRANS 3100 {"6" "11388" } -221.00 20240408 "LÜn 11395 - Inbetalning"
-#TRANS 1511 {"6" "11388" } -60.00 20240408 "LÜn 11395 - Inbetalning"
+#TRANS 1930 {} -738.00 20240826 "Inkîp - Varor"
+#TRANS 2641 {} 147.60 20240826 "Inkîp - Varor"
+#TRANS 4000 {} 590.40 20240826 "Inkîp - Varor"
 }
 
-#VER B 87 20240409 "LÜn 11007 - Inbetalning - Kvitto KFM" 20240421
+#VER A 14 20240828 "Inkîp - varor" 20240906
 {
-#TRANS 1930 {"6" "11007" } 559.00 20240409 "LÜn 11007 - Inbetalning - Kvitto KFM"
-#TRANS 3100 {"6" "11007" } -559.00 20240409 "LÜn 11007 - Inbetalning - Kvitto KFM"
+#TRANS 1930 {} -344.47 20240828 "Inkîp - varor"
+#TRANS 4000 {} 275.58 20240828 "Inkîp - varor"
+#TRANS 2641 {} 68.89 20240828 "Inkîp - varor"
 }
 
-#VER B 88 20240410 "LÜn 11197 - LÜn - 10678 - Inbetalning - Kvitto KFM" 20240426
+#VER A 15 20240828 "Inkîp - varor" 20240906
 {
-#TRANS 1930 {"6" "11197" } 2497.00 20240410 "LÜn 11197 - LÜn - 10678 - Inbetalning - Kvitto KFM"
-#TRANS 3100 {"6" "11197" } -738.00 20240410 "LÜn 11197 - LÜn - 10678 - Inbetalning - Kvitto KFM"
-#TRANS 1381 {"6" "10678" } -1650.00 20240410 "LÜn 11197 - LÜn - 10678 - Inbetalning - Kvitto KFM"
-#TRANS 3100 {"6" "10678" } -109.00 20240410 "LÜn 11197 - LÜn - 10678 - Inbetalning - Kvitto KFM"
-#TRANS 1389 {"6" "10678" } 1650.00 20240410 "LÜn 11197 - LÜn - 10678 - Inbetalning - Kvitto KFM"
-#TRANS 3950 {"6" "10678" } -1650.00 20240410 "LÜn 11197 - LÜn - 10678 - Inbetalning - Kvitto KFM"
-#TRANS 1381 {"6" "10678" } 1650.00 20240410 "LÜn 11197 - LÜn - 10678 - Inbetalning - Kvitto KFM"
-#TRANS 1389 {"6" "10678" } -1650.00 20240410 "LÜn 11197 - LÜn - 10678 - Inbetalning - Kvitto KFM"
+#TRANS 1930 {} -75.95 20240828 "Inkîp - varor"
+#TRANS 4000 {} 60.76 20240828 "Inkîp - varor"
+#TRANS 2641 {} 15.19 20240828 "Inkîp - varor"
 }
 
-#VER B 89 20240411 "LÜn 10710 - Inbetalning - Kvitto KFM" 20240426
+#VER A 16 20240828 "Inkîp - fîrbrukningsmaterial med frakt" 20240906
 {
-#TRANS 1930 {"6" "10710" } 479.00 20240411 "LÜn 10710 - Inbetalning - Kvitto KFM"
-#TRANS 1381 {"6" "10710" } -386.00 20240411 "LÜn 10710 - Inbetalning - Kvitto KFM"
-#TRANS 3100 {"6" "10710" } -93.00 20240411 "LÜn 10710 - Inbetalning - Kvitto KFM"
+#TRANS 1930 {} -1007.00 20240828 "Inkîp - fîrbrukningsmaterial med frakt"
+#TRANS 5460 {} 776.60 20240828 "Inkîp - fîrbrukningsmaterial med frakt"
+#TRANS 5700 {} 29.00 20240828 "Inkîp - fîrbrukningsmaterial med frakt"
+#TRANS 2641 {} 201.40 20240828 "Inkîp - fîrbrukningsmaterial med frakt"
 }
 
-#VER B 90 20240411 "LÜn 11445 - Inbetalning - Kvitto KFM" 20240426
+#VER A 17 20240830 "Inkîp - varor" 20240907
 {
-#TRANS 1930 {"6" "11445" } 784.00 20240411 "LÜn 11445 - Inbetalning - Kvitto KFM"
-#TRANS 1381 {"6" "11445" } -768.00 20240411 "LÜn 11445 - Inbetalning - Kvitto KFM"
-#TRANS 3100 {"6" "11445" } -16.00 20240411 "LÜn 11445 - Inbetalning - Kvitto KFM"
-#TRANS 1389 {"6" "11445" } 768.00 20240411 "LÜn 11445 - Inbetalning - Kvitto KFM"
-#TRANS 3950 {"6" "11445" } -768.00 20240411 "LÜn 11445 - Inbetalning - Kvitto KFM"
-#TRANS 1381 {"6" "11445" } 768.00 20240411 "LÜn 11445 - Inbetalning - Kvitto KFM"
-#TRANS 1389 {} -768.00 20240411 "LÜn 11445 - Inbetalning - Kvitto KFM"
+#TRANS 1930 {} -38.95 20240830 "Inkîp - varor"
+#TRANS 4000 {} 31.16 20240830 "Inkîp - varor"
+#TRANS 2641 {} 7.79 20240830 "Inkîp - varor"
 }
 
-#VER B 91 20240419 "LÜn 11130 - Inbetalning" 20240426
+#VER A 18 20240903 "Inkîp - varor" 20240907
 {
-#TRANS 1930 {"6" "11130" } 900.00 20240419 "LÜn 11130 - Inbetalning"
-#TRANS 1381 {"6" "11130" } -617.00 20240419 "LÜn 11130 - Inbetalning"
-#TRANS 3100 {"6" "11130" } -283.00 20240419 "LÜn 11130 - Inbetalning"
+#TRANS 1930 {} -1640.00 20240903 "Inkîp - varor"
+#TRANS 4000 {} 1312.00 20240903 "Inkîp - varor"
+#TRANS 2641 {} 328.00 20240903 "Inkîp - varor"
 }
 
-#VER B 92 20240419 " LÜn 11197) - Inbetalning - Kvitto KFM, 5608518" 20240426
+#VER A 19 20240904 "Inkîp - varor" 20240907
 {
-#TRANS 1930 {"6" "11197" } 348.00 20240419 " LÜn 11197) - Inbetalning - Kvitto KFM, 5608518"
-#TRANS 3100 {"6" "11197" } -348.00 20240419 " LÜn 11197) - Inbetalning - Kvitto KFM, 5608518"
+#TRANS 1930 {} -198.00 20240904 "Inkîp - varor"
+#TRANS 4000 {} 39.60 20240904 "Inkîp - varor"
+#TRANS 2641 {} 158.40 20240904 "Inkîp - varor"
 }
 
-#VER B 93 20240423 "LÜn 10298 - BetalningspÜminnelse" 20240426
+#VER A 20 20240906 "Inkîp - varor" 20240907
 {
-#TRANS 1511 {"6" "10298" } 60.00 20240423 "LÜn 10298 - BetalningspÜminnelse"
-#TRANS 3596 {"6" "10298" } -60.00 20240423 "LÜn 10298 - BetalningspÜminnelse"
+#TRANS 1930 {} -36.00 20240906 "Inkîp - varor"
+#TRANS 4000 {} 28.80 20240906 "Inkîp - varor"
+#TRANS 2641 {} 7.20 20240906 "Inkîp - varor"
 }
 
-#VER B 94 20240424 " LÜn 11007 - Inbetalning - Kvitto KFM, 5608518" 20240520
+#VER A 21 20240906 "Inkîp - varor - retur" 20240907
 {
-#TRANS 1930 {"6" "11007" } 534.00 20240424 " LÜn 11007 - Inbetalning - Kvitto KFM, 5608518"
-#TRANS 3100 {"6" "11007" } -534.00 20240424 " LÜn 11007 - Inbetalning - Kvitto KFM, 5608518"
+#TRANS 1930 {} 189.00 20240906 "Inkîp - varor - retur"
+#TRANS 4000 {} -151.20 20240906 "Inkîp - varor - retur"
+#TRANS 2641 {} -37.80 20240906 "Inkîp - varor - retur"
 }
 
-#VER B 95 20240425 " LÜn 11114 - Inbetalning - Kvitto KFM, 5608518" 20240520
+#VER A 22 20240906 "Inkîp - varor" 20240907
 {
-#TRANS 1930 {"6" "11114" } 466.00 20240425 " LÜn 11114 - Inbetalning - Kvitto KFM, 5608518"
-#TRANS 3100 {"6" "11114" } -466.00 20240425 " LÜn 11114 - Inbetalning - Kvitto KFM, 5608518"
+#TRANS 1930 {} -268.95 20240906 "Inkîp - varor"
+#TRANS 4000 {} 207.16 20240906 "Inkîp - varor"
+#TRANS 2641 {} 51.79 20240906 "Inkîp - varor"
+#TRANS 1930 {} 10.00 20240906 "Inkîp - varor"
 }
 
-#VER B 96 20240429 "LÜn 10371 - Inbetalning" 20240520
+#VER A 23 20240909 "Inkîp av varor" 20240923
 {
-#TRANS 1930 {"6" "10371" } 1000.00 20240429 "LÜn 10371 - Inbetalning"
-#TRANS 1381 {"6" "10371" } -412.00 20240429 "LÜn 10371 - Inbetalning"
-#TRANS 3100 {"6" "10371" } -588.00 20240429 "LÜn 10371 - Inbetalning"
+#TRANS 1930 {} -169.00 20240909 "Inkîp av varor"
+#TRANS 4000 {} 135.20 20240909 "Inkîp av varor"
+#TRANS 2641 {} 33.80 20240909 "Inkîp av varor"
 }
 
-#VER B 97 20240429 "LÜn 11692 - Inbetalning" 20240520
+#VER A 24 20240911 "Inkîp - varor - 2024-09-11 - Stuvbutiken - Kvitto" 20240923
 {
-#TRANS 1930 {"6" "11692" } 1200.00 20240429 "LÜn 11692 - Inbetalning"
-#TRANS 1381 {"6" "11692" } -982.00 20240429 "LÜn 11692 - Inbetalning"
-#TRANS 3100 {"6" "11692" } -218.00 20240429 "LÜn 11692 - Inbetalning"
+#TRANS 1930 {} -298.00 20240911 "Inkîp - varor - 2024-09-11 - Stuvbutiken - Kvitto"
+#TRANS 4000 {} 238.40 20240911 "Inkîp - varor - 2024-09-11 - Stuvbutiken - Kvitto"
+#TRANS 2641 {} 59.60 20240911 "Inkîp - varor - 2024-09-11 - Stuvbutiken - Kvitto"
 }
 
-#VER B 98 20240429 "LÜn 11593 - Inbetalning" 20240520
+#VER A 25 20240925 "Inkîp - varor - 2024-09-25 - Faktura 401479732 2024-09-24" 20241001
 {
-#TRANS 1930 {"6" "11593" } 958.00 20240429 "LÜn 11593 - Inbetalning"
-#TRANS 1381 {"6" "11593" } -654.00 20240429 "LÜn 11593 - Inbetalning"
-#TRANS 3100 {"6" "11593" } -304.00 20240429 "LÜn 11593 - Inbetalning"
+#TRANS 1930 {} -138.50 20240925 "Inkîp - varor - 2024-09-25 - Faktura 401479732 2024-09-24"
+#TRANS 4000 {} 110.80 20240925 "Inkîp - varor - 2024-09-25 - Faktura 401479732 2024-09-24"
+#TRANS 2641 {} 27.70 20240925 "Inkîp - varor - 2024-09-25 - Faktura 401479732 2024-09-24"
 }
 
-#VER B 99 20240429 "LÜn 10298 - Kapitalisering av rÑnta" 20240520
+#VER A 26 20240926 "Inkîp - varor - 2024-09-26 - CO1333-00133745" 20241001
 {
-#TRANS 1381 {"6" "10298" } 1331.00 20240429 "LÜn 10298 - Kapitalisering av rÑnta"
-#TRANS 3100 {"6" "10298" } -1331.00 20240429 "LÜn 10298 - Kapitalisering av rÑnta"
+#TRANS 1930 {} -1829.95 20240926 "Inkîp - varor - 2024-09-26 - CO1333-00133745"
+#TRANS 4000 {} 1463.96 20240926 "Inkîp - varor - 2024-09-26 - CO1333-00133745"
+#TRANS 2641 {} 365.99 20240926 "Inkîp - varor - 2024-09-26 - CO1333-00133745"
 }
 
-#VER B 100 20240429 "LÜn 10702 - Kapitalisering av rÑnta" 20240520
+#VER A 27 20240926 "Inkîp - varor - 2024-09-26 - Faktura 401484549 2024-09-25" 20241001
 {
-#TRANS 1381 {"6" "10702" } 38.00 20240429 "LÜn 10702 - Kapitalisering av rÑnta"
-#TRANS 3100 {"6" "10702" } -38.00 20240429 "LÜn 10702 - Kapitalisering av rÑnta"
+#TRANS 1930 {} -654.26 20240926 "Inkîp - varor - 2024-09-26 - Faktura 401484549 2024-09-25"
+#TRANS 4000 {} 523.41 20240926 "Inkîp - varor - 2024-09-26 - Faktura 401484549 2024-09-25"
+#TRANS 2641 {} 130.85 20240926 "Inkîp - varor - 2024-09-26 - Faktura 401484549 2024-09-25"
 }
 
-#VER B 101 20240429 "LÜn 11130 - Kapitalisering av rÑnta" 20240520
+#VER A 28 20240930 AktieÑgaretillskott 20241007
 {
-#TRANS 1381 {"6" "11130" } 119.00 20240429 "LÜn 11130 - Kapitalisering av rÑnta"
-#TRANS 3100 {"6" "11130" } -119.00 20240429 "LÜn 11130 - Kapitalisering av rÑnta"
+#TRANS 1930 {} 100000.00 20240930 "AktieÑgaretillskott"
+#TRANS 2093 {} -100000.00 20240930 "AktieÑgaretillskott"
 }
 
-#VER B 102 20240429 "LÜn 11387 - Kapitalisering av rÑnta" 20240520
+#VER A 29 20241001 "2024-10-01 - Ahlsell - 4736457500" 20241007
 {
-#TRANS 1381 {"6" "11387" } 346.00 20240429 "LÜn 11387 - Kapitalisering av rÑnta"
-#TRANS 3100 {"6" "11387" } -346.00 20240429 "LÜn 11387 - Kapitalisering av rÑnta"
+#TRANS 1930 {} -119143.21 20241001 "2024-10-01 - Ahlsell - 4736457500"
+#TRANS 4000 {} 94587.57 20241001 "2024-10-01 - Ahlsell - 4736457500"
+#TRANS 2641 {} 23646.89 20241001 "2024-10-01 - Ahlsell - 4736457500"
+#TRANS 3740 {} -0.46 20241001 "2024-10-01 - Ahlsell - 4736457500"
+#TRANS 1684 {} 909.21 20241001 "2024-10-01 - Ahlsell - 4736457500"
 }
 
-#VER B 103 20240429 "LÜn 11395 - Kapitalisering av rÑnta" 20240520
+#VER A 30 20241003 "Inkîp - varor - 2024-10-03 - Bauhaus - Faktura 401510702 2024-10-02" 20241007
 {
-#TRANS 1381 {"6" "11388" } 375.00 20240429 "LÜn 11395 - Kapitalisering av rÑnta"
-#TRANS 3100 {"6" "11388" } -375.00 20240429 "LÜn 11395 - Kapitalisering av rÑnta"
+#TRANS 1930 {} -1988.81 20241003 "Inkîp - varor - 2024-10-03 - Bauhaus - Faktura 401510702 20"
+#TRANS 4000 {} 1591.05 20241003 "Inkîp - varor - 2024-10-03 - Bauhaus - Faktura 401510702 20"
+#TRANS 2641 {} 397.76 20241003 "Inkîp - varor - 2024-10-03 - Bauhaus - Faktura 401510702 20"
 }
 
-#VER B 104 20240429 " LÜn 11445 - Inbetalning - Kvitto KFM, 5608518 " 20240520
+#VER A 31 20241004 "Inkîp - varor - 2024-10-04 - Byggmax - CO1323-00090692" 20241007
 {
-#TRANS 1930 {"6" "11445" } 301.00 20240429 " LÜn 11445 - Inbetalning - Kvitto KFM, 5608518 "
-#TRANS 1381 {"6" "11445" } -287.00 20240429 " LÜn 11445 - Inbetalning - Kvitto KFM, 5608518 "
-#TRANS 3100 {"6" "11445" } -14.00 20240429 " LÜn 11445 - Inbetalning - Kvitto KFM, 5608518 "
-#TRANS 1389 {"6" "11445" } 287.00 20240429 " LÜn 11445 - Inbetalning - Kvitto KFM, 5608518 "
-#TRANS 3950 {"6" "11445" } -287.00 20240429 " LÜn 11445 - Inbetalning - Kvitto KFM, 5608518 "
-#TRANS 1381 {"6" "11445" } 287.00 20240429 " LÜn 11445 - Inbetalning - Kvitto KFM, 5608518 "
-#TRANS 1389 {"6" "11445" } -287.00 20240429 " LÜn 11445 - Inbetalning - Kvitto KFM, 5608518 "
+#TRANS 1930 {} -139.00 20241004 "Inkîp - varor - 2024-10-04 - Byggmax - CO1323-00090692"
+#TRANS 4000 {} 111.20 20241004 "Inkîp - varor - 2024-10-04 - Byggmax - CO1323-00090692"
+#TRANS 2641 {} 27.80 20241004 "Inkîp - varor - 2024-10-04 - Byggmax - CO1323-00090692"
 }
 
-#VER B 105 20240429 "LÜn 10173 - Inbetalning " 20240520
+#VER A 32 20241007 "Leverantîrsfaktura - Ahlsell - Fatura,4735431407" 20241007
 {
-#TRANS 1930 {"6" "10173" } 5000.00 20240429 "LÜn 10173 - Inbetalning "
-#TRANS 1381 {"6" "10173" } -5000.00 20240429 "LÜn 10173 - Inbetalning "
-#TRANS 1389 {"6" "10173" } 3390.00 20240429 "LÜn 10173 - Inbetalning "
-#TRANS 3950 {"6" "10173" } -3390.00 20240429 "LÜn 10173 - Inbetalning "
-#TRANS 1381 {"6" "10173" } 3390.00 20240429 "LÜn 10173 - Inbetalning "
-#TRANS 1389 {"6" "10173" } -3390.00 20240429 "LÜn 10173 - Inbetalning "
+#TRANS 2440 {} -271.00 20241007 "Leverantîrsfaktura - Ahlsell - Fatura,4735431407"
+#TRANS 2641 {} 217.17 20241007 "Leverantîrsfaktura - Ahlsell - Fatura,4735431407"
+#TRANS 4000 {} 54.30 20241007 "Leverantîrsfaktura - Ahlsell - Fatura,4735431407"
+#TRANS 3740 {} -0.47 20241007 "Leverantîrsfaktura - Ahlsell - Fatura,4735431407"
 }
 
-#VER B 106 20240430 " LÜn 11445 - Inbetalning - Kvitto KFM, 5608518" 20240520
+#VER A 33 20241007 "Inkîp - varor - 2024-10-07 - Renta" 20241010
 {
-#TRANS 1930 {"6" "11445" } 195.00 20240430 " LÜn 11445 - Inbetalning - Kvitto KFM, 5608518"
-#TRANS 1381 {"6" "11445" } -195.00 20240430 " LÜn 11445 - Inbetalning - Kvitto KFM, 5608518"
-#TRANS 1389 {"6" "11445" } 195.00 20240430 " LÜn 11445 - Inbetalning - Kvitto KFM, 5608518"
-#TRANS 3950 {"6" "11445" } -195.00 20240430 " LÜn 11445 - Inbetalning - Kvitto KFM, 5608518"
-#TRANS 1381 {"6" "11445" } 195.00 20240430 " LÜn 11445 - Inbetalning - Kvitto KFM, 5608518"
-#TRANS 1389 {"6" "11445" } -195.00 20240430 " LÜn 11445 - Inbetalning - Kvitto KFM, 5608518"
+#TRANS 1930 {} -1005.00 20241007 "Inkîp - varor - 2024-10-07 - Renta"
+#TRANS 4000 {} 804.26 20241007 "Inkîp - varor - 2024-10-07 - Renta"
+#TRANS 2641 {} 201.07 20241007 "Inkîp - varor - 2024-10-07 - Renta"
+#TRANS 3740 {} -0.33 20241007 "Inkîp - varor - 2024-10-07 - Renta"
 }
 
-#VER B 107 20240502 "LÜn 10710 - Inbetalning - Kvitto KFM" 20240520
+#VER A 34 20241008 "2024-10-08 - Har utebetalat - Ahlsell - Fatura,4735431407" 20241010
 {
-#TRANS 1930 {"6" "10710" } 683.00 20240502 "LÜn 10710 - Inbetalning - Kvitto KFM"
-#TRANS 1381 {"6" "10710" } -474.00 20240502 "LÜn 10710 - Inbetalning - Kvitto KFM"
-#TRANS 3100 {"6" "10710" } -209.00 20240502 "LÜn 10710 - Inbetalning - Kvitto KFM"
+#TRANS 1930 {} -271.00 20241008 "2024-10-08 - Har utebetalat - Ahlsell - Fatura,4735431407"
+#TRANS 2440 {} 271.00 20241008 "2024-10-08 - Har utebetalat - Ahlsell - Fatura,4735431407"
 }
 
-#VER B 108 20240506 "LÜn 10694 - Inbetalning - Kvitto KFM" 20240520
+#VER A 35 20241008 "Inkîp - varor - 2024-10-08 - Hornbach" 20241010
 {
-#TRANS 1930 {"6" "10694" } 490.00 20240506 "LÜn 10694 - Inbetalning - Kvitto KFM"
-#TRANS 3100 {"6" "10694" } -490.00 20240506 "LÜn 10694 - Inbetalning - Kvitto KFM"
+#TRANS 1930 {} -662.00 20241008 "Inkîp - varor - 2024-10-08 - Hornbach"
+#TRANS 4000 {} 529.60 20241008 "Inkîp - varor - 2024-10-08 - Hornbach"
+#TRANS 2641 {} 132.40 20241008 "Inkîp - varor - 2024-10-08 - Hornbach"
 }
 
-#VER B 109 20240506 "LÜn 11619 - Inbetalning - Kvitto KFM" 20240520
+#VER A 36 20241009 "Inkîp - varor - 2024-10-09 - Dahl" 20241010
 {
-#TRANS 1930 {"6" "11619" } 523.00 20240506 "LÜn 11619 - Inbetalning - Kvitto KFM"
-#TRANS 3100 {"6" "11619" } -523.00 20240506 "LÜn 11619 - Inbetalning - Kvitto KFM"
+#TRANS 1930 {} -358.00 20241009 "Inkîp - varor - 2024-10-09 - Dahl"
+#TRANS 4000 {} 286.26 20241009 "Inkîp - varor - 2024-10-09 - Dahl"
+#TRANS 2641 {} 71.57 20241009 "Inkîp - varor - 2024-10-09 - Dahl"
+#TRANS 3740 {} 0.17 20241009 "Inkîp - varor - 2024-10-09 - Dahl"
 }
 
-#VER B 110 20240508 " LÜn 10678 - Inbetalning - Kvitto KFM, 5608518" 20240520
+#VER A 37 20241009 "Inkîp - varor - 2024-10-09 - Nuvado - DAHL - Fakura." 20241010
 {
-#TRANS 1930 {"6" "10678" } 952.00 20240508 " LÜn 10678 - Inbetalning - Kvitto KFM, 5608518"
-#TRANS 1381 {"6" "10678" } -731.00 20240508 " LÜn 10678 - Inbetalning - Kvitto KFM, 5608518"
-#TRANS 3100 {"6" "10678" } -221.00 20240508 " LÜn 10678 - Inbetalning - Kvitto KFM, 5608518"
-#TRANS 1389 {"6" "10678" } 731.00 20240508 " LÜn 10678 - Inbetalning - Kvitto KFM, 5608518"
-#TRANS 3950 {"6" "10678" } -731.00 20240508 " LÜn 10678 - Inbetalning - Kvitto KFM, 5608518"
-#TRANS 1381 {"6" "10678" } 731.00 20240508 " LÜn 10678 - Inbetalning - Kvitto KFM, 5608518"
-#TRANS 1389 {"6" "10678" } -731.00 20240508 " LÜn 10678 - Inbetalning - Kvitto KFM, 5608518"
+#TRANS 1930 {} -261.00 20241009 "Inkîp - varor - 2024-10-09 - Nuvado - DAHL - Fakura."
+#TRANS 4000 {} 208.40 20241009 "Inkîp - varor - 2024-10-09 - Nuvado - DAHL - Fakura."
+#TRANS 2641 {} 52.10 20241009 "Inkîp - varor - 2024-10-09 - Nuvado - DAHL - Fakura."
+#TRANS 3740 {} 0.50 20241009 "Inkîp - varor - 2024-10-09 - Nuvado - DAHL - Fakura."
 }
 
-#VER B 111 20240521 " LÜn 11197 - Inbetalning - Kvitto KFM, 5608518" 20240528
+#VER A 38 20241010 "Leverantîrsfaktura - Ahsell- Faktura - Behîver betalas - 4745023400" 20241010
 {
-#TRANS 1930 {"6" "11197" } 332.00 20240521 " LÜn 11197 - Inbetalning - Kvitto KFM, 5608518"
-#TRANS 3100 {"6" "11197" } -332.00 20240521 " LÜn 11197 - Inbetalning - Kvitto KFM, 5608518"
+#TRANS 2440 {} -485.00 20241010 "Leverantîrsfaktura - Ahsell- Faktura - Behîver betalas - 47"
+#TRANS 2641 {} 96.91 20241010 "Leverantîrsfaktura - Ahsell- Faktura - Behîver betalas - 47"
+#TRANS 4000 {} 387.60 20241010 "Leverantîrsfaktura - Ahsell- Faktura - Behîver betalas - 47"
+#TRANS 3740 {} 0.49 20241010 "Leverantîrsfaktura - Ahsell- Faktura - Behîver betalas - 47"
 }
 
-#VER B 112 20240523 " LÜn 11650 - Inbetalning - Kvitto KFM, 5608518" 20240528
+#VER A 39 20241010 "Leverantîrsfaktura - 2024-10-10 - Dahl - FAKTURA - Behîver betalas - 123772547" 20241010
 {
-#TRANS 1930 {"6" "11650" } 1759.00 20240523 " LÜn 11650 - Inbetalning - Kvitto KFM, 5608518"
-#TRANS 1511 {"6" "11650" } -1759.00 20240523 " LÜn 11650 - Inbetalning - Kvitto KFM, 5608518"
+#TRANS 2440 {} -1112.00 20241010 "Leverantîrsfaktura - 2024-10-10 - Dahl - FAKTURA - Behîver "
+#TRANS 2641 {} 222.32 20241010 "Leverantîrsfaktura - 2024-10-10 - Dahl - FAKTURA - Behîver "
+#TRANS 4000 {} 889.28 20241010 "Leverantîrsfaktura - 2024-10-10 - Dahl - FAKTURA - Behîver "
+#TRANS 3740 {} 0.40 20241010 "Leverantîrsfaktura - 2024-10-10 - Dahl - FAKTURA - Behîver "
 }
 
-#VER B 113 20240524 "LÜn 11130 - Inbetalning" 20240528
+#VER A 40 20241010 "Leverantîrsfaktura - 2024-10-10 - Dahl - FAKTURA - Behîver betalas - 123785309" 20241010
 {
-#TRANS 1930 {"6" "11130" } 900.00 20240524 "LÜn 11130 - Inbetalning"
-#TRANS 1381 {"6" "11130" } -601.00 20240524 "LÜn 11130 - Inbetalning"
-#TRANS 3100 {"6" "11130" } -299.00 20240524 "LÜn 11130 - Inbetalning"
+#TRANS 2440 {} -1056.00 20241010 "Leverantîrsfaktura - 2024-10-10 - Dahl - FAKTURA - Behîver "
+#TRANS 2641 {} 211.14 20241010 "Leverantîrsfaktura - 2024-10-10 - Dahl - FAKTURA - Behîver "
+#TRANS 4000 {} 844.54 20241010 "Leverantîrsfaktura - 2024-10-10 - Dahl - FAKTURA - Behîver "
+#TRANS 3740 {} 0.32 20241010 "Leverantîrsfaktura - 2024-10-10 - Dahl - FAKTURA - Behîver "
 }
 
-#VER B 114 20240524 " LÜn 11114 - LÜn - 11007 - Inbetalning - Kvitto KFM, 5608518" 20240529
+#VER A 41 20241010 "LeveransKonto - 2024-10-10 - Har betalat - Ahsell- Faktura - Behîver betalas - 4745023400" 20241014
 {
-#TRANS 1930 {} 1053.00 20240524 " LÜn 11114 - LÜn - 11007 - Inbetalning - Kvitto KFM, 5608518"
-#TRANS 3100 {"6" "11114" } -516.00 20240524 " LÜn 11114 - LÜn - 11007 - Inbetalning - Kvitto KFM, 5608518"
-#TRANS 3100 {"6" "11007" } -537.00 20240524 " LÜn 11114 - LÜn - 11007 - Inbetalning - Kvitto KFM, 560851"
+#TRANS 1930 {} -485.00 20241010 "LeveransKonto - 2024-10-10 - Har betalat - Ahsell- Faktura "
+#TRANS 2440 {} 485.00 20241010 "LeveransKonto - 2024-10-10 - Har betalat - Ahsell- Faktura "
 }
 
-#VER B 115 20240524 "LÜn 10702 - BetalningspÜminnelse" 20240529
+#VER A 42 20241010 "LeveransKonto - 2024-10-10 - Har betalat - Dahl - FAKTURA - Behîver betalas - 123785309" 20241014
 {
-#TRANS 1511 {"6" "10702" } 60.00 20240524 "LÜn 10702 - BetalningspÜminnelse"
-#TRANS 3596 {"6" "10702" } -60.00 20240524 "LÜn 10702 - BetalningspÜminnelse"
+#TRANS 1930 {} -1056.00 20241010 "LeveransKonto - 2024-10-10 - Har betalat - Dahl - FAKTURA -"
+#TRANS 2440 {} 1056.00 20241010 "LeveransKonto - 2024-10-10 - Har betalat - Dahl - FAKTURA -"
 }
 
-#VER B 116 20240524 "LÜn 11387 - Inkasso" 20240529
+#VER A 43 20241010 "LeveransKonto - 2024-10-10 - Har betalat - Dahl - FAKTURA - Behîver betalas - 123772547" 20241014
 {
-#TRANS 1511 {"6" "11387" } 180.00 20240524 "LÜn 11387 - Inkasso"
-#TRANS 3596 {"6" "11387" } -180.00 20240524 "LÜn 11387 - Inkasso"
+#TRANS 1930 {} -1112.00 20241010 "LeveransKonto - 2024-10-10 - Har betalat - Dahl - FAKTURA -"
+#TRANS 2440 {} 1112.00 20241010 "LeveransKonto - 2024-10-10 - Har betalat - Dahl - FAKTURA -"
 }
 
-#VER B 117 20240524 "LÜn 11395 - BetalningspÜminnelse" 20240529
+#VER A 44 20241014 "Inkîp - varor - 2024-10-14 - Bahaus - 401546093" 20241014
 {
-#TRANS 1511 {"6" "11388" } 60.00 20240524 "LÜn 11395 - BetalningspÜminnelse"
-#TRANS 3596 {"6" "11388" } -60.00 20240524 "LÜn 11395 - BetalningspÜminnelse"
+#TRANS 1930 {} -128.63 20241014 "Inkîp - varor - 2024-10-14 - Bahaus - 401546093"
+#TRANS 4000 {} 102.90 20241014 "Inkîp - varor - 2024-10-14 - Bahaus - 401546093"
+#TRANS 2641 {} 25.73 20241014 "Inkîp - varor - 2024-10-14 - Bahaus - 401546093"
 }
 
-#VER B 118 20240527 " LÜn 11619 - Inbetalning - Kvitto KFM, 5608518" 20240730
+#VER A 45 20241014 "Inkîp - varor - 2024-10-14 - Bauhaus - 1000563398" 20241014
 {
-#TRANS 1930 {"6" "11619" } 532.00 20240527 " LÜn 11619 - Inbetalning - Kvitto KFM, 5608518"
-#TRANS 3100 {"6" "11619" } -532.00 20240527 " LÜn 11619 - Inbetalning - Kvitto KFM, 5608518"
+#TRANS 1930 {} -77.20 20241014 "Inkîp - varor - 2024-10-14 - Bauhaus - 1000563398"
+#TRANS 4000 {} 61.76 20241014 "Inkîp - varor - 2024-10-14 - Bauhaus - 1000563398"
+#TRANS 2641 {} 15.44 20241014 "Inkîp - varor - 2024-10-14 - Bauhaus - 1000563398"
 }
 
-#VER B 119 20240528 "LÜn 10371 - Inbetalning" 20240731
+#VER A 46 20241014 "Leverantîrsfaktura - 2024-10-14 - Ahsell - Faktura - att betala - 4756871408" 20241014
 {
-#TRANS 1930 {"6" "10371" } 1000.00 20240528 "LÜn 10371 - Inbetalning"
-#TRANS 1381 {"6" "10371" } -503.00 20240528 "LÜn 10371 - Inbetalning"
-#TRANS 3100 {"6" "10371" } -497.00 20240528 "LÜn 10371 - Inbetalning"
+#TRANS 2440 {} -1223.00 20241014 "Leverantîrsfaktura - 2024-10-14 - Ahsell - Faktura - att be"
+#TRANS 2641 {} 244.54 20241014 "Leverantîrsfaktura - 2024-10-14 - Ahsell - Faktura - att be"
+#TRANS 4000 {} 978.13 20241014 "Leverantîrsfaktura - 2024-10-14 - Ahsell - Faktura - att be"
+#TRANS 3740 {} 0.33 20241014 "Leverantîrsfaktura - 2024-10-14 - Ahsell - Faktura - att be"
 }
 
-#VER B 120 20240528 "LÜn 11692 - Inbetalning" 20240731
+#VER A 47 20241014 Leverantîrsfaktura 20241014
 {
-#TRANS 1930 {"6" "11692" } 1200.00 20240528 "LÜn 11692 - Inbetalning"
-#TRANS 1381 {"6" "11692" } -1031.00 20240528 "LÜn 11692 - Inbetalning"
-#TRANS 3100 {"6" "11692" } -169.00 20240528 "LÜn 11692 - Inbetalning"
+#TRANS 2440 {} -261.00 20241014 "Leverantîrsfaktura"
+#TRANS 2641 {} 52.25 20241014 "Leverantîrsfaktura"
+#TRANS 4000 {} 208.98 20241014 "Leverantîrsfaktura"
+#TRANS 3740 {} -0.23 20241014 "Leverantîrsfaktura"
 }
 
-#VER B 121 20240528 "LÜn 11593 - Inbetalning" 20240731
+#VER A 48 20241014 "Leverantîrsfaktura - 2024-10-14 - Dahl - FAKTURA- att betala - 123823982" 20241014
 {
-#TRANS 1930 {"6" "11593" } 958.00 20240528 "LÜn 11593 - Inbetalning"
-#TRANS 1381 {"6" "11593" } -705.00 20240528 "LÜn 11593 - Inbetalning"
-#TRANS 3100 {"6" "11593" } -253.00 20240528 "LÜn 11593 - Inbetalning"
+#TRANS 2440 {} -310.00 20241014 "Leverantîrsfaktura - 2024-10-14 - Dahl - FAKTURA- att betal"
+#TRANS 2641 {} 62.09 20241014 "Leverantîrsfaktura - 2024-10-14 - Dahl - FAKTURA- att betal"
+#TRANS 4000 {} 248.35 20241014 "Leverantîrsfaktura - 2024-10-14 - Dahl - FAKTURA- att betal"
+#TRANS 3740 {} -0.44 20241014 "Leverantîrsfaktura - 2024-10-14 - Dahl - FAKTURA- att betal"
 }
 
-#VER B 122 20240528 "LÜn 10298 - Kapitalisering av rÑnta" 20240731
+#VER A 49 20241014 "Leverantîrsfaktura - 2024-10-14 - Dahl- FAKTURA-123813012 - att betala" 20241014
 {
-#TRANS 1381 {"6" "10298" } 1202.00 20240528 "LÜn 10298 - Kapitalisering av rÑnta"
-#TRANS 3100 {"6" "10298" } -1202.00 20240528 "LÜn 10298 - Kapitalisering av rÑnta"
+#TRANS 2440 {} -1906.00 20241014 "Leverantîrsfaktura - 2024-10-14 - Dahl- FAKTURA-123813012 -"
+#TRANS 2641 {} 381.14 20241014 "Leverantîrsfaktura - 2024-10-14 - Dahl- FAKTURA-123813012 -"
+#TRANS 4000 {} 1524.56 20241014 "Leverantîrsfaktura - 2024-10-14 - Dahl- FAKTURA-123813012 -"
+#TRANS 3740 {} 0.30 20241014 "Leverantîrsfaktura - 2024-10-14 - Dahl- FAKTURA-123813012 -"
 }
 
-#VER B 123 20240528 "LÜn 10702 - Kapitalisering av rÑnta" 20240731
+#VER A 50 20241015 "LeveransKonto - 2024-10-15 - Har betalar - Ahsell- Faktura - 4761694209" 20241017
 {
-#TRANS 1381 {"6" "10702" } 47.00 20240528 "LÜn 10702 - Kapitalisering av rÑnta"
-#TRANS 3100 {"6" "10702" } -47.00 20240528 "LÜn 10702 - Kapitalisering av rÑnta"
+#TRANS 1930 {} -261.00 20241015 "LeveransKonto - 2024-10-15 - Har betalar - Ahsell- Faktura "
+#TRANS 2440 {} 261.00 20241015 "LeveransKonto - 2024-10-15 - Har betalar - Ahsell- Faktura "
 }
 
-#VER B 124 20240528 "LÜn 11130 - Kapitalisering av rÑnta" 20240731
+#VER A 51 20241015 "LeveransKonto - 2024-10-15 - Har betalat - Ahsell - Faktura - 4756871408" 20241017
 {
-#TRANS 1381 {"6" "11130" } 47.00 20240528 "LÜn 11130 - Kapitalisering av rÑnta"
-#TRANS 3100 {"6" "11130" } -47.00 20240528 "LÜn 11130 - Kapitalisering av rÑnta"
+#TRANS 1930 {} -1223.00 20241015 "LeveransKonto - 2024-10-15 - Har betalat - Ahsell - Faktura"
+#TRANS 2440 {} 1223.00 20241015 "LeveransKonto - 2024-10-15 - Har betalat - Ahsell - Faktura"
 }
 
-#VER B 125 20240528 "LÜn 11387 - Kapitalisering av rÑnta" 20240731
+#VER A 52 20241015 "LeveransKonto - 2024-10-15 - Har betalat - Dahl - FAKTURA  - 123823982" 20241017
 {
-#TRANS 1381 {"6" "11387" } 311.00 20240528 "LÜn 11387 - Kapitalisering av rÑnta"
-#TRANS 3100 {"6" "11387" } -311.00 20240528 "LÜn 11387 - Kapitalisering av rÑnta"
+#TRANS 1930 {} -310.00 20241015 "LeveransKonto - 2024-10-15 - Har betalat - Dahl - FAKTURA  "
+#TRANS 2440 {} 310.00 20241015 "LeveransKonto - 2024-10-15 - Har betalat - Dahl - FAKTURA  "
 }
 
-#VER B 126 20240528 "LÜn 11395 - Kapitalisering av rÑnta" 20240731
+#VER A 53 20241015 "LeveransKonto - 2024-10-15 - Har betalat - Dahl- FAKTURA-123813012" 20241017
 {
-#TRANS 1381 {"6" "11388" } 526.00 20240528 "LÜn 11395 - Kapitalisering av rÑnta"
-#TRANS 3100 {"6" "11388" } -526.00 20240528 "LÜn 11395 - Kapitalisering av rÑnta"
+#TRANS 1930 {} -1906.00 20241015 "LeveransKonto - 2024-10-15 - Har betalat - Dahl- FAKTURA-12"
+#TRANS 2440 {} 1906.00 20241015 "LeveransKonto - 2024-10-15 - Har betalat - Dahl- FAKTURA-12"
 }
 
-#VER B 127 20240528 " LÜn 11445 - Inbetalning - Kvitto KFM, 5608518" 20240801
+#VER A 54 20241015 "Inkîp - varor - 2024-10-15 - Renta" 20241017
 {
-#TRANS 1930 {"6" "11445" } 394.00 20240528 " LÜn 11445 - Inbetalning - Kvitto KFM, 5608518"
-#TRANS 1381 {"6" "11445" } -385.00 20240528 " LÜn 11445 - Inbetalning - Kvitto KFM, 5608518"
-#TRANS 3100 {"6" "11445" } -9.00 20240528 " LÜn 11445 - Inbetalning - Kvitto KFM, 5608518"
-#TRANS 1389 {"6" "11445" } 385.00 20240528 " LÜn 11445 - Inbetalning - Kvitto KFM, 5608518"
-#TRANS 3950 {"6" "11445" } -385.00 20240528 " LÜn 11445 - Inbetalning - Kvitto KFM, 5608518"
-#TRANS 1381 {"6" "11445" } 385.00 20240528 " LÜn 11445 - Inbetalning - Kvitto KFM, 5608518"
-#TRANS 1389 {"6" "11445" } -385.00 20240528 " LÜn 11445 - Inbetalning - Kvitto KFM, 5608518"
+#TRANS 1930 {} -1448.00 20241015 "Inkîp - varor - 2024-10-15 - Renta"
+#TRANS 4000 {} 1158.42 20241015 "Inkîp - varor - 2024-10-15 - Renta"
+#TRANS 2641 {} 289.61 20241015 "Inkîp - varor - 2024-10-15 - Renta"
+#TRANS 3740 {} -0.03 20241015 "Inkîp - varor - 2024-10-15 - Renta"
 }
 
-#VER B 128 20240529 "LÜn - LÜn 10900 - 19860429-2014 - Inbetalning - Skuldsanering" 20240801
+#VER A 55 20241015 "2024-10-16 - Ahlsell Sverige AB - èterbetalat  - (A29)" 20241017
 {
-#TRANS 1930 {"6" "10900" } 245.00 20240529 "LÜn - LÜn 10900 - 19860429-2014 - Inbetalning - Skuldsaneri"
-#TRANS 1381 {"6" "10900" } -245.00 20240529 "LÜn - LÜn 10900 - 19860429-2014 - Inbetalning - Skuldsaneri"
+#TRANS 1930 {} 909.21 20241015 "2024-10-16 - Ahlsell Sverige AB - èterbetalat  - (A29)"
+#TRANS 4000 {} -727.37 20241015 "2024-10-16 - Ahlsell Sverige AB - èterbetalat  - (A29)"
+#TRANS 2641 {} -181.84 20241015 "2024-10-16 - Ahlsell Sverige AB - èterbetalat  - (A29)"
 }
 
-#VER B 129 20240529 "LÜn - 10132 - 19690601-2528 - Inbetalning - Skuldsanering" 20240801
+#VER A 56 20241016 "Inkîp - varor - 2024-10-16 - Elektroskandia - Kvitto" 20241017
 {
-#TRANS 1930 {"6" "10132" } 493.00 20240529 "LÜn - 10132 - 19690601-2528 - Inbetalning - Skuldsanering"
-#TRANS 1381 {"6" "10132" } -493.00 20240529 "LÜn - 10132 - 19690601-2528 - Inbetalning - Skuldsanering"
-#TRANS 1389 {"6" "10132" } 493.00 20240529 "LÜn - 10132 - 19690601-2528 - Inbetalning - Skuldsanering"
-#TRANS 3950 {"6" "10132" } -493.00 20240529 "LÜn - 10132 - 19690601-2528 - Inbetalning - Skuldsanering"
-#TRANS 1381 {"6" "10132" } 493.00 20240529 "LÜn - 10132 - 19690601-2528 - Inbetalning - Skuldsanering"
-#TRANS 1389 {"6" "10132" } -493.00 20240529 "LÜn - 10132 - 19690601-2528 - Inbetalning - Skuldsanering"
+#TRANS 1930 {} -2527.00 20241016 "Inkîp - varor - 2024-10-16 - Elektroskandia - Kvitto"
+#TRANS 4000 {} 2021.95 20241016 "Inkîp - varor - 2024-10-16 - Elektroskandia - Kvitto"
+#TRANS 2641 {} 505.49 20241016 "Inkîp - varor - 2024-10-16 - Elektroskandia - Kvitto"
+#TRANS 3740 {} -0.44 20241016 "Inkîp - varor - 2024-10-16 - Elektroskandia - Kvitto"
 }
 
-#VER B 130 20240529 "LÜn - 10132 - 19690601-2528 - Inbetalning - Skuldsanering" 20240801
+#VER A 57 20241016 "Inkîp - varor - 2024-10-16 - Elektroskandia - Kvitto" 20241017
 {
-#TRANS 1930 {"6" "10132" } 2729.00 20240529 "LÜn - 10132 - 19690601-2528 - Inbetalning - Skuldsanering"
-#TRANS 1381 {"6" "10132" } -2729.00 20240529 "LÜn - 10132 - 19690601-2528 - Inbetalning - Skuldsanering"
-#TRANS 1389 {"6" "10132" } 2729.00 20240529 "LÜn - 10132 - 19690601-2528 - Inbetalning - Skuldsanering"
-#TRANS 3950 {"6" "10132" } -2729.00 20240529 "LÜn - 10132 - 19690601-2528 - Inbetalning - Skuldsanering"
-#TRANS 1381 {"6" "10132" } 2729.00 20240529 "LÜn - 10132 - 19690601-2528 - Inbetalning - Skuldsanering"
-#TRANS 1389 {"6" "10132" } -2729.00 20240529 "LÜn - 10132 - 19690601-2528 - Inbetalning - Skuldsanering"
+#TRANS 1930 {} -1032.00 20241016 "Inkîp - varor - 2024-10-16 - Elektroskandia - Kvitto"
+#TRANS 4000 {} 825.74 20241016 "Inkîp - varor - 2024-10-16 - Elektroskandia - Kvitto"
+#TRANS 2641 {} 206.44 20241016 "Inkîp - varor - 2024-10-16 - Elektroskandia - Kvitto"
+#TRANS 3740 {} -0.18 20241016 "Inkîp - varor - 2024-10-16 - Elektroskandia - Kvitto"
 }
 
-#VER B 131 20240530 " LÜn 10694 - Inbetalning - Kvitto KFM, 5608518" 20240801
+#VER A 58 20241016 "Inkîp - varor - 2024-10-16 - Bauhaus - Faktura - Kvitto" 20241017
 {
-#TRANS 1930 {"6" "10694" } 490.00 20240530 " LÜn 10694 - Inbetalning - Kvitto KFM, 5608518"
-#TRANS 3100 {"6" "10694" } -490.00 20240530 " LÜn 10694 - Inbetalning - Kvitto KFM, 5608518"
+#TRANS 1930 {} -33.86 20241016 "Inkîp - varor - 2024-10-16 - Bauhaus - Faktura - Kvitto"
+#TRANS 4000 {} 27.09 20241016 "Inkîp - varor - 2024-10-16 - Bauhaus - Faktura - Kvitto"
+#TRANS 2641 {} 6.77 20241016 "Inkîp - varor - 2024-10-16 - Bauhaus - Faktura - Kvitto"
 }
 
-#VER B 132 20240530 " LÜn 10710 - Inbetalning - Kvitto KFM, 5608518" 20240801
+#VER A 59 20241017 "Inkîp - varor" 20241023
 {
-#TRANS 1930 {"6" "10710" } 652.00 20240530 " LÜn 10710 - Inbetalning - Kvitto KFM, 5608518"
-#TRANS 1381 {"6" "10710" } -400.00 20240530 " LÜn 10710 - Inbetalning - Kvitto KFM, 5608518"
-#TRANS 3100 {"6" "10710" } -252.00 20240530 " LÜn 10710 - Inbetalning - Kvitto KFM, 5608518"
+#TRANS 1930 {} -130.00 20241017 "Inkîp - varor"
+#TRANS 4000 {} 104.32 20241017 "Inkîp - varor"
+#TRANS 2641 {} 26.08 20241017 "Inkîp - varor"
+#TRANS 3740 {} -0.40 20241017 "Inkîp - varor"
 }
 
-#VER B 133 20240604 " LÜn (1 210) - Inbetalning - Kvitto KFM, 5608518" 20240801
+#VER A 60 20241018 "Inkîp - varor - 2024-10-18 - Elektroskania - Kvitto" 20241023
 {
-#TRANS 1930 {} 1210.00 20240604 " LÜn (1 210) - Inbetalning - Kvitto KFM, 5608518"
-#TRANS 3100 {} -1210.00 20240604 " LÜn (1 210) - Inbetalning - Kvitto KFM, 5608518"
+#TRANS 1930 {} -918.00 20241018 "Inkîp - varor - 2024-10-18 - Elektroskania - Kvitto"
+#TRANS 4000 {} 734.09 20241018 "Inkîp - varor - 2024-10-18 - Elektroskania - Kvitto"
+#TRANS 2641 {} 183.52 20241018 "Inkîp - varor - 2024-10-18 - Elektroskania - Kvitto"
+#TRANS 3740 {} 0.39 20241018 "Inkîp - varor - 2024-10-18 - Elektroskania - Kvitto"
 }
 
-#VER B 134 20240605 "LÜn 10702 - Inbetalning" 20240802
+#VER A 61 20241018 "Inkîp - varor - 2024-10-18 - Elektroskandia - Kvitto" 20241023
 {
-#TRANS 1930 {"6" "10702" } 809.00 20240605 "LÜn 10702 - Inbetalning"
-#TRANS 1381 {"6" "10702" } -735.00 20240605 "LÜn 10702 - Inbetalning"
-#TRANS 3100 {"6" "10702" } -14.00 20240605 "LÜn 10702 - Inbetalning"
-#TRANS 1511 {"6" "10702" } -60.00 20240605 "LÜn 10702 - Inbetalning"
+#TRANS 1930 {} -331.00 20241018 "Inkîp - varor - 2024-10-18 - Elektroskandia - Kvitto"
+#TRANS 4000 {} 264.69 20241018 "Inkîp - varor - 2024-10-18 - Elektroskandia - Kvitto"
+#TRANS 2641 {} 66.17 20241018 "Inkîp - varor - 2024-10-18 - Elektroskandia - Kvitto"
+#TRANS 3740 {} 0.14 20241018 "Inkîp - varor - 2024-10-18 - Elektroskandia - Kvitto"
 }
 
-#VER B 135 20240624 " LÜn 11197 - Inbetalning - Kvitto KFM, 5608518" 20240802
+#VER A 62 20241021 "Inkîp - varor - 2024-10-21 - Elektroskandia - Kvitto" 20241023
 {
-#TRANS 1930 {"6" "11197" } 318.00 20240624 " LÜn 11197 - Inbetalning - Kvitto KFM, 5608518"
-#TRANS 3100 {"6" "11197" } -318.00 20240624 " LÜn 11197 - Inbetalning - Kvitto KFM, 5608518"
+#TRANS 1930 {} -283.00 20241021 "Inkîp - varor - 2024-10-21 - Elektroskandia - Kvitto"
+#TRANS 4000 {} 226.20 20241021 "Inkîp - varor - 2024-10-21 - Elektroskandia - Kvitto"
+#TRANS 2641 {} 56.55 20241021 "Inkîp - varor - 2024-10-21 - Elektroskandia - Kvitto"
+#TRANS 3740 {} 0.25 20241021 "Inkîp - varor - 2024-10-21 - Elektroskandia - Kvitto"
 }
 
-#VER B 136 20240624 " LÜn 10694 - Inbetalning - Kvitto KFM, 5608518" 20240802
+#VER A 63 20241021 "Inkîp - varor - 2024-10-21 - Elektroskandia - Kvitto" 20241023
 {
-#TRANS 1930 {"6" "10694" } 492.00 20240624 " LÜn 10694 - Inbetalning - Kvitto KFM, 5608518"
-#TRANS 3100 {"6" "10694" } -492.00 20240624 " LÜn 10694 - Inbetalning - Kvitto KFM, 5608518"
+#TRANS 1930 {} -39.00 20241021 "Inkîp - varor - 2024-10-21 - Elektroskandia - Kvitto"
+#TRANS 4000 {} 31.40 20241021 "Inkîp - varor - 2024-10-21 - Elektroskandia - Kvitto"
+#TRANS 2641 {} 7.85 20241021 "Inkîp - varor - 2024-10-21 - Elektroskandia - Kvitto"
+#TRANS 3740 {} -0.25 20241021 "Inkîp - varor - 2024-10-21 - Elektroskandia - Kvitto"
 }
 
-#VER B 137 20240625 " LÜn 11114 - Inbetalning - Kvitto KFM, 5608518" 20240802
+#VER A 64 20241021 "Inkîp - varor - 2024-10-21 - Elektroskandia - Kvitto" 20241023
 {
-#TRANS 1930 {"6" "11114" } 430.00 20240625 " LÜn 11114 - Inbetalning - Kvitto KFM, 5608518"
-#TRANS 3100 {"6" "11114" } -430.00 20240625 " LÜn 11114 - Inbetalning - Kvitto KFM, 5608518"
+#TRANS 1930 {} -380.00 20241021 "Inkîp - varor - 2024-10-21 - Elektroskandia - Kvitto"
+#TRANS 4000 {} 304.00 20241021 "Inkîp - varor - 2024-10-21 - Elektroskandia - Kvitto"
+#TRANS 2641 {} 76.00 20241021 "Inkîp - varor - 2024-10-21 - Elektroskandia - Kvitto"
 }
 
-#VER B 138 20240626 "LÜn 10173 - Inbetalning" 20240802
+#VER A 65 20241021 "Inkîp - varor - 2024-10-21 - Clas Ohlson - Kvitto" 20241023
 {
-#TRANS 1930 {"6" "10173" } 5500.00 20240626 "LÜn 10173 - Inbetalning"
-#TRANS 1381 {"6" "10173" } -3221.00 20240626 "LÜn 10173 - Inbetalning"
-#TRANS 3100 {"6" "10173" } -1359.00 20240626 "LÜn 10173 - Inbetalning"
-#TRANS 1511 {"6" "10173" } -920.00 20240626 "LÜn 10173 - Inbetalning"
-#TRANS 1389 {"6" "10173" } 3221.00 20240626 "LÜn 10173 - Inbetalning"
-#TRANS 3950 {"6" "10173" } -3221.00 20240626 "LÜn 10173 - Inbetalning"
-#TRANS 1381 {"6" "10173" } 3221.00 20240626 "LÜn 10173 - Inbetalning"
-#TRANS 1389 {"6" "10173" } -3221.00 20240626 "LÜn 10173 - Inbetalning"
+#TRANS 1930 {} -189.60 20241021 "Inkîp - varor - 2024-10-21 - Clas Ohlson - Kvitto"
+#TRANS 4000 {} 151.68 20241021 "Inkîp - varor - 2024-10-21 - Clas Ohlson - Kvitto"
+#TRANS 2641 {} 37.92 20241021 "Inkîp - varor - 2024-10-21 - Clas Ohlson - Kvitto"
 }
 
-#VER B 139 20240626 " LÜn 11619 - Inbetalning - Kvitto KFM, 5608518" 20240802
+#VER A 66 20241021 "Inkîp - varor - 2024-10-21 - Bauhaus - KontantFaktura - Kvitto" 20241023
 {
-#TRANS 1930 {"6" "11619" } 263.00 20240626 " LÜn 11619 - Inbetalning - Kvitto KFM, 5608518"
-#TRANS 3100 {"6" "11619" } -263.00 20240626 " LÜn 11619 - Inbetalning - Kvitto KFM, 5608518"
+#TRANS 1930 {} -90.15 20241021 "Inkîp - varor - 2024-10-21 - Bauhaus - KontantFaktura - Kvi"
+#TRANS 4000 {} 72.12 20241021 "Inkîp - varor - 2024-10-21 - Bauhaus - KontantFaktura - Kvi"
+#TRANS 2641 {} 18.03 20241021 "Inkîp - varor - 2024-10-21 - Bauhaus - KontantFaktura - Kvi"
 }
 
-#VER B 140 20240627 "LÜn 10371 - Inbetalning" 20240802
+#VER A 67 20241021 "Inkîp - varor - 2024-10-21 - Bauhaus - KontantFaktura - Kvitto" 20241023
 {
-#TRANS 1930 {"6" "10371" } 1000.00 20240627 "LÜn 10371 - Inbetalning"
-#TRANS 1381 {"6" "10371" } -511.00 20240627 "LÜn 10371 - Inbetalning"
-#TRANS 3100 {"6" "10371" } -489.00 20240627 "LÜn 10371 - Inbetalning"
+#TRANS 1930 {} -208.05 20241021 "Inkîp - varor - 2024-10-21 - Bauhaus - KontantFaktura - Kvi"
+#TRANS 4000 {} 166.44 20241021 "Inkîp - varor - 2024-10-21 - Bauhaus - KontantFaktura - Kvi"
+#TRANS 2641 {} 41.61 20241021 "Inkîp - varor - 2024-10-21 - Bauhaus - KontantFaktura - Kvi"
 }
 
-#VER B 141 20240627 "LÜn 11692 - Inbetalning" 20240803
+#VER A 68 20241021 "Inkîp - varor - 2024-10-21 - Biltema - Kvitto" 20241023
 {
-#TRANS 1930 {"6" "11692" } 1200.00 20240627 "LÜn 11692 - Inbetalning"
-#TRANS 1381 {"6" "11692" } -1049.00 20240627 "LÜn 11692 - Inbetalning"
-#TRANS 3100 {"6" "11692" } -151.00 20240627 "LÜn 11692 - Inbetalning"
+#TRANS 1930 {} -234.60 20241021 "Inkîp - varor - 2024-10-21 - Biltema - Kvitto"
+#TRANS 4000 {} 187.68 20241021 "Inkîp - varor - 2024-10-21 - Biltema - Kvitto"
+#TRANS 2641 {} 46.92 20241021 "Inkîp - varor - 2024-10-21 - Biltema - Kvitto"
 }
 
-#VER B 142 20240627 "LÜn 10702 - Inbetalning" 20240803
+#VER A 69 20241022 "Inkîp - varor - 2024-10-22 - Bauhaus - KontantFaktura - Kvitto" 20241023
 {
-#TRANS 1930 {"6" "10702" } 809.00 20240627 "LÜn 10702 - Inbetalning"
-#TRANS 1381 {"6" "10702" } -786.00 20240627 "LÜn 10702 - Inbetalning"
-#TRANS 3100 {"6" "10702" } -23.00 20240627 "LÜn 10702 - Inbetalning"
+#TRANS 1930 {} -1644.76 20241022 "Inkîp - varor - 2024-10-22 - Bauhaus - KontantFaktura - Kvi"
+#TRANS 4000 {} 1315.81 20241022 "Inkîp - varor - 2024-10-22 - Bauhaus - KontantFaktura - Kvi"
+#TRANS 2641 {} 328.95 20241022 "Inkîp - varor - 2024-10-22 - Bauhaus - KontantFaktura - Kvi"
 }
 
-#VER B 143 20240627 "LÜn 11130 - Inbetalning" 20240803
+#VER A 70 20241022 "Leverantîrsfaktura - 2024-10-22 - Bevego - Faktura - Inkom - 11813945" 20241023
 {
-#TRANS 1930 {"6" "11130" } 750.00 20240627 "LÜn 11130 - Inbetalning"
-#TRANS 1381 {"6" "11130" } -403.00 20240627 "LÜn 11130 - Inbetalning"
-#TRANS 3100 {"6" "11130" } -347.00 20240627 "LÜn 11130 - Inbetalning"
+#TRANS 2440 {} -2956.00 20241022 "Leverantîrsfaktura - 2024-10-22 - Bevego - Faktura - Inkom "
+#TRANS 2641 {} 591.13 20241022 "Leverantîrsfaktura - 2024-10-22 - Bevego - Faktura - Inkom "
+#TRANS 4000 {} 2364.53 20241022 "Leverantîrsfaktura - 2024-10-22 - Bevego - Faktura - Inkom "
+#TRANS 3740 {} 0.34 20241022 "Leverantîrsfaktura - 2024-10-22 - Bevego - Faktura - Inkom "
 }
 
-#VER B 144 20240627 "LÜn 11593 - Inbetalning" 20240803
+#VER A 71 20241022 "Leverantîrsfaktura - 2024-10-22 - Ahsell - Faktura - Inkom - 4771462704" 20241023
 {
-#TRANS 1930 {"6" "11593" } 958.00 20240627 "LÜn 11593 - Inbetalning"
-#TRANS 1381 {"6" "11593" } -711.00 20240627 "LÜn 11593 - Inbetalning"
-#TRANS 3100 {"6" "11593" } -247.00 20240627 "LÜn 11593 - Inbetalning"
+#TRANS 2440 {} -156.00 20241022 "Leverantîrsfaktura - 2024-10-22 - Ahsell - Faktura - Inkom "
+#TRANS 2641 {} 31.13 20241022 "Leverantîrsfaktura - 2024-10-22 - Ahsell - Faktura - Inkom "
+#TRANS 4000 {} 124.49 20241022 "Leverantîrsfaktura - 2024-10-22 - Ahsell - Faktura - Inkom "
+#TRANS 3740 {} 0.38 20241022 "Leverantîrsfaktura - 2024-10-22 - Ahsell - Faktura - Inkom "
 }
 
-#VER B 145 20240627 "LÜn 10298 - Kapitalisering av rÑnta" 20240803
+#VER A 72 20241022 "Leverantîrsfaktura - 2024-10-22 - Ahsell - Faktura - Inkom - 4774997508" 20241023
 {
-#TRANS 1381 {"6" "10298" } 1274.00 20240627 "LÜn 10298 - Kapitalisering av rÑnta"
-#TRANS 3100 {"6" "10298" } -1274.00 20240627 "LÜn 10298 - Kapitalisering av rÑnta"
+#TRANS 2440 {} -955.00 20241022 "Leverantîrsfaktura - 2024-10-22 - Ahsell - Faktura - Inkom "
+#TRANS 2641 {} 190.92 20241022 "Leverantîrsfaktura - 2024-10-22 - Ahsell - Faktura - Inkom "
+#TRANS 4000 {} 763.65 20241022 "Leverantîrsfaktura - 2024-10-22 - Ahsell - Faktura - Inkom "
+#TRANS 3740 {} 0.43 20241022 "Leverantîrsfaktura - 2024-10-22 - Ahsell - Faktura - Inkom "
 }
 
-#VER B 146 20240627 "LÜn 11387 - Kapitalisering av rÑnta" 20240803
+#VER A 73 20241022 "Leverantîrsfaktura - 2024-10-17 - Dahl - Faktura - Inkom - 123871834" 20241023
 {
-#TRANS 1381 {"6" "11387" } 329.00 20240627 "LÜn 11387 - Kapitalisering av rÑnta"
-#TRANS 3100 {"6" "11387" } -329.00 20240627 "LÜn 11387 - Kapitalisering av rÑnta"
+#TRANS 2440 {} -664.00 20241022 "Leverantîrsfaktura - 2024-10-17 - Dahl - Faktura - Inkom - "
+#TRANS 2641 {} 132.89 20241022 "Leverantîrsfaktura - 2024-10-17 - Dahl - Faktura - Inkom - "
+#TRANS 4000 {} 531.54 20241022 "Leverantîrsfaktura - 2024-10-17 - Dahl - Faktura - Inkom - "
+#TRANS 3740 {} -0.43 20241022 "Leverantîrsfaktura - 2024-10-17 - Dahl - Faktura - Inkom - "
 }
 
-#VER B 147 20240627 "LÜn 11395 - Kapitalisering av rÑnta" 20240803
+#VER A 74 20241022 "Leverantîrsfaktura - 2024-10-18 - Ahsell - Faktura - Inkom - 4780145001" 20241023
 {
-#TRANS 1381 {"6" "11388" } 555.00 20240627 "LÜn 11395 - Kapitalisering av rÑnta"
-#TRANS 3100 {"6" "11388" } -555.00 20240627 "LÜn 11395 - Kapitalisering av rÑnta"
+#TRANS 2440 {} -262.00 20241022 "Leverantîrsfaktura - 2024-10-18 - Ahsell - Faktura - Inkom "
+#TRANS 2641 {} 52.48 20241022 "Leverantîrsfaktura - 2024-10-18 - Ahsell - Faktura - Inkom "
+#TRANS 4000 {} 209.90 20241022 "Leverantîrsfaktura - 2024-10-18 - Ahsell - Faktura - Inkom "
+#TRANS 3740 {} -0.38 20241022 "Leverantîrsfaktura - 2024-10-18 - Ahsell - Faktura - Inkom "
 }
 
-#VER B 148 20240627 "LÜn 11007 - Inbetalning - Kvitto KFM" 20240805
+#VER A 75 20241022 "Leverantîrsfaktura - 2024-10-18 - Ahsell - Faktura - Inkom - 4780162808" 20241023
 {
-#TRANS 1930 {"6" "11007" } 540.00 20240627 "LÜn 11007 - Inbetalning - Kvitto KFM"
-#TRANS 3100 {"6" "11007" } -540.00 20240627 "LÜn 11007 - Inbetalning - Kvitto KFM"
+#TRANS 2440 {} -601.00 20241022 "Leverantîrsfaktura - 2024-10-18 - Ahsell - Faktura - Inkom "
+#TRANS 2641 {} 120.17 20241022 "Leverantîrsfaktura - 2024-10-18 - Ahsell - Faktura - Inkom "
+#TRANS 4000 {} 480.69 20241022 "Leverantîrsfaktura - 2024-10-18 - Ahsell - Faktura - Inkom "
+#TRANS 3740 {} 0.14 20241022 "Leverantîrsfaktura - 2024-10-18 - Ahsell - Faktura - Inkom "
 }
 
-#VER B 149 20240627 "LÜn - 10942 - 19750610-9219 - Inbetalning - Skuldsanering" 20240805
+#VER A 76 20241022 "Leverantîrsfaktura - 2024-10-18 - Dahl - Faktura - Inkom -123883056" 20241023
 {
-#TRANS 1930 {"6" "10942" } 773.00 20240627 "LÜn - 10942 - 19750610-9219 - Inbetalning - Skuldsanering"
-#TRANS 1381 {"6" "10942" } -773.00 20240627 "LÜn - 10942 - 19750610-9219 - Inbetalning - Skuldsanering"
+#TRANS 2440 {} -1668.00 20241022 "Leverantîrsfaktura - 2024-10-18 - Dahl - Faktura - Inkom -1"
+#TRANS 2641 {} 333.51 20241022 "Leverantîrsfaktura - 2024-10-18 - Dahl - Faktura - Inkom -1"
+#TRANS 4000 {} 1334.02 20241022 "Leverantîrsfaktura - 2024-10-18 - Dahl - Faktura - Inkom -1"
+#TRANS 3740 {} 0.47 20241022 "Leverantîrsfaktura - 2024-10-18 - Dahl - Faktura - Inkom -1"
 }
 
-#VER B 150 20240704 "LÜn 10710 - Inbetalning - Kvitto KFM" 20240805
+#VER A 77 20241022 "Leverantîrsfaktura - 2024-10-21 - Ahsell - Faktura - Inkom - 4783619705" 20241023
 {
-#TRANS 1930 {"6" "10710" } 851.00 20240704 "LÜn 10710 - Inbetalning - Kvitto KFM"
-#TRANS 1381 {"6" "10710" } -559.00 20240704 "LÜn 10710 - Inbetalning - Kvitto KFM"
-#TRANS 3100 {"6" "10710" } -292.00 20240704 "LÜn 10710 - Inbetalning - Kvitto KFM"
+#TRANS 2440 {} -360.00 20241022 "Leverantîrsfaktura - 2024-10-21 - Ahsell - Faktura - Inkom "
+#TRANS 2641 {} 72.00 20241022 "Leverantîrsfaktura - 2024-10-21 - Ahsell - Faktura - Inkom "
+#TRANS 4000 {} 287.97 20241022 "Leverantîrsfaktura - 2024-10-21 - Ahsell - Faktura - Inkom "
+#TRANS 3740 {} 0.03 20241022 "Leverantîrsfaktura - 2024-10-21 - Ahsell - Faktura - Inkom "
 }
 
-#VER B 151 20240709 "LÜn 10678 - Inbetalning - Nedskrivning Üterfîring - Kapital- Kvitto KFM, 5608518" 20240805
+#VER A 78 20241022 "Leverantîrsfaktura - 2024-10-21 - Dahl - Faktura - Inkom - 123892127" 20241023
 {
-#TRANS 1930 {"6" "10678" } 871.00 20240709 "LÜn 10678 - Inbetalning - Nedskrivning Üterfîring - Kapital"
-#TRANS 1381 {"6" "10678" } -625.00 20240709 "LÜn 10678 - Inbetalning - Nedskrivning Üterfîring - Kapital"
-#TRANS 3100 {"6" "10678" } -246.00 20240709 "LÜn 10678 - Inbetalning - Nedskrivning Üterfîring - Kapital"
-#TRANS 1389 {"6" "10678" } 625.00 20240709 "LÜn 10678 - Inbetalning - Nedskrivning Üterfîring - Kapital"
-#TRANS 3950 {"6" "10678" } -625.00 20240709 "LÜn 10678 - Inbetalning - Nedskrivning Üterfîring - Kapital"
-#TRANS 1381 {"6" "10678" } 625.00 20240709 "LÜn 10678 - Inbetalning - Nedskrivning Üterfîring - Kapital"
-#TRANS 1389 {"6" "10678" } -625.00 20240709 "LÜn 10678 - Inbetalning - Nedskrivning Üterfîring - Kapital"
+#TRANS 2440 {} -2674.00 20241022 "Leverantîrsfaktura - 2024-10-21 - Dahl - Faktura - Inkom - "
+#TRANS 2641 {} 534.88 20241022 "Leverantîrsfaktura - 2024-10-21 - Dahl - Faktura - Inkom - "
+#TRANS 4000 {} 2139.53 20241022 "Leverantîrsfaktura - 2024-10-21 - Dahl - Faktura - Inkom - "
+#TRANS 3740 {} -0.41 20241022 "Leverantîrsfaktura - 2024-10-21 - Dahl - Faktura - Inkom - "
 }
 
-#VER B 152 20240716 "LÜn 11197 - Inbetalning - Kvitto KFM" 20240805
+#VER A 79 20241022 "Leverantîrsfaktura - 2024-10-21- Ahsell- Faktura - Inkom - 4783598107" 20241023
 {
-#TRANS 1930 {"6" "11197" } 284.00 20240716 "LÜn 11197 - Inbetalning - Kvitto KFM"
-#TRANS 3100 {"6" "11197" } -284.00 20240716 "LÜn 11197 - Inbetalning - Kvitto KFM"
+#TRANS 2440 {} -784.00 20241022 "Leverantîrsfaktura - 2024-10-21- Ahsell- Faktura - Inkom - "
+#TRANS 2641 {} 156.70 20241022 "Leverantîrsfaktura - 2024-10-21- Ahsell- Faktura - Inkom - "
+#TRANS 4000 {} 626.81 20241022 "Leverantîrsfaktura - 2024-10-21- Ahsell- Faktura - Inkom - "
+#TRANS 3740 {} 0.49 20241022 "Leverantîrsfaktura - 2024-10-21- Ahsell- Faktura - Inkom - "
 }
 
-#VER B 153 20240725 "LÜn 11114 - Inbetalning - Kvitto KFM" 20240806
+#VER A 80 20241022 "Leverantîrsfaktura - 2024-10-22 - Dahl - Faktura - Inkom - 123903143" 20241023
 {
-#TRANS 1930 {"6" "11114" } 502.00 20240725 "LÜn 11114 - Inbetalning - Kvitto KFM"
-#TRANS 3100 {"6" "11114" } -502.00 20240725 "LÜn 11114 - Inbetalning - Kvitto KFM"
+#TRANS 2440 {} -104.00 20241022 "Leverantîrsfaktura - 2024-10-22 - Dahl - Faktura - Inkom - "
+#TRANS 2641 {} 20.81 20241022 "Leverantîrsfaktura - 2024-10-22 - Dahl - Faktura - Inkom - "
+#TRANS 4000 {} 83.24 20241022 "Leverantîrsfaktura - 2024-10-22 - Dahl - Faktura - Inkom - "
+#TRANS 3740 {} -0.05 20241022 "Leverantîrsfaktura - 2024-10-22 - Dahl - Faktura - Inkom - "
 }
 
-#VER B 154 20240726 "LÜn 11619 - Inbetalning - Kvitto KFM" 20240806
+#VER A 81 20241023 AktieÑgaretillskott 20241024
 {
-#TRANS 1930 {"6" "11619" } 263.00 20240726 "LÜn 11619 - Inbetalning - Kvitto KFM"
-#TRANS 3100 {"6" "11619" } -263.00 20240726 "LÜn 11619 - Inbetalning - Kvitto KFM"
+#TRANS 1930 {} 50000.00 20241023 "AktieÑgaretillskott"
+#TRANS 2093 {} -50000.00 20241023 "AktieÑgaretillskott"
 }
 
-#VER B 155 20240726 "LÜn 10694 - Inbetalning - Kvitto KFM" 20240806
+#VER A 82 20241023 "Inkîp - varor - 2024-10-23 - Biltema - Kvitto" 20241024
 {
-#TRANS 1930 {"6" "10694" } 491.00 20240726 "LÜn 10694 - Inbetalning - Kvitto KFM"
-#TRANS 3100 {"6" "10694" } -491.00 20240726 "LÜn 10694 - Inbetalning - Kvitto KFM"
+#TRANS 1930 {} -199.00 20241023 "Inkîp - varor - 2024-10-23 - Biltema - Kvitto"
+#TRANS 4000 {} 159.20 20241023 "Inkîp - varor - 2024-10-23 - Biltema - Kvitto"
+#TRANS 2641 {} 39.80 20241023 "Inkîp - varor - 2024-10-23 - Biltema - Kvitto"
 }
 
-#VER B 156 20240730 "LÜn 11023 - Inbetalning - Kvitto KFM" 20240806
+#VER A 83 20241024 "LeveransKonto - 2024-10-24 - Ahsell- Faktura - Kvitto - 4767488200" 20241024
 {
-#TRANS 1930 {"6" "11023" } 1034.00 20240730 "LÜn 11023 - Inbetalning - Kvitto KFM"
-#TRANS 3100 {"6" "11023" } -945.00 20240730 "LÜn 11023 - Inbetalning - Kvitto KFM"
-#TRANS 1511 {"6" "11023" } -89.00 20240730 "LÜn 11023 - Inbetalning - Kvitto KFM"
+#TRANS 1930 {} -148.00 20241024 "LeveransKonto - 2024-10-24 - Ahsell- Faktura - Kvitto - 476"
+#TRANS 2440 {} 148.00 20241024 "LeveransKonto - 2024-10-24 - Ahsell- Faktura - Kvitto - 476"
+#TRANS 2440 {} -148.00 20241024 "LeveransKonto - 2024-10-24 - Ahsell- Faktura - Kvitto - 476"
+#TRANS 2641 {} 29.61 20241024 "LeveransKonto - 2024-10-24 - Ahsell- Faktura - Kvitto - 476"
+#TRANS 4000 {} 118.39 20241024 "LeveransKonto - 2024-10-24 - Ahsell- Faktura - Kvitto - 476"
 }
 
-#VER B 157 20240730 "LÜn 10371 - Inbetalning" 20240806
+#VER A 84 20241024 "LeveransKonto - 2024-10-24 - Ahsell - Faktura - Kvitto - 4771462704" 20241024
 {
-#TRANS 1930 {"6" "10371" } 1000.00 20240730 "LÜn 10371 - Inbetalning"
-#TRANS 1381 {"6" "10371" } -490.00 20240730 "LÜn 10371 - Inbetalning"
-#TRANS 3100 {"6" "10371" } -510.00 20240730 "LÜn 10371 - Inbetalning"
+#TRANS 1930 {} -156.00 20241024 "LeveransKonto - 2024-10-24 - Ahsell - Faktura - Kvitto - 47"
+#TRANS 2440 {} 156.00 20241024 "LeveransKonto - 2024-10-24 - Ahsell - Faktura - Kvitto - 47"
 }
 
-#VER B 158 20240730 "LÜn 11692 - Inbetalning" 20240806
+#VER A 85 20241024 "LeveransKonto - 2024-10-24 - Ahsell - Faktura - Kvitto - 4780145001" 20241024
 {
-#TRANS 1930 {"6" "11692" } 1200.00 20240730 "LÜn 11692 - Inbetalning"
-#TRANS 1381 {"6" "11692" } -1061.00 20240730 "LÜn 11692 - Inbetalning"
-#TRANS 3100 {"6" "11692" } -139.00 20240730 "LÜn 11692 - Inbetalning"
+#TRANS 1930 {} -262.00 20241024 "LeveransKonto - 2024-10-24 - Ahsell - Faktura - Kvitto - 47"
+#TRANS 2440 {} 262.00 20241024 "LeveransKonto - 2024-10-24 - Ahsell - Faktura - Kvitto - 47"
 }
 
-#VER B 159 20240730 "LÜn 10702 - Inbetalning" 20240806
+#VER A 86 20241024 "LeveransKonto - 2024-10-24 - Ahsell - Faktura - Kvitto - 4783619705" 20241024
 {
-#TRANS 1930 {"6" "10702" } 809.00 20240730 "LÜn 10702 - Inbetalning"
-#TRANS 1381 {"6" "10702" } -470.00 20240730 "LÜn 10702 - Inbetalning"
-#TRANS 3100 {"6" "10702" } -339.00 20240730 "LÜn 10702 - Inbetalning"
+#TRANS 1930 {} -360.00 20241024 "LeveransKonto - 2024-10-24 - Ahsell - Faktura - Kvitto - 47"
+#TRANS 2440 {} 360.00 20241024 "LeveransKonto - 2024-10-24 - Ahsell - Faktura - Kvitto - 47"
 }
 
-#VER B 160 20240730 "LÜn 11593 - Inbetalning" 20240806
+#VER A 87 20241024 "LeveransKonto - 2024-10-24 - Ahsell - Faktura - Kvitto - 4780162808" 20241024
 {
-#TRANS 1930 {"6" "11593" } 958.00 20240730 "LÜn 11593 - Inbetalning"
-#TRANS 1381 {"6" "11593" } -703.00 20240730 "LÜn 11593 - Inbetalning"
-#TRANS 3100 {"6" "11593" } -255.00 20240730 "LÜn 11593 - Inbetalning"
+#TRANS 1930 {} -601.00 20241024 "LeveransKonto - 2024-10-24 - Ahsell - Faktura - Kvitto - 47"
+#TRANS 2440 {} 601.00 20241024 "LeveransKonto - 2024-10-24 - Ahsell - Faktura - Kvitto - 47"
 }
 
-#VER B 161 20240730 "LÜn 10298 - Kapitalisering av rÑnta" 20240806
+#VER A 88 20241024 "LeveransKonto - 2024-10-24- Ahsell- Faktura - Kvitto - 4783598107" 20241024
 {
-#TRANS 1381 {"6" "10298" } 1436.00 20240730 "LÜn 10298 - Kapitalisering av rÑnta"
-#TRANS 3100 {"6" "10298" } -1436.00 20240730 "LÜn 10298 - Kapitalisering av rÑnta"
+#TRANS 1930 {} -784.00 20241024 "LeveransKonto - 2024-10-24- Ahsell- Faktura - Kvitto - 4783"
+#TRANS 2440 {} 784.00 20241024 "LeveransKonto - 2024-10-24- Ahsell- Faktura - Kvitto - 4783"
 }
 
-#VER B 162 20240730 "LÜn 11130 - Kapitalisering av rÑnta" 20240806
+#VER A 89 20241024 "LeveransKonto - 2024-10-24 - Ahsell - Faktura - Kvitto - 4765009008" 20241024
 {
-#TRANS 1381 {"6" "11130" } 372.00 20240730 "LÜn 11130 - Kapitalisering av rÑnta"
-#TRANS 3100 {"6" "11130" } -372.00 20240730 "LÜn 11130 - Kapitalisering av rÑnta"
+#TRANS 1930 {} -789.00 20241024 "LeveransKonto - 2024-10-24 - Ahsell - Faktura - Kvitto - 47"
+#TRANS 2440 {} 789.00 20241024 "LeveransKonto - 2024-10-24 - Ahsell - Faktura - Kvitto - 47"
+#TRANS 2440 {} -789.00 20241024 "LeveransKonto - 2024-10-24 - Ahsell - Faktura - Kvitto - 47"
+#TRANS 2641 {} 157.82 20241024 "LeveransKonto - 2024-10-24 - Ahsell - Faktura - Kvitto - 47"
+#TRANS 4000 {} 631.24 20241024 "LeveransKonto - 2024-10-24 - Ahsell - Faktura - Kvitto - 47"
+#TRANS 3740 {} -0.06 20241024 "LeveransKonto - 2024-10-24 - Ahsell - Faktura - Kvitto - 47"
 }
 
-#VER B 163 20240730 "LÜn 11387 - Kapitalisering av rÑnta" 20240806
+#VER A 90 20241024 "LeveransKonto - 2024-10-24 - Ahsell - Faktura - Kvitto - 4774997508" 20241024
 {
-#TRANS 1381 {"6" "11387" } 369.00 20240730 "LÜn 11387 - Kapitalisering av rÑnta"
-#TRANS 3100 {"6" "11387" } -369.00 20240730 "LÜn 11387 - Kapitalisering av rÑnta"
+#TRANS 1930 {} -955.00 20241024 "LeveransKonto - 2024-10-24 - Ahsell - Faktura - Kvitto - 47"
+#TRANS 2440 {} 955.00 20241024 "LeveransKonto - 2024-10-24 - Ahsell - Faktura - Kvitto - 47"
 }
 
-#VER B 164 20240730 "LÜn 11395 - Kapitalisering av rÑnta" 20240806
+#VER A 91 20241024 "LeveransKonto - 2024-10-24 - Dahl - Faktura - Kvitto - 123903143" 20241024
 {
-#TRANS 1381 {"6" "11388" } 624.00 20240730 "LÜn 11395 - Kapitalisering av rÑnta"
-#TRANS 3100 {"6" "11388" } -624.00 20240730 "LÜn 11395 - Kapitalisering av rÑnta"
+#TRANS 1930 {} -104.00 20241024 "LeveransKonto - 2024-10-24 - Dahl - Faktura - Kvitto - 1239"
+#TRANS 2440 {} 104.00 20241024 "LeveransKonto - 2024-10-24 - Dahl - Faktura - Kvitto - 1239"
 }
 
-#VER B 165 20240731 "LÜn 10298 - Inbetalning" 20240819
+#VER A 92 20241024 "LeveransKonto - 2024-10-24 - Dahl - Faktura - Kvitto - 123871834" 20241024
 {
-#TRANS 1930 {"6" "10298" } 1200.00 20240731 "LÜn 10298 - Inbetalning"
-#TRANS 1381 {"6" "10298" } -1095.00 20240731 "LÜn 10298 - Inbetalning"
-#TRANS 3100 {"6" "10298" } -45.00 20240731 "LÜn 10298 - Inbetalning"
-#TRANS 1511 {"6" "10298" } -60.00 20240731 "LÜn 10298 - Inbetalning"
+#TRANS 1930 {} -664.00 20241024 "LeveransKonto - 2024-10-24 - Dahl - Faktura - Kvitto - 1238"
+#TRANS 2440 {} 664.00 20241024 "LeveransKonto - 2024-10-24 - Dahl - Faktura - Kvitto - 1238"
 }
 
-#VER B 166 20240731 "LÜn 10710) - Inbetalning - Kvitto KFM" 20240819
+#VER A 93 20241024 "LeveransKonto - 2024-10-24 - Dahl - Faktura - Kvitto -123883056" 20241024
 {
-#TRANS 1930 {"6" "10710" } 846.00 20240731 "LÜn 10710) - Inbetalning - Kvitto KFM"
-#TRANS 1381 {"6" "10710" } -633.00 20240731 "LÜn 10710) - Inbetalning - Kvitto KFM"
-#TRANS 3100 {"6" "10710" } -213.00 20240731 "LÜn 10710) - Inbetalning - Kvitto KFM"
+#TRANS 1930 {} -1668.00 20241024 "LeveransKonto - 2024-10-24 - Dahl - Faktura - Kvitto -12388"
+#TRANS 2440 {} 1668.00 20241024 "LeveransKonto - 2024-10-24 - Dahl - Faktura - Kvitto -12388"
 }
 
-#VER B 167 20240806 "LÜn 10678 - Inbetalning - Kvitto KFM" 20240819
+#VER A 94 20241024 "LeveransKonto - 2024-10-24 - Dahl - Faktura - Kvitto - 123833709" 20241024
 {
-#TRANS 1930 {"6" "10678" } 1738.00 20240806 "LÜn 10678 - Inbetalning - Kvitto KFM"
-#TRANS 1381 {"6" "10678" } -1484.00 20240806 "LÜn 10678 - Inbetalning - Kvitto KFM"
-#TRANS 3100 {"6" "10678" } -254.00 20240806 "LÜn 10678 - Inbetalning - Kvitto KFM"
-#TRANS 1389 {"6" "10678" } 1484.00 20240806 "LÜn 10678 - Inbetalning - Kvitto KFM"
-#TRANS 3950 {"6" "10678" } -1484.00 20240806 "LÜn 10678 - Inbetalning - Kvitto KFM"
-#TRANS 1381 {"6" "10678" } 1484.00 20240806 "LÜn 10678 - Inbetalning - Kvitto KFM"
-#TRANS 1389 {"6" "10678" } -1484.00 20240806 "LÜn 10678 - Inbetalning - Kvitto KFM"
+#TRANS 1930 {} -2302.00 20241024 "LeveransKonto - 2024-10-24 - Dahl - Faktura - Kvitto - 1238"
+#TRANS 2440 {} 2302.00 20241024 "LeveransKonto - 2024-10-24 - Dahl - Faktura - Kvitto - 1238"
+#TRANS 2440 {} -2302.00 20241024 "LeveransKonto - 2024-10-24 - Dahl - Faktura - Kvitto - 1238"
+#TRANS 2641 {} 460.39 20241024 "LeveransKonto - 2024-10-24 - Dahl - Faktura - Kvitto - 1238"
+#TRANS 4000 {} 1841.55 20241024 "LeveransKonto - 2024-10-24 - Dahl - Faktura - Kvitto - 1238"
+#TRANS 3740 {} 0.06 20241024 "LeveransKonto - 2024-10-24 - Dahl - Faktura - Kvitto - 1238"
 }
 
-#VER B 168 20240812 "LÜn 11569 - Inbetalning - Kvitto KFM" 20240819
+#VER A 95 20241024 "LeveransKonto - 2024-10-24 - Dahl - Faktura - kvitto - 123892127" 20241024
 {
-#TRANS 1930 {"6" "11569" } 1162.00 20240812 "LÜn 11569 - Inbetalning - Kvitto KFM"
-#TRANS 3100 {"6" "11569" } -1162.00 20240812 "LÜn 11569 - Inbetalning - Kvitto KFM"
+#TRANS 1930 {} -2674.00 20241024 "LeveransKonto - 2024-10-24 - Dahl - Faktura - kvitto - 1238"
+#TRANS 2440 {} 2674.00 20241024 "LeveransKonto - 2024-10-24 - Dahl - Faktura - kvitto - 1238"
 }
 
-#VER B 169 20240821 "LÜn 11130 - BetalningspÜminnelse" 20240821
+#VER A 96 20241024 "LeveransKonto - 2024-10-24 - Bevego - Faktura - Kvitto - 11813945" 20241024
 {
-#TRANS 1511 {"6" "11130" } 60.00 20240821 "LÜn 11130 - BetalningspÜminnelse"
-#TRANS 3596 {"6" "11130" } -60.00 20240821 "LÜn 11130 - BetalningspÜminnelse"
+#TRANS 1930 {} -2956.00 20241024 "LeveransKonto - 2024-10-24 - Bevego - Faktura - Kvitto - 11"
+#TRANS 2440 {} 2956.00 20241024 "LeveransKonto - 2024-10-24 - Bevego - Faktura - Kvitto - 11"
 }
 
-#VER B 170 20240822 "2024-09-22 - Lan - 11569 - Kvitto,KFM" 20240907
+#VER A 97 20241030 "Inkîp - varor - 2024-10-30 - Bauhaus - Kvitto (Faktura) 401610700" 20241105
 {
-#TRANS 1930 {"6" "11569" } 901.00 20240822 "2024-09-22 - Lan - 11569 - Kvitto,KFM"
-#TRANS 3100 {"6" "11569" } -901.00 20240822 "2024-09-22 - Lan - 11569 - Kvitto,KFM"
+#TRANS 1930 {} -105.24 20241030 "Inkîp - varor - 2024-10-30 - Bauhaus - Kvitto (Faktura) 401"
+#TRANS 4000 {} 84.19 20241030 "Inkîp - varor - 2024-10-30 - Bauhaus - Kvitto (Faktura) 401"
+#TRANS 2641 {} 21.05 20241030 "Inkîp - varor - 2024-10-30 - Bauhaus - Kvitto (Faktura) 401"
 }
 
-#VER B 171 20240826 "2024-09-26 - Lan - 11114 - Lan - 11619 - Kvitto,KFM" 20240907
+#VER A 98 20241031 "Inkîp - varor - 2024-10-31 - Bauhaus - Kvitto (Faktura) 401617018" 20241105
 {
-#TRANS 1930 {"6" "11114" } 922.00 20240826 "2024-09-26 - Lan - 11114 - Lan - 11619 - Kvitto,KFM"
-#TRANS 3100 {"6" "11114" } -535.00 20240826 "2024-09-26 - Lan - 11114 - Lan - 11619 - Kvitto,KFM"
-#TRANS 3100 {"6" "11619" } -387.00 20240826 "2024-09-26 - Lan - 11114 - Lan - 11619 - Kvitto,KFM"
+#TRANS 1930 {} -55.21 20241031 "Inkîp - varor - 2024-10-31 - Bauhaus - Kvitto (Faktura) 401"
+#TRANS 4000 {} 44.17 20241031 "Inkîp - varor - 2024-10-31 - Bauhaus - Kvitto (Faktura) 401"
+#TRANS 2641 {} 11.04 20241031 "Inkîp - varor - 2024-10-31 - Bauhaus - Kvitto (Faktura) 401"
 }
 
-#VER B 172 20240827 "LÜn - Autogiro - Inbetalning - 10371" 20240907
+#VER A 99 20241105 "Leverantîrsfaktura - 2024-11-05 - Ahsell - Faktura - 4794594509" 20241105
 {
-#TRANS 1930 {"6" "10371" } 1000.00 20240827 "LÜn - Autogiro - Inbetalning - 10371"
-#TRANS 1381 {"6" "10371" } -590.00 20240827 "LÜn - Autogiro - Inbetalning - 10371"
-#TRANS 3100 {"6" "10371" } -410.00 20240827 "LÜn - Autogiro - Inbetalning - 10371"
+#TRANS 2440 {} -64.00 20241105 "Leverantîrsfaktura - 2024-11-05 - Ahsell - Faktura - 479459"
+#TRANS 2641 {} 12.90 20241105 "Leverantîrsfaktura - 2024-11-05 - Ahsell - Faktura - 479459"
+#TRANS 4000 {} 51.56 20241105 "Leverantîrsfaktura - 2024-11-05 - Ahsell - Faktura - 479459"
+#TRANS 3740 {} -0.46 20241105 "Leverantîrsfaktura - 2024-11-05 - Ahsell - Faktura - 479459"
 }
 
-#VER B 173 20240827 "LÜn - Autogiro - Inbetalning - 11692" 20240907
+#VER A 100 20241105 "Leverantîrsfaktura - 2024-11-05 - Ahsell - Faktura - 4795459702" 20241105
 {
-#TRANS 1930 {"6" "11692" } 1200.00 20240827 "LÜn - Autogiro - Inbetalning - 11692"
-#TRANS 1381 {"6" "11692" } -1105.00 20240827 "LÜn - Autogiro - Inbetalning - 11692"
-#TRANS 3100 {"6" "11692" } -95.00 20240827 "LÜn - Autogiro - Inbetalning - 11692"
+#TRANS 2440 {} -36.00 20241105 "Leverantîrsfaktura - 2024-11-05 - Ahsell - Faktura - 479545"
+#TRANS 2641 {} 7.12 20241105 "Leverantîrsfaktura - 2024-11-05 - Ahsell - Faktura - 479545"
+#TRANS 4000 {} 28.46 20241105 "Leverantîrsfaktura - 2024-11-05 - Ahsell - Faktura - 479545"
+#TRANS 3740 {} 0.42 20241105 "Leverantîrsfaktura - 2024-11-05 - Ahsell - Faktura - 479545"
 }
 
-#VER B 174 20240827 "LÜn - Autogiro - Inbetalning - 11130" 20240907
+#VER A 101 20241105 "Leverantîrsfaktura - 2024-11-05 - Ahsell - Faktura - 4798525202" 20241105
 {
-#TRANS 1930 {"6" "11130" } 750.00 20240827 "LÜn - Autogiro - Inbetalning - 11130"
-#TRANS 1381 {"6" "11130" } -367.00 20240827 "LÜn - Autogiro - Inbetalning - 11130"
-#TRANS 3100 {"6" "11130" } -323.00 20240827 "LÜn - Autogiro - Inbetalning - 11130"
-#TRANS 1511 {"6" "11130" } -60.00 20240827 "LÜn - Autogiro - Inbetalning - 11130"
+#TRANS 2440 {} -94.00 20241105 "Leverantîrsfaktura - 2024-11-05 - Ahsell - Faktura - 479852"
+#TRANS 2641 {} 18.86 20241105 "Leverantîrsfaktura - 2024-11-05 - Ahsell - Faktura - 479852"
+#TRANS 4000 {} 75.43 20241105 "Leverantîrsfaktura - 2024-11-05 - Ahsell - Faktura - 479852"
+#TRANS 3740 {} -0.29 20241105 "Leverantîrsfaktura - 2024-11-05 - Ahsell - Faktura - 479852"
 }
 
-#VER B 175 20240827 "LÜn - Autogiro - Inbetalning - 11593" 20240907
+#VER A 102 20241105 "Leverantîrsfaktura - 2024-11-05 - Ahsell - Faktura - 4800363709" 20241105
 {
-#TRANS 1930 {"6" "11593" } 958.00 20240827 "LÜn - Autogiro - Inbetalning - 11593"
-#TRANS 1381 {"6" "11593" } -756.00 20240827 "LÜn - Autogiro - Inbetalning - 11593"
-#TRANS 3100 {"6" "11593" } -202.00 20240827 "LÜn - Autogiro - Inbetalning - 11593"
+#TRANS 2440 {} -300.00 20241105 "Leverantîrsfaktura - 2024-11-05 - Ahsell - Faktura - 480036"
+#TRANS 2641 {} 60.09 20241105 "Leverantîrsfaktura - 2024-11-05 - Ahsell - Faktura - 480036"
+#TRANS 4000 {} 240.35 20241105 "Leverantîrsfaktura - 2024-11-05 - Ahsell - Faktura - 480036"
+#TRANS 3740 {} -0.44 20241105 "Leverantîrsfaktura - 2024-11-05 - Ahsell - Faktura - 480036"
 }
 
-#VER B 176 20240827 "2024-08-27 - Ver - LÜn 11395 - Kapitalisering" 20240907
+#VER A 103 20241105 "Leverantîrsfaktura - 2024-11-05 - Ahsell - Faktura 4810415507" 20241105
 {
-#TRANS 1381 {"6" "11388" } 542.00 20240827 "2024-08-27 - Ver - LÜn 11395 - Kapitalisering"
-#TRANS 3100 {"6" "11388" } -542.00 20240827 "2024-08-27 - Ver - LÜn 11395 - Kapitalisering"
+#TRANS 2440 {} -28.00 20241105 "Leverantîrsfaktura - 2024-11-05 - Ahsell - Faktura 48104155"
+#TRANS 2641 {} 5.57 20241105 "Leverantîrsfaktura - 2024-11-05 - Ahsell - Faktura 48104155"
+#TRANS 4000 {} 22.26 20241105 "Leverantîrsfaktura - 2024-11-05 - Ahsell - Faktura 48104155"
+#TRANS 3740 {} 0.17 20241105 "Leverantîrsfaktura - 2024-11-05 - Ahsell - Faktura 48104155"
 }
 
-#VER B 177 20240827 "LÜn - KFM - Kvitto - 10249" 20240907
+#VER A 104 20241105 "Leverantîrsfaktura - 2024-11-05 - Dahl - Faktura-123929904" 20241105
 {
-#TRANS 1930 {"6" "10249" } 183.00 20240827 "LÜn - KFM - Kvitto - 10249"
-#TRANS 3100 {"6" "10249" } -183.00 20240827 "LÜn - KFM - Kvitto - 10249"
+#TRANS 2440 {} -2037.00 20241105 "Leverantîrsfaktura - 2024-11-05 - Dahl - Faktura-123929904"
+#TRANS 2641 {} 407.41 20241105 "Leverantîrsfaktura - 2024-11-05 - Dahl - Faktura-123929904"
+#TRANS 4000 {} 1629.64 20241105 "Leverantîrsfaktura - 2024-11-05 - Dahl - Faktura-123929904"
+#TRANS 3740 {} -0.05 20241105 "Leverantîrsfaktura - 2024-11-05 - Dahl - Faktura-123929904"
 }
 
-#VER B 178 20240827 "LÜn - KFM - Kvitto - 11023" 20240907
+#VER A 105 20241105 "Leverantîrsfaktura - 2024-11-05 - Dahl - Faktura-123929909" 20241105
 {
-#TRANS 1930 {"6" "11023" } 243.00 20240827 "LÜn - KFM - Kvitto - 11023"
-#TRANS 3100 {"6" "11023" } -243.00 20240827 "LÜn - KFM - Kvitto - 11023"
+#TRANS 2440 {} -95.00 20241105 "Leverantîrsfaktura - 2024-11-05 - Dahl - Faktura-123929909"
+#TRANS 2641 {} 19.08 20241105 "Leverantîrsfaktura - 2024-11-05 - Dahl - Faktura-123929909"
+#TRANS 4000 {} 76.32 20241105 "Leverantîrsfaktura - 2024-11-05 - Dahl - Faktura-123929909"
+#TRANS 3740 {} -0.40 20241105 "Leverantîrsfaktura - 2024-11-05 - Dahl - Faktura-123929909"
 }
 
-#VER B 179 20240828 "LÜn - KFM - Kvitto - 11007" 20240916
+#VER A 106 20241105 "Leverantîrsfaktura - 2024-11-05 - Dahl - Faktura-123941141" 20241105
 {
-#TRANS 1930 {"6" "11007" } 517.00 20240828 "LÜn - KFM - Kvitto - 11007"
-#TRANS 3100 {"6" "11007" } -517.00 20240828 "LÜn - KFM - Kvitto - 11007"
+#TRANS 2440 {} -1738.00 20241105 "Leverantîrsfaktura - 2024-11-05 - Dahl - Faktura-123941141"
+#TRANS 2641 {} 347.60 20241105 "Leverantîrsfaktura - 2024-11-05 - Dahl - Faktura-123941141"
+#TRANS 4000 {} 1390.38 20241105 "Leverantîrsfaktura - 2024-11-05 - Dahl - Faktura-123941141"
+#TRANS 3740 {} 0.02 20241105 "Leverantîrsfaktura - 2024-11-05 - Dahl - Faktura-123941141"
 }
 
-#VER B 180 20240829 "LÜn - KFM - Kvitto - 10710" 20240916
+#VER A 107 20241105 "Leverantîrsfaktura - 2024-11-05 - Dahl - Faktura-123961808" 20241105
 {
-#TRANS 1930 {"6" "10710" } 474.00 20240829 "LÜn - KFM - Kvitto - 10710"
-#TRANS 1381 {"6" "10710" } -260.00 20240829 "LÜn - KFM - Kvitto - 10710"
-#TRANS 3100 {"6" "10710" } -214.00 20240829 "LÜn - KFM - Kvitto - 10710"
+#TRANS 2440 {} -1228.00 20241105 "Leverantîrsfaktura - 2024-11-05 - Dahl - Faktura-123961808"
+#TRANS 2641 {} 245.60 20241105 "Leverantîrsfaktura - 2024-11-05 - Dahl - Faktura-123961808"
+#TRANS 4000 {} 982.41 20241105 "Leverantîrsfaktura - 2024-11-05 - Dahl - Faktura-123961808"
+#TRANS 3740 {} -0.01 20241105 "Leverantîrsfaktura - 2024-11-05 - Dahl - Faktura-123961808"
 }
 
-#VER B 181 20240829 "LÜn - KFM - Kvitto - 10694" 20240916
+#VER A 108 20241105 "Leverantîrsfaktura - 2024-11-05 - Dahl - Faktura-123962019" 20241105
 {
-#TRANS 1930 {"6" "10694" } 498.00 20240829 "LÜn - KFM - Kvitto - 10694"
-#TRANS 3100 {"6" "10694" } -498.00 20240829 "LÜn - KFM - Kvitto - 10694"
+#TRANS 2440 {} -383.00 20241105 "Leverantîrsfaktura - 2024-11-05 - Dahl - Faktura-123962019"
+#TRANS 2641 {} 76.67 20241105 "Leverantîrsfaktura - 2024-11-05 - Dahl - Faktura-123962019"
+#TRANS 4000 {} 306.66 20241105 "Leverantîrsfaktura - 2024-11-05 - Dahl - Faktura-123962019"
+#TRANS 3740 {} -0.33 20241105 "Leverantîrsfaktura - 2024-11-05 - Dahl - Faktura-123962019"
 }
 
-#VER B 182 20240905 "2024-09-05 - Lan - 10678 - Kvitto,KFM" 20240916
+#VER A 109 20241105 "Leverantîrsfaktura - 2024-11-05 - Dahl - Faktura-123962029" 20241105
 {
-#TRANS 1930 {"6" "10678" } 953.00 20240905 "2024-09-05 - Lan - 10678 - Kvitto,KFM"
-#TRANS 1381 {"6" "10678" } -752.00 20240905 "2024-09-05 - Lan - 10678 - Kvitto,KFM"
-#TRANS 3100 {"6" "10678" } -201.00 20240905 "2024-09-05 - Lan - 10678 - Kvitto,KFM"
-#TRANS 1389 {"6" "10678" } 752.00 20240905 "2024-09-05 - Lan - 10678 - Kvitto,KFM"
-#TRANS 3950 {"6" "10678" } -752.00 20240905 "2024-09-05 - Lan - 10678 - Kvitto,KFM"
-#TRANS 1381 {"6" "10678" } 752.00 20240905 "2024-09-05 - Lan - 10678 - Kvitto,KFM"
-#TRANS 1389 {"6" "10678" } -752.00 20240905 "2024-09-05 - Lan - 10678 - Kvitto,KFM"
+#TRANS 2440 {} -28.00 20241105 "Leverantîrsfaktura - 2024-11-05 - Dahl - Faktura-123962029"
+#TRANS 2641 {} 5.58 20241105 "Leverantîrsfaktura - 2024-11-05 - Dahl - Faktura-123962029"
+#TRANS 4000 {} 22.32 20241105 "Leverantîrsfaktura - 2024-11-05 - Dahl - Faktura-123962029"
+#TRANS 3740 {} 0.10 20241105 "Leverantîrsfaktura - 2024-11-05 - Dahl - Faktura-123962029"
 }
 
-#VER B 183 20240826 "BetalningsfîrelÑggande - Nedskrivning - LÜn 11387" 20240920
+#VER A 110 20241105 "Leverantîrsfaktura - 2024-11-05 - Dahl - Faktura-123963966" 20241105
 {
-#TRANS 6380 {"6" "11387" } 8009.00 20240826 "BetalningsfîrelÑggande - Nedskrivning - LÜn 11387"
-#TRANS 1389 {"6" "11387" } -8009.00 20240826 "BetalningsfîrelÑggande - Nedskrivning - LÜn 11387"
-#TRANS 1389 {"6" "11387" } 8009.00 20240826 "BetalningsfîrelÑggande - Nedskrivning - LÜn 11387"
-#TRANS 1381 {"6" "11387" } -8009.00 20240826 "BetalningsfîrelÑggande - Nedskrivning - LÜn 11387"
-#TRANS 1511 {"6" "11387" } 680.00 20240826 "BetalningsfîrelÑggande - Nedskrivning - LÜn 11387"
-#TRANS 3596 {"6" "11387" } -680.00 20240826 "BetalningsfîrelÑggande - Nedskrivning - LÜn 11387"
+#TRANS 2440 {} -50.00 20241105 "Leverantîrsfaktura - 2024-11-05 - Dahl - Faktura-123963966"
+#TRANS 2641 {} 10.04 20241105 "Leverantîrsfaktura - 2024-11-05 - Dahl - Faktura-123963966"
+#TRANS 4000 {} 40.14 20241105 "Leverantîrsfaktura - 2024-11-05 - Dahl - Faktura-123963966"
+#TRANS 3740 {} -0.18 20241105 "Leverantîrsfaktura - 2024-11-05 - Dahl - Faktura-123963966"
 }
 
-#VER B 184 20240910 "LÜn 11288 - Inbetalning" 20240920
+#VER A 111 20241105 "Leverantîrsfaktura - 2024-11-05 - Dahl - Faktura-123972214" 20241105
 {
-#TRANS 1930 {"6" "11288" } 45000.00 20240910 "LÜn 11288 - Inbetalning"
-#TRANS 1381 {"6" "11288" } -29147.00 20240910 "LÜn 11288 - Inbetalning"
-#TRANS 3100 {"6" "11288" } -15853.00 20240910 "LÜn 11288 - Inbetalning"
-#TRANS 1389 {"6" "11288" } 17739.00 20240910 "LÜn 11288 - Inbetalning"
-#TRANS 3950 {"6" "11288" } -17739.00 20240910 "LÜn 11288 - Inbetalning"
-#TRANS 1381 {"6" "11288" } 17739.00 20240910 "LÜn 11288 - Inbetalning"
-#TRANS 1389 {"6" "11288" } -17739.00 20240910 "LÜn 11288 - Inbetalning"
+#TRANS 2440 {} -33.00 20241105 "Leverantîrsfaktura - 2024-11-05 - Dahl - Faktura-123972214"
+#TRANS 2641 {} 6.56 20241105 "Leverantîrsfaktura - 2024-11-05 - Dahl - Faktura-123972214"
+#TRANS 4000 {} 26.22 20241105 "Leverantîrsfaktura - 2024-11-05 - Dahl - Faktura-123972214"
+#TRANS 3740 {} 0.22 20241105 "Leverantîrsfaktura - 2024-11-05 - Dahl - Faktura-123972214"
 }
 
-#VER B 185 20240920 "10298 - BetalningspÜminnelse" 20240920
+#VER A 112 20241105 "Leverantîrsfaktura - 2024-11-05 - Dahl - Faktura-124006863" 20241105
 {
-#TRANS 1511 {"6" "10298" } 60.00 20240920 "10298 - BetalningspÜminnelse"
-#TRANS 3596 {"6" "10298" } -60.00 20240920 "10298 - BetalningspÜminnelse"
+#TRANS 2440 {} -251.00 20241105 "Leverantîrsfaktura - 2024-11-05 - Dahl - Faktura-124006863"
+#TRANS 2641 {} 50.25 20241105 "Leverantîrsfaktura - 2024-11-05 - Dahl - Faktura-124006863"
+#TRANS 4000 {} 201.00 20241105 "Leverantîrsfaktura - 2024-11-05 - Dahl - Faktura-124006863"
+#TRANS 3740 {} -0.25 20241105 "Leverantîrsfaktura - 2024-11-05 - Dahl - Faktura-124006863"
 }
 
-#VER B 186 20240923 "2024-09-20 - LÜn 11395 - Inkasso" 20240920
+#VER A 113 20241105 "Leverantîrsfaktura - 2024-11-05 - Dahl- Faktura-123930081" 20241105
 {
-#TRANS 1511 {"6" "11388" } 180.00 20240923 "2024-09-20 - LÜn 11395 - Inkasso"
-#TRANS 3596 {"6" "11388" } -180.00 20240923 "2024-09-20 - LÜn 11395 - Inkasso"
+#TRANS 2440 {} -336.00 20241105 "Leverantîrsfaktura - 2024-11-05 - Dahl- Faktura-123930081"
+#TRANS 2641 {} 67.28 20241105 "Leverantîrsfaktura - 2024-11-05 - Dahl- Faktura-123930081"
+#TRANS 4000 {} 269.13 20241105 "Leverantîrsfaktura - 2024-11-05 - Dahl- Faktura-123930081"
+#TRANS 3740 {} -0.41 20241105 "Leverantîrsfaktura - 2024-11-05 - Dahl- Faktura-123930081"
 }
 
-#VER B 187 20240925 "LÜn - KFM - Kvitto - 2024-09-25 - Lan - 11007 - Kvitto,KFM" 20241021
+#VER A 114 20241105 "Inkîp - varor - 2024-11-05 - Nibe - Faktura - DSTP100041480QPRTJOB012461" 20241105
 {
-#TRANS 1930 {"6" "11007" } 564.00 20240925 "LÜn - KFM - Kvitto - 2024-09-25 - Lan - 11007 - Kvitto,KFM"
-#TRANS 3100 {"6" "11007" } -564.00 20240925 "LÜn - KFM - Kvitto - 2024-09-25 - Lan - 11007 - Kvitto,KFM"
+#TRANS 1930 {} -5352.00 20241105 "Inkîp - varor - 2024-11-05 - Nibe - Faktura - DSTP100041480"
+#TRANS 4000 {} 4156.50 20241105 "Inkîp - varor - 2024-11-05 - Nibe - Faktura - DSTP100041480"
+#TRANS 2641 {} 1070.38 20241105 "Inkîp - varor - 2024-11-05 - Nibe - Faktura - DSTP100041480"
+#TRANS 5700 {} 125.00 20241105 "Inkîp - varor - 2024-11-05 - Nibe - Faktura - DSTP100041480"
+#TRANS 3740 {} 0.12 20241105 "Inkîp - varor - 2024-11-05 - Nibe - Faktura - DSTP100041480"
 }
 
-#VER B 188 20240926 "LÜn - KFM - Kvitto - 2024-09-26 - Lan - 11619 - Kvitto,KFM" 20241021
+#VER A 115 20241106 "LeveransKonto - 2024-11-05 - Ahsell - Faktura 4810415507" 20241106
 {
-#TRANS 1930 {"6" "11619" } 489.00 20240926 "LÜn - KFM - Kvitto - 2024-09-26 - Lan - 11619 - Kvitto,KFM"
-#TRANS 3100 {"6" "11619" } -489.00 20240926 "LÜn - KFM - Kvitto - 2024-09-26 - Lan - 11619 - Kvitto,KFM"
+#TRANS 1930 {} -28.00 20241106 "LeveransKonto - 2024-11-05 - Ahsell - Faktura 4810415507"
+#TRANS 2440 {} 28.00 20241106 "LeveransKonto - 2024-11-05 - Ahsell - Faktura 4810415507"
 }
 
-#VER B 189 20240927 "LÜn - Autogiro - Inbetalning - 2024-09-27 - Ver - LÜn  - 10371 -  Inbetalning" 20241021
+#VER A 116 20241106 "LeveransKonto - 2024-11-06 - Ahsell - Faktura - 4795459702" 20241106
 {
-#TRANS 1930 {"6" "10371" } 1000.00 20240927 "LÜn - Autogiro - Inbetalning - 2024-09-27 - Ver - LÜn  - 10"
-#TRANS 1381 {"6" "10371" } -577.00 20240927 "LÜn - Autogiro - Inbetalning - 2024-09-27 - Ver - LÜn  - 10"
-#TRANS 3100 {"6" "10371" } -423.00 20240927 "LÜn - Autogiro - Inbetalning - 2024-09-27 - Ver - LÜn  - 10"
+#TRANS 1930 {} -36.00 20241106 "LeveransKonto - 2024-11-06 - Ahsell - Faktura - 4795459702"
+#TRANS 2440 {} 36.00 20241106 "LeveransKonto - 2024-11-06 - Ahsell - Faktura - 4795459702"
 }
 
-#VER B 190 20240927 "LÜn - Autogiro - Inbetalning - 2024-09-27 - Ver - LÜn  - 11692 -  Inbetalning" 20241021
+#VER A 117 20241106 "LeveransKonto - 2024-11-06 - Ahsell - Faktura - 4794594509" 20241106
 {
-#TRANS 1930 {"6" "11692" } 1200.00 20240927 "LÜn - Autogiro - Inbetalning - 2024-09-27 - Ver - LÜn  - 11"
-#TRANS 1381 {"6" "11692" } -1121.00 20240927 "LÜn - Autogiro - Inbetalning - 2024-09-27 - Ver - LÜn  - 11"
-#TRANS 3100 {"6" "11692" } -79.00 20240927 "LÜn - Autogiro - Inbetalning - 2024-09-27 - Ver - LÜn  - 11"
+#TRANS 1930 {} -64.00 20241106 "LeveransKonto - 2024-11-06 - Ahsell - Faktura - 4794594509"
+#TRANS 2440 {} 64.00 20241106 "LeveransKonto - 2024-11-06 - Ahsell - Faktura - 4794594509"
 }
 
-#VER B 191 20240927 "LÜn - Autogiro - Inbetalning -  2024-09-27 - Ver - LÜn  - 11593 -  Inbetalning" 20241021
+#VER A 118 20241106 "LeveransKonto - 2024-11-06 - Ahsell - Faktura - 4798525202" 20241106
 {
-#TRANS 1930 {"6" "11593" } 958.00 20240927 "LÜn - Autogiro - Inbetalning -  2024-09-27 - Ver - LÜn  - 1"
-#TRANS 1381 {"6" "11593" } -751.00 20240927 "LÜn - Autogiro - Inbetalning -  2024-09-27 - Ver - LÜn  - 1"
-#TRANS 3100 {"6" "11593" } -207.00 20240927 "LÜn - Autogiro - Inbetalning -  2024-09-27 - Ver - LÜn  - 1"
+#TRANS 1930 {} -94.00 20241106 "LeveransKonto - 2024-11-06 - Ahsell - Faktura - 4798525202"
+#TRANS 2440 {} 94.00 20241106 "LeveransKonto - 2024-11-06 - Ahsell - Faktura - 4798525202"
 }
 
-#VER B 192 20240927 "Kapitalisering av rÑnta - 2024-09-27 - Ver - LÜn  - 10298 - Kapitalisering" 20241021
+#VER A 119 20241106 "LeveransKonto - 2024-11-06- Ahsell - Faktura - 4800363709" 20241106
 {
-#TRANS 1381 {"6" "10298" } 2540.00 20240927 "Kapitalisering av rÑnta - 2024-09-27 - Ver - LÜn  - 10298 -"
-#TRANS 3100 {"6" "10298" } -2540.00 20240927 "Kapitalisering av rÑnta - 2024-09-27 - Ver - LÜn  - 10298 -"
+#TRANS 1930 {} -300.00 20241106 "LeveransKonto - 2024-11-06- Ahsell - Faktura - 4800363709"
+#TRANS 2440 {} 300.00 20241106 "LeveransKonto - 2024-11-06- Ahsell - Faktura - 4800363709"
 }
 
-#VER B 193 20240927 "Kapitalisering av rÑnta -  2024-09-27 - Ver - LÜn  - 11130 - Kapitalisering" 20241021
+#VER A 120 20241106 "LeveransKonto - 2024-11-06 - Nibe - Faktura - DSTP100041480QPRTJOB012461 (korrigerad med verifikation A131 av Carl-Johan Wik, 2024-11-06)" 20241106
 {
-#TRANS 1381 {"6" "11130" } 350.00 20240927 "Kapitalisering av rÑnta -  2024-09-27 - Ver - LÜn  - 11130 "
-#TRANS 3100 {"6" "11130" } -350.00 20240927 "Kapitalisering av rÑnta -  2024-09-27 - Ver - LÜn  - 11130 "
+#TRANS 1930 {} -5352.00 20241106 "LeveransKonto - 2024-11-06 - Nibe - Faktura - DSTP100041480"
+#TRANS 2440 {} 5352.00 20241106 "LeveransKonto - 2024-11-06 - Nibe - Faktura - DSTP100041480"
 }
 
-#VER B 194 20240927 "Kapitalisering av rÑnta - 2024-09-27 - Ver - LÜn  - 11395 - Kapitalisering" 20241021
+#VER A 121 20241106 "LeveransKonto - 2024-11-06 - Dahl - Faktura-123962029" 20241106
 {
-#TRANS 1381 {"6" "11388" } 612.00 20240927 "Kapitalisering av rÑnta - 2024-09-27 - Ver - LÜn  - 11395 -"
-#TRANS 3100 {"6" "11388" } -612.00 20240927 "Kapitalisering av rÑnta - 2024-09-27 - Ver - LÜn  - 11395 -"
+#TRANS 1930 {} -28.00 20241106 "LeveransKonto - 2024-11-06 - Dahl - Faktura-123962029"
+#TRANS 2440 {} 28.00 20241106 "LeveransKonto - 2024-11-06 - Dahl - Faktura-123962029"
 }
 
-#VER B 195 20240927 "LÜn - KFM - Kvitto - 2024-09-27 - Lan - 11569 - Kvitto,KFM" 20241022
+#VER A 122 20241106 "LeveransKonto - 2024-11-05 - Dahl - Faktura-123972214" 20241106
 {
-#TRANS 1930 {"6" "11569" } 239.00 20240927 "LÜn - KFM - Kvitto - 2024-09-27 - Lan - 11569 - Kvitto,KFM"
-#TRANS 1511 {"6" "11569" } -239.00 20240927 "LÜn - KFM - Kvitto - 2024-09-27 - Lan - 11569 - Kvitto,KFM"
+#TRANS 1930 {} -33.00 20241106 "LeveransKonto - 2024-11-05 - Dahl - Faktura-123972214"
+#TRANS 2440 {} 33.00 20241106 "LeveransKonto - 2024-11-05 - Dahl - Faktura-123972214"
 }
 
-#VER B 196 20240930 "LÜn - KFM - Kvitto - 2024-09-30 - Lan - 11023 - Kvitto,KFM" 20241022
+#VER A 123 20241106 "LeveransKonto - 2024-11-06 - Dahl - Faktura-123963966" 20241106
 {
-#TRANS 1930 {"6" "11023" } 809.00 20240930 "LÜn - KFM - Kvitto - 2024-09-30 - Lan - 11023 - Kvitto,KFM"
-#TRANS 3100 {"6" "11023" } -809.00 20240930 "LÜn - KFM - Kvitto - 2024-09-30 - Lan - 11023 - Kvitto,KFM"
+#TRANS 1930 {} -50.00 20241106 "LeveransKonto - 2024-11-06 - Dahl - Faktura-123963966"
+#TRANS 2440 {} 50.00 20241106 "LeveransKonto - 2024-11-06 - Dahl - Faktura-123963966"
 }
 
-#VER B 197 20241001 "LÜn - KFM - Kvitto - 2024-10-01 - Lan - 10694 - Kvitto,KFM" 20241022
+#VER A 124 20241106 "LeveransKonto - 2024-11-06 - Dahl - Faktura-123929909" 20241106
 {
-#TRANS 1930 {"6" "10694" } 494.00 20241001 "LÜn - KFM - Kvitto - 2024-10-01 - Lan - 10694 - Kvitto,KFM"
-#TRANS 3100 {"6" "10694" } -494.00 20241001 "LÜn - KFM - Kvitto - 2024-10-01 - Lan - 10694 - Kvitto,KFM"
+#TRANS 1930 {} -95.00 20241106 "LeveransKonto - 2024-11-06 - Dahl - Faktura-123929909"
+#TRANS 2440 {} 95.00 20241106 "LeveransKonto - 2024-11-06 - Dahl - Faktura-123929909"
 }
 
-#VER B 198 20241002 "2024-10-02 - Lan - 10678 - Kvitto,KFM" 20241022
+#VER A 125 20241106 "LeveransKonto - 2024-11-06 - Dahl - Faktura-124006863" 20241106
 {
-#TRANS 1930 {"6" "10678" } 1004.00 20241002 "2024-10-02 - Lan - 10678 - Kvitto,KFM"
-#TRANS 1381 {"6" "10678" } -845.00 20241002 "2024-10-02 - Lan - 10678 - Kvitto,KFM"
-#TRANS 3100 {"6" "10678" } -159.00 20241002 "2024-10-02 - Lan - 10678 - Kvitto,KFM"
-#TRANS 1389 {"6" "10678" } 845.00 20241002 "2024-10-02 - Lan - 10678 - Kvitto,KFM"
-#TRANS 3950 {"6" "10678" } -845.00 20241002 "2024-10-02 - Lan - 10678 - Kvitto,KFM"
-#TRANS 1381 {"6" "10678" } 845.00 20241002 "2024-10-02 - Lan - 10678 - Kvitto,KFM"
-#TRANS 1389 {"6" "10678" } -845.00 20241002 "2024-10-02 - Lan - 10678 - Kvitto,KFM"
+#TRANS 1930 {} -251.00 20241106 "LeveransKonto - 2024-11-06 - Dahl - Faktura-124006863"
+#TRANS 2440 {} 251.00 20241106 "LeveransKonto - 2024-11-06 - Dahl - Faktura-124006863"
 }
 
-#VER B 199 20241010 "LÜn - KFM - Kvitto - 2024-10-10 - Lan - 11569 -(728) Kvitto,KFM" 20241022
+#VER A 126 20241106 "LeveransKonto - 2024-11-06 - Dahl- Faktura-123930081" 20241106
 {
-#TRANS 1930 {"6" "11569" } 728.00 20241010 "LÜn - KFM - Kvitto - 2024-10-10 - Lan - 11569 -(728) Kvitt"
-#TRANS 3100 {"6" "11569" } -728.00 20241010 "LÜn - KFM - Kvitto - 2024-10-10 - Lan - 11569 -(728) Kvitt"
+#TRANS 1930 {} -336.00 20241106 "LeveransKonto - 2024-11-06 - Dahl- Faktura-123930081"
+#TRANS 2440 {} 336.00 20241106 "LeveransKonto - 2024-11-06 - Dahl- Faktura-123930081"
 }
 
-#VER B 200 20241010 "LÜn - KFM - Kvitto - 2024-10-10 - Lan - 11569 -(796) Kvitto,KFM" 20241022
+#VER A 127 20241106 "LeveransKonto - 2024-11-06 - Dahl - Faktura-123962019" 20241106
 {
-#TRANS 1930 {"6" "11569" } 796.00 20241010 "LÜn - KFM - Kvitto - 2024-10-10 - Lan - 11569 -(796) Kvitt"
-#TRANS 3100 {"6" "11569" } -796.00 20241010 "LÜn - KFM - Kvitto - 2024-10-10 - Lan - 11569 -(796) Kvitt"
+#TRANS 1930 {} -383.00 20241106 "LeveransKonto - 2024-11-06 - Dahl - Faktura-123962019"
+#TRANS 2440 {} 383.00 20241106 "LeveransKonto - 2024-11-06 - Dahl - Faktura-123962019"
 }
 
-#VER B 201 20241018 "LÜn - KFM - Kvitto - 2024-10-18 - Lan - 11197 - Kvitto,KFM" 20241025
+#VER A 128 20241106 "LeveransKonto - 2024-11-06 - Dahl - Faktura-123961808" 20241106
 {
-#TRANS 1930 {"6" "11197" } 318.00 20241018 "LÜn - KFM - Kvitto - 2024-10-18 - Lan - 11197 - Kvitto,KFM"
-#TRANS 3100 {"6" "11190" } -318.00 20241018 "LÜn - KFM - Kvitto - 2024-10-18 - Lan - 11197 - Kvitto,KFM"
+#TRANS 1930 {} -1228.00 20241106 "LeveransKonto - 2024-11-06 - Dahl - Faktura-123961808"
+#TRANS 2440 {} 1228.00 20241106 "LeveransKonto - 2024-11-06 - Dahl - Faktura-123961808"
 }
 
-#VER B 202 20241024 "2024-10-24 - Lan - 10710 - Kvitto,KFM" 20241025
+#VER A 129 20241106 "LeveransKonto - 2024-11-06 - Dahl - Faktura-123941141" 20241106
 {
-#TRANS 1930 {"6" "10710" } 198.00 20241024 "2024-10-24 - Lan - 10710 - Kvitto,KFM"
-#TRANS 1381 {"6" "10710" } -189.00 20241024 "2024-10-24 - Lan - 10710 - Kvitto,KFM"
-#TRANS 3100 {"6" "10710" } -9.00 20241024 "2024-10-24 - Lan - 10710 - Kvitto,KFM"
+#TRANS 1930 {} -1738.00 20241106 "LeveransKonto - 2024-11-06 - Dahl - Faktura-123941141"
+#TRANS 2440 {} 1738.00 20241106 "LeveransKonto - 2024-11-06 - Dahl - Faktura-123941141"
 }
 
-#VER B 203 20241024 "2024-10-24 - Lan - 11007 - Kvitto,KFM" 20241025
+#VER A 130 20241106 "LeveransKonto - 2024-11-06 - Dahl - Faktura-123929904" 20241106
 {
-#TRANS 1930 {"6" "11007" } 568.00 20241024 "2024-10-24 - Lan - 11007 - Kvitto,KFM"
-#TRANS 3100 {"6" "11007" } -568.00 20241024 "2024-10-24 - Lan - 11007 - Kvitto,KFM"
+#TRANS 1930 {} -2037.00 20241106 "LeveransKonto - 2024-11-06 - Dahl - Faktura-123929904"
+#TRANS 2440 {} 2037.00 20241106 "LeveransKonto - 2024-11-06 - Dahl - Faktura-123929904"
 }
 
-#VER B 204 20241029 "BetalningspÜminnelse - 2024-10-29 - LÜn 11130- Sista betalningspÜminnelse" 20241029
+#VER A 131 20241106 "Korrigering av ver.nr. A120, LeveransKonto - 2024-11-06 - Nibe - Faktura - DSTP100041480QPRTJOB012461 (av Carl-Johan Wik, 2024-11-06)" 20241106
 {
-#TRANS 1511 {"6" "11130" } 60.00 20241029 "BetalningspÜminnelse - 2024-10-29 - LÜn 11130- Sista betaln"
-#TRANS 3596 {"6" "11130" } -60.00 20241029 "BetalningspÜminnelse - 2024-10-29 - LÜn 11130- Sista betaln"
+#TRANS 1930 {} 5352.00 20241106 "LeveransKonto - 2024-11-06 - Nibe - Faktura - DSTP100041480"
+#TRANS 2440 {} -5352.00 20241106 "LeveransKonto - 2024-11-06 - Nibe - Faktura - DSTP100041480"
 }
 
-#VER B 205 20241029 "LÜn - Autogiro - Inbetalning -2024-11-29 - Ver - LÜn 10371 - Inbetalning" 20241111
+#VER A 132 20240930 "Momsredovisning juli-september 2024" 20241107
 {
-#TRANS 1930 {"6" "10371" } 1000.00 20241029 "LÜn - Autogiro - Inbetalning -2024-11-29 - Ver - LÜn 10371 "
-#TRANS 1381 {"6" "10371" } -594.00 20241029 "LÜn - Autogiro - Inbetalning -2024-11-29 - Ver - LÜn 10371 "
-#TRANS 3100 {"6" "10371" } -406.00 20241029 "LÜn - Autogiro - Inbetalning -2024-11-29 - Ver - LÜn 10371 "
+#TRANS 2641 {} -3626.06
+#TRANS 2650 {} 3626.00
+#TRANS 3740 {} 0.06
 }
 
-#VER B 206 20241029 "LÜn - Autogiro - Inbetalning - 2024-11-29 - Ver - LÜn 11692 - Inbetalning" 20241111
+#VER A 133 20241108 "Leverantîrsfaktura - 2024-11-08 - Ahlsell - Faktura - 4836029506" 20241122
 {
-#TRANS 1930 {"6" "11692" } 1200.00 20241029 "LÜn - Autogiro - Inbetalning - 2024-11-29 - Ver - LÜn 11692"
-#TRANS 1381 {"6" "11692" } -1147.00 20241029 "LÜn - Autogiro - Inbetalning - 2024-11-29 - Ver - LÜn 11692"
-#TRANS 3100 {"6" "11692" } -53.00 20241029 "LÜn - Autogiro - Inbetalning - 2024-11-29 - Ver - LÜn 11692"
+#TRANS 2440 {} -776.00 20241108 "Leverantîrsfaktura - 2024-11-08 - Ahlsell - Faktura - 48360"
+#TRANS 2641 {} 155.28 20241108 "Leverantîrsfaktura - 2024-11-08 - Ahlsell - Faktura - 48360"
+#TRANS 4000 {} 621.13 20241108 "Leverantîrsfaktura - 2024-11-08 - Ahlsell - Faktura - 48360"
+#TRANS 3740 {} -0.41 20241108 "Leverantîrsfaktura - 2024-11-08 - Ahlsell - Faktura - 48360"
 }
 
-#VER B 207 20241029 "Kapitalisering av rÑnta - 2024-11-29 - Ver - LÜn 10298 - Kapitalisering av rÑnta" 20241111
+#VER A 134 20241109 "Inkîp - varor - 2024-11-09 - Elektroskandia" 20241122
 {
-#TRANS 1381 {"6" "10298" } 1469.00 20241029 "Kapitalisering av rÑnta - 2024-11-29 - Ver - LÜn 10298 - Ka"
-#TRANS 3100 {"6" "10298" } -1469.00 20241029 "Kapitalisering av rÑnta - 2024-11-29 - Ver - LÜn 10298 - Ka"
+#TRANS 1930 {} -666.00 20241109 "Inkîp - varor - 2024-11-09 - Elektroskandia"
+#TRANS 4000 {} 532.56 20241109 "Inkîp - varor - 2024-11-09 - Elektroskandia"
+#TRANS 2641 {} 133.14 20241109 "Inkîp - varor - 2024-11-09 - Elektroskandia"
+#TRANS 3740 {} 0.30 20241109 "Inkîp - varor - 2024-11-09 - Elektroskandia"
 }
 
-#VER B 208 20241029 "Kapitalisering av rÑnta - 2024-11-29 - Ver - LÜn 11130 - Kapitalisering av rÑnta" 20241111
+#VER A 135 20241109 "Inkîp - varor - 2024-11-09 - Bauhaus - KontantFaktura 401650838" 20241122
 {
-#TRANS 1381 {"6" "11130" } 369.00 20241029 "Kapitalisering av rÑnta - 2024-11-29 - Ver - LÜn 11130 - Ka"
-#TRANS 3100 {"6" "11130" } -369.00 20241029 "Kapitalisering av rÑnta - 2024-11-29 - Ver - LÜn 11130 - Ka"
+#TRANS 1930 {} -178.24 20241109 "Inkîp - varor - 2024-11-09 - Bauhaus - KontantFaktura 40165"
+#TRANS 4000 {} 142.59 20241109 "Inkîp - varor - 2024-11-09 - Bauhaus - KontantFaktura 40165"
+#TRANS 2641 {} 35.65 20241109 "Inkîp - varor - 2024-11-09 - Bauhaus - KontantFaktura 40165"
 }
 
-#VER B 209 20241029 "Kapitalisering av rÑnta - 2024-11-29 - Ver - LÜn 11593 - Kapitalisering av rÑnta" 20241111
+#VER A 136 20241111 "Leverantîrsfaktura - 2024-11-11 - Ahlsell - Faktura - 4839105907" 20241122
 {
-#TRANS 1381 {"6" "11593" } 197.00 20241029 "Kapitalisering av rÑnta - 2024-11-29 - Ver - LÜn 11593 - Ka"
-#TRANS 3100 {"6" "11593" } -197.00 20241029 "Kapitalisering av rÑnta - 2024-11-29 - Ver - LÜn 11593 - Ka"
+#TRANS 2440 {} -309.00 20241111 "Leverantîrsfaktura - 2024-11-11 - Ahlsell - Faktura - 48391"
+#TRANS 2641 {} 61.82 20241111 "Leverantîrsfaktura - 2024-11-11 - Ahlsell - Faktura - 48391"
+#TRANS 4000 {} 247.27 20241111 "Leverantîrsfaktura - 2024-11-11 - Ahlsell - Faktura - 48391"
+#TRANS 3740 {} -0.09 20241111 "Leverantîrsfaktura - 2024-11-11 - Ahlsell - Faktura - 48391"
 }
 
-#VER B 210 20241029 "LÜn - KFM - Kvitto - 2024-10-29 - Lan - 10249 - Kvitto,KFM" 20241111
+#VER A 137 20241112 "Leverantîrsfaktura - 2024-11-12 - Ahlsell - Faktura - 4842770002" 20241122
 {
-#TRANS 1930 {"6" "10249" } 105.00 20241029 "LÜn - KFM - Kvitto - 2024-10-29 - Lan - 10249 - Kvitto,KFM"
-#TRANS 3100 {} -105.00 20241029 "LÜn - KFM - Kvitto - 2024-10-29 - Lan - 10249 - Kvitto,KFM"
+#TRANS 2440 {} -398.00 20241112 "Leverantîrsfaktura - 2024-11-12 - Ahlsell - Faktura - 48427"
+#TRANS 2641 {} 79.64 20241112 "Leverantîrsfaktura - 2024-11-12 - Ahlsell - Faktura - 48427"
+#TRANS 4000 {} 318.56 20241112 "Leverantîrsfaktura - 2024-11-12 - Ahlsell - Faktura - 48427"
+#TRANS 3740 {} -0.20 20241112 "Leverantîrsfaktura - 2024-11-12 - Ahlsell - Faktura - 48427"
 }
 
-#VER B 211 20241029 "2024-10-29 - Lan - 11619,11023,11569 - Kvitto,KFM" 20241111
+#VER A 138 20241112 "Leverantîrsfaktura - 2024-11-12 - Ahlsell - Faktura - 4842887905" 20241122
 {
-#TRANS 1930 {"6" "11619" } 2089.00 20241029 "2024-10-29 - Lan - 11619,11023,11569 - Kvitto,KFM"
-#TRANS 3100 {"6" "11619" } -481.00 20241029 "2024-10-29 - Lan - 11619,11023,11569 - Kvitto,KFM"
-#TRANS 3100 {"6" "11023" } -768.00 20241029 "2024-10-29 - Lan - 11619,11023,11569 - Kvitto,KFM"
-#TRANS 3100 {"6" "11569" } -159.00 20241029 "2024-10-29 - Lan - 11619,11023,11569 - Kvitto,KFM"
-#TRANS 1511 {"6" "11569" } -681.00 20241029 "2024-10-29 - Lan - 11619,11023,11569 - Kvitto,KFM"
+#TRANS 2440 {} -327.00 20241112 "Leverantîrsfaktura - 2024-11-12 - Ahlsell - Faktura - 48428"
+#TRANS 2641 {} 65.46 20241112 "Leverantîrsfaktura - 2024-11-12 - Ahlsell - Faktura - 48428"
+#TRANS 4000 {} 261.83 20241112 "Leverantîrsfaktura - 2024-11-12 - Ahlsell - Faktura - 48428"
+#TRANS 3740 {} -0.29 20241112 "Leverantîrsfaktura - 2024-11-12 - Ahlsell - Faktura - 48428"
 }
 
-#VER B 212 20241101 "LÜn - KFM - Kvitto - 2024-11-01 - Lan - 10694 - Kvitto,KFM" 20241111
+#VER A 139 20241112 "Inkîp - varor - 2024-11-12 - Elektroskandia - kvitto, 28150787" 20241122
 {
-#TRANS 1930 {"6" "10694" } 494.00 20241101 "LÜn - KFM - Kvitto - 2024-11-01 - Lan - 10694 - Kvitto,KFM"
-#TRANS 3100 {"6" "10694" } -494.00 20241101 "LÜn - KFM - Kvitto - 2024-11-01 - Lan - 10694 - Kvitto,KFM"
+#TRANS 1930 {} -237.00 20241112 "Inkîp - varor - 2024-11-12 - Elektroskandia - kvitto, 28150"
+#TRANS 4000 {} 189.44 20241112 "Inkîp - varor - 2024-11-12 - Elektroskandia - kvitto, 28150"
+#TRANS 2641 {} 47.36 20241112 "Inkîp - varor - 2024-11-12 - Elektroskandia - kvitto, 28150"
+#TRANS 3740 {} 0.20 20241112 "Inkîp - varor - 2024-11-12 - Elektroskandia - kvitto, 28150"
 }
 
-#VER B 213 20241104 "2024-11-04 - Lan - 10678 - Kvitto,KFM" 20241120
+#VER A 140 20241112 "Inkîp - varor - 2024-11-12 - Elektroskandia - Ordernr,1867841" 20241122
 {
-#TRANS 1930 {"6" "10678" } 1006.00 20241104 "2024-11-04 - Lan - 10678 - Kvitto,KFM"
-#TRANS 1381 {"6" "10678" } -836.00 20241104 "2024-11-04 - Lan - 10678 - Kvitto,KFM"
-#TRANS 3100 {"6" "10678" } -170.00 20241104 "2024-11-04 - Lan - 10678 - Kvitto,KFM"
-#TRANS 1389 {"6" "10678" } 836.00 20241104 "2024-11-04 - Lan - 10678 - Kvitto,KFM"
-#TRANS 3950 {"6" "10678" } -836.00 20241104 "2024-11-04 - Lan - 10678 - Kvitto,KFM"
-#TRANS 1381 {"6" "10678" } 836.00 20241104 "2024-11-04 - Lan - 10678 - Kvitto,KFM"
-#TRANS 1389 {"6" "10678" } -836.00 20241104 "2024-11-04 - Lan - 10678 - Kvitto,KFM"
+#TRANS 1930 {} -444.00 20241112 "Inkîp - varor - 2024-11-12 - Elektroskandia - Ordernr,18678"
+#TRANS 4000 {} 355.08 20241112 "Inkîp - varor - 2024-11-12 - Elektroskandia - Ordernr,18678"
+#TRANS 2641 {} 88.77 20241112 "Inkîp - varor - 2024-11-12 - Elektroskandia - Ordernr,18678"
+#TRANS 3740 {} 0.15 20241112 "Inkîp - varor - 2024-11-12 - Elektroskandia - Ordernr,18678"
 }
 
-#VER B 214 20241119 "2024-11-19 - Lan - 11197 - Kvitto, KFM" 20241120
+#VER A 141 20241113 "Inkîp - varor - 2024-11-13 - Elektroskandia - Kvitto,80341" 20241122
 {
-#TRANS 1930 {"6" "11197" } 350.00 20241119 "2024-11-19 - Lan - 11197 - Kvitto, KFM"
-#TRANS 3100 {"6" "11197" } -350.00 20241119 "2024-11-19 - Lan - 11197 - Kvitto, KFM"
+#TRANS 1930 {} -382.00 20241113 "Inkîp - varor - 2024-11-13 - Elektroskandia - Kvitto,80341"
+#TRANS 4000 {} 305.38 20241113 "Inkîp - varor - 2024-11-13 - Elektroskandia - Kvitto,80341"
+#TRANS 2641 {} 76.35 20241113 "Inkîp - varor - 2024-11-13 - Elektroskandia - Kvitto,80341"
+#TRANS 3740 {} 0.27 20241113 "Inkîp - varor - 2024-11-13 - Elektroskandia - Kvitto,80341"
 }
 
-#VER B 215 20241119 "LÜn - KFM - Kvitto - 2024-11-19 - Lan - 11247 - Kvitto,KFM" 20241120
+#VER A 142 20241114 "Inkîp - varor - 2024-11-14 - Biltema(327,90 kr)" 20241122
 {
-#TRANS 1930 {"6" "11247" } 110.00 20241119 "LÜn - KFM - Kvitto - 2024-11-19 - Lan - 11247 - Kvitto,KFM"
-#TRANS 1511 {"6" "11247" } -110.00 20241119 "LÜn - KFM - Kvitto - 2024-11-19 - Lan - 11247 - Kvitto,KFM"
+#TRANS 1930 {} -327.90 20241114 "Inkîp - varor - 2024-11-14 - Biltema(327,90 kr)"
+#TRANS 4000 {} 262.32 20241114 "Inkîp - varor - 2024-11-14 - Biltema(327,90 kr)"
+#TRANS 2641 {} 65.58 20241114 "Inkîp - varor - 2024-11-14 - Biltema(327,90 kr)"
 }
 
-#VER B 216 20241119 "LÜn - KFM - Kvitto - 2024-11-11 - Lan - 11247(139kr) - Kvitto,KFM11247" 20241120
+#VER A 143 20241118 "Leverantîrsfaktura - 2014-11-18 - Bauhaus - Faktura 401680874 (korrigerad med verifikation A170 av Carl-Johan Wik, 2025-04-22)" 20241122
 {
-#TRANS 1930 {"6" "11247" } 139.00 20241119 "LÜn - KFM - Kvitto - 2024-11-11 - Lan - 11247(139kr) - Kvi"
-#TRANS 1511 {"6" "11247" } -139.00 20241119 "LÜn - KFM - Kvitto - 2024-11-11 - Lan - 11247(139kr) - Kvi"
+#TRANS 2440 {} -796.10 20241118 "Leverantîrsfaktura - 2014-11-18 - Bauhaus - Faktura 4016808"
+#TRANS 2641 {} 159.22 20241118 "Leverantîrsfaktura - 2014-11-18 - Bauhaus - Faktura 4016808"
+#TRANS 4000 {} 636.88 20241118 "Leverantîrsfaktura - 2014-11-18 - Bauhaus - Faktura 4016808"
 }
 
-#VER B 217 20241119 "LÜn - KFM - Kvitto - 2024-11-11 - Lan - 11569 - Kvitto,KFM" 20241120
+#VER A 144 20241118 "Inkîp - varor - 2024-11-18 - Bauhaus" 20241122
 {
-#TRANS 1930 {"6" "11569" } 797.00 20241119 "LÜn - KFM - Kvitto - 2024-11-11 - Lan - 11569 - Kvitto,KFM"
-#TRANS 1511 {"6" "11569" } -797.00 20241119 "LÜn - KFM - Kvitto - 2024-11-11 - Lan - 11569 - Kvitto,KFM"
+#TRANS 1930 {} -796.10 20241118 "Inkîp - varor - 2024-11-18 - Bauhaus"
+#TRANS 4000 {} 636.88 20241118 "Inkîp - varor - 2024-11-18 - Bauhaus"
+#TRANS 2641 {} 159.22 20241118 "Inkîp - varor - 2024-11-18 - Bauhaus"
 }
 
-#VER B 218 20241121 "BetalningspÜminnelse -   LÜn 11593 -  Sista betalningspÜminnelse" 20241121
+#VER A 145 20241119 "Inkîp - varor - 2024-11-19 - Byggmax- Kvitto - CO1323-00096053" 20241122
 {
-#TRANS 1511 {"6" "11593" } 60.00 20241121 "BetalningspÜminnelse -   LÜn 11593 -  Sista betalningspÜmin"
-#TRANS 3596 {"6" "11593" } -60.00 20241121 "BetalningspÜminnelse -   LÜn 11593 -  Sista betalningspÜmin"
+#TRANS 1930 {} -897.00 20241119 "Inkîp - varor - 2024-11-19 - Byggmax- Kvitto - CO1323-00096"
+#TRANS 4000 {} 717.60 20241119 "Inkîp - varor - 2024-11-19 - Byggmax- Kvitto - CO1323-00096"
+#TRANS 2641 {} 179.40 20241119 "Inkîp - varor - 2024-11-19 - Byggmax- Kvitto - CO1323-00096"
 }
 
-#VER B 219 20241125 "LÜn - Autogiro - Inbetalning - 2024-11-25 - Lan - 10694 - Kvitto, KFM" 20241209
+#VER A 146 20241119 "Inkîp - varor - 2024-11-19 - Elektroskandia" 20241122
 {
-#TRANS 1930 {"6" "10694" } 492.00 20241125 "LÜn - Autogiro - Inbetalning - 2024-11-25 - Lan - 10694 - "
-#TRANS 3100 {"6" "10694" } -492.00 20241125 "LÜn - Autogiro - Inbetalning - 2024-11-25 - Lan - 10694 - "
+#TRANS 1930 {} -1661.00 20241119 "Inkîp - varor - 2024-11-19 - Elektroskandia"
+#TRANS 4000 {} 1328.97 20241119 "Inkîp - varor - 2024-11-19 - Elektroskandia"
+#TRANS 2641 {} 332.24 20241119 "Inkîp - varor - 2024-11-19 - Elektroskandia"
+#TRANS 3740 {} -0.21 20241119 "Inkîp - varor - 2024-11-19 - Elektroskandia"
 }
 
-#VER B 220 20241125 "2024-11-25 - LÜn - 10801 - Skuldsanering - 860922-0705" 20241209
+#VER A 147 20241119 "Inkîp - varor - 2024-11-19 - Bauhaus - KontantFaktura 401685745 2024-11-18" 20241122
 {
-#TRANS 1930 {"6" "10801" } 766.00 20241125 "2024-11-25 - LÜn - 10801 - Skuldsanering - 860922-0705"
-#TRANS 1381 {"6" "10801" } -766.00 20241125 "2024-11-25 - LÜn - 10801 - Skuldsanering - 860922-0705"
+#TRANS 1930 {} -431.74 20241119 "Inkîp - varor - 2024-11-19 - Bauhaus - KontantFaktura 40168"
+#TRANS 4000 {} 345.39 20241119 "Inkîp - varor - 2024-11-19 - Bauhaus - KontantFaktura 40168"
+#TRANS 2641 {} 86.35 20241119 "Inkîp - varor - 2024-11-19 - Bauhaus - KontantFaktura 40168"
 }
 
-#VER B 221 20241126 "2024-11-26 - Lan - 11007 - Kvitto, KFM" 20241209
+#VER A 148 20241119 "Inkîp - varor - 2024-11-19 - Biltema" 20241122
 {
-#TRANS 1930 {"6" "11007" } 567.00 20241126 "2024-11-26 - Lan - 11007 - Kvitto, KFM"
-#TRANS 3100 {"6" "10074" } -567.00 20241126 "2024-11-26 - Lan - 11007 - Kvitto, KFM"
+#TRANS 1930 {} -568.90 20241119 "Inkîp - varor - 2024-11-19 - Biltema"
+#TRANS 4000 {} 455.12 20241119 "Inkîp - varor - 2024-11-19 - Biltema"
+#TRANS 2641 {} 113.78 20241119 "Inkîp - varor - 2024-11-19 - Biltema"
 }
 
-#VER B 222 20241127 "Inbetalning -  2024-11-27 - Lan - 10371 - Betalningsunderlag Autogiro" 20241209
+#VER A 149 20241120 "Leverantîrsfaktura - 2024-11-20 - Dahl- FAKTURA-124147281" 20241122
 {
-#TRANS 1930 {"6" "10371" } 1000.00 20241127 "Inbetalning -  2024-11-27 - Lan - 10371 - Betalningsunderl"
-#TRANS 1381 {"6" "10371" } -661.00 20241127 "Inbetalning -  2024-11-27 - Lan - 10371 - Betalningsunderl"
-#TRANS 3100 {"6" "10371" } -339.00 20241127 "Inbetalning -  2024-11-27 - Lan - 10371 - Betalningsunderl"
+#TRANS 2440 {} -296.00 20241120 "Leverantîrsfaktura - 2024-11-20 - Dahl- FAKTURA-124147281"
+#TRANS 2641 {} 59.24 20241120 "Leverantîrsfaktura - 2024-11-20 - Dahl- FAKTURA-124147281"
+#TRANS 4000 {} 236.97 20241120 "Leverantîrsfaktura - 2024-11-20 - Dahl- FAKTURA-124147281"
+#TRANS 3740 {} -0.21 20241120 "Leverantîrsfaktura - 2024-11-20 - Dahl- FAKTURA-124147281"
 }
 
-#VER B 223 20241127 "Inbetalning - 2024-11-27 - Lan - 11692 - Betalningsunderlag Autogiro" 20241209
+#VER A 150 20241121 "Inkîp - varor - 2024-11-21 - Byggmax - Kvitto - CO1323-00096299" 20241122
 {
-#TRANS 1930 {"6" "11692" } 1200.00 20241127 "Inbetalning - 2024-11-27 - Lan - 11692 - Betalningsunderla"
-#TRANS 1381 {"6" "11692" } -966.00 20241127 "Inbetalning - 2024-11-27 - Lan - 11692 - Betalningsunderla"
-#TRANS 3100 {"6" "11692" } -234.00 20241127 "Inbetalning - 2024-11-27 - Lan - 11692 - Betalningsunderla"
+#TRANS 1930 {} -309.00 20241121 "Inkîp - varor - 2024-11-21 - Byggmax - Kvitto - CO1323-0009"
+#TRANS 4000 {} 247.20 20241121 "Inkîp - varor - 2024-11-21 - Byggmax - Kvitto - CO1323-0009"
+#TRANS 2641 {} 61.80 20241121 "Inkîp - varor - 2024-11-21 - Byggmax - Kvitto - CO1323-0009"
 }
 
-#VER B 224 20241127 "Inbetalning - 2024-11-27 - Lan - 11593 - Betalningsunderlag Autogiro" 20241209
+#VER A 151 20241121 "Inkîp - varor - 2024-11-21 - Bauhaus - KontantFaktura 401696491" 20241122
 {
-#TRANS 1930 {"6" "11593" } 958.00 20241127 "Inbetalning - 2024-11-27 - Lan - 11593 - Betalningsunderla"
-#TRANS 1381 {"6" "11593" } -716.00 20241127 "Inbetalning - 2024-11-27 - Lan - 11593 - Betalningsunderla"
-#TRANS 3100 {"6" "11593" } -182.00 20241127 "Inbetalning - 2024-11-27 - Lan - 11593 - Betalningsunderla"
-#TRANS 1511 {"6" "11593" } -60.00 20241127 "Inbetalning - 2024-11-27 - Lan - 11593 - Betalningsunderla"
+#TRANS 1930 {} -85.50 20241121 "Inkîp - varor - 2024-11-21 - Bauhaus - KontantFaktura 40169"
+#TRANS 4000 {} 68.40 20241121 "Inkîp - varor - 2024-11-21 - Bauhaus - KontantFaktura 40169"
+#TRANS 2641 {} 17.10 20241121 "Inkîp - varor - 2024-11-21 - Bauhaus - KontantFaktura 40169"
 }
 
-#VER B 225 20241127 "Kapitalisering av rÑnta - 2024-11-27 - Lan - 10298 - Kapitalisering" 20241209
+#VER A 152 20241121 "Inkîp - varor - 2024-11-21 - Biltema" 20241122
 {
-#TRANS 1381 {"6" "10298" } 1367.00 20241127 "Kapitalisering av rÑnta - 2024-11-27 - Lan - 10298 - Kapit"
-#TRANS 3100 {"6" "10298" } -1367.00 20241127 "Kapitalisering av rÑnta - 2024-11-27 - Lan - 10298 - Kapit"
+#TRANS 1930 {} -94.90 20241121 "Inkîp - varor - 2024-11-21 - Biltema"
+#TRANS 4000 {} 75.92 20241121 "Inkîp - varor - 2024-11-21 - Biltema"
+#TRANS 2641 {} 18.98 20241121 "Inkîp - varor - 2024-11-21 - Biltema"
 }
 
-#VER B 226 20241127 "Kapitalisering av rÑnta - 2024-11-27 - Lan - 11130 - Kapitalisering" 20241209
+#VER A 153 20241122 "Inkîp - varor - 2024-11-22 - Elektroskandia" 20241205
 {
-#TRANS 1381 {"6" "11130" } 342.00 20241127 "Kapitalisering av rÑnta - 2024-11-27 - Lan - 11130 - Kapit"
-#TRANS 3100 {"6" "11130" } -342.00 20241127 "Kapitalisering av rÑnta - 2024-11-27 - Lan - 11130 - Kapit"
+#TRANS 1930 {} -418.00 20241122 "Inkîp - varor - 2024-11-22 - Elektroskandia"
+#TRANS 4000 {} 334.53 20241122 "Inkîp - varor - 2024-11-22 - Elektroskandia"
+#TRANS 2641 {} 83.63 20241122 "Inkîp - varor - 2024-11-22 - Elektroskandia"
+#TRANS 3740 {} -0.16 20241122 "Inkîp - varor - 2024-11-22 - Elektroskandia"
 }
 
-#VER B 227 20241127 "LÜn - KFM - Kvitto - 2024-11-27 - Lan - 10249 - Kvitto, KFM" 20241209
+#VER A 154 20241122 "Inkîp - varor - 2024-11-22 - Elektroskandia" 20241205
 {
-#TRANS 1930 {"6" "10249" } 172.00 20241127 "LÜn - KFM - Kvitto - 2024-11-27 - Lan - 10249 - Kvitto, KFM"
-#TRANS 3100 {"6" "10249" } -172.00 20241127 "LÜn - KFM - Kvitto - 2024-11-27 - Lan - 10249 - Kvitto, KFM"
+#TRANS 1930 {} -344.00 20241122 "Inkîp - varor - 2024-11-22 - Elektroskandia"
+#TRANS 4000 {} 275.10 20241122 "Inkîp - varor - 2024-11-22 - Elektroskandia"
+#TRANS 2641 {} 68.78 20241122 "Inkîp - varor - 2024-11-22 - Elektroskandia"
+#TRANS 3740 {} 0.12 20241122 "Inkîp - varor - 2024-11-22 - Elektroskandia"
 }
 
-#VER B 228 20241127 "LÜn - KFM - Kvitto - 2024-11-27 - Lan - 11023 - Kvitto, KFM" 20241209
+#VER A 155 20241122 "Inkîp - varor - 2024-11-22 - Bauhaus - KontntFaktura 401699115 2024-11-21" 20241205
 {
-#TRANS 1930 {"6" "11023" } 751.00 20241127 "LÜn - KFM - Kvitto - 2024-11-27 - Lan - 11023 - Kvitto, KFM"
-#TRANS 3100 {"6" "11023" } -751.00 20241127 "LÜn - KFM - Kvitto - 2024-11-27 - Lan - 11023 - Kvitto, KFM"
+#TRANS 1930 {} -369.55 20241122 "Inkîp - varor - 2024-11-22 - Bauhaus - KontntFaktura 401699"
+#TRANS 4000 {} 295.64 20241122 "Inkîp - varor - 2024-11-22 - Bauhaus - KontntFaktura 401699"
+#TRANS 2641 {} 73.91 20241122 "Inkîp - varor - 2024-11-22 - Bauhaus - KontntFaktura 401699"
 }
 
-#VER B 229 20241128 "LÜn - KFM - Kvitto - 2024-11-28 - Lan - 11619 - Kvitto, KFM" 20241209
+#VER A 156 20241125 "Inkîp - varor - 2024-11-25 - Ahlsell - Faktura - 4839105907" 20241205
 {
-#TRANS 1930 {"6" "11619" } 481.00 20241128 "LÜn - KFM - Kvitto - 2024-11-28 - Lan - 11619 - Kvitto, KFM"
-#TRANS 3100 {"6" "11619" } -481.00 20241128 "LÜn - KFM - Kvitto - 2024-11-28 - Lan - 11619 - Kvitto, KFM"
+#TRANS 1930 {} -309.00 20241125 "Inkîp - varor - 2024-11-25 - Ahlsell - Faktura - 4839105907"
+#TRANS 4000 {} 247.27 20241125 "Inkîp - varor - 2024-11-25 - Ahlsell - Faktura - 4839105907"
+#TRANS 2641 {} 61.82 20241125 "Inkîp - varor - 2024-11-25 - Ahlsell - Faktura - 4839105907"
+#TRANS 3740 {} -0.09 20241125 "Inkîp - varor - 2024-11-25 - Ahlsell - Faktura - 4839105907"
 }
 
-#VER B 230 20241129 "Inbetalning - 2024-11-29 - Ver - LÜn 10298 - Inbetalning" 20241209
+#VER A 157 20241125 "Inkîp - varor - 2024-11-25 - Ahlsell - Faktura - 4842887905" 20241205
 {
-#TRANS 1930 {"6" "10298" } 1260.00 20241129 "Inbetalning - 2024-11-29 - Ver - LÜn 10298 - Inbetalning"
-#TRANS 1381 {"6" "10298" } -1103.00 20241129 "Inbetalning - 2024-11-29 - Ver - LÜn 10298 - Inbetalning"
-#TRANS 3100 {"6" "10298" } -97.00 20241129 "Inbetalning - 2024-11-29 - Ver - LÜn 10298 - Inbetalning"
-#TRANS 1511 {"6" "10298" } -60.00 20241129 "Inbetalning - 2024-11-29 - Ver - LÜn 10298 - Inbetalning"
+#TRANS 1930 {} -327.00 20241125 "Inkîp - varor - 2024-11-25 - Ahlsell - Faktura - 4842887905"
+#TRANS 4000 {} 261.83 20241125 "Inkîp - varor - 2024-11-25 - Ahlsell - Faktura - 4842887905"
+#TRANS 2641 {} 65.46 20241125 "Inkîp - varor - 2024-11-25 - Ahlsell - Faktura - 4842887905"
+#TRANS 3740 {} -0.29 20241125 "Inkîp - varor - 2024-11-25 - Ahlsell - Faktura - 4842887905"
 }
 
-#VER B 231 20241129 "LÜn - KFM - Kvitto - 2024-11-29 - Lan - 11569 - Kvitto,KFM" 20250121
+#VER A 158 20241125 "Inkîp - varor - 2024-11-25 - Ahlsell - Faktura - 4842770002" 20241205
 {
-#TRANS 1930 {"6" "11569" } 840.00 20241129 "LÜn - KFM - Kvitto - 2024-11-29 - Lan - 11569 - Kvitto,KFM"
-#TRANS 3100 {"6" "11569" } -840.00 20241129 "LÜn - KFM - Kvitto - 2024-11-29 - Lan - 11569 - Kvitto,KFM"
+#TRANS 1930 {} -398.00 20241125 "Inkîp - varor - 2024-11-25 - Ahlsell - Faktura - 4842770002"
+#TRANS 4000 {} 318.56 20241125 "Inkîp - varor - 2024-11-25 - Ahlsell - Faktura - 4842770002"
+#TRANS 2641 {} 79.64 20241125 "Inkîp - varor - 2024-11-25 - Ahlsell - Faktura - 4842770002"
+#TRANS 3740 {} -0.20 20241125 "Inkîp - varor - 2024-11-25 - Ahlsell - Faktura - 4842770002"
 }
 
-#VER B 232 20241202 "2024-12-02 - Lan - 10678 - Kvitto,KFM" 20250121
+#VER A 159 20241125 "Inkîp - varor - 2024-11-25 - Ahlsell - Faktura - 4836029506" 20241205
 {
-#TRANS 1930 {"6" "10678" } 1132.00 20241202 "2024-12-02 - Lan - 10678 - Kvitto,KFM"
-#TRANS 1381 {"6" "10678" } -1006.00 20241202 "2024-12-02 - Lan - 10678 - Kvitto,KFM"
-#TRANS 3100 {"6" "10678" } -126.00 20241202 "2024-12-02 - Lan - 10678 - Kvitto,KFM"
-#TRANS 1389 {"6" "10678" } 1006.00 20241202 "2024-12-02 - Lan - 10678 - Kvitto,KFM"
-#TRANS 3950 {"6" "10678" } -1006.00 20241202 "2024-12-02 - Lan - 10678 - Kvitto,KFM"
-#TRANS 1381 {"6" "10678" } 1006.00 20241202 "2024-12-02 - Lan - 10678 - Kvitto,KFM"
-#TRANS 1389 {"6" "10678" } -1006.00 20241202 "2024-12-02 - Lan - 10678 - Kvitto,KFM"
+#TRANS 1930 {} -776.00 20241125 "Inkîp - varor - 2024-11-25 - Ahlsell - Faktura - 4836029506"
+#TRANS 4000 {} 621.13 20241125 "Inkîp - varor - 2024-11-25 - Ahlsell - Faktura - 4836029506"
+#TRANS 2641 {} 155.28 20241125 "Inkîp - varor - 2024-11-25 - Ahlsell - Faktura - 4836029506"
+#TRANS 3740 {} -0.41 20241125 "Inkîp - varor - 2024-11-25 - Ahlsell - Faktura - 4836029506"
 }
 
-#VER B 233 20241218 "LÜn - KFM - Kvitto - 2024-12-18 - Lan - 11197 - Kvitto,KFM" 20250121
+#VER A 160 20241125 "Inkîp - varor - 2024-11-25 - Dahl- FAKTURA-124147281" 20241205
 {
-#TRANS 1930 {"6" "11197" } 306.00 20241218 "LÜn - KFM - Kvitto - 2024-12-18 - Lan - 11197 - Kvitto,KFM"
-#TRANS 3100 {"6" "11197" } -306.00 20241218 "LÜn - KFM - Kvitto - 2024-12-18 - Lan - 11197 - Kvitto,KFM"
+#TRANS 1930 {} -296.00 20241125 "Inkîp - varor - 2024-11-25 - Dahl- FAKTURA-124147281"
+#TRANS 4000 {} 236.97 20241125 "Inkîp - varor - 2024-11-25 - Dahl- FAKTURA-124147281"
+#TRANS 2641 {} 59.24 20241125 "Inkîp - varor - 2024-11-25 - Dahl- FAKTURA-124147281"
+#TRANS 3740 {} -0.21 20241125 "Inkîp - varor - 2024-11-25 - Dahl- FAKTURA-124147281"
 }
 
-#VER B 234 20241220 "2024-12-20 - Ver - LÜn 10496 - 19731219-5931 - Inbetalning - Skuldsanering" 20250121
+#VER A 161 20241126 "Inkîp - varor - 2024-11-26 - Bauhaus - KontantFaktura 401711324 2024-11-25" 20241205
 {
-#TRANS 1930 {"6" "10496" } 2206.00 20241220 "2024-12-20 - Ver - LÜn 10496 - 19731219-5931 - Inbetalning "
-#TRANS 1381 {"6" "10496" } -2206.00 20241220 "2024-12-20 - Ver - LÜn 10496 - 19731219-5931 - Inbetalning "
+#TRANS 1930 {} -423.26 20241126 "Inkîp - varor - 2024-11-26 - Bauhaus - KontantFaktura 40171"
+#TRANS 4000 {} 338.61 20241126 "Inkîp - varor - 2024-11-26 - Bauhaus - KontantFaktura 40171"
+#TRANS 2641 {} 84.65 20241126 "Inkîp - varor - 2024-11-26 - Bauhaus - KontantFaktura 40171"
 }
 
-#VER B 235 20241223 "LÜn - KFM - Kvitto - 2024-12-23 - Lan - 11007 - Kvitto,KFM" 20250121
+#VER A 162 20241127 "ôvriga personalkostnader" 20250109
 {
-#TRANS 1930 {"6" "11007" } 492.00 20241223 "LÜn - KFM - Kvitto - 2024-12-23 - Lan - 11007 - Kvitto,KFM"
-#TRANS 3100 {"6" "11007" } -492.00 20241223 "LÜn - KFM - Kvitto - 2024-12-23 - Lan - 11007 - Kvitto,KFM"
+#TRANS 1930 {} -35.00 20241127 "ôvriga personalkostnader"
+#TRANS 7699 {} 28.00 20241127 "ôvriga personalkostnader"
+#TRANS 2641 {} 7.00 20241127 "ôvriga personalkostnader"
 }
 
-#VER B 236 20241230 "LÜn - KFM - Kvitto - 2024-12-30 - Lan - 10249 - Kvitto,KFM" 20250121
+#VER A 163 20241219 Leverantîrsfaktura 20250109
 {
-#TRANS 1930 {"6" "10249" } 155.00 20241230 "LÜn - KFM - Kvitto - 2024-12-30 - Lan - 10249 - Kvitto,KFM"
-#TRANS 3100 {"6" "10249" } -155.00 20241230 "LÜn - KFM - Kvitto - 2024-12-30 - Lan - 10249 - Kvitto,KFM"
+#TRANS 2440 {} -223.00 20241219 "Leverantîrsfaktura"
+#TRANS 2641 {} 44.58 20241219 "Leverantîrsfaktura"
+#TRANS 4000 {} 178.28 20241219 "Leverantîrsfaktura"
+#TRANS 3740 {} 0.14 20241219 "Leverantîrsfaktura"
 }
 
-#VER B 237 20241230 "LÜn - KFM - Kvitto - 2024-12-30 - Lan - 11569 - Kvitto,KFM" 20250121
+#VER A 164 20241219 "Inkîp - varor - 2024-12-19 - Flinks" 20250109
 {
-#TRANS 1930 {"6" "11569" } 765.00 20241230 "LÜn - KFM - Kvitto - 2024-12-30 - Lan - 11569 - Kvitto,KFM"
-#TRANS 3100 {"6" "11569" } -765.00 20241230 "LÜn - KFM - Kvitto - 2024-12-30 - Lan - 11569 - Kvitto,KFM"
+#TRANS 1930 {} -183.00 20241219 "Inkîp - varor - 2024-12-19 - Flinks"
+#TRANS 4000 {} 146.00 20241219 "Inkîp - varor - 2024-12-19 - Flinks"
+#TRANS 2641 {} 36.50 20241219 "Inkîp - varor - 2024-12-19 - Flinks"
+#TRANS 3740 {} 0.50 20241219 "Inkîp - varor - 2024-12-19 - Flinks"
 }
 
-#VER B 238 20241230 "Kapitalisering av rÑnta - 2024-12-30 - Lan - 10298 - Kapitalisering" 20250122
+#VER A 165 20241231 "Momsredovisning oktober-december 2024" 20250127
 {
-#TRANS 1381 {"6" "10298" } 1468.00 20241230 "Kapitalisering av rÑnta - 2024-12-30 - Lan - 10298 - Kapit"
-#TRANS 3100 {"6" "10298" } -1468.00 20241230 "Kapitalisering av rÑnta - 2024-12-30 - Lan - 10298 - Kapit"
+#TRANS 2641 {} -35310.76
+#TRANS 2650 {} 35310.00
+#TRANS 3740 {} 0.76
 }
 
-#VER B 239 20241230 "Kapitalisering av rÑnta -  2024-12-30 - Lan - 10371 - Kapitalisering" 20250122
+#VER A 166 20241108 "2024-11-08 Moms juli 2024 - sept 2024" 20250207
 {
-#TRANS 1381 {"6" "10371" } 349.00 20241230 "Kapitalisering av rÑnta -  2024-12-30 - Lan - 10371 - Kapi"
-#TRANS 3100 {"6" "10371" } -349.00 20241230 "Kapitalisering av rÑnta -  2024-12-30 - Lan - 10371 - Kapi"
+#TRANS 1630 {} 3626.00 20241108 "2024-11-08 Moms juli 2024 - sept 2024"
+#TRANS 2650 {} -3626.00 20241108 "2024-11-08 Moms juli 2024 - sept 2024"
 }
 
-#VER B 240 20241230 "Kapitalisering av rÑnta - 2024-12-30 - Lan - 11130 - Kapitalisering" 20250122
+#VER A 167 20241201 "2024-12-01 IntÑktsrÑnta" 20250207
 {
-#TRANS 1381 {"6" "11130" } 397.00 20241230 "Kapitalisering av rÑnta - 2024-12-30 - Lan - 11130 - Kapit"
-#TRANS 3100 {"6" "11130" } -397.00 20241230 "Kapitalisering av rÑnta - 2024-12-30 - Lan - 11130 - Kapit"
+#TRANS 1630 {} 3.00 20241201 "2024-12-01 IntÑktsrÑnta"
+#TRANS 8314 {} -3.00 20241201 "2024-12-01 IntÑktsrÑnta"
 }
 
-#VER B 241 20241230 "Kapitalisering av rÑnta - 2024-12-30 - Lan - 11593 - Kapitalisering" 20250122
+#VER A 168 20241204 "2025-01-04 IntÑktsrÑnta (korrigerad med verifikation A169 av Carl-Johan Wik, 2025-02-07)" 20250207
 {
-#TRANS 1381 {"6" "11593" } 191.00 20241230 "Kapitalisering av rÑnta - 2024-12-30 - Lan - 11593 - Kapit"
-#TRANS 3100 {"6" "11593" } -191.00 20241230 "Kapitalisering av rÑnta - 2024-12-30 - Lan - 11593 - Kapit"
+#TRANS 1630 {} 3.00 20241204 "2025-01-04 IntÑktsrÑnta"
+#TRANS 8314 {} -3.00 20241204 "2025-01-04 IntÑktsrÑnta"
 }
 
-#VER B 242 20241231 "LÜn 11395 - Nedskrivning " 20250129
+#VER A 169 20241204 "Korrigering av ver.nr. A168, 2025-01-04 IntÑktsrÑnta (av Carl-Johan Wik, 2025-02-07)" 20250207
 {
-#TRANS 1381 {"6" "11388" } 605.00 20241231 "LÜn 11395 - Nedskrivning "
-#TRANS 3100 {"6" "11388" } -605.00 20241231 "LÜn 11395 - Nedskrivning "
-#TRANS 1381 {"6" "11388" } 639.00 20241231 "LÜn 11395 - Nedskrivning "
-#TRANS 3100 {"6" "11388" } -639.00 20241231 "LÜn 11395 - Nedskrivning "
-#TRANS 1381 {"6" "11388" } 632.00 20241231 "LÜn 11395 - Nedskrivning "
-#TRANS 3100 {"6" "11388" } -632.00 20241231 "LÜn 11395 - Nedskrivning "
-#TRANS 6380 {"6" "11388" } 4067.00 20241231 "LÜn 11395 - Nedskrivning "
-#TRANS 1389 {"6" "11388" } -4067.00 20241231 "LÜn 11395 - Nedskrivning "
-#TRANS 1389 {"6" "11388" } 4067.00 20241231 "LÜn 11395 - Nedskrivning "
-#TRANS 1381 {"6" "11388" } -4067.00 20241231 "LÜn 11395 - Nedskrivning "
+#TRANS 1630 {} -3.00 20241204 "2025-01-04 IntÑktsrÑnta"
+#TRANS 8314 {} 3.00 20241204 "2025-01-04 IntÑktsrÑnta"
 }
 
-#VER B 243 20241231 "LÜn 11676 - Nedskrivning" 20250129
+#VER A 170 20241118 "Korrigering av ver.nr. A143, Leverantîrsfaktura - 2014-11-18 - Bauhaus - Faktura 401680874 (av Carl-Johan Wik, 2025-04-22)" 20250422
 {
-#TRANS 6380 {"6" "11676" } 6174.00 20241231 "LÜn 11676 - Nedskrivning"
-#TRANS 1389 {"6" "11676" } -6174.00 20241231 "LÜn 11676 - Nedskrivning"
-#TRANS 1389 {"6" "11676" } 6174.00 20241231 "LÜn 11676 - Nedskrivning"
-#TRANS 1381 {"6" "11676" } -6174.00 20241231 "LÜn 11676 - Nedskrivning"
+#TRANS 2440 {} 796.10 20241118 "Leverantîrsfaktura - 2014-11-18 - Bauhaus - Faktura 4016808"
+#TRANS 2641 {} -159.22 20241118 "Leverantîrsfaktura - 2014-11-18 - Bauhaus - Faktura 4016808"
+#TRANS 4000 {} -636.88 20241118 "Leverantîrsfaktura - 2014-11-18 - Bauhaus - Faktura 4016808"
 }
 
-#VER B 244 20241231 "LÜn 10595 - Nedskrivning" 20250129
+#VER A 171 20241231 "Bokfîring av Ürets resultat" 20250422
 {
-#TRANS 6380 {"6" "10595" } 30000.00 20241231 "LÜn 10595 - Nedskrivning"
-#TRANS 1389 {"6" "10595" } -30000.00 20241231 "LÜn 10595 - Nedskrivning"
-#TRANS 1389 {"6" "10595" } 30000.00 20241231 "LÜn 10595 - Nedskrivning"
-#TRANS 1381 {"6" "10595" } -30000.00 20241231 "LÜn 10595 - Nedskrivning"
+#TRANS 8999 {} -158788.45 20241231 "Bokfîring av Ürets resultat"
+#TRANS 2099 {} 158788.45 20241231 "Bokfîring av Ürets resultat"
 }

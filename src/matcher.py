@@ -124,7 +124,7 @@ class InvoiceMatcher:
         """
         self.max_days = max_days
 
-    def identify_correction_vouchers(self, vouchers: List[Voucher]) -> set[str]:
+    def identify_correction_vouchers(self, vouchers: List[Voucher], target_year: int = None) -> set[str]:
         """
         Identifies correction voucher pairs that should be excluded from matching.
 
@@ -134,35 +134,55 @@ class InvoiceMatcher:
 
         These represent accounting corrections that cancel each other out, not actual invoices.
 
+        Args:
+            vouchers: List of all vouchers to search
+            target_year: If provided, only exclude corrections where BOTH vouchers are from this year.
+                        This prevents cross-year voucher ID collisions (e.g., 2024-A53 vs 2025-A53)
+
         Returns:
             Set of voucher IDs to exclude (both the incorrect and correction vouchers)
         """
         exclude_ids = set()
+        import re
 
         for voucher in vouchers:
+            # If filtering by year, skip vouchers from other years
+            if target_year and voucher.date.year != target_year:
+                continue
+
             desc_lower = voucher.description.lower()
 
             # Check for "korrigerad" (corrected with reference to another voucher)
             if "korrigerad" in desc_lower:
                 # Extract referenced voucher ID (pattern: "korrigerad med verifikation A131")
-                import re
                 match = re.search(r'korrigerad.*?([A-Z]\d+)', voucher.description, re.IGNORECASE)
                 if match:
                     referenced_id = match.group(1)
-                    exclude_ids.add(voucher.voucher_id)
-                    exclude_ids.add(referenced_id)
-                    logger.info(f"Excluding correction pair: {voucher.voucher_id} <-> {referenced_id}")
+
+                    # Find the referenced voucher to check its year
+                    ref_voucher = next((v for v in vouchers if v.voucher_id == referenced_id), None)
+
+                    # Only exclude if both vouchers are from the same year (or no year filter)
+                    if ref_voucher and (not target_year or ref_voucher.date.year == target_year):
+                        exclude_ids.add(voucher.voucher_id)
+                        exclude_ids.add(referenced_id)
+                        logger.info(f"Excluding correction pair: {voucher.voucher_id} <-> {referenced_id}")
 
             # Check for "korrigering" (correction of another voucher)
             if "korrigering" in desc_lower:
                 # Extract referenced voucher ID (pattern: "Korrigering av ver.nr. A120")
-                import re
                 match = re.search(r'korrigering.*?([A-Z]\d+)', voucher.description, re.IGNORECASE)
                 if match:
                     referenced_id = match.group(1)
-                    exclude_ids.add(voucher.voucher_id)
-                    exclude_ids.add(referenced_id)
-                    logger.info(f"Excluding correction pair: {voucher.voucher_id} <-> {referenced_id}")
+
+                    # Find the referenced voucher to check its year
+                    ref_voucher = next((v for v in vouchers if v.voucher_id == referenced_id), None)
+
+                    # Only exclude if both vouchers are from the same year (or no year filter)
+                    if ref_voucher and (not target_year or ref_voucher.date.year == target_year):
+                        exclude_ids.add(voucher.voucher_id)
+                        exclude_ids.add(referenced_id)
+                        logger.info(f"Excluding correction pair: {voucher.voucher_id} <-> {referenced_id}")
 
         if exclude_ids:
             logger.info(f"Total correction vouchers excluded: {len(exclude_ids)} ({', '.join(sorted(exclude_ids))})")
@@ -261,10 +281,16 @@ class InvoiceMatcher:
     def find_clearing_for_receipt(
         self,
         receipt: ReceiptEvent,
-        clearings: List[ClearingEvent]
+        clearings: List[ClearingEvent],
+        receipt_year: int = None
     ) -> Tuple[Optional[ClearingEvent], str]:
         """
         Finds the matching clearing for a receipt.
+
+        Args:
+            receipt: The receipt event to find clearing for
+            clearings: List of all available clearing events (can include multiple years)
+            receipt_year: Optional year of the receipt for cross-year detection
 
         Returns:
             Tuple of (ClearingEvent or None, comment string)
@@ -274,6 +300,7 @@ class InvoiceMatcher:
         2. Clearing date must be after receipt date
         3. Prefer clearings within 1-40 days
         4. Accept clearings up to max_days with note
+        5. Flag cross-year payments (e.g., 2024 receipt paid in 2025)
         """
         # Filter candidates by amount match (exact absolute value)
         abs_receipt_amount = abs(receipt.amount_2440)
@@ -315,6 +342,10 @@ class InvoiceMatcher:
         else:
             return None, f"Clearing found but {days} days after receipt (exceeds max {self.max_days} days)"
 
+        # Check for cross-year payment
+        if receipt_year and best_clearing.date.year != receipt_year:
+            comment += f" [CROSS-YEAR: {receipt_year} invoice paid in {best_clearing.date.year}]"
+
         # Check for ambiguity (multiple candidates with same days)
         same_day_candidates = [c for c, d in candidates_with_days if d == days]
         if len(same_day_candidates) > 1:
@@ -322,27 +353,37 @@ class InvoiceMatcher:
 
         return best_clearing, comment
 
-    def match_all(self, vouchers: List[Voucher]) -> List[InvoiceCase]:
+    def match_all(self, vouchers: List[Voucher], receipt_year: int = None) -> List[InvoiceCase]:
         """
         Performs complete matching of all receipts with clearings.
+
+        Args:
+            vouchers: List of all vouchers (can include multiple years for cross-year matching)
+            receipt_year: Optional year to filter receipts by (e.g., 2024). If provided,
+                         only receipts from this year will be processed, but clearings
+                         from all years in vouchers will be available for matching.
 
         Returns a list of InvoiceCase objects (one per receipt).
         """
         logger.info(f"Starting matching process for {len(vouchers)} vouchers...")
 
-        # Step 0: Identify and exclude correction vouchers
-        exclude_ids = self.identify_correction_vouchers(vouchers)
+        # Step 0: Identify and exclude correction vouchers (only from the target year to avoid cross-year ID collisions)
+        exclude_ids = self.identify_correction_vouchers(vouchers, target_year=receipt_year)
         filtered_vouchers = [v for v in vouchers if v.voucher_id not in exclude_ids]
         logger.info(f"Processing {len(filtered_vouchers)} vouchers after excluding {len(exclude_ids)} correction vouchers")
 
+        # Filter receipts by year if specified
+        receipts_vouchers = [v for v in filtered_vouchers if receipt_year is None or v.date.year == receipt_year]
+        logger.info(f"Filtering receipts to year {receipt_year}: {len(receipts_vouchers)} vouchers" if receipt_year else "Processing all years")
+
         # Step 1: Identify all receipts and clearings
-        receipts = self.identify_receipts(filtered_vouchers)
-        clearings = self.identify_clearings(filtered_vouchers)
+        receipts = self.identify_receipts(receipts_vouchers)
+        clearings = self.identify_clearings(filtered_vouchers)  # Search ALL years for clearings
 
         # Step 2: Match each receipt with its clearing
         cases = []
         for receipt in receipts:
-            clearing, comment = self.find_clearing_for_receipt(receipt, clearings)
+            clearing, comment = self.find_clearing_for_receipt(receipt, clearings, receipt_year=receipt_year)
 
             # Determine status
             if clearing:

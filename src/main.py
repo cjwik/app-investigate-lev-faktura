@@ -244,16 +244,29 @@ def cmd_match(args: argparse.Namespace) -> int:
             logger.warning(f"No vouchers parsed from {sie_file.name}")
             continue
 
-        # Perform matching
+        # For cross-year matching: also load next year's data for clearings
+        # This allows 2024 invoices to find 2025 payments
+        all_vouchers_for_matching = list(vouchers)
+        next_year = year + 1
+        next_year_sie = next(config.SIE_DIR.glob(f"{next_year}*.se"), None)
+
+        if next_year_sie:
+            logger.info(f"Loading {next_year} data for cross-year matching...")
+            next_year_vouchers = parse_sie_transactions(next_year_sie)
+            if next_year_vouchers:
+                all_vouchers_for_matching.extend(next_year_vouchers)
+                logger.info(f"Added {len(next_year_vouchers)} vouchers from {next_year} for cross-year clearing detection")
+
+        # Perform matching with current year receipts and all available clearings
         matcher = InvoiceMatcher(max_days=max_days)
-        cases = matcher.match_all(vouchers)
+        cases = matcher.match_all(all_vouchers_for_matching, receipt_year=year)
 
         if not cases:
             logger.warning(f"No invoice cases generated for {year}")
             continue
 
-        # Generate report
-        report_path = generate_both_reports(cases, config.REPORTS_DIR, year)
+        # Generate report (pass only current year vouchers for bookkeeping reconciliation)
+        report_path = generate_both_reports(cases, config.REPORTS_DIR, year, all_vouchers=vouchers)
         logger.info(f"Report generated: {report_path.name}")
 
     total_time = time.time() - start_time

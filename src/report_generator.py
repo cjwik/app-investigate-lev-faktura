@@ -211,14 +211,142 @@ def generate_combined_report(cases: List[InvoiceCase], output_path: Path) -> Non
         logger.info(f"  - {status}: {count}")
 
 
-def generate_both_reports(cases: List[InvoiceCase], reports_dir: Path, year: int) -> Path:
+def generate_summary_report_with_bookkeeping(cases: List[InvoiceCase], output_path: Path, all_vouchers: List = None) -> None:
     """
-    Generates the combined validation report with review flag.
+    Generates a financial summary report matching bookkeeping totals.
+
+    Args:
+        cases: List of InvoiceCase objects to report on
+        output_path: Path where the summary CSV will be saved
+        all_vouchers: Optional list of all vouchers (including excluded corrections) for reconciliation
+    """
+    from src.transaction_parser import Voucher
+
+    logger.info(f"Generating summary report for {len(cases)} invoice cases...")
+
+    # Calculate based on actual bookkeeping (all 2440 transactions including corrections)
+    if all_vouchers:
+        # Calculate total Kredit (receipts) and Debet (clearings) from ALL vouchers
+        total_kredit = 0.0  # Receipts (negative on 2440)
+        total_debet = 0.0   # Clearings (positive on 2440)
+
+        for voucher in all_vouchers:
+            if voucher.has_account("2440"):
+                trans_2440_list = voucher.get_transactions_by_account("2440")
+                for trans in trans_2440_list:
+                    if trans.amount < 0:
+                        total_kredit += abs(trans.amount)  # Kredit (receipts)
+                    else:
+                        total_debet += abs(trans.amount)   # Debet (clearings)
+
+        # Outstanding = Kredit - Debet (in absolute terms)
+        outstanding_balance = total_kredit - total_debet
+    else:
+        # Fallback to cases-based calculation
+        total_kredit = sum(abs(c.receipt.amount_2440) for c in cases)
+        total_debet = sum(abs(c.clearing.amount_2440) for c in cases if c.clearing)
+        outstanding_balance = total_kredit - total_debet
+
+    # Calculate validation statistics from cases (after excluding corrections)
+    total_invoices = len(cases)
+    paid_cases = [c for c in cases if c.status == "OK"]
+    unpaid_cases = [c for c in cases if c.status == "Missing clearing"]
+    review_cases = [c for c in cases if c.status == "Needs review"]
+
+    # Create summary rows matching bookkeeping
+    summary_rows = [
+        {"Category": "Account 2440 - Bookkeeping Totals", "Count": "", "Amount (SEK)": ""},
+        {"Category": "Total Kredit (Receipts)", "Count": "", "Amount (SEK)": f"{total_kredit:.2f}".replace(".", ",")},
+        {"Category": "Total Debet (Clearings)", "Count": "", "Amount (SEK)": f"{total_debet:.2f}".replace(".", ",")},
+        {"Category": "Outstanding Balance (Utg. saldo)", "Count": "", "Amount (SEK)": f"{outstanding_balance:.2f}".replace(".", ",")},
+        {"Category": "", "Count": "", "Amount (SEK)": ""},
+        {"Category": "Validation Summary (After Excluding Corrections)", "Count": "", "Amount (SEK)": ""},
+        {"Category": "Total Invoice Cases", "Count": total_invoices, "Amount (SEK)": ""},
+        {"Category": "  - Paid (OK)", "Count": len(paid_cases), "Amount (SEK)": ""},
+        {"Category": "  - Unpaid (Missing clearing)", "Count": len(unpaid_cases), "Amount (SEK)": ""},
+        {"Category": "  - Needs Review", "Count": len(review_cases), "Amount (SEK)": ""},
+    ]
+
+    # Create DataFrame and save
+    df = pd.DataFrame(summary_rows)
+    df.to_csv(output_path, index=False, encoding="utf-8-sig")
+    logger.info(f"Summary report saved to {output_path}")
+
+    # Log summary to console
+    logger.info("=" * 60)
+    logger.info("Financial Summary - Bookkeeping Reconciliation")
+    logger.info("=" * 60)
+    logger.info(f"Account 2440 Totals:")
+    logger.info(f"  Kredit (Receipts): {total_kredit:,.2f} SEK")
+    logger.info(f"  Debet (Clearings): {total_debet:,.2f} SEK")
+    logger.info(f"  Outstanding Balance: {outstanding_balance:,.2f} SEK")
+    logger.info(f"")
+    logger.info(f"Validation Summary (after excluding {0 if not all_vouchers else (len(all_vouchers) - sum(1 for v in all_vouchers if any(c.receipt.voucher.voucher_id == v.voucher_id for c in cases)))} correction vouchers):")
+    logger.info(f"  Total Cases: {total_invoices}")
+    logger.info(f"  Paid (OK): {len(paid_cases)}")
+    logger.info(f"  Unpaid: {len(unpaid_cases)}")
+    logger.info(f"  Needs Review: {len(review_cases)}")
+    logger.info("=" * 60)
+
+
+def generate_summary_report(cases: List[InvoiceCase], output_path: Path) -> None:
+    """
+    Generates a financial summary report showing outstanding balances.
+
+    Args:
+        cases: List of InvoiceCase objects to report on
+        output_path: Path where the summary CSV will be saved
+    """
+    logger.info(f"Generating summary report for {len(cases)} invoice cases...")
+
+    # Calculate totals
+    total_invoices = len(cases)
+    paid_cases = [c for c in cases if c.status == "OK"]
+    unpaid_cases = [c for c in cases if c.status == "Missing clearing"]
+    review_cases = [c for c in cases if c.status == "Needs review"]
+
+    # Calculate amounts (absolute values for totals)
+    total_invoice_amount = sum(abs(c.receipt.amount_2440) for c in cases)
+    paid_amount = sum(abs(c.receipt.amount_2440) for c in paid_cases)
+    unpaid_amount = sum(abs(c.receipt.amount_2440) for c in unpaid_cases)
+    review_amount = sum(abs(c.receipt.amount_2440) for c in review_cases)
+
+    # Create summary rows
+    summary_rows = [
+        {"Category": "Total Invoices", "Count": total_invoices, "Amount (SEK)": f"{total_invoice_amount:.2f}".replace(".", ",")},
+        {"Category": "Paid (OK)", "Count": len(paid_cases), "Amount (SEK)": f"{paid_amount:.2f}".replace(".", ",")},
+        {"Category": "Unpaid (Missing clearing)", "Count": len(unpaid_cases), "Amount (SEK)": f"{unpaid_amount:.2f}".replace(".", ",")},
+        {"Category": "Needs Review", "Count": len(review_cases), "Amount (SEK)": f"{review_amount:.2f}".replace(".", ",")},
+        {"Category": "", "Count": "", "Amount (SEK)": ""},  # Empty row
+        {"Category": "Outstanding Balance", "Count": len(unpaid_cases) + len(review_cases), "Amount (SEK)": f"{unpaid_amount + review_amount:.2f}".replace(".", ",")},
+    ]
+
+    # Create DataFrame and save
+    df = pd.DataFrame(summary_rows)
+    df.to_csv(output_path, index=False, encoding="utf-8-sig")
+    logger.info(f"Summary report saved to {output_path}")
+
+    # Log summary to console
+    logger.info("=" * 60)
+    logger.info("Financial Summary")
+    logger.info("=" * 60)
+    logger.info(f"Total Invoices: {total_invoices} ({total_invoice_amount:,.2f} SEK)")
+    logger.info(f"Paid (OK): {len(paid_cases)} ({paid_amount:,.2f} SEK)")
+    logger.info(f"Unpaid: {len(unpaid_cases)} ({unpaid_amount:,.2f} SEK)")
+    logger.info(f"Needs Review: {len(review_cases)} ({review_amount:,.2f} SEK)")
+    logger.info(f"Outstanding Balance: {len(unpaid_cases) + len(review_cases)} ({unpaid_amount + review_amount:,.2f} SEK)")
+    logger.info("=" * 60)
+
+
+def generate_both_reports(cases: List[InvoiceCase], reports_dir: Path, year: int, all_vouchers: List = None) -> Path:
+    """
+    Generates the combined validation report with review flag and summary report.
 
     Args:
         cases: List of InvoiceCase objects
         reports_dir: Directory to save reports
         year: Year for filename
+        all_vouchers: Optional list of all vouchers (including excluded corrections) for bookkeeping reconciliation
 
     Returns:
         Path to the generated report file
@@ -230,5 +358,9 @@ def generate_both_reports(cases: List[InvoiceCase], reports_dir: Path, year: int
     # Combined report with review flag
     combined_path = reports_dir / f"invoice_validation_{year}_{timestamp}.csv"
     generate_combined_report(cases, combined_path)
+
+    # Summary report
+    summary_path = reports_dir / f"summary_{year}_{timestamp}.csv"
+    generate_summary_report_with_bookkeeping(cases, summary_path, all_vouchers)
 
     return combined_path
