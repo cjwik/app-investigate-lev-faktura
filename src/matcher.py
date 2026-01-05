@@ -124,6 +124,51 @@ class InvoiceMatcher:
         """
         self.max_days = max_days
 
+    def identify_correction_vouchers(self, vouchers: List[Voucher]) -> set[str]:
+        """
+        Identifies correction voucher pairs that should be excluded from matching.
+
+        Correction vouchers are identified by:
+        - "korrigerad" (corrected) in description with reference to another voucher
+        - "Korrigering" (correction) in description with reference to another voucher
+
+        These represent accounting corrections that cancel each other out, not actual invoices.
+
+        Returns:
+            Set of voucher IDs to exclude (both the incorrect and correction vouchers)
+        """
+        exclude_ids = set()
+
+        for voucher in vouchers:
+            desc_lower = voucher.description.lower()
+
+            # Check for "korrigerad" (corrected with reference to another voucher)
+            if "korrigerad" in desc_lower:
+                # Extract referenced voucher ID (pattern: "korrigerad med verifikation A131")
+                import re
+                match = re.search(r'korrigerad.*?([A-Z]\d+)', voucher.description, re.IGNORECASE)
+                if match:
+                    referenced_id = match.group(1)
+                    exclude_ids.add(voucher.voucher_id)
+                    exclude_ids.add(referenced_id)
+                    logger.info(f"Excluding correction pair: {voucher.voucher_id} <-> {referenced_id}")
+
+            # Check for "korrigering" (correction of another voucher)
+            if "korrigering" in desc_lower:
+                # Extract referenced voucher ID (pattern: "Korrigering av ver.nr. A120")
+                import re
+                match = re.search(r'korrigering.*?([A-Z]\d+)', voucher.description, re.IGNORECASE)
+                if match:
+                    referenced_id = match.group(1)
+                    exclude_ids.add(voucher.voucher_id)
+                    exclude_ids.add(referenced_id)
+                    logger.info(f"Excluding correction pair: {voucher.voucher_id} <-> {referenced_id}")
+
+        if exclude_ids:
+            logger.info(f"Total correction vouchers excluded: {len(exclude_ids)} ({', '.join(sorted(exclude_ids))})")
+
+        return exclude_ids
+
     def identify_receipts(self, vouchers: List[Voucher]) -> List[ReceiptEvent]:
         """
         Identifies all receipt events from vouchers.
@@ -285,9 +330,14 @@ class InvoiceMatcher:
         """
         logger.info(f"Starting matching process for {len(vouchers)} vouchers...")
 
+        # Step 0: Identify and exclude correction vouchers
+        exclude_ids = self.identify_correction_vouchers(vouchers)
+        filtered_vouchers = [v for v in vouchers if v.voucher_id not in exclude_ids]
+        logger.info(f"Processing {len(filtered_vouchers)} vouchers after excluding {len(exclude_ids)} correction vouchers")
+
         # Step 1: Identify all receipts and clearings
-        receipts = self.identify_receipts(vouchers)
-        clearings = self.identify_clearings(vouchers)
+        receipts = self.identify_receipts(filtered_vouchers)
+        clearings = self.identify_clearings(filtered_vouchers)
 
         # Step 2: Match each receipt with its clearing
         cases = []

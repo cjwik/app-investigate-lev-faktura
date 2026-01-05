@@ -147,6 +147,44 @@ Then:
 
 ---
 
+## Correction Vouchers
+
+**Correction vouchers represent accounting corrections that cancel each other out, not actual supplier invoices.**
+
+### Exclusion Rule
+
+**Exclude both vouchers in a correction pair from the validation report entirely.**
+
+### Detection Pattern
+
+Identify correction vouchers by keywords in the description:
+- **"korrigerad"** (corrected) - The incorrect voucher that was later corrected
+  - Pattern: "korrigerad med verifikation A131"
+- **"Korrigering"** (correction) - The correction voucher that fixes the error
+  - Pattern: "Korrigering av ver.nr. A120"
+
+When either keyword is found, extract the referenced voucher ID and exclude **both** vouchers from processing.
+
+### Example: A120 ↔ A131
+
+**A120** (Incorrect):
+- Description: "...Nibe... (korrigerad med verifikation A131...)"
+- 1930 Kredit -5352.00, 2440 Debet +5352.00 (incorrect clearing)
+
+**A131** (Correction):
+- Description: "Korrigering av ver.nr. A120..."
+- 1930 Debet +5352.00, 2440 Kredit -5352.00 (reverses A120)
+
+**Result**: Both excluded - they cancel each other out.
+
+### Why Exclude?
+
+1. **Not actual invoices**: Corrections reverse accounting errors, not supplier transactions
+2. **No validation needed**: The correction already fixed the error
+3. **Improves accuracy**: Reduces false "Missing clearing" cases
+
+---
+
 ## Output
 
 Export CSV or XLSX.
@@ -400,3 +438,113 @@ For each 2440 receipt line:
 - Cash purchases paid immediately
 - Direct bank payments at point of purchase
 - Credit card transactions where expense and payment occur simultaneously
+
+---
+
+### Test Case 4: Correction Vouchers - A120 ↔ A131 (2024)
+
+**Purpose:** Verify that correction voucher pairs are excluded from validation report.
+
+**A120** (Incorrect voucher - later corrected):
+```
+#VER A 120 20241106 "...Nibe - Faktura - DSTP100041480... (korrigerad med verifikation A131...)"
+{
+  #TRANS 1930 {} -5352.00    ← Bank payment (Kredit) - incorrect
+  #TRANS 2440 {} 5352.00     ← Clears AP (Debet) - incorrect
+}
+```
+**Keyword:** "korrigerad med verifikation A131"
+
+**A131** (Correction voucher - reverses A120):
+```
+#VER A 131 20241106 "Korrigering av ver.nr. A120, LeveransKonto - 2024-11-06 - Nibe..."
+{
+  #TRANS 1930 {} 5352.00     ← Bank (Debet) - reverses payment
+  #TRANS 2440 {} -5352.00    ← Creates AP (Kredit) - reverses clearing
+}
+```
+**Keyword:** "Korrigering av ver.nr. A120"
+
+**Expected Behavior:**
+- ✅ A120 detected as incorrect voucher (keyword: "korrigerad med verifikation A131")
+- ✅ A131 extracted from A120's description
+- ✅ A131 detected as correction voucher (keyword: "Korrigering av ver.nr. A120")
+- ✅ A120 extracted from A131's description
+- ✅ Both A120 and A131 excluded from validation report
+- ✅ Neither appears in invoice cases list
+
+**Result:** Both vouchers excluded - they cancel each other out (accounting correction, not actual invoice).
+
+---
+
+### Test Case 5: Correction Vouchers - A143 ↔ A170 (2024)
+
+**Purpose:** Verify correction exclusion for receipt-only vouchers (no clearing involved).
+
+**A143** (Incorrect receipt - later corrected):
+```
+#VER A 143 20241118 "Leverantörsfaktura - 2014-11-18 - Bauhaus - Faktura 401680874 (korrigerad med verifikation A170...)"
+{
+  #TRANS 2440 {} -796.10     ← Receipt (Kredit) - Creates payable - incorrect
+  #TRANS 2641 {} 159.22      ← VAT
+  #TRANS 4000 {} 636.88      ← Expense
+}
+```
+**Keyword:** "korrigerad med verifikation A170"
+
+**A170** (Correction voucher - reverses A143):
+```
+#VER A 170 20241118 "Korrigering av ver.nr. A143, Leverantörsfaktura - 2014-11-18 - Bauhaus - Faktura 401680874..."
+{
+  #TRANS 2440 {} 796.10      ← Credit note (Debet without 1930) - reverses receipt
+  #TRANS 2641 {} -159.22     ← VAT reversal
+  #TRANS 4000 {} -636.88     ← Expense reversal
+}
+```
+**Keyword:** "Korrigering av ver.nr. A143"
+
+**Expected Behavior:**
+- ✅ A143 detected as incorrect voucher (keyword: "korrigerad med verifikation A170")
+- ✅ A170 extracted from A143's description
+- ✅ A170 detected as correction voucher (keyword: "Korrigering av ver.nr. A143")
+- ✅ A143 extracted from A170's description
+- ✅ Both A143 and A170 excluded from validation report
+
+**Note:** A143 would have been a receipt (Kredit -796.10), and A170 reverses it (Debet +796.10 without 1930 = credit note receipt). Both excluded.
+
+---
+
+### Test Case 6: Correction Vouchers - A168 ↔ A169 (2024)
+
+**Purpose:** Verify correction exclusion for non-2440 vouchers (interest income correction).
+
+**A168** (Incorrect interest income - later corrected):
+```
+#VER A 168 20241204 "2025-01-04 Inträktsränta (korrigerad med verifikation A169...)"
+{
+  #TRANS 1630 {} 3.00        ← Bank account (Debet)
+  #TRANS 8314 {} -3.00       ← Interest income (Kredit) - incorrect
+}
+```
+**Keyword:** "korrigerad med verifikation A169"
+**Note:** No account 2440 - not a supplier invoice, but still needs exclusion
+
+**A169** (Correction voucher - reverses A168):
+```
+#VER A 169 20241204 "Korrigering av ver.nr. A168, 2025-01-04 Inträktsränta..."
+{
+  #TRANS 1630 {} -3.00       ← Bank account (Kredit) - reversal
+  #TRANS 8314 {} 3.00        ← Interest income (Debet) - reversal
+}
+```
+**Keyword:** "Korrigering av ver.nr. A168"
+
+**Expected Behavior:**
+- ✅ A168 detected as incorrect voucher (keyword: "korrigerad med verifikation A169")
+- ✅ A169 extracted from A168's description
+- ✅ A169 detected as correction voucher (keyword: "Korrigering av ver.nr. A168")
+- ✅ A168 extracted from A169's description
+- ✅ Both A168 and A169 excluded from matching process
+- ✅ Doesn't affect invoice validation (no 2440 anyway)
+
+**Note:** This demonstrates that correction detection works universally, not just for supplier invoices. The exclusion happens before receipt identification, so non-2440 corrections are also filtered out.

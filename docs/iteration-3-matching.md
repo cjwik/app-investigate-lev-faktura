@@ -145,17 +145,19 @@ Comment: Clearing found 1 day after receipt
 
 ### Statistics (2024 Data)
 
-**After Bug Fixes (2026-01-04):**
+**After Correction Voucher Exclusion (2026-01-05):**
 - Total verifications: 165
-- Invoice cases identified: **46** (increased from 40)
+- Correction voucher pairs excluded: **3 pairs (6 vouchers)**: A120/A131, A143/A168, A169/A170
+- Invoice cases identified: **43** (after excluding 3 correction receipts)
 - Status breakdown:
-  - OK: **38** (82.6%) - increased from 34
-  - Missing clearing: **8** (17.4%)
-- Same-voucher payments: **7 cases** (A38, A39, A40, A83, A89, A94, A131)
+  - OK: **37** (86.0%)
+  - Missing clearing: **6** (14.0%)
+- Same-voucher payments: **7 cases** (A38, A39, A40, A83, A89, A94)
 
-**Bug Fixes Applied:**
-1. **VER_PATTERN regex** - Now handles both quoted and unquoted descriptions (fixed A47)
-2. **identify_receipts() logic** - Processes each 2440 transaction individually (fixed A83 and 3 other same-voucher cases)
+**Features Implemented:**
+1. **VER_PATTERN regex** - Handles both quoted and unquoted descriptions (fixed A47)
+2. **identify_receipts() logic** - Processes each 2440 transaction individually (fixed A83 and same-voucher cases)
+3. **Correction voucher detection** - Automatically excludes accounting corrections that cancel each other out (keywords: "korrigerad", "Korrigering")
 
 ### Statistics (2025 Data)
 
@@ -165,6 +167,47 @@ Comment: Clearing found 1 day after receipt
   - OK: 92 (81.4%)
   - Missing clearing: 21 (18.6%)
 - Processing time: ~0.07s
+
+## Correction Voucher Handling
+
+The matcher automatically detects and excludes correction voucher pairs that represent accounting corrections rather than actual supplier invoices.
+
+### Detection Pattern
+
+Correction vouchers are identified by keywords in the description:
+- **"korrigerad"** (corrected) - The incorrect voucher that was corrected
+- **"Korrigering"** (correction) - The correction voucher that fixes the error
+
+Both vouchers in the pair are excluded from the validation report.
+
+### Example: A120 ↔ A131
+
+**A120** (Incorrect - later corrected):
+```
+Description: "...Nibe - Faktura - DSTP100041480... (korrigerad med verifikation A131...)"
+Transactions:
+  #TRANS 1930 {} -5352.00    ← Bank (Kredit)
+  #TRANS 2440 {} 5352.00     ← Clears AP (Debet) - but was incorrect
+```
+
+**A131** (Correction - reverses A120):
+```
+Description: "Korrigering av ver.nr. A120, LeveransKonto - 2024-11-06 - Nibe..."
+Transactions:
+  #TRANS 1930 {} 5352.00     ← Bank (Debet) - reverses payment
+  #TRANS 2440 {} -5352.00    ← Creates AP (Kredit) - reverses clearing
+```
+
+**Result**: Both A120 and A131 excluded from report - they cancel each other out.
+
+### 2024 Data
+
+3 correction pairs identified and excluded:
+- **A120 ↔ A131**: Nibe invoice (5352.00 SEK)
+- **A143 ↔ A168**: Unknown (796.10 SEK)
+- **A169 ↔ A170**: Unknown (796.10 SEK credit note)
+
+This improved the match rate from 82.6% to 86.0% by removing false negatives.
 
 ## Known Limitations
 
