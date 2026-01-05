@@ -96,6 +96,18 @@ class ClearingEvent:
     def date(self) -> datetime:
         return self.voucher.date
 
+    @property
+    def description(self) -> str:
+        return self.voucher.description
+
+    def extract_supplier(self) -> Optional[str]:
+        """Extracts supplier from voucher description."""
+        return self.voucher.extract_supplier()
+
+    def extract_invoice_number(self) -> Optional[str]:
+        """Extracts invoice number from voucher description."""
+        return self.voucher.extract_invoice_number()
+
 
 @dataclass
 class InvoiceCase:
@@ -390,23 +402,50 @@ class InvoiceMatcher:
         else:
             return None, f"Clearing found but {days} days after receipt (exceeds max {self.max_days} days)"
 
-        # Add match quality indicators
+        # Add match quality indicators with detailed mismatch information
         if both_match:
             comment += " ✓ FULL MATCH (supplier + invoice#)"
         elif invoice_match and not supplier_match:
             # Invoice matches but supplier doesn't - flag for SIE file correction
-            receipt_sup = receipt.voucher.extract_supplier() or "?"
-            clearing_sup = best_clearing.voucher.extract_supplier() or "?"
-            comment += f" ⚠ WARNING: Invoice# matches but SUPPLIER MISMATCH (Receipt: {receipt_sup} vs Clearing: {clearing_sup}) - CHECK SIE FILE"
+            receipt_sup = receipt.voucher.extract_supplier() or "MISSING"
+            clearing_sup = best_clearing.voucher.extract_supplier() or "MISSING"
+
+            # Provide specific guidance based on what's missing
+            if receipt_sup == "MISSING" and clearing_sup == "MISSING":
+                comment += f" ⚠ TITLE MISMATCH: Both vouchers missing supplier in title (Invoice# OK) - FIX: Add supplier to 3rd field"
+            elif receipt_sup == "MISSING":
+                comment += f" ⚠ TITLE MISMATCH: Receipt {receipt.voucher_id} missing supplier in title (Invoice# OK) - FIX: Should be 'Leverantörsfaktura - Mottagen - {clearing_sup} - {receipt_invoice_no}'"
+            elif clearing_sup == "MISSING":
+                comment += f" ⚠ TITLE MISMATCH: Clearing {best_clearing.voucher_id} missing supplier in title (Invoice# OK) - FIX: Should be 'Leverantörsfaktura - Betalat - {receipt_sup} - {receipt_invoice_no}'"
+            else:
+                comment += f" ⚠ TITLE MISMATCH: Supplier names differ (Invoice# OK) - Receipt has '{receipt_sup}' but Clearing has '{clearing_sup}' - FIX: Use same supplier name in both"
+
         elif supplier_match and not invoice_match:
             # Supplier matches but invoice doesn't - flag for SIE file correction
-            receipt_inv = receipt.voucher.extract_invoice_number() or "?"
-            clearing_inv = best_clearing.voucher.extract_invoice_number() or "?"
-            comment += f" ⚠ WARNING: Supplier matches but INVOICE# MISMATCH (Receipt: {receipt_inv} vs Clearing: {clearing_inv}) - CHECK SIE FILE"
+            receipt_inv = receipt.voucher.extract_invoice_number() or "MISSING"
+            clearing_inv = best_clearing.voucher.extract_invoice_number() or "MISSING"
+
+            # Provide specific guidance based on what's missing
+            if receipt_inv == "MISSING" and clearing_inv == "MISSING":
+                comment += f" ⚠ TITLE MISMATCH: Both vouchers missing invoice# in title (Supplier OK) - FIX: Add invoice# to 4th field"
+            elif receipt_inv == "MISSING":
+                comment += f" ⚠ TITLE MISMATCH: Receipt {receipt.voucher_id} missing invoice# in title (Supplier OK) - FIX: Add '{clearing_inv}' to 4th field"
+            elif clearing_inv == "MISSING":
+                comment += f" ⚠ TITLE MISMATCH: Clearing {best_clearing.voucher_id} missing invoice# in title (Supplier OK) - FIX: Add '{receipt_inv}' to 4th field"
+            else:
+                comment += f" ⚠ TITLE MISMATCH: Invoice numbers differ (Supplier OK) - Receipt has '{receipt_inv}' but Clearing has '{clearing_inv}' - FIX: Use same invoice# in both"
+
         elif not invoice_match and not supplier_match:
             # Neither matches - either old format or needs correction
-            if receipt_invoice_no or receipt_supplier:
-                comment += " ⚠ WARNING: NO MATCH - Possible old format or needs SIE file correction"
+            receipt_sup = receipt.voucher.extract_supplier() or "MISSING"
+            receipt_inv = receipt.voucher.extract_invoice_number() or "MISSING"
+            clearing_sup = best_clearing.voucher.extract_supplier() or "MISSING"
+            clearing_inv = best_clearing.voucher.extract_invoice_number() or "MISSING"
+
+            if receipt_sup == "MISSING" or receipt_inv == "MISSING" or clearing_sup == "MISSING" or clearing_inv == "MISSING":
+                comment += f" ⚠ TITLE MISMATCH: Incomplete standardized format - Receipt({receipt.voucher_id}): supplier='{receipt_sup}' invoice#='{receipt_inv}' | Clearing({best_clearing.voucher_id}): supplier='{clearing_sup}' invoice#='{clearing_inv}' - FIX: Use format 'Leverantörsfaktura - Mottagen/Betalat - [Supplier] - [Invoice#]'"
+            else:
+                comment += f" ⚠ TITLE MISMATCH: Both supplier AND invoice# differ - Receipt has '{receipt_sup}'/'{receipt_inv}' but Clearing has '{clearing_sup}'/'{clearing_inv}' - CHECK: Wrong match or data entry error?"
 
         # Check for cross-year payment
         if receipt_year and best_clearing.date.year != receipt_year:
@@ -489,9 +528,30 @@ class InvoiceMatcher:
             )
             cases.append(case)
 
+        # Step 3: Find unmatched clearings (payments without receipts)
+        # Filter clearings to the target year if specified
+        clearings_for_year = [c for c in clearings if receipt_year is None or c.date.year == receipt_year]
+
+        unmatched_clearings = [
+            c for c in clearings_for_year
+            if id(c) not in used_clearing_ids
+        ]
+
+        # Create cases for unmatched clearings (payment without receipt)
+        for clearing in unmatched_clearings:
+            case = InvoiceCase(
+                receipt=None,  # No receipt voucher
+                clearing=clearing,
+                status="Missing receipt",
+                match_confidence=0,
+                comment="Payment made but no receipt voucher found - needs receipt verification"
+            )
+            cases.append(case)
+
         # Log statistics
         ok_count = sum(1 for c in cases if c.status == "OK")
-        missing_count = sum(1 for c in cases if c.status == "Missing clearing")
+        missing_clearing_count = sum(1 for c in cases if c.status == "Missing clearing")
+        missing_receipt_count = sum(1 for c in cases if c.status == "Missing receipt")
         review_count = sum(1 for c in cases if c.status == "Needs review")
 
         logger.info("=" * 60)
@@ -499,7 +559,8 @@ class InvoiceMatcher:
         logger.info("=" * 60)
         logger.info(f"Total invoice cases: {len(cases)}")
         logger.info(f"  - OK: {ok_count}")
-        logger.info(f"  - Missing clearing: {missing_count}")
+        logger.info(f"  - Missing clearing (unpaid invoices): {missing_clearing_count}")
+        logger.info(f"  - Missing receipt (payments without invoice): {missing_receipt_count}")
         logger.info(f"  - Needs review: {review_count}")
 
         return cases

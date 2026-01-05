@@ -157,43 +157,80 @@ def generate_combined_report(cases: List[InvoiceCase], output_path: Path) -> Non
         receipt = case.receipt
         clearing = case.clearing
 
-        # Extract supplier from voucher description
-        sie_supplier = receipt.extract_supplier()
-
         # Determine review flag
         needs_review = "JA" if case.status != "OK" else "NEJ"
 
-        # Build row data (using Swedish number format: comma as decimal separator)
-        row = {
-            # Review flag first (most important column)
-            "Behöver granskas": needs_review,
+        # Handle cases where receipt is missing (payment without invoice)
+        if receipt is None:
+            # Extract supplier from clearing voucher instead
+            sie_supplier = clearing.extract_supplier() if clearing else ""
 
-            # SIE Receipt
-            "Receipt Voucher Id": receipt.voucher_id,
-            "Receipt Voucher Date": receipt.date.strftime("%Y-%m-%d"),
-            "Receipt 2440 Amount": f"{receipt.amount_2440:.2f}".replace(".", ","),
-            "SIE Supplier": sie_supplier,
-            "SIE Text": receipt.description,
+            row = {
+                # Review flag first (most important column)
+                "Behöver granskas": needs_review,
 
-            # SIE Clearing
-            "Clearing Voucher Id": clearing.voucher_id if clearing else "",
-            "Clearing Voucher Date": clearing.date.strftime("%Y-%m-%d") if clearing else "",
-            "Clearing 2440 Amount": f"{clearing.amount_2440:.2f}".replace(".", ",") if clearing else "",
-            "Clearing 1930 Amount": f"{clearing.amount_1930:.2f}".replace(".", ",") if clearing else "",
+                # SIE Receipt (empty for missing receipt cases)
+                "Receipt Voucher Id": "",
+                "Receipt Voucher Date": "",
+                "Receipt 2440 Amount": "",
+                "SIE Supplier": sie_supplier,
+                "SIE Text": "",
 
-            # PDF (placeholder - to be implemented in future iteration)
-            "PDF Supplier": "",
-            "Invoice No": "",
-            "PDF Invoice Date": "",
-            "PDF Total Amount": "",
-            "Currency": "SEK",  # Default for Swedish accounting
-            "PDF Filename": "",
+                # SIE Clearing
+                "Clearing Voucher Id": clearing.voucher_id if clearing else "",
+                "Clearing Voucher Date": clearing.date.strftime("%Y-%m-%d") if clearing else "",
+                "Clearing 2440 Amount": f"{clearing.amount_2440:.2f}".replace(".", ",") if clearing else "",
+                "Clearing 1930 Amount": f"{clearing.amount_1930:.2f}".replace(".", ",") if clearing else "",
 
-            # Validation
-            "Status": case.status,
-            "Match Confidence": case.match_confidence,
-            "Comment": case.comment,
-        }
+                # PDF (placeholder - to be implemented in future iteration)
+                "PDF Supplier": "",
+                "Invoice No": clearing.extract_invoice_number() if clearing else "",
+                "PDF Invoice Date": "",
+                "PDF Total Amount": "",
+                "Currency": "SEK",  # Default for Swedish accounting
+                "PDF Filename": "",
+
+                # Validation
+                "Status": case.status,
+                "Match Confidence": case.match_confidence,
+                "Comment": case.comment,
+            }
+        else:
+            # Normal case with receipt
+            # Extract supplier from voucher description
+            sie_supplier = receipt.extract_supplier()
+
+            # Build row data (using Swedish number format: comma as decimal separator)
+            row = {
+                # Review flag first (most important column)
+                "Behöver granskas": needs_review,
+
+                # SIE Receipt
+                "Receipt Voucher Id": receipt.voucher_id,
+                "Receipt Voucher Date": receipt.date.strftime("%Y-%m-%d"),
+                "Receipt 2440 Amount": f"{receipt.amount_2440:.2f}".replace(".", ","),
+                "SIE Supplier": sie_supplier,
+                "SIE Text": receipt.description,
+
+                # SIE Clearing
+                "Clearing Voucher Id": clearing.voucher_id if clearing else "",
+                "Clearing Voucher Date": clearing.date.strftime("%Y-%m-%d") if clearing else "",
+                "Clearing 2440 Amount": f"{clearing.amount_2440:.2f}".replace(".", ",") if clearing else "",
+                "Clearing 1930 Amount": f"{clearing.amount_1930:.2f}".replace(".", ",") if clearing else "",
+
+                # PDF (placeholder - to be implemented in future iteration)
+                "PDF Supplier": "",
+                "Invoice No": "",
+                "PDF Invoice Date": "",
+                "PDF Total Amount": "",
+                "Currency": "SEK",  # Default for Swedish accounting
+                "PDF Filename": "",
+
+                # Validation
+                "Status": case.status,
+                "Match Confidence": case.match_confidence,
+                "Comment": case.comment,
+            }
         rows.append(row)
 
     # Create DataFrame
@@ -251,6 +288,7 @@ def generate_summary_report_with_bookkeeping(cases: List[InvoiceCase], output_pa
     total_invoices = len(cases)
     paid_cases = [c for c in cases if c.status == "OK"]
     unpaid_cases = [c for c in cases if c.status == "Missing clearing"]
+    missing_receipt_cases = [c for c in cases if c.status == "Missing receipt"]
     review_cases = [c for c in cases if c.status == "Needs review"]
 
     # Create summary rows matching bookkeeping
@@ -264,6 +302,7 @@ def generate_summary_report_with_bookkeeping(cases: List[InvoiceCase], output_pa
         {"Category": "Total Invoice Cases", "Count": total_invoices, "Amount (SEK)": ""},
         {"Category": "  - Paid (OK)", "Count": len(paid_cases), "Amount (SEK)": ""},
         {"Category": "  - Unpaid (Missing clearing)", "Count": len(unpaid_cases), "Amount (SEK)": ""},
+        {"Category": "  - Payments without receipt", "Count": len(missing_receipt_cases), "Amount (SEK)": ""},
         {"Category": "  - Needs Review", "Count": len(review_cases), "Amount (SEK)": ""},
     ]
 
@@ -281,10 +320,11 @@ def generate_summary_report_with_bookkeeping(cases: List[InvoiceCase], output_pa
     logger.info(f"  Debet (Clearings): {total_debet:,.2f} SEK")
     logger.info(f"  Outstanding Balance: {outstanding_balance:,.2f} SEK")
     logger.info(f"")
-    logger.info(f"Validation Summary (after excluding {0 if not all_vouchers else (len(all_vouchers) - sum(1 for v in all_vouchers if any(c.receipt.voucher.voucher_id == v.voucher_id for c in cases)))} correction vouchers):")
+    logger.info(f"Validation Summary:")
     logger.info(f"  Total Cases: {total_invoices}")
     logger.info(f"  Paid (OK): {len(paid_cases)}")
-    logger.info(f"  Unpaid: {len(unpaid_cases)}")
+    logger.info(f"  Unpaid (Missing clearing): {len(unpaid_cases)}")
+    logger.info(f"  Payments without receipt: {len(missing_receipt_cases)}")
     logger.info(f"  Needs Review: {len(review_cases)}")
     logger.info("=" * 60)
 
