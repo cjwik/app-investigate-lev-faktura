@@ -230,6 +230,9 @@ def cmd_match(args: argparse.Namespace) -> int:
     max_days = args.max_days if hasattr(args, 'max_days') else 120
     start_time = time.time()
 
+    # Track closing balances for each year to use as opening balance for next year
+    closing_balances = {}
+
     for year in years:
         logger.info(f"Processing matching for year {year}...")
         sie_file = next(config.SIE_DIR.glob(f"{year}*.se"), None)
@@ -258,6 +261,39 @@ def cmd_match(args: argparse.Namespace) -> int:
                 all_vouchers_for_matching.extend(next_year_vouchers)
                 logger.info(f"Added {len(next_year_vouchers)} vouchers from {next_year} for cross-year clearing detection")
 
+        # Also load previous year's data for cross-year clearing detection
+        # This allows 2025 clearings to match 2024 receipts
+        prev_year = year - 1
+        prev_year_sie = next(config.SIE_DIR.glob(f"{prev_year}*.se"), None)
+
+        prev_year_vouchers = None
+        if prev_year_sie:
+            logger.info(f"Loading {prev_year} data for cross-year clearing detection...")
+            prev_year_vouchers = parse_sie_transactions(prev_year_sie)
+            if prev_year_vouchers:
+                all_vouchers_for_matching.extend(prev_year_vouchers)
+                logger.info(f"Added {len(prev_year_vouchers)} vouchers from {prev_year} for cross-year clearing detection")
+
+        # Calculate previous year's closing balance if not already cached
+        prev_year_closing_balance = None
+        if prev_year not in closing_balances and prev_year_vouchers:
+            # Calculate closing balance from previous year's vouchers
+            prev_kredit = 0.0
+            prev_debet = 0.0
+            for voucher in prev_year_vouchers:
+                if voucher.has_account("2440"):
+                    trans_2440_list = voucher.get_transactions_by_account("2440")
+                    for trans in trans_2440_list:
+                        if trans.amount < 0:
+                            prev_kredit += abs(trans.amount)
+                        else:
+                            prev_debet += abs(trans.amount)
+            prev_year_closing_balance = prev_kredit - prev_debet
+            closing_balances[prev_year] = prev_year_closing_balance
+            logger.info(f"Calculated {prev_year} closing balance: {prev_year_closing_balance:,.2f} SEK")
+        elif prev_year in closing_balances:
+            prev_year_closing_balance = closing_balances[prev_year]
+
         # Perform matching with current year receipts and all available clearings
         matcher = InvoiceMatcher(max_days=max_days)
         cases = matcher.match_all(all_vouchers_for_matching, receipt_year=year)
@@ -267,8 +303,21 @@ def cmd_match(args: argparse.Namespace) -> int:
             continue
 
         # Generate report (pass only current year vouchers for bookkeeping reconciliation)
-        report_path = generate_both_reports(cases, config.REPORTS_DIR, year, all_vouchers=vouchers)
+        report_path = generate_both_reports(cases, config.REPORTS_DIR, year, all_vouchers=vouchers, prev_year_closing_balance=prev_year_closing_balance)
         logger.info(f"Report generated: {report_path.name}")
+
+        # Calculate and store current year's closing balance for next iteration
+        curr_kredit = 0.0
+        curr_debet = 0.0
+        for voucher in vouchers:
+            if voucher.has_account("2440"):
+                trans_2440_list = voucher.get_transactions_by_account("2440")
+                for trans in trans_2440_list:
+                    if trans.amount < 0:
+                        curr_kredit += abs(trans.amount)
+                    else:
+                        curr_debet += abs(trans.amount)
+        closing_balances[year] = (prev_year_closing_balance or 0.0) + (curr_kredit - curr_debet)
 
     total_time = time.time() - start_time
     logger.info(f"Matching finished in {total_time:.2f}s")

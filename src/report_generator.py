@@ -248,7 +248,7 @@ def generate_combined_report(cases: List[InvoiceCase], output_path: Path) -> Non
         logger.info(f"  - {status}: {count}")
 
 
-def generate_summary_report_with_bookkeeping(cases: List[InvoiceCase], output_path: Path, all_vouchers: List = None) -> None:
+def generate_summary_report_with_bookkeeping(cases: List[InvoiceCase], output_path: Path, all_vouchers: List = None, year: int = None, prev_year_closing_balance: float = None) -> None:
     """
     Generates a financial summary report matching bookkeeping totals.
 
@@ -256,6 +256,8 @@ def generate_summary_report_with_bookkeeping(cases: List[InvoiceCase], output_pa
         cases: List of InvoiceCase objects to report on
         output_path: Path where the summary CSV will be saved
         all_vouchers: Optional list of all vouchers (including excluded corrections) for reconciliation
+        year: Year being reported
+        prev_year_closing_balance: Closing balance from previous year (for opening balance)
     """
     from src.transaction_parser import Voucher
 
@@ -276,13 +278,17 @@ def generate_summary_report_with_bookkeeping(cases: List[InvoiceCase], output_pa
                     else:
                         total_debet += abs(trans.amount)   # Debet (clearings)
 
-        # Outstanding = Kredit - Debet (in absolute terms)
-        outstanding_balance = total_kredit - total_debet
+        # Period change = Kredit - Debet
+        period_change = total_kredit - total_debet
     else:
         # Fallback to cases-based calculation
         total_kredit = sum(abs(c.receipt.amount_2440) for c in cases)
         total_debet = sum(abs(c.clearing.amount_2440) for c in cases if c.clearing)
-        outstanding_balance = total_kredit - total_debet
+        period_change = total_kredit - total_debet
+
+    # Calculate opening and closing balances
+    opening_balance = prev_year_closing_balance if prev_year_closing_balance is not None else 0.0
+    closing_balance = opening_balance + period_change
 
     # Calculate validation statistics from cases (after excluding corrections)
     total_invoices = len(cases)
@@ -291,19 +297,31 @@ def generate_summary_report_with_bookkeeping(cases: List[InvoiceCase], output_pa
     missing_receipt_cases = [c for c in cases if c.status == "Missing receipt"]
     review_cases = [c for c in cases if c.status == "Needs review"]
 
-    # Create summary rows matching bookkeeping
+    # Create summary rows with improved structure
+    # Note: In Swedish accounting, account 2440 is a liability account (normally Kredit balance)
+    # We show balances as absolute values with sign to match bookkeeping conventions
+    year_label = f" {year}" if year else ""
     summary_rows = [
-        {"Category": "Account 2440 - Bookkeeping Totals", "Count": "", "Amount (SEK)": ""},
-        {"Category": "Total Kredit (Receipts)", "Count": "", "Amount (SEK)": f"{total_kredit:.2f}".replace(".", ",")},
-        {"Category": "Total Debet (Clearings)", "Count": "", "Amount (SEK)": f"{total_debet:.2f}".replace(".", ",")},
-        {"Category": "Outstanding Balance (Utg. saldo)", "Count": "", "Amount (SEK)": f"{outstanding_balance:.2f}".replace(".", ",")},
+        {"Category": f"Account 2440 - Leverantörsskulder (Supplier Liabilities){year_label}", "Count": "", "Amount (SEK)": ""},
         {"Category": "", "Count": "", "Amount (SEK)": ""},
-        {"Category": "Validation Summary (After Excluding Corrections)", "Count": "", "Amount (SEK)": ""},
-        {"Category": "Total Invoice Cases", "Count": total_invoices, "Amount (SEK)": ""},
-        {"Category": "  - Paid (OK)", "Count": len(paid_cases), "Amount (SEK)": ""},
-        {"Category": "  - Unpaid (Missing clearing)", "Count": len(unpaid_cases), "Amount (SEK)": ""},
-        {"Category": "  - Payments without receipt", "Count": len(missing_receipt_cases), "Amount (SEK)": ""},
-        {"Category": "  - Needs Review", "Count": len(review_cases), "Amount (SEK)": ""},
+        {"Category": "Ingående saldo (Opening balance)", "Count": "", "Amount (SEK)": f"{-opening_balance:.2f}".replace(".", ",")},
+        {"Category": "", "Count": "", "Amount (SEK)": ""},
+        {"Category": "Periodens förändring (Period changes):", "Count": "", "Amount (SEK)": ""},
+        {"Category": "  + Kredit (Receipts - invoices received)", "Count": "", "Amount (SEK)": f"{total_kredit:.2f}".replace(".", ",")},
+        {"Category": "  - Debet (Clearings - invoices paid)", "Count": "", "Amount (SEK)": f"{total_debet:.2f}".replace(".", ",")},
+        {"Category": "  = Netto förändring (Net change)", "Count": "", "Amount (SEK)": f"{period_change:.2f}".replace(".", ",")},
+        {"Category": "", "Count": "", "Amount (SEK)": ""},
+        {"Category": "Utgående saldo (Closing balance)", "Count": "", "Amount (SEK)": f"{-closing_balance:.2f}".replace(".", ",")},
+        {"Category": "", "Count": "", "Amount (SEK)": ""},
+        {"Category": "", "Count": "", "Amount (SEK)": ""},
+        {"Category": "Validering - Fakturakontroll (Validation - Invoice Control)", "Count": "", "Amount (SEK)": ""},
+        {"Category": "(Exkl. korrigeringsverifikationer)", "Count": "", "Amount (SEK)": ""},
+        {"Category": "", "Count": "", "Amount (SEK)": ""},
+        {"Category": "Totalt antal fakturor", "Count": total_invoices, "Amount (SEK)": ""},
+        {"Category": "  ✓ Betalda (Paid)", "Count": len(paid_cases), "Amount (SEK)": ""},
+        {"Category": "  ✗ Obetalda (Unpaid)", "Count": len(unpaid_cases), "Amount (SEK)": ""},
+        {"Category": "  ? Betalning utan faktura (Payment without invoice)", "Count": len(missing_receipt_cases), "Amount (SEK)": ""},
+        {"Category": "  ! Behöver granskas (Needs review)", "Count": len(review_cases), "Amount (SEK)": ""},
     ]
 
     # Create DataFrame and save
@@ -313,12 +331,14 @@ def generate_summary_report_with_bookkeeping(cases: List[InvoiceCase], output_pa
 
     # Log summary to console
     logger.info("=" * 60)
-    logger.info("Financial Summary - Bookkeeping Reconciliation")
+    logger.info(f"Financial Summary{year_label} - Bookkeeping Reconciliation")
     logger.info("=" * 60)
-    logger.info(f"Account 2440 Totals:")
+    logger.info(f"Account 2440 - Leverantörsskulder:")
+    logger.info(f"  Ingående saldo (Opening): {opening_balance:,.2f} SEK")
     logger.info(f"  Kredit (Receipts): {total_kredit:,.2f} SEK")
     logger.info(f"  Debet (Clearings): {total_debet:,.2f} SEK")
-    logger.info(f"  Outstanding Balance: {outstanding_balance:,.2f} SEK")
+    logger.info(f"  Netto förändring (Change): {period_change:,.2f} SEK")
+    logger.info(f"  Utgående saldo (Closing): {closing_balance:,.2f} SEK")
     logger.info(f"")
     logger.info(f"Validation Summary:")
     logger.info(f"  Total Cases: {total_invoices}")
@@ -378,7 +398,7 @@ def generate_summary_report(cases: List[InvoiceCase], output_path: Path) -> None
     logger.info("=" * 60)
 
 
-def generate_both_reports(cases: List[InvoiceCase], reports_dir: Path, year: int, all_vouchers: List = None) -> Path:
+def generate_both_reports(cases: List[InvoiceCase], reports_dir: Path, year: int, all_vouchers: List = None, prev_year_closing_balance: float = None) -> Path:
     """
     Generates the combined validation report with review flag and summary report.
 
@@ -387,6 +407,7 @@ def generate_both_reports(cases: List[InvoiceCase], reports_dir: Path, year: int
         reports_dir: Directory to save reports
         year: Year for filename
         all_vouchers: Optional list of all vouchers (including excluded corrections) for bookkeeping reconciliation
+        prev_year_closing_balance: Closing balance from previous year (for opening balance)
 
     Returns:
         Path to the generated report file
@@ -401,6 +422,6 @@ def generate_both_reports(cases: List[InvoiceCase], reports_dir: Path, year: int
 
     # Summary report
     summary_path = reports_dir / f"summary_{year}_{timestamp}.csv"
-    generate_summary_report_with_bookkeeping(cases, summary_path, all_vouchers)
+    generate_summary_report_with_bookkeeping(cases, summary_path, all_vouchers, year, prev_year_closing_balance)
 
     return combined_path
