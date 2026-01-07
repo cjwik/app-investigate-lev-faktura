@@ -520,6 +520,9 @@ class InvoiceMatcher:
             clearing_invoice_no = c.voucher.extract_invoice_number()
             clearing_supplier = c.voucher.extract_supplier()
 
+            # Check if amounts match exactly
+            amount_match = abs(abs(c.amount_2440) - abs_receipt_amount) < 0.01
+
             # Check if invoice numbers match
             invoice_match = (clearing_invoice_no == receipt_invoice_no
                            if (receipt_invoice_no and clearing_invoice_no) else False)
@@ -534,16 +537,20 @@ class InvoiceMatcher:
             # Check if matched via reference (Strategy 2)
             is_ref_match = c in reference_candidates
 
-            candidates_with_info.append((c, days_diff, invoice_match, supplier_match, both_match, is_ref_match))
+            candidates_with_info.append((c, days_diff, invoice_match, supplier_match, both_match, is_ref_match, amount_match))
 
         # Sort by:
-        # 1. Explicit Reference Match (Highest priority for bulk payments)
+        # 1. Exact amount match (NEW - highest priority for 1:1 payments)
         # 2. Both match (invoice# AND supplier)
-        # 3. Invoice number match only
-        # 4. Days difference (closest first)
-        candidates_with_info.sort(key=lambda x: (not x[5], not x[4], not x[2], x[1]))
+        # 3. Explicit Reference Match (for multi-invoice bulk payments)
+        # 4. Invoice number match only
+        # 5. Days difference (closest first)
+        #
+        # Rationale: When amounts match exactly, that's the strongest signal (1:1 payment).
+        # Bulk payments (reference matches) are lower priority since they involve multiple invoices.
+        candidates_with_info.sort(key=lambda x: (not x[6], not x[4], not x[5], not x[2], x[1]))
 
-        best_clearing, days, invoice_match, supplier_match, both_match, is_ref_match = candidates_with_info[0]
+        best_clearing, days, invoice_match, supplier_match, both_match, is_ref_match, amount_match = candidates_with_info[0]
 
         # Build comment based on day count
         # Note: Explicit reference matches (bulk payments) bypass max_days check
@@ -613,7 +620,7 @@ class InvoiceMatcher:
             comment += f" [CROSS-YEAR: {receipt_year} invoice paid in {best_clearing.date.year}]"
 
         # Check for ambiguity (multiple candidates with same days)
-        same_day_candidates = [c for c, d, _, _, _, _ in candidates_with_info if d == days]
+        same_day_candidates = [c for c, d, _, _, _, _, _ in candidates_with_info if d == days]
         if len(same_day_candidates) > 1:
             comment += f" (Warning: {len(same_day_candidates)} candidates with same date)"
 
