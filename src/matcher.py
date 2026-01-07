@@ -110,6 +110,28 @@ class ClearingEvent:
 
 
 @dataclass
+class CorrectionEvent:
+    """Represents a correction event that clears a liability without payment."""
+    voucher: Voucher
+    amount_2440: float  # The signed amount on account 2440 (positive = debit)
+    trans_2440: Transaction
+    payment_voucher_id: str  # Referenced payment voucher (e.g., A159)
+    receipt_voucher_id: str  # Referenced receipt voucher (e.g., A133)
+
+    @property
+    def voucher_id(self) -> str:
+        return self.voucher.voucher_id
+
+    @property
+    def date(self) -> datetime:
+        return self.voucher.date
+
+    @property
+    def description(self) -> str:
+        return self.voucher.description
+
+
+@dataclass
 class InvoiceCase:
     """Represents one invoice case (one row in final report)."""
     receipt: ReceiptEvent
@@ -136,13 +158,14 @@ class InvoiceMatcher:
         """
         self.max_days = max_days
 
-    def identify_correction_vouchers(self, vouchers: List[Voucher], target_year: int = None) -> set[str]:
+    def identify_correction_vouchers(self, vouchers: List[Voucher], target_year: int = None) -> tuple[set[str], dict]:
         """
         Identifies correction voucher pairs that should be excluded from matching.
 
         Correction vouchers are identified by:
         - "korrigerad" (corrected) in description with reference to another voucher
         - "Korrigering" (correction) in description with reference to another voucher
+        - "Rättelse av felbokad betalning" (2024 payment corrections in 2025)
 
         These represent accounting corrections that cancel each other out, not actual invoices.
 
@@ -152,20 +175,24 @@ class InvoiceMatcher:
                         This prevents cross-year voucher ID collisions (e.g., 2024-A53 vs 2025-A53)
 
         Returns:
-            Set of voucher IDs to exclude (both the incorrect and correction vouchers)
+            Tuple of (exclude_ids: set, correction_mappings: dict)
+            - exclude_ids: Set of voucher IDs to exclude
+            - correction_mappings: Dict of {correction_id: {'payment_id': str, 'receipt_id': str, 'correction_voucher': Voucher}}
         """
         exclude_ids = set()
+        correction_mappings = {}
         import re
 
-        for voucher in vouchers:
-            # If filtering by year, skip vouchers from other years
-            if target_year and voucher.date.year != target_year:
-                continue
 
+        for voucher in vouchers:
             desc_lower = voucher.description.lower()
 
+            # For regular correction pairs (same-year), filter by target year
+            # But for payment corrections that reference other years, check all vouchers
+
             # Check for "korrigerad" (corrected with reference to another voucher)
-            if "korrigerad" in desc_lower:
+            # Only check vouchers from target year for same-year corrections
+            if "korrigerad" in desc_lower and (not target_year or voucher.date.year == target_year):
                 # Extract referenced voucher ID (pattern: "korrigerad med verifikation A131")
                 match = re.search(r'korrigerad.*?([A-Z]\d+)', voucher.description, re.IGNORECASE)
                 if match:
@@ -181,7 +208,8 @@ class InvoiceMatcher:
                         logger.info(f"Excluding correction pair: {voucher.voucher_id} <-> {referenced_id}")
 
             # Check for "korrigering" (correction of another voucher)
-            if "korrigering" in desc_lower:
+            # Only check vouchers from target year for same-year corrections
+            if "korrigering" in desc_lower and (not target_year or voucher.date.year == target_year):
                 # Extract referenced voucher ID (pattern: "Korrigering av ver.nr. A120")
                 match = re.search(r'korrigering.*?([A-Z]\d+)', voucher.description, re.IGNORECASE)
                 if match:
@@ -196,10 +224,44 @@ class InvoiceMatcher:
                         exclude_ids.add(referenced_id)
                         logger.info(f"Excluding correction pair: {voucher.voucher_id} <-> {referenced_id}")
 
+            # Check for "Rättelse av felbokad betalning" (2024 payment corrections in 2025)
+            # The SIE file is encoded in CP850/CP437 and properly decoded to Swedish characters
+            desc = voucher.description
+            is_payment_correction = (
+                "rättelse av felbokad betalning" in desc_lower and
+                ("i stället för 2440" in desc_lower or "i stället för 2440" in desc_lower) and
+                "rättas i 2025" in desc_lower
+            )
+
+
+            if is_payment_correction:
+                # Extract payment voucher: "felbokad betalning A159 2024-11-25"
+                payment_match = re.search(r'felbokad betalning ([A-Z]\d+)', desc, re.IGNORECASE)
+
+                # Extract receipt voucher: "faktura A133 2024-11-08"
+                receipt_match = re.search(r'faktura ([A-Z]\d+)', desc, re.IGNORECASE)
+
+                if payment_match and receipt_match:
+                    payment_id = payment_match.group(1)
+                    receipt_id = receipt_match.group(1)
+
+                    # This is a correction voucher - exclude from normal receipt/clearing processing
+                    # Store mapping for later matching
+                    correction_mappings[voucher.voucher_id] = {
+                        'payment_id': payment_id,
+                        'receipt_id': receipt_id,
+                        'correction_voucher': voucher
+                    }
+                    exclude_ids.add(voucher.voucher_id)
+                    logger.info(f"Excluding 2025 payment correction: {voucher.voucher_id} -> Receipt {receipt_id} (Payment {payment_id} bypassed 2440)")
+
         if exclude_ids:
             logger.info(f"Total correction vouchers excluded: {len(exclude_ids)} ({', '.join(sorted(exclude_ids))})")
 
-        return exclude_ids
+        if correction_mappings:
+            logger.info(f"Payment corrections found: {len(correction_mappings)} ({', '.join(sorted(correction_mappings.keys()))})")
+
+        return exclude_ids, correction_mappings
 
     def identify_receipts(self, vouchers: List[Voucher]) -> List[ReceiptEvent]:
         """
@@ -291,20 +353,79 @@ class InvoiceMatcher:
 
             # Handle multiple 2440 lines in same clearing voucher
             for trans_2440 in trans_2440_list:
-                # For each 2440, find corresponding 1930
-                # In most cases, there's one 1930 that matches
+                # For each 2440, find the BEST matching 1930 transaction
+                # Priority: exact amount match, then any valid payment/refund pair
+                best_trans_1930 = None
+                best_match_score = -1
+
                 for trans_1930 in trans_1930_list:
+                    # Only consider valid payment/refund pairs:
+                    # - Payment: 2440 Debet (positive) + 1930 Kredit (negative)
+                    # - Refund: 2440 Kredit (negative) + 1930 Debet (positive)
+                    is_payment = trans_2440.amount > 0 and trans_1930.amount < 0
+                    is_refund = trans_2440.amount < 0 and trans_1930.amount > 0
+
+                    if is_payment or is_refund:
+                        # Score: 2 for exact amount match, 1 for valid pair
+                        match_score = 2 if abs(abs(trans_2440.amount) - abs(trans_1930.amount)) < 0.01 else 1
+                        if match_score > best_match_score:
+                            best_match_score = match_score
+                            best_trans_1930 = trans_1930
+
+                # Only create one clearing per 2440 transaction (the best match)
+                if best_trans_1930:
                     clearing = ClearingEvent(
                         voucher=voucher,
                         amount_2440=trans_2440.amount,
-                        amount_1930=trans_1930.amount,
+                        amount_1930=best_trans_1930.amount,
                         trans_2440=trans_2440,
-                        trans_1930=trans_1930
+                        trans_1930=best_trans_1930
                     )
                     clearings.append(clearing)
 
         logger.info(f"Identified {len(clearings)} clearing events")
         return clearings
+
+    def identify_corrections(self, vouchers: List[Voucher], correction_mappings: dict) -> List[CorrectionEvent]:
+        """
+        Identifies correction events from vouchers.
+
+        Correction events are accounting adjustments that clear 2440 liabilities
+        without actual bank transactions (no 1930). These are used when payments
+        were incorrectly posted to expense accounts instead of clearing liabilities.
+
+        Args:
+            vouchers: List of all vouchers
+            correction_mappings: Dict of {correction_id: {'payment_id': str, 'receipt_id': str, 'correction_voucher': Voucher}}
+
+        Returns:
+            List of CorrectionEvent objects
+        """
+        corrections = []
+
+        for correction_id, mapping in correction_mappings.items():
+            correction_voucher = mapping['correction_voucher']
+
+            # Get 2440 Debit transaction (should be positive)
+            trans_2440_list = correction_voucher.get_transactions_by_account("2440")
+
+            for trans_2440 in trans_2440_list:
+                if trans_2440.amount > 0:  # Only Debit (liability clearing)
+                    correction = CorrectionEvent(
+                        voucher=correction_voucher,
+                        amount_2440=trans_2440.amount,
+                        trans_2440=trans_2440,
+                        payment_voucher_id=mapping['payment_id'],
+                        receipt_voucher_id=mapping['receipt_id']
+                    )
+                    corrections.append(correction)
+                    break  # Only one 2440 Debit per correction
+
+        logger.info(f"Identified {len(corrections)} correction events")
+        for c in corrections:
+            logger.info(f"  - {c.voucher_id}: Corrects {c.receipt_voucher_id} (paid by {c.payment_voucher_id})")
+
+        return corrections
 
     def find_clearing_for_receipt(
         self,
@@ -473,7 +594,7 @@ class InvoiceMatcher:
         logger.info(f"Starting matching process for {len(vouchers)} vouchers...")
 
         # Step 0: Identify and exclude correction vouchers (only from the target year to avoid cross-year ID collisions)
-        exclude_ids = self.identify_correction_vouchers(vouchers, target_year=receipt_year)
+        exclude_ids, correction_mappings = self.identify_correction_vouchers(vouchers, target_year=receipt_year)
         filtered_vouchers = [v for v in vouchers if v.voucher_id not in exclude_ids]
         logger.info(f"Processing {len(filtered_vouchers)} vouchers after excluding {len(exclude_ids)} correction vouchers")
 
@@ -484,6 +605,9 @@ class InvoiceMatcher:
         # Step 1: Identify all receipts and clearings
         receipts = self.identify_receipts(receipts_vouchers)
         clearings = self.identify_clearings(filtered_vouchers)  # Search ALL years for clearings
+
+        # Step 1.5: Identify corrections (accounting adjustments that clear liabilities without bank transactions)
+        corrections = self.identify_corrections(vouchers, correction_mappings)
 
         # Step 2: Match each receipt with its clearing
         cases = []
@@ -528,6 +652,36 @@ class InvoiceMatcher:
             )
             cases.append(case)
 
+        # Step 2.5: Match receipts with corrections (2024 invoices corrected in 2025)
+        for correction in corrections:
+            # Find the receipt this correction is for
+            receipt = next((r for r in receipts if r.voucher_id == correction.receipt_voucher_id), None)
+
+            if receipt and abs(abs(correction.amount_2440) - abs(receipt.amount_2440)) < 0.01:
+                # Amount matches - this correction clears this receipt
+
+                # Find if this receipt already has a case (might be "Missing clearing")
+                existing_case = next((c for c in cases if c.receipt and c.receipt.voucher_id == receipt.voucher_id), None)
+
+                if existing_case:
+                    # Update existing case
+                    existing_case.clearing = None  # No standard clearing
+                    existing_case.status = "OK"
+                    existing_case.match_confidence = 100
+                    existing_case.comment = f"Corrected in 2025 by {correction.voucher_id} (payment {correction.payment_voucher_id} bypassed 2440)"
+                else:
+                    # Create new case (shouldn't happen, but handle it)
+                    case = InvoiceCase(
+                        receipt=receipt,
+                        clearing=None,
+                        status="OK",
+                        match_confidence=100,
+                        comment=f"Corrected in 2025 by {correction.voucher_id} (payment {correction.payment_voucher_id} bypassed 2440)"
+                    )
+                    cases.append(case)
+
+                logger.info(f"Matched correction: {receipt.voucher_id} <- {correction.voucher_id}")
+
         # Step 3: Find unmatched clearings (payments without receipts)
         # Filter clearings to the target year if specified
         clearings_for_year = [c for c in clearings if receipt_year is None or c.date.year == receipt_year]
@@ -537,15 +691,47 @@ class InvoiceMatcher:
             if id(c) not in used_clearing_ids
         ]
 
+        # Step 3.5: Check if unmatched clearings match previous year receipts
+        # This handles cross-year clearings (e.g., 2025 payment for 2024 invoice)
+        previous_year_receipts = []
+        if receipt_year:
+            # Load previous year's receipts to check for cross-year matches
+            prev_year_vouchers = [v for v in filtered_vouchers if v.date.year == receipt_year - 1]
+            if prev_year_vouchers:
+                previous_year_receipts = self.identify_receipts(prev_year_vouchers)
+                logger.info(f"Loaded {len(previous_year_receipts)} receipts from {receipt_year - 1} for cross-year clearing detection")
+
         # Create cases for unmatched clearings (payment without receipt)
         for clearing in unmatched_clearings:
-            case = InvoiceCase(
-                receipt=None,  # No receipt voucher
-                clearing=clearing,
-                status="Missing receipt",
-                match_confidence=0,
-                comment="Payment made but no receipt voucher found - needs receipt verification"
-            )
+            # Check if this clearing matches a previous year's receipt
+            cross_year_match = None
+            if previous_year_receipts:
+                # Try to find a matching receipt from previous year
+                for prev_receipt in previous_year_receipts:
+                    # Check amount match
+                    if abs(abs(clearing.amount_2440) - abs(prev_receipt.amount_2440)) < 0.01:
+                        # Found potential match - verify it's reasonable
+                        cross_year_match = prev_receipt
+                        break
+
+            if cross_year_match:
+                # This is a cross-year clearing - mark as OK
+                case = InvoiceCase(
+                    receipt=None,  # Receipt is in previous year, not included in this report
+                    clearing=clearing,
+                    status="OK",
+                    match_confidence=100,
+                    comment=f"Cross-year clearing: {receipt_year} payment for {receipt_year - 1} invoice {cross_year_match.voucher_id}"
+                )
+            else:
+                # Truly missing receipt - needs review
+                case = InvoiceCase(
+                    receipt=None,  # No receipt voucher
+                    clearing=clearing,
+                    status="Missing receipt",
+                    match_confidence=0,
+                    comment="Payment made but no receipt voucher found - needs receipt verification"
+                )
             cases.append(case)
 
         # Log statistics
@@ -553,6 +739,7 @@ class InvoiceMatcher:
         missing_clearing_count = sum(1 for c in cases if c.status == "Missing clearing")
         missing_receipt_count = sum(1 for c in cases if c.status == "Missing receipt")
         review_count = sum(1 for c in cases if c.status == "Needs review")
+        correction_count = sum(1 for c in cases if c.comment and "Corrected in 2025" in c.comment)
 
         logger.info("=" * 60)
         logger.info("Matching Complete")
@@ -562,5 +749,7 @@ class InvoiceMatcher:
         logger.info(f"  - Missing clearing (unpaid invoices): {missing_clearing_count}")
         logger.info(f"  - Missing receipt (payments without invoice): {missing_receipt_count}")
         logger.info(f"  - Needs review: {review_count}")
+        if correction_count > 0:
+            logger.info(f"  - Corrected in 2025: {correction_count}")
 
         return cases
