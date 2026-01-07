@@ -304,11 +304,20 @@ class InvoiceMatcher:
 
             for trans_2440 in trans_2440_list:
                 # Receipt identification per transaction:
-                # - 2440 Kredit (negative) → Always receipt
+                # - 2440 Kredit (negative) WITHOUT 1930 → Receipt (normal invoice)
+                # - 2440 Kredit (negative) WITH 1930 AND multiple 2440 entries → Same-voucher payment receipt
+                # - 2440 Kredit (negative) WITH 1930 AND single 2440 entry → Payment of credit invoices (NOT a receipt)
                 # - 2440 Debet (positive) + NO 1930 → Credit note receipt
 
                 if trans_2440.amount < 0:
-                    # Kredit = receipt (normal invoice)
+                    # Kredit - check if this is a receipt or payment of credit invoices
+                    # If there are multiple 2440 transactions, this is a same-voucher payment (receipt + clearing)
+                    # If there's only one 2440 transaction WITH 1930, it's a payment of credit invoices (exclude)
+                    if has_1930 and len(trans_2440_list) == 1:
+                        # Single 2440 Credit + 1930 = payment of credit invoices, not a receipt
+                        continue
+
+                    # Otherwise, it's a receipt (normal invoice or same-voucher payment)
                     receipt = ReceiptEvent(
                         voucher=voucher,
                         amount_2440=trans_2440.amount,
