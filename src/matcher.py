@@ -108,6 +108,10 @@ class ClearingEvent:
         """Extracts invoice number from voucher description."""
         return self.voucher.extract_invoice_number()
 
+    def extract_referenced_invoice_numbers(self) -> List[str]:
+        """Extracts list of invoice numbers referenced in description."""
+        return self.voucher.extract_referenced_invoice_numbers()
+
 
 @dataclass
 class CorrectionEvent:
@@ -432,7 +436,7 @@ class InvoiceMatcher:
         receipt: ReceiptEvent,
         clearings: List[ClearingEvent],
         receipt_year: int = None,
-        used_clearing_ids: set = None
+        clearing_balances: dict = None
     ) -> Tuple[Optional[ClearingEvent], str]:
         """
         Finds the matching clearing for a receipt.
@@ -441,7 +445,7 @@ class InvoiceMatcher:
             receipt: The receipt event to find clearing for
             clearings: List of all available clearing events (can include multiple years)
             receipt_year: Optional year of the receipt for cross-year detection
-            used_clearing_ids: Set of clearing IDs (id(clearing)) that have already been matched
+            clearing_balances: Dict of {id(clearing): remaining_amount}
 
         Returns:
             Tuple of (ClearingEvent or None, comment string)
@@ -455,35 +459,59 @@ class InvoiceMatcher:
         6. Accept clearings up to max_days with note
         7. Flag cross-year payments (e.g., 2024 receipt paid in 2025)
         """
-        # Filter candidates by amount match (exact absolute value)
         abs_receipt_amount = abs(receipt.amount_2440)
-        candidates = [
-            c for c in clearings
-            if abs(abs(c.amount_2440) - abs_receipt_amount) < 0.01
-        ]
-
-        if not candidates:
-            return None, "No clearing found with matching amount"
-
-        # Filter by date: clearing must be after receipt
-        candidates = [
-            c for c in candidates
-            if c.date >= receipt.date
-        ]
-
-        if not candidates:
-            return None, f"Found {len(candidates)} amount matches but all before receipt date"
-
-        # Filter out used clearings
-        if used_clearing_ids is not None:
-            candidates = [c for c in candidates if id(c) not in used_clearing_ids]
-
-        if not candidates:
-            return None, "No clearing found (all matching clearings already used)"
-
         # Extract invoice numbers and suppliers for better matching
         receipt_invoice_no = receipt.voucher.extract_invoice_number()
         receipt_supplier = receipt.voucher.extract_supplier()
+
+        # Strategy 1: Exact Amount Match (Primary)
+        # ----------------------------------------
+        amount_candidates = []
+        for c in clearings:
+            # Check if clearing has enough balance (if tracking balances)
+            remaining = clearing_balances.get(id(c), 0.0) if clearing_balances is not None else abs(c.amount_2440)
+            
+            # Check for exact match with the *original* amount (standard 1:1 match)
+            # OR check if remaining balance matches (if partially used)
+            if abs(abs(c.amount_2440) - abs_receipt_amount) < 0.01 or abs(remaining - abs_receipt_amount) < 0.01:
+                if c.date >= receipt.date:
+                    # Ensure we don't reuse fully exhausted clearings
+                    if remaining >= abs_receipt_amount - 0.01:
+                        amount_candidates.append(c)
+
+        # Strategy 2: Explicit Invoice Reference Match (Fallback for Bulk Payments)
+        # -------------------------------------------------------------------------
+        # If A232 pays for A186, A215 etc. in one lump sum, amounts won't match 1:1.
+        # We check if the clearing description explicitly lists the receipt's invoice number.
+        reference_candidates = []
+        if receipt_invoice_no:
+            for c in clearings:
+                
+                # Check date
+                if c.date < receipt.date:
+                    continue
+
+                # Check balance
+                remaining = clearing_balances.get(id(c), 0.0) if clearing_balances is not None else abs(c.amount_2440)
+                if remaining < abs_receipt_amount - 0.01:
+                    continue
+
+                # Check description for invoice number
+                referenced_invoices = c.extract_referenced_invoice_numbers()
+                if receipt_invoice_no in referenced_invoices:
+                    reference_candidates.append(c)
+
+        # Combine candidates, prioritizing exact amount matches
+        # Deduplicate while preserving order (amount matches first)
+        candidates = []
+        seen_ids = set()
+        for c in amount_candidates + reference_candidates:
+            if id(c) not in seen_ids:
+                candidates.append(c)
+                seen_ids.add(id(c))
+
+        if not candidates:
+            return None, "No clearing found (checked amount and invoice references)"
 
         # Calculate days and check invoice number + supplier match for each candidate
         candidates_with_info = []
@@ -503,15 +531,19 @@ class InvoiceMatcher:
             # Both should match for standardized format
             both_match = invoice_match and supplier_match
 
-            candidates_with_info.append((c, days_diff, invoice_match, supplier_match, both_match))
+            # Check if matched via reference (Strategy 2)
+            is_ref_match = c in reference_candidates
+
+            candidates_with_info.append((c, days_diff, invoice_match, supplier_match, both_match, is_ref_match))
 
         # Sort by:
-        # 1. Both match (invoice# AND supplier) - highest priority
-        # 2. Invoice number match only
-        # 3. Days difference (closest first)
-        candidates_with_info.sort(key=lambda x: (not x[4], not x[2], x[1]))
+        # 1. Explicit Reference Match (Highest priority for bulk payments)
+        # 2. Both match (invoice# AND supplier)
+        # 3. Invoice number match only
+        # 4. Days difference (closest first)
+        candidates_with_info.sort(key=lambda x: (not x[5], not x[4], not x[2], x[1]))
 
-        best_clearing, days, invoice_match, supplier_match, both_match = candidates_with_info[0]
+        best_clearing, days, invoice_match, supplier_match, both_match, is_ref_match = candidates_with_info[0]
 
         # Build comment based on day count
         if days == 0:
@@ -524,7 +556,9 @@ class InvoiceMatcher:
             return None, f"Clearing found but {days} days after receipt (exceeds max {self.max_days} days)"
 
         # Add match quality indicators with detailed mismatch information
-        if both_match:
+        if is_ref_match:
+            comment += f" ✓ BULK MATCH (Found invoice {receipt_invoice_no} in clearing description)"
+        elif both_match:
             comment += " ✓ FULL MATCH (supplier + invoice#)"
         elif invoice_match and not supplier_match:
             # Invoice matches but supplier doesn't - flag for SIE file correction
@@ -573,7 +607,7 @@ class InvoiceMatcher:
             comment += f" [CROSS-YEAR: {receipt_year} invoice paid in {best_clearing.date.year}]"
 
         # Check for ambiguity (multiple candidates with same days)
-        same_day_candidates = [c for c, d, _, _, _ in candidates_with_info if d == days]
+        same_day_candidates = [c for c, d, _, _, _, _ in candidates_with_info if d == days]
         if len(same_day_candidates) > 1:
             comment += f" (Warning: {len(same_day_candidates)} candidates with same date)"
 
@@ -611,20 +645,22 @@ class InvoiceMatcher:
 
         # Step 2: Match each receipt with its clearing
         cases = []
-        used_clearing_ids = set()  # Track clearings that have already been matched
+        # Track remaining balance for each clearing to allow bulk payments
+        clearing_balances = {id(c): abs(c.amount_2440) for c in clearings}
 
         for receipt in receipts:
             clearing, comment = self.find_clearing_for_receipt(
                 receipt,
                 clearings,
                 receipt_year=receipt_year,
-                used_clearing_ids=used_clearing_ids
+                clearing_balances=clearing_balances
             )
 
             # Determine status
             if clearing:
-                # Mark this clearing as used to prevent double-matching
-                used_clearing_ids.add(id(clearing))
+                # Deduct amount from clearing balance
+                clearing_balances[id(clearing)] -= abs(receipt.amount_2440)
+                
                 # Check for same voucher case
                 if clearing.voucher_id == receipt.voucher_id:
                     status = "OK"
@@ -632,7 +668,8 @@ class InvoiceMatcher:
                     confidence = 100
                 else:
                     # Validate amounts match exactly
-                    if abs(abs(clearing.amount_2440) - abs(receipt.amount_2440)) < 0.01:
+                    # Note: For bulk matches, clearing amount > receipt amount, but we trust the reference match
+                    if abs(abs(clearing.amount_2440) - abs(receipt.amount_2440)) < 0.01 or "BULK MATCH" in comment:
                         status = "OK"
                         confidence = 100
                     else:
@@ -688,7 +725,7 @@ class InvoiceMatcher:
 
         unmatched_clearings = [
             c for c in clearings_for_year
-            if id(c) not in used_clearing_ids
+            if abs(clearing_balances[id(c)] - abs(c.amount_2440)) < 0.01  # Only show completely unused clearings
         ]
 
         # Step 3.5: Check if unmatched clearings match previous year receipts
