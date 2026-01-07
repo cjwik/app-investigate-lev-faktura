@@ -127,6 +127,33 @@ class Voucher:
         match = re.search(r'\d{8,}', self.description)
         return match.group(0) if match else None
 
+    def extract_referenced_invoice_numbers(self) -> List[str]:
+        """
+        Extracts all invoice numbers referenced in the description.
+        Useful for bulk payments listing multiple invoices (e.g., "Betalat - 123;456;789").
+        """
+        # Look for the invoice number field (4th part in standardized format)
+        parts = [p.strip() for p in self.description.split(' - ')]
+
+        candidates = []
+        if len(parts) >= 4:
+            # The 4th part might contain "123;456;789" or "123;456;789" 20250624
+            # First, split on whitespace to remove trailing dates
+            invoice_part = parts[3].split()[0] if parts[3].split() else parts[3]
+
+            # Remove any trailing quotes
+            invoice_part = invoice_part.rstrip('"\'')
+
+            # Split by semicolon to get individual invoice numbers
+            raw_numbers = invoice_part.split(';')
+            for num in raw_numbers:
+                # Remove non-digits and quotes
+                clean_num = ''.join(filter(str.isdigit, num))
+                if len(clean_num) >= 4:  # Minimal length for an invoice number
+                    candidates.append(clean_num)
+
+        return candidates
+
     def __repr__(self):
         return f"Voucher({self.voucher_id}, {self.date.date()}, {len(self.transactions)} trans)"
 

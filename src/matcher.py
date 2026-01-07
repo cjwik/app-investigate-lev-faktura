@@ -546,12 +546,18 @@ class InvoiceMatcher:
         best_clearing, days, invoice_match, supplier_match, both_match, is_ref_match = candidates_with_info[0]
 
         # Build comment based on day count
+        # Note: Explicit reference matches (bulk payments) bypass max_days check
+        # because invoice number is explicitly listed in payment description
         if days == 0:
             comment = "Receipt and clearing in same voucher date"
         elif days <= 40:
             comment = f"Clearing found {days} day{'s' if days != 1 else ''} after receipt"
-        elif days <= self.max_days:
-            comment = f"Late clearing: {days} days after receipt"
+        elif days <= self.max_days or is_ref_match:
+            # Accept if within max_days OR if explicit reference match
+            if days > self.max_days:
+                comment = f"Bulk payment clearing: {days} days after receipt (date tolerance relaxed for explicit reference)"
+            else:
+                comment = f"Late clearing: {days} days after receipt"
         else:
             return None, f"Clearing found but {days} days after receipt (exceeds max {self.max_days} days)"
 
